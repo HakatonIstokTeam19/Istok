@@ -377,30 +377,6 @@
         </section>
       </div>
     </div>
-    <script>
-      const container = document.querySelector(".container");
-
-      const handleResize = () => {
-        if (window.innerWidth <= 768) {
-          container.style.flexDirection = "column";
-          container.style.overflowY = "auto";
-          container.style.overflowX = "hidden";
-        } else {
-          container.style.flexDirection = "row";
-          container.style.overflowY = "hidden";
-          container.style.overflowX = "auto";
-        }
-      };
-
-      window.addEventListener("resize", handleResize);
-      handleResize();
-
-      container.addEventListener("wheel", (e) => {
-        if (window.innerWidth > 768) {
-          e.preventDefault();
-          container.scrollLeft += e.deltaY;
-        }
-      });
-    </script>
+    <script src="./output/main.js"></script>
   </body>
 </html>
