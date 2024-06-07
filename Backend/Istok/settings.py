@@ -41,6 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Istok_app.apps.IstokAppConfig',
+    'users.apps.UsersConfig',
+    'crispy_forms',
+    'bootstrap4',
+    'crispy_bootstrap4',
+    'django_email_verification',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +64,7 @@ ROOT_URLCONF = 'Istok.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -111,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'UTC'
 
@@ -123,9 +129,52 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_URL = 'static/'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# функция, которая сделает пользователя активным
+# после того, как он перейдет по ссылке
+def verified_callback(user):
+    user.is_active = True
+
+EMAIL_VERIFIED_CALLBACK = verified_callback
+
+# тема письма
+EMAIL_MAIL_SUBJECT = 'Confirm your email'
+# шаблон письма в html
+EMAIL_MAIL_HTML = 'mail_body.html'
+# текстовый шаблон
+EMAIL_MAIL_PLAIN = 'mail_body.txt'
+# время жизни ссылки
+EMAIL_MAIL_TOKEN_LIFE = 60 * 60
+# шаблон, который увидят после перехода по ссылке
+EMAIL_MAIL_PAGE_TEMPLATE = 'confirm_template.html'
+# домен для использования в ссылке
+EMAIL_PAGE_DOMAIN = 'http://127.0.0.1:8000/'
+EMAIL_MULTI_USER = True
+
+# настройки вашего SMTP сервера
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_PORT = os.getenv('EMAIL_PORT')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_FROM_ADDRESS = os.getenv('EMAIL_FROM_ADDRESS')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_USE_SSL = True
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'login'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
