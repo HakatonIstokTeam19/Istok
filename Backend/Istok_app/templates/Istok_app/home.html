@@ -1,15 +1,129 @@
-{% extends "blog/base.html" %}
-{% block content %}
-    {% for post in posts %}
-        <article class="media content-section">
-          <div class="media-body">
-            <div class="article-metadata">
-              <a class="mr-2" href="#">{{ post.author }}</a>
-              <small class="text-muted">{{ post.date_posted }}</small>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{% static './src/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static './src/css/reset.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="container__page1 page">
+        <header>
+          <div class="header__nav">
+            <img
+              src="{% static './src/assets/images/logo.png' %}"
+              alt="logo"
+              class="header__logo"
+            />
+            <div class="header__links">
+              <ul>
+                <li class="header__link"><a href="{% url 'home' %}">Главная</a></li>
+                <li class="header__link"><a href="#">Готовая мебель</a></li>
+                <li class="header__link"><a href="#">Мебель на заказ</a></li>
+                <li class="header__link"><a href="{% url 'about' %}">О нас</a></li>
+                <li class="header__link"><a href="{% url 'profile' %}">Личный кабинет</a></li>
+              </ul>
             </div>
-            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
-            <p class="article-content">{{ post.content }}</p>
           </div>
-        </article>
-    {% endfor %}
-{% endblock content %}
+        </header>
+        <section class="main__heading">
+          <div class="main__heading-title">
+            <h1>
+              с <span>нами </span>начинается <br />
+              уют <span>вышего </span>дома
+            </h1>
+            <p>
+              ПРОИЗВОДСТВО МЕБЕЛИ НА ЗАКАЗ <br />
+              В САНКТ-ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ
+            </p>
+            <button class="main__heading-meeting">Записаться на встречу</button>
+          </div>
+
+          <div class="main__bottom-text">
+            <ul>
+              <li class="main__bottom-text-p">Преимущества</li>
+              <li class="main__bottom-text-p">Что мы производим</li>
+              <li class="main__bottom-text-p">Поставщики</li>
+              <li class="main__bottom-text-p">Процесс</li>
+              <li class="main__bottom-text-p">Акции</li>
+              <li class="main__bottom-text-p">Получить консультацию</li>
+            </ul>
+          </div>
+          <div class="main__bottom-nav">
+            <div class="main__bottom-line"></div>
+            <svg
+              class="main__bottom-svgs"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="10" cy="10" r="9.5" stroke="black" />
+            </svg>
+            <div class="main__bottom-line"></div>
+            <svg
+              class="main__bottom-svgs"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="10" cy="10" r="9.5" stroke="black" />
+            </svg>
+            <div class="main__bottom-line"></div>
+            <svg
+              class="main__bottom-svgs"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="10" cy="10" r="9.5" stroke="black" />
+            </svg>
+            <div class="main__bottom-line"></div>
+            <svg
+              class="main__bottom-svgs"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="10" cy="10" r="9.5" stroke="black" />
+            </svg>
+            <div class="main__bottom-line"></div>
+            <svg
+              class="main__bottom-svgs"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="10" cy="10" r="9.5" stroke="black" />
+            </svg>
+            <div class="main__bottom-line"></div>
+            <svg
+              class="main__bottom-svgs"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="10" cy="10" r="9.5" stroke="black" />
+            </svg>
+            <div class="main__bottom-line"></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
