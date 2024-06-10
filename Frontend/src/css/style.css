@@ -404,7 +404,7 @@ p {
   font-family: "VelaSans";
 }
 
-.container__page3::after {
+/* .container__page3::after {
   content: "";
   position: absolute;
   top: 0;
@@ -413,15 +413,27 @@ p {
   height: 100%;
   background-color: var(--beige-color);
   z-index: 1;
-}
+} */
 
 .page3__heading {
+  margin-top: 10%;
+  height: 800px;
   min-width: 1440px !important;
   position: relative;
-  left: 22%;
   z-index: 2;
+  left: 180%;
 }
 
+/* .page3__heading::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 16%;
+  width: 43%;
+  height: 100%;
+  background-color: var(--beige-color);
+  z-index: 1;
+} */
 .page3__title {
   max-width: 973px;
   display: flex;
