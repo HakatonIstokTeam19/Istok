@@ -19,23 +19,24 @@ class UserRegisterForm(UserCreationForm):
         ('4', 'Стелаж'),
         ('5', 'Комод')
     ]
+    full_name = forms.CharField(label='Ф.И.О.')
 
-    username = forms.CharField(label='Ф.И.О.')
     birth_date = forms.DateField(label='Дата рождения')
     phone = forms.CharField(label='Телефон', max_length=12, required=True,
                             help_text='Номер телефона в формате +7ХХХХХХХХХХ')
     email = forms.EmailField()
-    repair_planing = forms.BooleanField(label='Планируете ли Вы ремонт?')
+    repair_planing = forms.BooleanField(label='Планируете ли Вы ремонт?', required=False)
     repair_planing_time = forms.TypedMultipleChoiceField(label='Когда планируется ремонт?', choices=PLANING_TIME)
     mebel_type = forms.TypedMultipleChoiceField(label='Какая мебель понадобится?', choices=MEBEL_TYPE)
-    mailing = forms.BooleanField(label='Согласие на рассылку новостей')
-    personal_data_processing = forms.BooleanField(label='Согласие на обработку персональных данных')
-    children_having = forms.BooleanField(label='Есть ли у Вас дети?')
+    mailing = forms.BooleanField(label='Согласие на рассылку новостей', required=False)
+    personal_data_processing = forms.BooleanField(label='Согласие на обработку персональных данных', required=False)
+    children_having = forms.BooleanField(label='Есть ли у Вас дети?', required=False)
 
+#todo виджет для ввода даты рождения.
 
     class Meta:
         model = User
-        fields = ['username', 'birth_date', 'phone', 'email', 'password1', 'password2', 'repair_planing',
+        fields = ['full_name', 'birth_date', 'phone', 'email', 'password1', 'password2', 'repair_planing',
                   'repair_planing_time', 'mebel_type', 'mailing', 'personal_data_processing', 'children_having']
 
 

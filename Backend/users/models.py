@@ -16,8 +16,8 @@ class Profile(models.Model):
         ('3', 'В течение полугода'),
         ('4', 'В течение года')
     ]
-
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    full_name = models.CharField(null=True, unique=False, blank=False, verbose_name='Ф.И.О.')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='User джанго модели')
     birth_date = BirthdayField(null=True, verbose_name='Дата рождения')
     phone = models.CharField(null=True, validators=[phone_regex], unique=True, max_length=12,
                              blank=False, verbose_name='Телефон')
@@ -25,10 +25,10 @@ class Profile(models.Model):
     repair_planing_time = models.CharField(null=True, max_length=1, choices=PLANING_TIME,
                                            verbose_name='Когда планируется ремонт?')
     mebel_type = models.CharField(null=True, max_length=250, verbose_name='Тип мебели')
-    mailing = models.BooleanField(default=False, verbose_name='Согласие на рассылку')
+    mailing = models.BooleanField(default=False, verbose_name='Согласие на рассылку', blank=True)
     personal_data_processing = models.BooleanField(default=False,
                                                    verbose_name='Согласие на обработку персональных данных')
-    children_having = models.BooleanField(default=False, verbose_name='Наличие детей')
+    children_having = models.BooleanField(default=False, verbose_name='Наличие детей', blank=True)
 
 
     def __str__(self):

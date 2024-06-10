@@ -2,14 +2,26 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from random import randint
+from django.contrib.auth.models import User
+
 
 
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
+        username = request.POST.get('full_name').replace(' ', '')
+
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
+            new_user = form.save(commit=False)
+            while True:
+                try:
+                    new_user.username = f"{username}{randint(1, 300)}"
+                    new_user.save()
+                    break
+                except Exception:
+                    continue
+
             messages.success(request, f'Ваш аккаунт создан: можно войти на сайт.')
             return redirect('login')
     else:
