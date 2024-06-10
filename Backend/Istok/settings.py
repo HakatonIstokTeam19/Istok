@@ -147,6 +147,7 @@ def verified_callback(user):
 
 EMAIL_VERIFIED_CALLBACK = verified_callback
 
+########## наверно удалить
 # тема письма
 EMAIL_MAIL_SUBJECT = 'Confirm your email'
 # шаблон письма в html
@@ -160,6 +161,7 @@ EMAIL_MAIL_PAGE_TEMPLATE = 'confirm_template.html'
 # домен для использования в ссылке
 EMAIL_PAGE_DOMAIN = 'http://127.0.0.1:8000/'
 EMAIL_MULTI_USER = True
+############
 
 # настройки вашего SMTP сервера
 EMAIL_HOST = os.getenv('EMAIL_HOST')
@@ -173,6 +175,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+
+
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login'

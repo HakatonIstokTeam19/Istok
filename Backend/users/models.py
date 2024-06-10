@@ -33,3 +33,9 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.user.username} Profile'
+
+
+
+# для быстрого подключения в консоли
+# from users.models import Profile
+# p = Profile.objects.all().first()
