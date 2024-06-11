@@ -1,32 +1,44 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, ProfileRegisterForm
 from random import randint
 from django.contrib.auth.models import User
-
+from .models import Profile
 
 
 def register(request):
     if request.method == 'POST':
-        form = UserRegisterForm(request.POST)
-        username = request.POST.get('full_name').replace(' ', '')
+        u_form = UserRegisterForm(request.POST)
+        p_form = ProfileRegisterForm(request.POST)
+        username = f"{request.POST.get('first_name')}{request.POST.get('last_name')}{request.POST.get('surname')}"
 
-        if form.is_valid():
-            new_user = form.save(commit=False)
-            while True:
-                try:
-                    new_user.username = f"{username}{randint(1, 300)}"
-                    new_user.save()
-                    break
-                except Exception:
-                    continue
+        if u_form.is_valid() and p_form.is_valid():
+            new_user = u_form.save(commit=False)
+            # Проверка на наличие полной тезки. В положительном случае генерирует для username рандомный айди до 300.
+            if User.objects.filter(username__iexact=username).exists():
+                while True:
+                    username = f"{username}{randint(1, 300)}"
+                    if not User.objects.filter(username__iexact=username).exists():
+                        new_user.username = username
+                        new_user = u_form.save()
+                        break
+
+            else:
+                u_form.cleaned_data['username'] = username
+                new_user = u_form.save()
+
+            Profile.objects.filter(user=new_user).update(**p_form.cleaned_data)
+
 
             messages.success(request, f'Ваш аккаунт создан: можно войти на сайт.')
             return redirect('login')
     else:
-        form = UserRegisterForm()
-    return render(request, 'users/register.html', {'form': form})
+        u_form = UserRegisterForm()
+        p_form = ProfileRegisterForm()
+
+    context = {'u_form': u_form, 'p_form': p_form}
+    return render(request, 'users/register.html', context=context)
 
 
 @login_required
@@ -34,8 +46,8 @@ def profile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST,
-                                   request.FILES,
-                                   instance=request.user.profile)
+            request.FILES,
+            instance=request.user.profile)
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()

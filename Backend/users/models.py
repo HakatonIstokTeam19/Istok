@@ -16,7 +16,16 @@ class Profile(models.Model):
         ('3', 'В течение полугода'),
         ('4', 'В течение года')
     ]
-    full_name = models.CharField(null=True, unique=False, blank=False, verbose_name='Ф.И.О.')
+
+    FURNITURE_TYPE = [
+        ('1', 'Кухня'),
+        ('2', 'Гардероб'),
+        ('3', 'Прихожая'),
+        ('4', 'Стелаж'),
+        ('5', 'Комод')
+    ]
+
+    surname = models.CharField(null=True, unique=False, verbose_name='Отчество')
     user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='User джанго модели')
     birth_date = BirthdayField(null=True, verbose_name='Дата рождения')
     phone = models.CharField(null=True, validators=[phone_regex], unique=True, max_length=12,
@@ -24,9 +33,9 @@ class Profile(models.Model):
     repair_planing = models.BooleanField(default=False, verbose_name='Планирование ремонта')
     repair_planing_time = models.CharField(null=True, max_length=1, choices=PLANING_TIME,
                                            verbose_name='Когда планируется ремонт?')
-    mebel_type = models.CharField(null=True, max_length=250, verbose_name='Тип мебели')
+    furniture_type = models.CharField(null=True, max_length=250, verbose_name='Тип мебели', choices=FURNITURE_TYPE,)
     mailing = models.BooleanField(default=False, verbose_name='Согласие на рассылку', blank=True)
-    personal_data_processing = models.BooleanField(default=False,
+    personal_data_processing = models.BooleanField(default=False, blank=True,
                                                    verbose_name='Согласие на обработку персональных данных')
     children_having = models.BooleanField(default=False, verbose_name='Наличие детей', blank=True)
 
@@ -37,5 +46,6 @@ class Profile(models.Model):
 
 
 # для быстрого подключения в консоли
+# from django.contrib.auth.models import User
 # from users.models import Profile
 # p = Profile.objects.all().first()
