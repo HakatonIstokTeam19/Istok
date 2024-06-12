@@ -41,12 +41,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'Istok_app.apps.IstokAppConfig',
-    'users.apps.UsersConfig',
     'crispy_forms',
     'bootstrap4',
     'crispy_bootstrap4',
-    'django_email_verification',
+
+    'users.apps.UsersConfig',
+    'allauth',
+    'allauth.account',
 ]
 
 MIDDLEWARE = [
@@ -57,6 +60,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = 'Istok.urls'
@@ -72,6 +77,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # `allauth` needs this from django
+                'django.template.context_processors.request',
             ],
         },
     },
@@ -140,28 +147,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# функция, которая сделает пользователя активным
-# после того, как он перейдет по ссылке
-def verified_callback(user):
-    user.is_active = True
-
-EMAIL_VERIFIED_CALLBACK = verified_callback
-
-########## наверно удалить
-# тема письма
-EMAIL_MAIL_SUBJECT = 'Confirm your email'
-# шаблон письма в html
-EMAIL_MAIL_HTML = 'mail_body.html'
-# текстовый шаблон
-EMAIL_MAIL_PLAIN = 'mail_body.txt'
-# время жизни ссылки
-EMAIL_MAIL_TOKEN_LIFE = 60 * 60
-# шаблон, который увидят после перехода по ссылке
-EMAIL_MAIL_PAGE_TEMPLATE = 'confirm_template.html'
-# домен для использования в ссылке
-EMAIL_PAGE_DOMAIN = 'http://127.0.0.1:8000/'
-EMAIL_MULTI_USER = True
-############
 
 # настройки вашего SMTP сервера
 EMAIL_HOST = os.getenv('EMAIL_HOST')
@@ -177,10 +162,28 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 
-
-
-
+########## allauth
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by email
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+LOGIN_URL = 'account_login'
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'login'
-LOGIN_URL = 'login'
-LOGOUT_URL = 'logout'
+LOGOUT_REDIRECT_URL = 'home'
+LOGOUT_URL = 'account_logout'
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+# своя форма регистрации юзера
+ACCOUNT_FORMS = {'signup': 'users.forms.BasicSignupForm'}
+#todo был изменен. в env был полный адрес
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER + '@yandex.ru'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+########## allauth
+
+

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, ProfileRegisterForm
+from .forms import UserRegisterForm, ProfileRegisterForm
 from random import randint
 from django.contrib.auth.models import User
 from .models import Profile

@@ -1,39 +1,33 @@
 from birthday import BirthdayField
-from django.core.validators import RegexValidator
 from django.db import models
 from django.contrib.auth.models import User
-
-phone_regex = RegexValidator(
-        regex=r'^\+?1?\d{9,12}$',
-        message="Телефон должен быть указан в формате: "
-                                         "'+7ХХХХХХХХХХ'. Максимум 12 символов.")
 
 class Profile(models.Model):
 
     PLANING_TIME = [
-        ('1', 'Уже идет'),
-        ('2', 'Скоро приступаем'),
-        ('3', 'В течение полугода'),
-        ('4', 'В течение года')
+        ('0', 'Нет, не планирую'),
+        ('1', 'Планирую, но не определился со временем'),
+        ('2', 'Уже идет'),
+        ('3', 'Скоро приступаем'),
+        ('4', 'В течение полугода'),
+        ('5', 'В течение года')
     ]
 
-    FURNITURE_TYPE = [
-        ('1', 'Кухня'),
-        ('2', 'Гардероб'),
-        ('3', 'Прихожая'),
-        ('4', 'Стелаж'),
-        ('5', 'Комод')
-    ]
-
-    surname = models.CharField(null=True, unique=False, verbose_name='Отчество')
-    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='User джанго модели')
+    full_nane = models.CharField(unique=False, verbose_name='Ф.И.О.')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='User джанго модели', primary_key=True)
     birth_date = BirthdayField(null=True, verbose_name='Дата рождения')
-    phone = models.CharField(null=True, validators=[phone_regex], unique=True, max_length=12,
-                             blank=False, verbose_name='Телефон')
-    repair_planing = models.BooleanField(default=False, verbose_name='Планирование ремонта')
+    # phone = models.CharField(null=True, validators=[phone_regex], unique=True, max_length=12,
+    #                          blank=False, verbose_name='Телефон')
     repair_planing_time = models.CharField(null=True, max_length=1, choices=PLANING_TIME,
                                            verbose_name='Когда планируется ремонт?')
-    furniture_type = models.CharField(null=True, max_length=250, verbose_name='Тип мебели', choices=FURNITURE_TYPE,)
+
+    #todo вместо этого костыля создать еще модель мебели, и прописать отношения многие ко многим с мультивыбором.
+    f_kitchen = models.BooleanField(default=False, verbose_name='Кухня', blank=True)
+    f_wardrobe = models.BooleanField(default=False, verbose_name='Гардероб', blank=True)
+    f_hallway = models.BooleanField(default=False, verbose_name='Прихожая', blank=True)
+    f_rack = models.BooleanField(default=False, verbose_name='Стеллаж', blank=True)
+    f_dresser = models.BooleanField(default=False, verbose_name='Комод', blank=True)
+
     mailing = models.BooleanField(default=False, verbose_name='Согласие на рассылку', blank=True)
     personal_data_processing = models.BooleanField(default=False, blank=True,
                                                    verbose_name='Согласие на обработку персональных данных')
