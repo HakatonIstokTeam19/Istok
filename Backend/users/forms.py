@@ -103,7 +103,6 @@ class BasicSignupForm(SignupForm):
     )
     full_nane = forms.CharField(label="Ф.И.О.", required=True)
     birth_date = forms.DateField(label='Дата рождения', widget=SelectDateWidget(years=YEARS))
-    repair_planing = forms.BooleanField(label='Планируете ли Вы ремонт?', required=False)
     mailing = forms.BooleanField(label='Согласие на рассылку новостей', required=False)
     personal_data_processing = forms.BooleanField(label='Согласие на обработку персональных данных', required=False)
     children_having = forms.BooleanField(label='Есть ли у Вас дети?', required=False)
