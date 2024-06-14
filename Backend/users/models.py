@@ -13,7 +13,7 @@ class Profile(models.Model):
         ('5', 'В течение года')
     ]
 
-    full_nane = models.CharField(unique=False, verbose_name='Ф.И.О.')
+    surname = models.CharField(unique=False, verbose_name='Отчество', blank=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='User джанго модели', primary_key=True)
     birth_date = BirthdayField(null=True, verbose_name='Дата рождения')
     # phone = models.CharField(null=True, validators=[phone_regex], unique=True, max_length=12,
@@ -21,7 +21,7 @@ class Profile(models.Model):
     repair_planing_time = models.CharField(null=True, max_length=1, choices=PLANING_TIME,
                                            verbose_name='Когда планируется ремонт?')
 
-    #todo вместо этого костыля создать еще модель мебели, и прописать отношения многие ко многим с мультивыбором.
+    #todo вместо этого костыля создать еще модель типа мебели, и прописать отношения многие ко многим с мультивыбором.
     f_kitchen = models.BooleanField(default=False, verbose_name='Кухня', blank=True)
     f_wardrobe = models.BooleanField(default=False, verbose_name='Гардероб', blank=True)
     f_hallway = models.BooleanField(default=False, verbose_name='Прихожая', blank=True)
@@ -34,9 +34,13 @@ class Profile(models.Model):
     children_having = models.BooleanField(default=False, verbose_name='Наличие детей', blank=True)
 
 
+
+
     def __str__(self):
         return f'{self.user.username} Profile'
 
+
+#     mebel_type = forms.TypedMultipleChoiceField(label='Какая мебель понадобится?', choices=MEBEL_TYPE)
 
 
 # для быстрого подключения в консоли

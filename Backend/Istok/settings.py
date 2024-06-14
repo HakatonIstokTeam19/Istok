@@ -176,14 +176,12 @@ LOGOUT_URL = 'account_logout'
 
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
-ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 # своя форма регистрации юзера
-ACCOUNT_FORMS = {'signup': 'users.forms.BasicSignupForm'}
+ACCOUNT_FORMS = {'signup': 'users.forms.CustomSignupForm'}
 #todo был изменен. в env был полный адрес
 # DEFAULT_FROM_EMAIL = EMAIL_HOST_USER + '@yandex.ru'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 ########## allauth
-
-

@@ -1,24 +1,28 @@
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from users import views as user_views
-from .views import *
+from . import views
+
+from allauth.account import views as allauth_view
+
 
 urlpatterns = [
-    path('register/', user_views.register, name='register'),
-    path('profile/', user_views.profile, name='profile'),
-    path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
-    # path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
+    path('signup/', views.signup, name='signup'),
+    path('logout/', views.logout, name='logout'),
+    path('login/', views.login, name='login'),
+    # path('accounts/logout/', views.logout, name='account_logout'),
+    # path('accounts/logout/', views.logout, name='account_logout'),
+    # path('accounts/logout/', views.logout, name='account_logout'),
+    # path('accounts/logout/', views.logout, name='account_logout'),
+    # path('accounts/logout/', views.logout, name='account_logout'),
+    # path('accounts/logout/', views.logout, name='account_logout'),
+    # path('accounts/logout/', views.logout, name='account_logout'),
     # allauth
     path('accounts/', include('allauth.urls')),
 ]
 
-# admin/
-# register/ [name='register']
-# profile/ [name='profile']
 # accounts/ login/ [name='account_login']
-# accounts/ logout/ [name='account_logout']
 # accounts/ inactive/ [name='account_inactive']
-# accounts/ signup/ [name='account_signup']
 # accounts/ reauthenticate/ [name='account_reauthenticate']
 # accounts/ email/ [name='account_email']
 # accounts/ confirm-email/ [name='account_email_verification_sent']

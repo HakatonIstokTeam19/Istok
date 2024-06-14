@@ -14,18 +14,27 @@
       <div class="container__page1 page">
         <header class="header">
           <div class="header__nav">
-            <img
-              src="{% static './src/assets/images/logo.png' %}"
-              alt="logo"
-              class="header__logo"
-            />
+{#            <img#}
+{#              src="{% static './src/assets/images/logo.png' %}"#}
+{#              alt="logo"#}
+{#              class="header__logo"#}
+{#            />#}
             <div class="header__links">
               <ul>
-                <li class="header__link"><a href="{% url 'home' %}">Главная</a></li>
-                <li class="header__link"><a href="#">Готовая мебель</a></li>
-                <li class="header__link"><a href="#">Мебель на заказ</a></li>
-                <li class="header__link"><a href="{% url 'about' %}">О нас</a></li>
-                <li class="header__link"><a href="{% url 'profile' %}">Личный кабинет</a></li>
+{#                <li class="header__link"><a href="{% url 'home' %}">Главная</a></li>#}
+{#                <li class="header__link"><a href="#">Готовая мебель</a></li>#}
+{#                <li class="header__link"><a href="#">Мебель на заказ</a></li>#}
+{#                <li class="header__link"><a href="{% url 'about' %}">О нас</a></li>#}
+                {% if request.user.is_authenticated %}
+                  <li class="header__link"><a href="{% url 'logout' %}">{{ request.user.first_name|capfirst }} Выйти</a></li>
+                {% else %}
+                  <li class="header__link">Вы не авторизованы</li>
+                {% endif %}
+
+                <li class="header__link"><a href="{% url 'signup' %}">Регистрация</a></li>
+
+                <li class="header__link"><a href="{% url 'login' %}">Войти</a></li>
+
               </ul>
             </div>
           </div>
