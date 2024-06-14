@@ -1,0 +1,81 @@
+:root {
+  /* Typography */
+
+  --font-main: "VelaSans";
+  --font-12: 12px;
+  --font-14: 14px;
+  --font-16: 16px;
+  --font-20: 20px;
+  --font-24: 24px;
+  --font-32: 32px;
+  --font-48: 48px;
+  --font-52: 52px;
+
+  --weight-regular: 400;
+  --weight-bold: 700;
+  --weight-bold-x: 800;
+
+  --line-height-20: 20px;
+  --line-height-22: 22px;
+  --line-height-26: 26px;
+  --line-height-65: 65px;
+
+  /* Colors */
+  --white: #ffffff;
+  --black: #000000;
+  --green: #769d22;
+  --grey: #807f7e;
+  --light-black: #222222;
+  --whitish: #fffdfb;
+  --beige: #e8e9da;
+}
+
+.font-body-1 {
+  font-family: var(--font-main);
+  font-size: var(--font-16);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-height-26);
+  color: var(--light-black);
+}
+
+.font-body-2 {
+  font-family: var(--font-main);
+  font-size: var(--font-14);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-height-22);
+  color: var(--light-black);
+}
+
+.font-heading-reg-52 {
+  font-family: var(--font-main);
+  font-size: var(--font-52);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-height-65);
+  color: var(--light-black);
+}
+
+.font-heading-bold-52 {
+  font-family: var(--font-main);
+  font-size: var(--font-52);
+  font-weight: var(--weight-bold);
+  line-height: var(--line-height-65);
+  color: var(--light-black);
+}
+
+.font-heading-reg-32 {
+  font-family: var(--font-main);
+  font-size: var(--font-32);
+  font-weight: var(--weight-regular);
+  color: var(--light-black);
+}
+
+.font-heading-bold-16 {
+  font-family: var(--font-main);
+  font-size: var(--font-16);
+  font-weight: var(--weight-bold-x);
+  line-height: var(--line-height-20);
+  color: var(--light-black);
+}
+.text-color-accent {
+  color: var(--green);
+}
