@@ -1,6 +1,6 @@
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
@@ -55,6 +55,12 @@ class Finished_furnitureUpdate(LoginRequiredMixin, UpdateView):
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
 
+    def post(self, request, *args, **kwargs):
+        if 'delete' in request.POST and self.request.user.is_staff:
+            self.object = self.get_object()
+            self.object.delete()
+            return redirect(self.get_success_url())
+        return super().post(request, *args, **kwargs)
 
 class OrdersList(LoginRequiredMixin, ListView):
     model = Orders
