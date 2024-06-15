@@ -11,12 +11,12 @@ from django.forms import SelectDateWidget
 
 
 
-
 class CustomSignupForm(SignupForm):
     """Форма дополняющая регистрационную форму allauth новыми полями.
     Необходимо прописать путь в настройкахACCOUNT_FORMS = {'signup': 'news.forms.BasicSignupForm'}"""
 
     username = forms.CharField(
+        widget=forms.TextInput(attrs={'placeholder': 'Email или номер телефона'}),
         label='Контактный номер',
         max_length=12,
         required=True,
@@ -62,8 +62,8 @@ class CustomSignupForm(SignupForm):
                 personal_data_processing=data.get('personal_data_processing'),
                 children_having=data.get('children_having'))
 
-        except Exception:
-            print(f'\n\n!!! НЕИЗВЕТСНАЯ ОШИБКА СОЗДАНИЯ ПРОФИЛЯ!!!\n cleaned_data == {data}\n\n')
+        except Exception as e:
+            print(f'\n\n!!! НЕИЗВЕТСНАЯ ОШИБКА СОЗДАНИЯ ПРОФИЛЯ!!!\n cleaned_data == {data}\n{e}')
 
         return user
 
