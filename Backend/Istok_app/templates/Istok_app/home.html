@@ -8,10 +8,14 @@
 
     <link rel="stylesheet" href="{% static './src/css/style.css' %}" />
     <link rel="stylesheet" href="{% static './src/css/reset.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.4.0/uicons-bold-rounded/css/uicons-bold-rounded.css"
+    />
   </head>
   <body>
     <div class="container">
-      <div class="container__page1 page">
+      <div class="container__page1">
         <header class="header">
           <div class="header__nav">
             <img
@@ -21,8 +25,8 @@
             />
             <div class="header__links">
               <ul>
-                <li class="header__link"><a href="{% url 'home' %}">Главная</a></li>
-                <li class="header__link"><a href="#">Готовая мебель</a></li>
+                <li class="header__link active"><a href="{% url 'home' %}">Главная</a></li>
+                <li class="header__link"><a href="{% url 'finished_furniture_list' %}">Готовая мебель</a></li>
                 <li class="header__link"><a href="#">Мебель на заказ</a></li>
                 <li class="header__link"><a href="{% url 'about' %}">О нас</a></li>
                 <li class="header__link"><a href="{% url 'profile' %}">Личный кабинет</a></li>
@@ -30,11 +34,174 @@
             </div>
           </div>
         </header>
-        <section class="main__heading">
+
+        <section class="main__heading page">
+          <!-- <div class="main__blackout"></div> -->
+          <!-- <div class="main__popup">
+            <div class="main__popup-type ">
+              <div class="main__popup-header">
+                <h2>Выберите тип мебели</h2>
+                <i class="fi fi-br-cross close-btn"></i>
+              </div>
+
+              <div class="main__popup-cards">
+                <div class="main__popup-card">
+                  <img src="./src/assets/images/popup1.png" alt="Кухня" />
+                  <p>Кухня</p>
+                </div>
+                <div class="main__popup-card">
+                  <img src="./src/assets/images/popup1.png" alt="Гардероб" />
+                  <p>Гардероб</p>
+                </div>
+                <div class="main__popup-card">
+                  <img src="./src/assets/images/popup1.png" alt="Прихожая" />
+                  <p>Прихожая</p>
+                </div>
+                <div class="main__popup-card">
+                  <img src="./src/assets/images/popup1.png" alt="Комод" />
+                  <p>Комод</p>
+                </div>
+                <div class="main__popup-card">
+                  <img src="./src/assets/images/popup1.png" alt="Стеллаж" />
+                  <p>Стеллаж</p>
+                </div>
+                <div class="main__popup-card">
+                  <img
+                    src="./src/assets/images/popup1.png"
+                    alt="Комплексный заказ"
+                  />
+                  <p>Комплексный заказ</p>
+                </div>
+              </div>
+            </div>
+            <div class="main__popup-bottom">
+              <div class="main__popup-line"></div>
+              <div class="main__popup-text">
+                <ul>
+                  <li class="main__popup-text-p">1</li>
+                  <li class="main__popup-text-p">2</li>
+                  <li class="main__popup-text-p">3</li>
+                  <li class="main__popup-text-p">4</li>
+                  <li class="main__popup-text-p">5</li>
+                  <li class="main__popup-text-p">6</li>
+                  <li class="main__popup-text-p">7</li>
+                  <li class="main__popup-text-p">8</li>
+                  <li class="main__popup-text-p">9</li>
+                  <li class="main__popup-text-p">10</li>
+                </ul>
+              </div>
+
+              <div class="main__popup-nav">
+                <svg
+                  class="main__bottom-svgs"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="10" cy="10" r="9.5" stroke="black" />
+                </svg>
+                <svg
+                  class="main__bottom-svgs"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="10" cy="10" r="9.5" stroke="black" />
+                </svg>
+                <svg
+                  class="main__bottom-svgs"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="10" cy="10" r="9.5" stroke="black" />
+                </svg>
+                <svg
+                  class="main__bottom-svgs"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="10" cy="10" r="9.5" stroke="black" />
+                </svg>
+                <svg
+                  class="main__bottom-svgs"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="10" cy="10" r="9.5" stroke="black" />
+                </svg>
+                <svg
+                  class="main__bottom-svgs"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="10" cy="10" r="9.5" stroke="black" />
+                </svg>
+                <svg
+                  class="main__bottom-svgs"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="10" cy="10" r="9.5" stroke="black" />
+                </svg>
+                <svg
+                  class="main__bottom-svgs"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="10" cy="10" r="9.5" stroke="black" />
+                </svg>
+                <svg
+                  class="main__bottom-svgs"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="10" cy="10" r="9.5" stroke="black" />
+                </svg>
+                <svg
+                  class="main__bottom-svgs"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="10" cy="10" r="9.5" stroke="black" />
+                </svg>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="main__contact"><h2>Связаться с ИСТОК</h2></div>
+
           <div class="main__heading-title">
             <h1>
               с <span>нами </span>начинается <br />
-              уют <span>вышего </span>дома
+              уют <span>вашего </span>дома
             </h1>
             <p>
               ПРОИЗВОДСТВО МЕБЕЛИ НА ЗАКАЗ <br />
@@ -42,89 +209,90 @@
             </p>
             <button class="main__heading-meeting">Записаться на встречу</button>
           </div>
+          <div class="main__bottom">
+            <div class="main__bottom-text">
+              <ul>
+                <li class="main__bottom-text-p">Преимущества</li>
+                <li class="main__bottom-text-p">Что мы производим</li>
+                <li class="main__bottom-text-p">Поставщики</li>
+                <li class="main__bottom-text-p">Процесс</li>
+                <li class="main__bottom-text-p">Акции</li>
+                <li class="main__bottom-text-p">Получить консультацию</li>
+              </ul>
+            </div>
 
-          <div class="main__bottom-text">
-            <ul>
-              <li class="main__bottom-text-p">Преимущества</li>
-              <li class="main__bottom-text-p">Что мы производим</li>
-              <li class="main__bottom-text-p">Поставщики</li>
-              <li class="main__bottom-text-p">Процесс</li>
-              <li class="main__bottom-text-p">Акции</li>
-              <li class="main__bottom-text-p">Получить консультацию</li>
-            </ul>
-          </div>
-          <div class="main__bottom-nav">
-            <div class="main__bottom-line"></div>
-            <svg
-              class="main__bottom-svgs"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="10" cy="10" r="9.5" stroke="black" />
-            </svg>
-            <div class="main__bottom-line"></div>
-            <svg
-              class="main__bottom-svgs"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="10" cy="10" r="9.5" stroke="black" />
-            </svg>
-            <div class="main__bottom-line"></div>
-            <svg
-              class="main__bottom-svgs"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="10" cy="10" r="9.5" stroke="black" />
-            </svg>
-            <div class="main__bottom-line"></div>
-            <svg
-              class="main__bottom-svgs"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="10" cy="10" r="9.5" stroke="black" />
-            </svg>
-            <div class="main__bottom-line"></div>
-            <svg
-              class="main__bottom-svgs"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="10" cy="10" r="9.5" stroke="black" />
-            </svg>
-            <div class="main__bottom-line"></div>
-            <svg
-              class="main__bottom-svgs"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="10" cy="10" r="9.5" stroke="black" />
-            </svg>
+            <div class="main__bottom-nav">
+              <svg
+                class="main__bottom-svgs"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="10" cy="10" r="9.5" stroke="black" />
+              </svg>
+
+              <svg
+                class="main__bottom-svgs"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="10" cy="10" r="9.5" stroke="black" />
+              </svg>
+
+              <svg
+                class="main__bottom-svgs"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="10" cy="10" r="9.5" stroke="black" />
+              </svg>
+
+              <svg
+                class="main__bottom-svgs"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="10" cy="10" r="9.5" stroke="black" />
+              </svg>
+
+              <svg
+                class="main__bottom-svgs"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="10" cy="10" r="9.5" stroke="black" />
+              </svg>
+
+              <svg
+                class="main__bottom-svgs"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="10" cy="10" r="9.5" stroke="black" />
+              </svg>
+            </div>
             <div class="main__bottom-line"></div>
           </div>
         </section>
       </div>
-      <div class="container__page2 page">
+      <div class="container__page2">
         <section class="page2__heading">
           <div class="page2__headings">
             <h2>Почему выбирают <span>ИСТОК</span>?</h2>
@@ -189,7 +357,7 @@
           </div>
         </section>
       </div>
-      <div class="container__page3 page">
+      <div class="container__page3">
         <section class="page3__heading">
           <div class="page3__title">
             <h2>ЧТО МЫ ПРОИЗВОДИМ</h2>
@@ -214,19 +382,19 @@
               />
             </div>
           </div>
-          <div class="page3__materials">
-            <h2>МАТЕРИАЛЫ</h2>
-            <ul class="page3__list">
-              <li class="page3__list-material">Корпус</li>
-              <li class="page3__list-material">Столешницы</li>
-              <li class="page3__list-material active">Фасады</li>
-              <li class="page3__list-material">Фурнитура</li>
-            </ul>
-          </div>
         </section>
       </div>
-      <div class="container__page4 page">
+      <div class="container__page4">
         <section class="page4__heading">
+          <!-- <div class="page4__materials">
+            <h2>МАТЕРИАЛЫ</h2>
+            <ul class="page4__list">
+              <li class="page4__list-material">Корпус</li>
+              <li class="page4__list-material">Столешницы</li>
+              <li class="page4__list-material active">Фасады</li>
+              <li class="page4__list-material">Фурнитура</li>
+            </ul>
+          </div> -->
           <div class="page4__provider">
             <h3>
               Мы в ISTOK очень тщательно подбираем поставщиков для нашей
@@ -263,7 +431,7 @@
           </div>
         </section>
       </div>
-      <div class="container__page6 page">
+      <div class="container__page6">
         <section class="page6__heading">
           <h2>НАШИ <span>ПРОЕКТЫ</span></h2>
           <div class="page6__projects">
@@ -306,26 +474,28 @@
           </div>
         </section>
       </div>
-      <div class="container__page7 page">
+      <div class="container__page7">
         <section class="page7__heading">
           <h1>
-            Уникальный технологический ПРОЦЕСС по запатентованной технологии
+            Уникальный технологический <span>ПРОЦЕСС</span> по запатентованной
+            технологии
           </h1>
           <div class="page7__process">
             <div class="page7__process-step">
               <h2>1.</h2>
               <h3>Онлайн консультация</h3>
               <p>
-                Наш специалист свяжется с Вами, поможет сделать выбор и запишет
-                на встречу с дизайнером
+                Наш специалист свяжется <br />
+                с Вами, поможет сделать выбор <br />
+                и запишет на встречу с дизайнером
               </p>
             </div>
             <div class="page7__process-step">
               <h3>Встреча с дизайнером</h3>
               <p>
-                Дизайнер привезет с собой материалы,<br />
-                спроектирует стильный и эргономичный проект, и оформит Ваш
-                заказ.
+                Дизайнер привезет с собой материалы, <br />
+                спроектирует стильный <br />
+                и эргономичный проект, и оформит Ваш заказ.
               </p>
               <h2>2.</h2>
             </div>
@@ -333,7 +503,8 @@
               <h2>3.</h2>
               <h3>Технический замер</h3>
               <p>
-                Мы приедет со специализированным оборудованием, замерим каждую
+                Мы приедет со специализированным <br />
+                оборудованием, замерим каждую <br />
                 деталь Вашего помещения.
               </p>
             </div>
@@ -368,9 +539,162 @@
               <h2>7.</h2>
               <h3>Онлайн консультация</h3>
               <p>
-                Наш специалист свяжется с Вами, поможет сделать выбор и запишет
-                на встречу с дизайнером
+                Специалист контроля качества<br />
+                позвонит после сборки<br />
+                и узнает, все ли Вам понравилось!
               </p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="container__page8">
+        <section class="page8__heading">
+          <div class="page8__slider-container">
+            <svg
+              class="page8__arrow left"
+              width="29"
+              height="31"
+              viewBox="0 0 29 31"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <rect
+                opacity="0.9"
+                x="29"
+                width="31"
+                height="29"
+                transform="rotate(90 29 0)"
+                fill="url(#pattern0_941_1001)"
+                fill-opacity="0.5"
+              />
+              <defs>
+                <pattern
+                  id="pattern0_941_1001"
+                  patternContentUnits="objectBoundingBox"
+                  width="1"
+                  height="1"
+                >
+                  <use
+                    xlink:href="#image0_941_1001"
+                    transform="matrix(0.00195312 0 0 0.00208782 0 -0.0344828)"
+                  />
+                </pattern>
+                <image
+                  id="image0_941_1001"
+                  width="512"
+                  height="512"
+                  xlink:href="data:image/png;base64,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"
+                />
+              </defs>
+            </svg>
+            <div class="page8__slider slides">
+              <div class="page8__slider-info">
+                <h2>СКИДКА 10%</h2>
+                <h3>НА ЛЮБОЙ ЗАКАЗ</h3>
+                <ul>
+                  <li>Кухня</li>
+                  <li>Гардероб</li>
+                  <li>Прихожая</li>
+                  <li>Комод</li>
+                  <li>Стеллаж</li>
+                </ul>
+                <button class="page8__order">Сделать заказ</button>
+              </div>
+            </div>
+            <svg
+              class="page8__arrow right"
+              width="29"
+              height="31"
+              viewBox="0 0 29 31"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <rect
+                opacity="0.9"
+                y="31"
+                width="31"
+                height="29"
+                transform="rotate(-90 0 31)"
+                fill="url(#pattern0_941_1002)"
+                fill-opacity="0.5"
+              />
+              <defs>
+                <pattern
+                  id="pattern0_941_1002"
+                  patternContentUnits="objectBoundingBox"
+                  width="1"
+                  height="1"
+                >
+                  <use
+                    xlink:href="#image0_941_1002"
+                    transform="matrix(0.00195312 0 0 0.00208782 0 -0.0344828)"
+                  />
+                </pattern>
+                <image
+                  id="image0_941_1002"
+                  width="512"
+                  height="512"
+                  xlink:href="data:image/png;base64,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"
+                />
+              </defs>
+            </svg>
+          </div>
+
+          <div class="page8__consulting">
+            <h1>ПОЛУЧИ КОНСУЛЬТАЦИЮ</h1>
+            <div class="page8__consulting-user">
+              <p>
+                Укажите ваши данные, и мы свяжемся с вами в удобное время для
+                обсуждения проекта!
+              </p>
+              <div class="page8__consulting-name">
+                <label for="name"></label>
+                <input type="text" class="name" placeholder="ФИО*" />
+                <label for="number"></label>
+                <input
+                  type="tel"
+                  class="number"
+                  placeholder="Ваш номер телефона*"
+                />
+              </div>
+              <p class="page8__consulting-question">Как с вами связаться?*</p>
+              <div class="page8__consulting-options">
+                <label for="ring"
+                  ><input type="radio" name="ring" />Звонок</label
+                >
+
+                <label for="telegram">
+                  <input type="radio" name="telegram" />Telegram</label
+                >
+
+                <label for="vk"
+                  ><input type="radio" name="vk" />Вконтакте</label
+                >
+              </div>
+              <input
+                class="page8__consulting-link"
+                type="text"
+                placeholder="Ваша ссылка на Telegram/Вконтакте"
+              />
+              <p class="page8__consulting-date-question">
+                Укажите удобное для Вас время*
+              </p>
+              <div class="page8__consulting-dates">
+                <input
+                  type="text"
+                  class="page8__consulting-date"
+                  placeholder="Дата"
+                />
+                <input
+                  type="text"
+                  class="page8__consulting-time"
+                  placeholder="Время"
+                />
+              </div>
+              <button class="page8__consulting-send">Отправить</button>
             </div>
           </div>
         </section>
@@ -379,4 +703,3 @@
     <script src="{% static './output/main.js' %}"></script>
   </body>
 </html>
-

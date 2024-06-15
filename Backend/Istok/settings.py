@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'crispy_bootstrap4',
     'django_email_verification',
+
 ]
 
 MIDDLEWARE = [

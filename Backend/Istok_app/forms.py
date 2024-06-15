@@ -2,7 +2,17 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 
-from .models import Profile
+from Istok_app.models import Orders, Finished_furniture
+from users.models import Profile
+
+
+class Finished_furnitureCreateForm(forms.ModelForm):
+
+    class Meta:
+        model = Finished_furniture
+        fields = ('name', 'type', 'form', 'body_material', 'facades_material', 'price',
+                  'image_1', 'image_2', 'image_3', 'image_4')
+
 
 class SignUpForm(UserCreationForm):
     phone = forms.CharField(max_length=15, required=True, help_text='Номер телефона в формате +7ХХХХХХХХХХ')
@@ -94,6 +104,12 @@ class ProfileUpdateForm(forms.ModelForm):
     """
     class Meta:
         model = Profile
-        fields = ('profile_pic', 'gender', 'birth_date', 'children_having', 'delivery_address')
+        fields = ('user', 'birth_date', 'phone')
 
 
+class OrdersCreateForm(forms.ModelForm):
+
+    class Meta:
+        model = Orders
+        fields = ('order_user', 'order_number', 'order_shipment_date', 'order_status', 'order_delivery_address', 'order_contract',
+                  'order_price', 'order_sketch1', 'order_sketch2', 'order_sketch3', 'order_sketch4', 'order_3D_model')

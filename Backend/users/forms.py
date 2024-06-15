@@ -26,7 +26,7 @@ class UserRegisterForm(UserCreationForm):
                             help_text='Номер телефона в формате +7ХХХХХХХХХХ')
     email = forms.EmailField()
     repair_planing = forms.BooleanField(label='Планируете ли Вы ремонт?')
-    repair_planing_time = forms.TypedMultipleChoiceField(label='Когда планируется ремонт?', choices=PLANING_TIME)
+    repair_planing_time = forms.ChoiceField(label='Когда планируется ремонт?', choices=PLANING_TIME)
     mebel_type = forms.TypedMultipleChoiceField(label='Какая мебель понадобится?', choices=MEBEL_TYPE)
     mailing = forms.BooleanField(label='Согласие на рассылку новостей')
     personal_data_processing = forms.BooleanField(label='Согласие на обработку персональных данных')

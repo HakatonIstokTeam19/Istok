@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from Istok_app.models import Orders, Loyalty, Finished_furniture
+
+admin.site.register(Orders)
+admin.site.register(Loyalty)
+admin.site.register(Finished_furniture)
+
