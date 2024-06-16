@@ -1,15 +1,17 @@
 from django.urls import path, include
-from django.contrib.auth import views as auth_views
-from users import views as user_views
-from . import views
+# from django.contrib.auth import views as auth_views
+# from users import views as user_views
 
+from . import views
 from allauth.account import views as allauth_view
 
 
 urlpatterns = [
     path('signup/', views.signup, name='signup'),
-    path('logout/', views.logout, name='logout'),
+    path('logout/', views.logout, name='logout'),  # без шаблона
     path('login/', views.login, name='login'),
+    path('password_reset/', views.password_reset, name='password_reset'),
+    path('password_reset_done/', views.password_reset_done, name='password_set'),
     # path('accounts/logout/', views.logout, name='account_logout'),
     # path('accounts/logout/', views.logout, name='account_logout'),
     # path('accounts/logout/', views.logout, name='account_logout'),

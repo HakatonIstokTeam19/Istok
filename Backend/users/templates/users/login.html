@@ -8,15 +8,15 @@
 
 
 <body>
-<p><h2>Авторизоваться</h2></p>
-  <form method="post" action="{% url 'login' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    {{ form.login }}
-    {{ form.password }}
-    {{ form.remember }}
-    <input type="submit" value="Войти!!!" />
-  </form>
+  <h2>Авторизоваться(custom)</h2>
+  Если у вас ещё нет учётной записи, пожалуйста, сначала <a href="{% url 'signup' %}">зарегистрируйтесь</a>
+    <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Войти" />
+    </form>
+  <hr>
+  <button><a href="{% url 'signup' %}"><h4>Зарегистрироваться</h4></a></button>
 </body>
 
 

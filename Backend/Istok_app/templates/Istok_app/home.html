@@ -29,11 +29,17 @@
                   <li class="header__link"><a href="{% url 'logout' %}">{{ request.user.first_name|capfirst }} Выйти</a></li>
                 {% else %}
                   <li class="header__link">Вы не авторизованы</li>
+                  <li class="header__link"><a href="{% url 'signup' %}">Регистрация</a></li>
                 {% endif %}
 
-                <li class="header__link"><a href="{% url 'signup' %}">Регистрация</a></li>
 
-                <li class="header__link"><a href="{% url 'login' %}">Войти</a></li>
+                {% if request.user.is_authenticated %}
+                  <li class="header__link"><a href="#">Личный кабинет ({{ request.user.first_name|capfirst }})</a></li>
+                {% else %}
+                  <li class="header__link"><a href="{% url 'login' %}">Войти в личный кабинет</a></li>
+                {% endif %}
+
+
 
               </ul>
             </div>

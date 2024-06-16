@@ -125,6 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
 LANGUAGE_CODE = 'ru-RU'
+# LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
@@ -178,8 +179,8 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-ACCOUNT_EMAIL_VERIFICATION = 'none'
-# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+# ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 # своя форма регистрации юзера
 ACCOUNT_FORMS = {'signup': 'users.forms.CustomSignupForm'}
 #todo был изменен. в env был полный адрес
