@@ -309,42 +309,7 @@ p {
 .main__heading-meeting:focus {
   background-color: var(--green-color);
 }
-.image-slide-container {
-  width: 800px;
-  height: 150px;
-  overflow: hidden;
-  position: relative;
-}
 
-.image-slide-container__image {
-  width: 100%;
-  position: absolute;
-  animation: slide-up-down 5s ease-in-out infinite;
-}
-
-@keyframes slide-up-down {
-  0% {
-    top: -15%;
-  }
-  15% {
-    top: -10%;
-  }
-  25% {
-    top: -5%;
-  }
-  50% {
-    top: 0%;
-  }
-  60% {
-    top: -5%;
-  }
-  75% {
-    top: -10%;
-  }
-  100% {
-    top: -15%;
-  }
-}
 .main__bottom {
   position: fixed;
   bottom: 16%;
@@ -440,6 +405,7 @@ p {
   top: 0;
   width: 102px;
   height: 100vh;
+  z-index: 10000;
 }
 
 .main__contact-arrow {
@@ -689,33 +655,34 @@ p {
 
 /* page4 */
 .container__page4 {
-  min-width: 1120px;
+  position: relative;
+  min-width: 1440px;
   height: 100%;
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: start;
+  justify-content: center;
   font-family: "VelaSans";
-  z-index: 100;
 }
 
-/* .container__page4::after {
-  content: "";
+.page4__materials {
   position: absolute;
-  top: 0;
-  right: 75%;
-  width: 60%;
+  width: 50%;
   height: 100%;
   background-color: var(--beige-color);
-  z-index: 0;
-} */
-
-.page4__materials {
   top: 0;
+  right: 92%;
+  z-index: -1;
+}
+
+.page4__innerWrapper {
+  padding: 10px 35px;
+  margin-top: 20%;
   display: flex;
   flex-direction: column;
-  z-index: 100;
+  align-items: flex-end;
+  text-align: center;
+  justify-content: end;
 }
 
 .page4__materials h2 {
@@ -725,15 +692,15 @@ p {
 }
 
 .page4__list {
+  margin-top: 10%;
   display: flex;
   flex-direction: column;
   text-align: end;
   gap: 25px;
-  margin-top: 80%;
 }
 
 .page4__list-material {
-  cursor: pointer;
+  cursor: pointer !important;
   font-size: 16px;
   font-weight: 800;
 }
@@ -744,6 +711,7 @@ p {
 
 .page4__heading {
   margin-top: 5%;
+  margin-left: 20%;
 }
 
 .page4__provider {
@@ -752,7 +720,42 @@ p {
   flex-direction: column;
   gap: 50px;
 }
+.image-slide-container {
+  width: 800px;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
 
+.image-slide-container__image {
+  width: 100%;
+  position: absolute;
+  animation: slide-up-down 5s ease-in-out infinite;
+}
+
+@keyframes slide-up-down {
+  0% {
+    top: -15%;
+  }
+  15% {
+    top: -10%;
+  }
+  25% {
+    top: -5%;
+  }
+  50% {
+    top: 0%;
+  }
+  60% {
+    top: -5%;
+  }
+  75% {
+    top: -10%;
+  }
+  100% {
+    top: -15%;
+  }
+}
 .page4__provider h3 {
   line-height: 1.4;
   font-size: 16px;
