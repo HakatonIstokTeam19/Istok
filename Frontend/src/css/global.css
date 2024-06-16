@@ -56,6 +56,14 @@
   color: var(--light-black);
 }
 
+.font-body-3-bold {
+  font-family: var(--font-main);
+  font-size: var(--font-12);
+  font-weight: var(--weight-bold-x);
+  line-height: var(--line-height-16);
+  color: var(--light-black);
+}
+
 .font-heading-reg-52 {
   font-family: var(--font-main);
   font-size: var(--font-52);

@@ -311,6 +311,10 @@
   position: relative;
 }
 
+.slide-controls__btn:has(.slide-control__circle_active)  > span, .slide-controls__btn:hover  > span, .slide-controls__btn:active > span {
+  font-weight: var(--weight-bold-x);
+}
+
 .slide-controls_txt {
   margin-bottom: 14px;
 }
@@ -330,7 +334,7 @@ background-color: var(--green);
 }
 
 .slide-control__circle:active {
-background-color: var(----whitish);
+background-color: var(--whitish);
 }
 
 .slide-control__circle_active {
