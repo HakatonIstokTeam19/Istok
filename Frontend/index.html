@@ -3,48 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Istok - Home</title>
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/global.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
-    <link rel="stylesheet" href="./src/about/about.css" />
     <link
       rel="stylesheet"
       href="https://cdn-uicons.flaticon.com/2.4.0/uicons-bold-rounded/css/uicons-bold-rounded.css"
     />
   </head>
   <body class="body">
-    <header class="about-header">
-      <svg alt="logo" class="about-header__logo">
+    <header class="header">
+      <svg alt="logo" class="header__logo">
         <use
           href="./src/assets/images/interface/icons-sprite-sheet.svg#logo"
         ></use>
       </svg>
-      <nav class="about-header__nav">
-        <ul class="about-header__links">
-          <li class="about-header__link font-body-1 active">
+      <nav class="header__nav">
+        <ul class="header__links">
+          <li class="header__link font-body-1 active">
             <a
-              class="about-header__link font-body-1 href="
+              class="header__link font-body-1 href="
               href="../../index.html"
               >Главная</a
             >
           </li>
-          <li class="about-header__link font-body-1">
-            <a class="about-header__link font-body-1 href=">Готовая мебель</a>
+          <li class="header__link font-body-1">
+            <a class="header__link font-body-1 href=">Готовая мебель</a>
           </li>
-          <li class="about-header__link font-body-1">
-            <a class="about-header__link font-body-1 href=">Мебель на заказ</a>
+          <li class="header__link font-body-1">
+            <a class="header__link font-body-1 href=">Мебель на заказ</a>
           </li>
-          <li class="about-header__link font-body-1">
+          <li class="header__link font-body-1">
             <a
-              class="about-header__link font-body-1"
+              class="header__link font-body-1"
               href="./src/about/about.html"
               >О нас</a
             >
           </li>
         </ul>
       </nav>
-      <a class="about-header__link font-body-1 header__sign-in" href="#"
+      <a class="header__link font-body-1 header__sign-in" href="#"
         >Войти в личный кабинет</a
       >
     </header>
@@ -427,48 +426,58 @@
             </p>
           </div>
           <div class="page3__examples">
-            <div class="page3__example">
+            <a class="page3__example">
               <h3 class="page3__example-name">Кухни</h3>
               <img src="./src/assets/images/example1.png" alt="Кухни" />
-            </div>
-            <div class="page3__example">
+            </a>
+            <a class="page3__example">
               <h3 class="page3__example-name">Системы хранения</h3>
               <img
                 src="./src/assets/images/example1.png"
                 alt="Системы хранения"
               />
-            </div>
+            </a>
+            <a class="page3__example">
+              <h3 class="page3__example-name">Системы хранения</h3>
+              <img
+                src="./src/assets/images/example1.png"
+                alt="Системы хранения"
+              />
+            </a>
+            <a class="page3__example">
+              <h3 class="page3__example-name">Системы хранения</h3>
+              <img
+                src="./src/assets/images/example1.png"
+                alt="Системы хранения"
+              />
+            </a>
           </div>
         </section>
       </div>
-      <div class="container__page4" id="process">
-        <div class="page4__materials">
-          <div class="page4__innerWrapper">
-            <h2>МАТЕРИАЛЫ</h2>
-            <ul class="page4__list">
-              <li class="page4__list-material">Корпус</li>
-              <li class="page4__list-material active">Столешницы</li>
-              <li class="page4__list-material">Фасады</li>
-              <li class="page4__list-material">Фурнитура</li>
-            </ul>
+      <section class="container__page4 page4" id="process">
+        <div class="page4__inner-container">
+          <h2 class="page4__heading font-heading-reg-32">МАТЕРИАЛЫ</h2>
+          <ul class="page4__list">
+            <li class="page4__list-material"><button class="page4__slider-btn">Корпус</button></li>
+            <li class="page4__list-material"><button class="page4__slider-btn active">Столешницы</button> </li>
+            <li class="page4__list-material"><button class="page4__slider-btn">Фасады</button></li>
+            <li class="page4__list-material"><button class="page4__slider-btn">Фурнитура</button></li>
+          </ul>
+          <p class="page4__text font-body-1">
+            Мы в ISTOK очень тщательно подбираем поставщиков для нашей
+            продукции. <br />
+            Для нас важно, чтобы все товары соответствовали строгим критериям
+            отбора, <br />
+            включая высокое качество и ЭКОЛОГИЧНОСТЬ.
+          </p>
+          <div class="image-slide-container">
+            <img
+              class="image-slide-container__image"
+              src="./src/assets/images/provider.png"
+              alt="provider"
+            />
           </div>
-        </div>
-        <section class="page4__heading">
           <div class="page4__provider">
-            <h3>
-              Мы в ISTOK очень тщательно подбираем поставщиков для нашей
-              продукции. <br />
-              Для нас важно, чтобы все товары соответствовали строгим критериям
-              отбора, <br />
-              включая высокое качество и ЭКОЛОГИЧНОСТЬ.
-            </h3>
-            <div class="image-slide-container">
-              <img
-                class="image-slide-container__image"
-                src="./src/assets/images/provider.png"
-                alt="provider"
-              />
-            </div>
             <div class="page4__provider-list">
               <div class="page4__provider-list-element">
                 <h1>ЛДСП</h1>
@@ -494,8 +503,8 @@
               </div>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
       <div class="container__page6" id="">
         <section class="page6__heading">
           <h2>НАШИ <span>ПРОЕКТЫ</span></h2>

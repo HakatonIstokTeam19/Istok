@@ -30,7 +30,33 @@
   --light-black: #222222;
   --whitish: #fffdfb;
   --beige: #e8e9da;
+
+  /* spaces */
+--padding-102: 102px;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+:before, *, :after {
+  outline: none;
+  text-decoration: none;
+  border: none;
+  box-sizing: border-box;
+  text-decoration-line: none;
+}
+
+body {
+  overflow: hidden;
+  background-color: var(--whitish);
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 .font-body-1 {
   font-family: var(--font-main);
