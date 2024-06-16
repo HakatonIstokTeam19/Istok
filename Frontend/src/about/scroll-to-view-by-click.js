@@ -8,7 +8,7 @@ function scrollToItem(itemId) {
 }
 
 const controls = document.querySelectorAll(".slide-controls__btn");
-controls.forEach((control, index) => {
+controls.forEach((control) => {
   control.addEventListener("click", () => {
     const sectionId = control.getAttribute("data-related-section-id");
     if (sectionId) {

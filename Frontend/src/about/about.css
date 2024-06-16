@@ -322,9 +322,22 @@
   border-radius: 50px;
   background-color: var(--beige);
   scale: 1;
-  transition: scale 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.slide-control__circle:hover {
+background-color: var(--green);
+}
+
+.slide-control__circle:active {
+background-color: var(----whitish);
 }
 
 .slide-control__circle_active {
-  scale: 2;
+  scale: 2.1;
+  background-color: var(--whitish);
+}
+
+.slide-control__circle_active:hover {
+  background-color: var(--whitish);
 }
