@@ -447,6 +447,7 @@ p {
   align-items: center;
   justify-content: end;
   gap: 10px;
+  margin-right: -42px;
 }
 
 .main__contact-links {
@@ -454,12 +455,15 @@ p {
   display: none;
   flex-direction: column;
   align-items: center;
+  height: 340px;
+  justify-content: space-between;
 }
 
 .main__contact-link {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 4px;
 }
 
 .main__contact-link p {
@@ -467,6 +471,7 @@ p {
   font-size: 12px;
   font-weight: 200;
   color: var(--whitish-color);
+  line-height: 16px;
 }
 
 .clicked h2 {
