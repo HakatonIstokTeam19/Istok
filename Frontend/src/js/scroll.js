@@ -11,7 +11,7 @@ const initialTransformX = 493;
 const minTransform = -467;
 const maxTransform = initialTransformX;
 
-export const handleScroll = (e) => {
+export function handleScroll(e){
   if (window.innerWidth > 768) {
     const projectsRect = projects.getBoundingClientRect();
 
@@ -55,7 +55,7 @@ const getCurrentTransformX = (element) => {
 
 container.addEventListener("wheel", handleScroll);
 
-export const handleResize = () => {
+export function handleResize() {
   if (window.innerWidth <= 768) {
     container.style.flexDirection = "column";
     container.style.overflowY = "scroll";
