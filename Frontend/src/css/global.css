@@ -50,6 +50,7 @@ html {
 body {
   overflow: hidden;
   background-color: var(--whitish);
+  font-family: var(--font-main)
 }
 
 a {
@@ -66,12 +67,29 @@ a {
   color: var(--light-black);
 }
 
+.font-body-light-1 {
+  font-family: var(--font-main);
+  font-size: var(--font-16);
+  font-weight: var(--weight-light);
+  line-height: var(--line-height-26);
+  color: var(--light-black);
+}
+
 .font-body-2 {
   font-family: var(--font-main);
   font-size: var(--font-14);
   font-weight: var(--weight-regular);
   line-height: var(--line-height-22);
   color: var(--light-black);
+}
+
+.font-body-light-2 {
+  font-family: var(--font-main);
+  font-size: var(--font-14);
+  font-weight: var(--weight-light);
+  line-height: var(--line-height-22);
+  color: var(--light-black);
+  text-transform: none;
 }
 
 .font-body-3 {
@@ -110,6 +128,13 @@ a {
   font-family: var(--font-main);
   font-size: var(--font-32);
   font-weight: var(--weight-regular);
+  color: var(--light-black);
+}
+
+.font-heading-bold-32 {
+  font-family: var(--font-main);
+  font-size: var(--font-32);
+  font-weight: var(--weight-bold-x);
   color: var(--light-black);
 }
 
