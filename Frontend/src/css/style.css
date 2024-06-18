@@ -74,7 +74,6 @@
   background-position-y: top;
 }
 
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -568,17 +567,7 @@ p {
 }
 
 /* page3 */
-/* .container__page3 {
-  min-width: 1440px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  font-family: "VelaSans";
-} */
 
-/* what we do page*/
 .container__page3 {
   width: 1440px;
   height: 100%;
@@ -596,38 +585,18 @@ p {
   );
 }
 
-/* .container__page3::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -16%;
-  width: 43%;
+.page3__inner-container {
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  background-color: var(--beige);
-  z-index: 1;
-} */
+  gap: 40px;
+}
 
-/* .page3__heading {
-  /* margin-top: -10%;
-
-} */
-
-/* .page3__heading::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 16%;
-  width: 43%;
-  height: 100%;
-  background-color: var(--beige);
-  z-index: 1;
-} */
 .page3__title {
   max-width: 973px;
   display: flex;
-  gap: 5%;
+  gap: 40px;
   align-items: flex-start;
-  margin-bottom: 40px;
 }
 
 .page3__title h2 {
@@ -641,12 +610,22 @@ p {
   line-height: 1.3;
 }
 
-.page3__examples {
+.page3__slider-outer-container {
   transform: translateX(calc(var(--padding-102) * -1));
-  gap: 35px;
   display: flex;
-  max-width: 1478px;
-  overflow-x: hidden;
+  width: 1440px;
+  height: 100%;
+  max-height: 380px;
+  overflow: hidden;
+}
+
+.page3__slider-inner-container {
+  display: flex;
+  flex-flow: row-reverse;
+  height: 100%;
+  max-height: 380px;
+  gap: 40px;
+  transform: translateX(493px);
 }
 
 .page3__example {
@@ -654,6 +633,26 @@ p {
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
+  width: 466px;
+  height: 380px;
+}
+
+.page3__img-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.page3__img-wrapper > img {
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+  scale: 1;
+  transition: scale 1s ease-in-out;
+}
+
+.page3__img-wrapper:hover > img {
+  scale: 1.1;
 }
 
 .page3__example h3 {

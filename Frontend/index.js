@@ -8,14 +8,11 @@ import { handleResize } from "./src/js/scroll.js";
 
 window.addEventListener("resize", handleResize);
 handleResize();
+
 const contactHead = document.querySelector(".main__contact h2");
 const contact = document.querySelector(".main__contact");
 const linksContact = document.querySelector(".main__contact-links");
 const pointerContact = document.querySelector(".main__contact-arrow");
-
-console.log("contact:", contact);
-console.log("linksContact:", linksContact);
-console.log("pointerContact:", pointerContact);
 
 document.addEventListener("DOMContentLoaded", () => {
   contactHead.addEventListener("click", () => {
