@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/global.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
+    <!-- <link rel="stylesheet" href="./src/css/about.css" /> -->
     <link
       rel="stylesheet"
       href="https://cdn-uicons.flaticon.com/2.4.0/uicons-bold-rounded/css/uicons-bold-rounded.css"
@@ -33,9 +34,7 @@
             <a class="header__link font-body-1 href=">Мебель на заказ</a>
           </li>
           <li class="header__link font-body-1">
-            <a class="header__link font-body-1" href="./src/about/about.html"
-              >О нас</a
-            >
+            <a class="header__link font-body-1" href="./about.html">О нас</a>
           </li>
         </ul>
       </nav>
@@ -44,8 +43,11 @@
       >
     </header>
     <div class="container">
-      <div class="container__page1" id="privileges">
-        <section class="main__heading page">
+      <section class="container__page1" id="privileges">
+        <div class="main__heading page">
+
+          <!-- slide-out menu button -->
+
           <div class="main__contact">
             <h2>Связаться с ИСТОК</h2>
             <div class="main__contact-arrow">
@@ -65,7 +67,7 @@
               </svg>
             </div>
             <div class="main__contact-links">
-              <div class="main__contact-link">
+              <a class="main__contact-link">
                 <svg
                   width="33"
                   height="32"
@@ -95,8 +97,8 @@
                   </defs>
                 </svg>
                 <p>Сообщество</p>
-              </div>
-              <div class="main__contact-link">
+              </a>
+              <a class="main__contact-link">
                 <svg
                   width="33"
                   height="32"
@@ -126,8 +128,8 @@
                   </defs>
                 </svg>
                 <p>Сообщество</p>
-              </div>
-              <div class="main__contact-link">
+              </a>
+              <a class="main__contact-link">
                 <svg
                   width="33"
                   height="32"
@@ -165,8 +167,8 @@
                   </defs>
                 </svg>
                 <p>Чат</p>
-              </div>
-              <div class="main__contact-link">
+              </a>
+              <a class="main__contact-link">
                 <svg
                   width="33"
                   height="32"
@@ -196,8 +198,8 @@
                   </defs>
                 </svg>
                 <p>Чат</p>
-              </div>
-              <div class="main__contact-link">
+              </a>
+              <a class="main__contact-link">
                 <svg
                   width="33"
                   height="32"
@@ -227,7 +229,7 @@
                   </defs>
                 </svg>
                 <p>Звонок</p>
-              </div>
+              </a>
             </div>
           </div>
           <div class="main__heading-title">
@@ -241,10 +243,10 @@
             </p>
             <button class="main__heading-meeting">Записаться на встречу</button>
           </div>
-        </section>
-      </div>
-      <div class="container__page2" id="materials">
-        <section class="page2__heading">
+        </div>
+      </section>
+      <section class="container__page2" id="materials">
+        <div class="page2__heading">
           <div class="page2__headings">
             <h2>Почему выбирают <span>ИСТОК</span>?</h2>
             <p class="font-body-light-1">
@@ -264,7 +266,7 @@
             </div>
             <div class="page2__privilege">
               <img src="./src/assets/images/privilege2.png" alt="privilege2" />
-              <h1>10 лет гарантии!</h1>
+              <h3>10 лет гарантии!</h3>
               <p>
                 Мы уверены в качестве нашей мебели и предлагаем вам невероятные
                 10 лет гарантии на все изделия. Это означает, что вы сможете
@@ -273,7 +275,7 @@
               </p>
             </div>
             <div class="page2__privilege">
-              <h1>Взаимодействие с мебелью во время проектирования</h1>
+              <h3>Взаимодействие с мебелью во время проектирования</h3>
               <p>
                 Интерактивная модель в мобильном приложение и/или в масштабе 1:1
                 в VR гарнитуре при встрече. Отслеживание статуса изготовления
@@ -283,14 +285,14 @@
             </div>
             <div class="page2__privilege">
               <img src="./src/assets/images/privilege4.png" alt="privilege4" />
-              <h1>Бесплатный дизайн-проект</h1>
+              <h3>Бесплатный дизайн-проект</h3>
               <p>
                 Наши специалисты подскажут, как воплотить в реальность Ваши идеи
                 не только стильно, но и эргономично!
               </p>
             </div>
             <div class="page2__privilege">
-              <h1>Рассрочка 0-0-6</h1>
+              <h3>Рассрочка 0-0-6</h3>
               <p>
                 Честная рассрочка без переплат и первоначального взноса у
                 банков-партнеров.
@@ -299,15 +301,15 @@
             </div>
             <div class="page2__privilege">
               <img src="./src/assets/images/privilege6.png" alt="privilege6" />
-              <h1>Мы всегда рядом</h1>
+              <h3>Мы всегда рядом</h3>
               <p>
                 Наши специалисты готовы прийти вам на помощь в любое время
                 суток. Мы всегда на связи.
               </p>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
       <section class="container__page3" id="projects">
         <div class="page3__inner-container">
           <div class="page3__title">
@@ -415,9 +417,6 @@
               data-related-category="fittings"
             />
           </div>
-
-          <!-- slide 1 - frames -->
-
           <div class="page4__slide-txt-block">
             <div
               class="page4__slide-txt-block-list active"
@@ -433,9 +432,6 @@
               </div>
             </div>
           </div>
-
-          <!-- slide 2 - countertops -->
-
           <div class="page4__slide-txt-block">
             <div
               class="page4__slide-txt-block-list"
@@ -454,9 +450,6 @@
               </div>
             </div>
           </div>
-
-          <!-- slide 3 - fronts -->
-
           <div class="page4__slide-txt-block">
             <div
               class="page4__slide-txt-block-list"
@@ -486,9 +479,6 @@
               </div>
             </div>
           </div>
-
-          <!-- slide 4 - fittings -->
-
           <div class="page4__slide-txt-block">
             <div
               class="page4__slide-txt-block-list"
@@ -504,8 +494,6 @@
           </div>
         </div>
       </section>
-
-      <!-- PROJECTS -->
       <section class="container__page6" id="">
         <h2 class="font-heading-reg-32">
           НАШИ
@@ -525,9 +513,8 @@
                 class="page6__3d"
                 src="./src/assets/images/content/home-projects-card-1.png"
                 alt="kitchen"
-              />
-            </div>
-          </a>
+              /></div
+          ></a>
           <a class="card card_projects">
             <div class="card__text-wrapper">
               <h3 class="font-heading-bold-16">Шкаф</h3>
@@ -541,9 +528,8 @@
                 class="page6__3d"
                 src="./src/assets/images/content/home-projects-card-2.png"
                 alt="board"
-              />
-            </div>
-          </a>
+              /></div
+          ></a>
           <a class="card card_projects">
             <div class="card__text-wrapper">
               <h3 class="font-heading-bold-16">Гардероб в спальню</h3>
@@ -559,14 +545,14 @@
                   src="./src/assets/images/content/home-projects-card-3.png"
                   alt="wardrop"
                 />
-              </div>
-            </div>
-          </a>
+              </div></div
+          ></a>
         </div>
       </section>
       <section class="container__page7 font-heading-reg-32" id="process">
         <h2 class="page7__heading">
-          Уникальный технологический <span class="text-color-accent">ПРОЦЕСС</span> по запатентованной
+          Уникальный технологический
+          <span class="text-color-accent">ПРОЦЕСС</span> по запатентованной
           технологии
         </h2>
         <ol class="page7__process">
@@ -628,11 +614,13 @@
           </li>
         </ol>
       </section>
-      <div class="container__page8" id="stocks">
-        <section class="page8__heading">
-          <div class="page8__slider-container" id="stocks">
+      <section class="container__page8" id="stocks">
+        <!-- slider 3 -->
+
+        <div class="page8__slider-container" id="stocks">
+          <button class="slider__btn slider__btn_left">
             <svg
-              class="page8__arrow left"
+              class="slider__arrow"
               width="29"
               height="31"
               viewbox="0 0 29 31"
@@ -646,45 +634,59 @@
                 width="31"
                 height="29"
                 transform="rotate(90 29 0)"
-                fill="url(#pattern0_941_1001)"
-                fill-opacity="0.5"
+                fill="url(#pattern0_1722_8887)"
               ></rect>
               <defs>
                 <pattern
-                  id="pattern0_941_1001"
+                  id="pattern0_1722_8887"
                   patterncontentunits="objectBoundingBox"
                   width="1"
                   height="1"
                 >
                   <use
-                    xlink:href="#image0_941_1001"
+                    xlink:href="#image0_1722_8887"
                     transform="matrix(0.00195312 0 0 0.00208782 0 -0.0344828)"
                   ></use>
                 </pattern>
                 <image
-                  id="image0_941_1001"
+                  id="image0_1722_8887"
                   width="512"
                   height="512"
                   xlink:href="data:image/png;base64,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"
                 ></image>
               </defs>
             </svg>
-            <div class="page8__slider slides">
-              <div class="page8__slider-info">
-                <h2>СКИДКА 10%</h2>
-                <h3>НА ЛЮБОЙ ЗАКАЗ</h3>
-                <ul>
-                  <li>Кухня</li>
-                  <li>Гардероб</li>
-                  <li>Прихожая</li>
-                  <li>Комод</li>
-                  <li>Стеллаж</li>
-                </ul>
-                <button class="page8__order">Сделать заказ</button>
+          </button>
+          <div class="slider__visible-space">
+            <div class="page8__slider slider__inner-container">
+              <div class="page8__slide-1">
+                <!-- commercial block 1 -->
+                <div class="page8__slider-info">
+                  <h2>СКИДКА 10%</h2>
+                  <h3>НА ЛЮБОЙ ЗАКАЗ</h3>
+                  <ul>
+                    <li>Кухня</li>
+                    <li>Гардероб</li>
+                    <li>Прихожая</li>
+                    <li>Комод</li>
+                    <li>Стеллаж</li>
+                  </ul>
+                  <button class="page8__order">Сделать заказ</button>
+                </div>
+              </div>
+              <div class="page8__slide-2">
+                <!-- commercial block 2 -->
+                <div class="page8__slider-info">
+                  <h2>10 000 РУБЛЕЙ</h2>
+                  <p>ЗА РЕКОМЕНДАЦИЮ И ЗАКАЗ ПО НЕЙ</p>
+                  <button class="page8__order">Рекомендовать</button>
+                </div>
               </div>
             </div>
+          </div>
+          <button class="slider__btn slider__btn_right">
             <svg
-              class="page8__arrow right"
+              class="slider__arrow slider__arrow_right"
               width="29"
               height="31"
               viewbox="0 0 29 31"
@@ -694,92 +696,204 @@
             >
               <rect
                 opacity="0.9"
-                y="31"
+                x="29"
                 width="31"
                 height="29"
-                transform="rotate(-90 0 31)"
-                fill="url(#pattern0_941_1002)"
-                fill-opacity="0.5"
+                transform="rotate(90 29 0)"
+                fill="url(#pattern0_1722_8887)"
               ></rect>
               <defs>
                 <pattern
-                  id="pattern0_941_1002"
+                  id="pattern0_1722_8887"
                   patterncontentunits="objectBoundingBox"
                   width="1"
                   height="1"
                 >
                   <use
-                    xlink:href="#image0_941_1002"
+                    xlink:href="#image0_1722_8887"
                     transform="matrix(0.00195312 0 0 0.00208782 0 -0.0344828)"
                   ></use>
                 </pattern>
                 <image
-                  id="image0_941_1002"
+                  id="image0_1722_8887"
                   width="512"
                   height="512"
                   xlink:href="data:image/png;base64,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"
                 ></image>
               </defs>
             </svg>
+          </button>
+        </div>
+
+        <!-- send a request section -->
+
+        <div class="page8__consulting" id="consult">
+          <h2 class="page8__heading">Оставьте заявку</h2>
+          <p class="font-body-1 page8__tagline">
+            И ПОЛУЧИТЕ КОНСУЛЬТАЦИЮ СПЕЦИАЛИСТА
+          </p>
+          <div class="page8__text-content">
+            <p class="page8__paragraph font-body-1">
+              В ISTOK мы серьёзно подходим к своей работе и ценим время наших
+              клиентов. Поэтому мы никогда не обещаем то, что не сможем
+              выполнить в срок.
+            </p>
+            <p class="page8__paragraph font-body-1">
+              Наш специалист ответит на любой ваш вопрос. РЕГИСТРИРУЙТЕСЬ В
+              ЛИЧНОМ КАБИНЕТЕ И ОСТАВЛЯЙТЕ ЗАЯВКУ
+            </p>
+            <p class="page8__paragraph font-body-1">
+              Или просто укажите свои контактные данные и менеджер перезвонит в
+              удобное для вас время!
+            </p>
           </div>
-          <div class="page8__consulting" id="consult">
-            <form action="">
-              <h1>ПОЛУЧИ КОНСУЛЬТАЦИЮ</h1>
-              <div class="page8__consulting-user">
-                <p>
-                  Укажите ваши данные, и мы свяжемся с вами<br />
-                  в удобное время для обсуждения проекта!
-                </p>
-                <div class="page8__consulting-name">
-                  <input type="text" class="name" placeholder="ФИО*" />
-                  <input
-                    type="tel"
-                    class="number"
-                    placeholder="Ваш номер телефона*"
-                  />
-                </div>
-                <p class="page8__consulting-question">Как с вами связаться?*</p>
-                <div class="page8__consulting-options">
-                  <div class="page8__consulting-option">
-                    <input type="radio" name="ring" />
-                    <label for="ring">Звонок</label>
-                  </div>
-                  <div class="page8__consulting-option">
-                    <input type="radio" name="telegram" />
-                    <label for="telegram">Telegram</label>
-                  </div>
-                  <div class="page8__consulting-option">
-                    <input type="radio" name="vk" />
-                    <label for="vk">Вконтакте</label>
-                  </div>
-                </div>
-                <input
-                  class="page8__consulting-link"
-                  type="text"
-                  placeholder="Ваша ссылка на Telegram/Вконтакте"
-                />
-                <p class="page8__consulting-date-question">
-                  Укажите удобное для Вас время*
-                </p>
-                <div class="page8__consulting-dates">
-                  <input
-                    type="text"
-                    class="page8__consulting-date"
-                    placeholder="Дата"
-                  />
-                  <input
-                    type="text"
-                    class="page8__consulting-time"
-                    placeholder="Время"
-                  />
-                </div>
-                <button class="page8__consulting-send">Отправить</button>
-              </div>
-            </form>
+          <button class="btn-transparent">Заказать звонок</button>
+        </div>
+      </section>
+
+      <!-- footer -->
+
+      <footer class="footer">
+        <div class="footer__section">
+          <h5 class="footer__heading">Связаться с исток</h5>
+          <div class="social__links">
+            <a class="social__link">
+              <svg>
+                <use
+                  href="./src/assets/images/interface/icons-sprite-sheet.svg#whatsapp"
+                ></use>
+              </svg>
+              <span class="social__link-label">Чат</span>
+            </a>
+            <a class="social__link">
+              <svg>
+                <use
+                  href="./src/assets/images/interface/icons-sprite-sheet.svg#telegram"
+                ></use>
+              </svg>
+              <span class="social__link-label">Чат</span>
+            </a>
+            <a class="social__link">
+              <svg>
+                <use
+                  href="./src/assets/images/interface/icons-sprite-sheet.svg#ring"
+                ></use>
+              </svg>
+              <span class="social__link-label">Чат</span>
+            </a>
           </div>
-        </section>
-      </div>
+        </div>
+        <div class="footer__section">
+          <h5 class="footer__heading">Подписаться</h5>
+          <div class="social__links">
+            <a class="social__link">
+              <svg>
+                <use
+                  href="./src/assets/images/interface/icons-sprite-sheet.svg#vkontakte"
+                ></use>
+              </svg>
+              <span class="social__link-label">Сообщество</span>
+            </a>
+            <a class="social__link">
+              <svg>
+                <use
+                  href="./src/assets/images/interface/icons-sprite-sheet.svg#telegram"
+                ></use>
+              </svg>
+              <span class="social__link-label">Сообщество</span>
+            </a>
+          </div>
+        </div>
+        <div class="footer__section">
+          <h5 class="footer__heading">Узнать больше</h5>
+          <div class="social__links">
+            <a class="social__link">
+              <span class="social__link-label">Вопросы и ответы </span></a
+            >
+            <a class="social__link">
+              <span class="social__link-label">Программа лояльности</span></a
+            >
+            <a class="social__link">
+              <span class="social__link-label">Доставка и возврат</span></a
+            >
+            <a class="social__link">
+              <span class="social__link-label">Инструкция по уходу</span></a
+            >
+          </div>
+        </div>
+        <div class="footer__legal-info">
+          <a class="footer__policy-notice" href="https://istok-mebel.ru/policy"
+            >Политика конфиденциальности</a
+          >
+          <span class="footer__copyright">© ООО "ИСТОК-МЕБЕЛЬ" 2024</span>
+        </div>
+      </footer>
     </div>
-    <script src="./output/main.js"></script>
+    <ul class="bottom-progress-bar">
+      <li class="bottom-progress-bar__item">
+        <button data-related-section-id="us" class="bottom-progress-bar__btn">
+          <img
+            class="slide-control__circle"
+            src="./src/assets/images/interface/circle.svg"
+            alt="circle"
+          />
+        </button>
+      </li>
+      <li class="bottom-progress-bar__item">
+        <button data-related-section-id="mission" class="bottom-progress-bar__btn">
+          <img
+            class="slide-control__circle"
+            src="./src/assets/images/interface/circle.svg"
+            alt="circle"
+          />
+        </button>
+      </li>
+      <li class="bottom-progress-bar__item">
+        <button data-related-section-id="values" class="bottom-progress-bar__btn">
+          <img
+            class="slide-control__circle"
+            src="./src/assets/images/interface/circle.svg"
+            alt="circle"
+          />
+        </button>
+      </li>
+      <li class="bottom-progress-bar__item">
+        <button data-related-section-id="team" class="bottom-progress-bar__btn">
+          <img
+            class="slide-control__circle"
+            src="./src/assets/images/interface/circle.svg"
+            alt="circle"
+          />
+        </button>
+      </li>
+      <li class="bottom-progress-bar__item">
+        <button data-related-section-id="brand" class="bottom-progress-bar__btn">
+          <img
+            class="slide-control__circle"
+            src="./src/assets/images/interface/circle.svg"
+            alt="circle"
+          />
+        </button>
+      </li>
+      <li class="bottom-progress-bar__item">
+        <button data-related-section-id="brand" class="bottom-progress-bar__btn">
+          <img
+            class="slide-control__circle"
+            src="./src/assets/images/interface/circle.svg"
+            alt="circle"
+          />
+        </button>
+      </li>
+      <li class="bottom-progress-bar__item">
+        <button data-related-section-id="brand" class="bottom-progress-bar__btn">
+          <img
+            class="slide-control__circle"
+            src="./src/assets/images/interface/circle.svg"
+            alt="circle"
+          />
+        </button>
+      </li>
+    </ul>
+    <script src="./src/js/pageEntryPoints/index.js" type="module" defer></script>
   </body>
 </html>

@@ -265,7 +265,7 @@
 
 /*bottom navigation line*/
 
-.slide-controls {
+.bottom-progress-bar {
   display: flex;
   justify-content: space-around;
   align-items: start;
@@ -281,7 +281,7 @@
   list-style: none;
 }
 
-.slide-controls::before {
+.bottom-progress-bar::before {
   display: block;
   position: absolute;
   left: 0;
@@ -293,12 +293,12 @@
   z-index: 80;
 }
 
-.slide-controls__item {
+.bottom-progress-bar__item {
   height: 100%;
   z-index: 90;
 }
 
-.slide-controls__btn {
+.bottom-progress-bar__btn {
   all: unset;
   display: flex;
   flex-flow: column nowrap;
@@ -311,11 +311,11 @@
   position: relative;
 }
 
-.slide-controls__btn:has(.slide-control__circle_active)  > span, .slide-controls__btn:hover  > span, .slide-controls__btn:active > span {
+.bottom-progress-bar__btn:has(.slide-control__circle_active)  > span, .bottom-progress-bar__btn:hover  > span, .bottom-progress-bar__btn:active > span {
   font-weight: var(--weight-bold-x);
 }
 
-.slide-controls_txt {
+.bottom-progress-bar_txt {
   margin-bottom: 14px;
 }
 

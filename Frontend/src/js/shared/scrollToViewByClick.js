@@ -1,23 +1,23 @@
-function scrollToItem(itemId) {
-  const element = document.getElementById(itemId);
-  element.scrollIntoView({
-    behavior: "smooth",
-    alignToTop: false,
-    block: "end",
-  });
-}
+export default function initScrollToView() {
+  function scrollToItem(itemId) {
+    const element = document.getElementById(itemId);
+    element.scrollIntoView({
+      behavior: "smooth",
+      alignToTop: false,
+      block: "end",
+    });
+  }
 
-const controls = document.querySelectorAll(".slide-controls__btn");
-controls.forEach((control) => {
-  control.addEventListener("click", () => {
-    const sectionId = control.getAttribute("data-related-section-id");
-    if (sectionId) {
-      scrollToItem(sectionId);
-    }
+  const controls = document.querySelectorAll(".bottom-progress-bar__btn");
+  controls.forEach((control) => {
+    control.addEventListener("click", () => {
+      const sectionId = control.getAttribute("data-related-section-id");
+      if (sectionId) {
+        scrollToItem(sectionId);
+      }
+    });
   });
-});
 
-document.addEventListener("DOMContentLoaded", () => {
   const root = document.querySelector(".main-content");
   const textBlock = document.getElementById("text-block");
   const textContent = textBlock.querySelector(".text-block__content");
@@ -73,4 +73,4 @@ document.addEventListener("DOMContentLoaded", () => {
   sections.forEach((section) => {
     observer.observe(section);
   });
-});
+}
