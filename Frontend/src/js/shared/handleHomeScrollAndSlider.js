@@ -1,10 +1,10 @@
 export default function initHomeScrollAndSlider1(container) {
-  const projects = document.getElementById("projects");
+  const projects = document.getElementById("products");
   const sliderInnerContainer = document.querySelector(
     ".page3__slider-inner-container"
   );
 
-  const projectSectionStopScrollPosition = 466;
+  const projectSectionStopScrollPosition = 490;
   let sliderActive = false;
   //transformX values of the slider to set the range of motion
   const initialTransformX = 493;

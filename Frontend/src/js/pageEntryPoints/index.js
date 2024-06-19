@@ -1,6 +1,7 @@
 import handleResize from "../shared/handleResize.js";
 import initSideMenu from "../shared/handleSideMenu.js";
 import initHomeScrollAndSlider1 from "../shared/handleHomeScrollAndSlider.js";
+import initScrollToViewByClick from "../shared/scrollToViewByClick.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
@@ -14,6 +15,42 @@ document.addEventListener("DOMContentLoaded", () => {
   } else console.debug("No container found");
 
   initSideMenu();
+  const controls = document.querySelectorAll(".bottom-progress-bar__btn");
+  initScrollToViewByClick(controls);
+
+  const sections = document.querySelectorAll(".main-content__section");
+  const root = document.querySelector(".main-content");
+  const options = {
+    root: root,
+    rootMargin: "0px",
+    threshold: 0.5,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+
+        const sectionId = entry.target.id;
+        controls.forEach((control) => {
+          const controlCircle = control.querySelector(".slide-control__circle");
+          if (
+            control.getAttribute("data-related-section-id") === sectionId ||
+            (sectionId === "values_2" &&
+              control.getAttribute("data-related-section-id") === "values")
+          ) {
+            controlCircle.classList.add("slide-control__circle_active");
+          } else {
+            controlCircle.classList.remove("slide-control__circle_active");
+          }
+        });
+      }
+    });
+  }, options);
+
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+  
 });
 
 // slider 3 - materials

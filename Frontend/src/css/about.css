@@ -74,7 +74,7 @@
   flex-flow: row nowrap;
 }
 
-.slide {
+.main-content__section {
   position: relative;
   flex: 0 0 auto;
 }

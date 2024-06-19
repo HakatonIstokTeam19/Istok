@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/global.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
-    <!-- <link rel="stylesheet" href="./src/css/about.css" /> -->
     <link
       rel="stylesheet"
       href="https://cdn-uicons.flaticon.com/2.4.0/uicons-bold-rounded/css/uicons-bold-rounded.css"
@@ -23,7 +22,7 @@
       <nav class="header__nav">
         <ul class="header__links">
           <li class="header__link font-body-1 active">
-            <a class="header__link font-body-1 href=" href="../../index.html"
+            <a class="header__link font-body-1 href=" href="./index.html"
               >Главная</a
             >
           </li>
@@ -42,10 +41,9 @@
         >Войти в личный кабинет</a
       >
     </header>
-    <div class="container">
-      <section class="container__page1" id="privileges">
+    <div class="container main-content">
+      <section class="container__page1 main-content__section" id="start">
         <div class="main__heading page">
-
           <!-- slide-out menu button -->
 
           <div class="main__contact">
@@ -245,7 +243,7 @@
           </div>
         </div>
       </section>
-      <section class="container__page2" id="materials">
+      <section class="container__page2 main-content__section" id="benefits">
         <div class="page2__heading">
           <div class="page2__headings">
             <h2>Почему выбирают <span>ИСТОК</span>?</h2>
@@ -310,7 +308,7 @@
           </div>
         </div>
       </section>
-      <section class="container__page3" id="projects">
+      <section class="container__page3 main-content__section" id="products">
         <div class="page3__inner-container">
           <div class="page3__title">
             <h2>ЧТО МЫ ПРОИЗВОДИМ</h2>
@@ -359,7 +357,7 @@
           </div>
         </div>
       </section>
-      <section class="container__page4 page4" id="process">
+      <section class="container__page4 main-content__section" id="materials">
         <div class="page4__inner-container">
           <h2 class="page4__heading font-heading-reg-32">МАТЕРИАЛЫ</h2>
           <ul class="page4__slider-controls">
@@ -494,7 +492,7 @@
           </div>
         </div>
       </section>
-      <section class="container__page6" id="">
+      <section class="container__page6 main-content__section" id="projects">
         <h2 class="font-heading-reg-32">
           НАШИ
           <span class="font-heading-bold-32 text-color-accent">ПРОЕКТЫ</span>
@@ -549,7 +547,9 @@
           ></a>
         </div>
       </section>
-      <section class="container__page7 font-heading-reg-32" id="process">
+      <section
+        class="container__page7 main-content__section font-heading-reg-32" id="process"
+      >
         <h2 class="page7__heading">
           Уникальный технологический
           <span class="text-color-accent">ПРОЦЕСС</span> по запатентованной
@@ -614,7 +614,7 @@
           </li>
         </ol>
       </section>
-      <section class="container__page8" id="stocks">
+      <section class="container__page8 main-content__section" id="orderNow">
         <!-- slider 3 -->
 
         <div class="page8__slider-container" id="stocks">
@@ -831,7 +831,7 @@
     </div>
     <ul class="bottom-progress-bar">
       <li class="bottom-progress-bar__item">
-        <button data-related-section-id="us" class="bottom-progress-bar__btn">
+        <button data-related-section-id="start" class="bottom-progress-bar__btn">
           <img
             class="slide-control__circle"
             src="./src/assets/images/interface/circle.svg"
@@ -840,7 +840,7 @@
         </button>
       </li>
       <li class="bottom-progress-bar__item">
-        <button data-related-section-id="mission" class="bottom-progress-bar__btn">
+        <button data-related-section-id="benefits" class="bottom-progress-bar__btn">
           <img
             class="slide-control__circle"
             src="./src/assets/images/interface/circle.svg"
@@ -849,7 +849,10 @@
         </button>
       </li>
       <li class="bottom-progress-bar__item">
-        <button data-related-section-id="values" class="bottom-progress-bar__btn">
+        <button
+          data-related-section-id="products"
+          class="bottom-progress-bar__btn"
+        >
           <img
             class="slide-control__circle"
             src="./src/assets/images/interface/circle.svg"
@@ -858,7 +861,7 @@
         </button>
       </li>
       <li class="bottom-progress-bar__item">
-        <button data-related-section-id="team" class="bottom-progress-bar__btn">
+        <button data-related-section-id="materials" class="bottom-progress-bar__btn">
           <img
             class="slide-control__circle"
             src="./src/assets/images/interface/circle.svg"
@@ -867,7 +870,10 @@
         </button>
       </li>
       <li class="bottom-progress-bar__item">
-        <button data-related-section-id="brand" class="bottom-progress-bar__btn">
+        <button
+          data-related-section-id="projects"
+          class="bottom-progress-bar__btn"
+        >
           <img
             class="slide-control__circle"
             src="./src/assets/images/interface/circle.svg"
@@ -876,7 +882,10 @@
         </button>
       </li>
       <li class="bottom-progress-bar__item">
-        <button data-related-section-id="brand" class="bottom-progress-bar__btn">
+        <button
+          data-related-section-id="process"
+          class="bottom-progress-bar__btn"
+        >
           <img
             class="slide-control__circle"
             src="./src/assets/images/interface/circle.svg"
@@ -885,7 +894,10 @@
         </button>
       </li>
       <li class="bottom-progress-bar__item">
-        <button data-related-section-id="brand" class="bottom-progress-bar__btn">
+        <button
+          data-related-section-id="orderNow"
+          class="bottom-progress-bar__btn"
+        >
           <img
             class="slide-control__circle"
             src="./src/assets/images/interface/circle.svg"
@@ -894,6 +906,10 @@
         </button>
       </li>
     </ul>
-    <script src="./src/js/pageEntryPoints/index.js" type="module" defer></script>
+    <script
+      src="./src/js/pageEntryPoints/index.js"
+      type="module"
+      defer
+    ></script>
   </body>
 </html>
