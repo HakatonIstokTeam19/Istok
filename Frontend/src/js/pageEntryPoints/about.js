@@ -37,11 +37,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
         if (textContent.innerHTML !== newContent) {
           textContent.innerHTML = newContent;
-          textBlock.classList.add("fade");
+          // textBlock.classList.add("fade");
           textContent.style.opacity = 0;
-          setTimeout(() => {
-            textBlock.classList.remove("fade");
-          }, 500);
+          // setTimeout(() => {
+          //   textBlock.classList.remove("fade");
+          // }, 500);
           setTimeout(() => {
             textContent.style.opacity = 1;
           }, 700);
@@ -49,7 +49,7 @@ window.addEventListener("DOMContentLoaded", () => {
           if (entry.target.id === "brand") {
             textBlock.style.width = "auto";
           } else {
-            textBlock.style.width = "385px";
+            textBlock.style.width = "487px";
           }
         }
         const sectionId = entry.target.id;
