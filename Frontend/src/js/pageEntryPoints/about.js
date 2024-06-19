@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const options = {
     root: root,
     rootMargin: "0px",
-    threshold: 0.5,
+    threshold: 0.4,
   };
 
   const observer = new IntersectionObserver((entries, observer) => {
@@ -36,13 +36,13 @@ window.addEventListener("DOMContentLoaded", () => {
         ).innerHTML;
 
         if (textContent.innerHTML !== newContent) {
-          textContent.innerHTML = newContent;
-          // textBlock.classList.add("fade");
           textContent.style.opacity = 0;
+          // textBlock.classList.add("fade");
           // setTimeout(() => {
-          //   textBlock.classList.remove("fade");
-          // }, 500);
-          setTimeout(() => {
+            //   textBlock.classList.remove("fade");
+            // }, 500);
+            setTimeout(() => {
+            textContent.innerHTML = newContent;
             textContent.style.opacity = 1;
           }, 700);
           // change width of text block for brand section

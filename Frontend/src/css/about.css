@@ -80,32 +80,40 @@
   flex: 0 0 auto;
 }
 
+.main-content__section_team {
+  display: flex;
+  gap: var(--padding-102);
+}
+
 .main-content__section:nth-of-type(1) {
   padding: 0 var(--padding-102);
   padding-left: 487px;
 }
 
-.slide__image {
+.slide__image:not(.slide__image[data-section-name="team"]) {
   height: calc(100vh - var(--padding-102) * 2);
   object-fit: cover;
 }
 
+.slide__image[data-section-name="team"] {
+  height: calc(100vh - var(--padding-102) * 2 - 80px);
+  object-fit: cover;
+
+}
+
 .slide:nth-of-type(1) > img {
-  max-width: 1236px;
-
+  max-width: 850px;
 }
-
-/* .slide:nth-of-type(7) > img {
-  max-width: 1380px;
-  height: auto;
-  margin: 0 var(--padding-102);
+/* specific to team slides */
+.slide__heading-wrapper_team {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: start;
+  gap: 4px;
+  width: 100%;
+  margin-bottom: 25px;
 }
-
-.slide:last-of-type > img {
-  max-width: 1440px;
-} */
-
-/*fixed white container inside main*/
 
 .text-block {
   position: fixed;
@@ -123,7 +131,7 @@
 .text-block__content {
   display: flex;
   flex-direction: column;
-  padding: 0 40px;
+  padding: 0 80px 0 102px;
   width: 100%;
   height: 100%;
   transition: opacity 0.5s ease-in-out;
