@@ -1,14 +1,15 @@
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django_filters.views import FilterView
 
 from Istok_app.filters import FinishedFurnitureFilter
-from .models import Orders, Finished_furniture
-from .forms import OrdersCreateForm, Finished_furnitureCreateForm
+from .models import Orders, Finished_furniture, Application
+from .forms import OrdersCreateForm, Finished_furnitureCreateForm, ApplicationCreateForm
 
 
 def home(request):
@@ -61,6 +62,25 @@ class Finished_furnitureUpdate(LoginRequiredMixin, UpdateView):
             self.object.delete()
             return redirect(self.get_success_url())
         return super().post(request, *args, **kwargs)
+
+
+class ApplicationCreate(CreateView):
+    raise_exception = False
+    form_class = ApplicationCreateForm
+    model = Application
+    template_name = 'Istok_app/application_edit.html'
+    success_url = reverse_lazy('application_accept')
+
+    def form_valid(self, form):
+        slider_value = self.request.POST.get('slider')
+        if slider_value == '100':
+            return super().form_valid(form)
+        else:
+            messages.error(self.request, 'Передвиньте ползунок вправо для подтверждения, что вы человек.')
+            return self.form_invalid(form)
+
+def application_accept(request):
+    return render(request, 'Istok_app/application_accept.html')
 
 class OrdersList(LoginRequiredMixin, ListView):
     model = Orders

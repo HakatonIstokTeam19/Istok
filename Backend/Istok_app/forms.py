@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 
-from Istok_app.models import Orders, Finished_furniture
+from Istok_app.models import Orders, Finished_furniture, Application
 from users.models import Profile
 
 
@@ -13,6 +13,13 @@ class Finished_furnitureCreateForm(forms.ModelForm):
         fields = ('name', 'type', 'form', 'body_material', 'facades_material', 'price',
                   'image_1', 'image_2', 'image_3', 'image_4')
 
+class ApplicationCreateForm(forms.ModelForm):
+
+    class Meta:
+        model = Application
+        fields = ('type', 'form', 'form', 'addition', 'facades_material', 'table_material', 'plumb', 'appliances',
+                  'budget', 'consultation', 'last_name', 'first_name', 'patronymic', 'phone', 'connection', 'link',
+                  'data', 'time')
 
 class SignUpForm(UserCreationForm):
     phone = forms.CharField(max_length=15, required=True, help_text='Номер телефона в формате +7ХХХХХХХХХХ')

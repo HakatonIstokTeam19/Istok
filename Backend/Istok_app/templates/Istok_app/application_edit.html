@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Оставить заявку</title>
+</head>
+<body>
+    <h1>Оставить заявку</h1>
+
+        {% if messages %}
+         <ul class="messages">
+             {% for message in messages %}
+                 <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+             {% endfor %}
+         </ul>
+        {% endif %}
+
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <label for="slider">Подтвердите, что Вы человек и передвиньте ползунок вправо:</label>
+        <input type="range" id="slider" name="slider" min="0" max="100" step="1" value="0">
+        <button type="submit">Отправить</button>
+    </form>
+
+</body>
+</html>
