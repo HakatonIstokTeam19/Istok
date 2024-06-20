@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="./src/css/global.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
     <link rel="stylesheet" href="./src/css/buttons.css" />
+    <link rel="stylesheet" href="./src/css/modal.css" />
   </head>
   <body class="body">
-    <!-- Header - часть базового шаблона -->
     <header class="header">
       <svg alt="logo" class="header__logo">
         <use
@@ -20,9 +20,7 @@
       <nav class="header__nav">
         <ul class="header__links">
           <li class="header__link font-body-1">
-            <a class="header__link active font-body-1" href="#"./index.html"
-              >Главная</a
-            >
+            <a class="header__link active font-body-1" href="#">Главная</a>
           </li>
           <li class="header__link font-body-1">
             <a class="header__link font-body-1" href="#">Готовая мебель</a>
@@ -31,7 +29,9 @@
             <a class="header__link font-body-1" href="./about.html">О нас</a>
           </li>
           <li class="header__link font-body-1">
-            <a class="header__link font-body-1" href="./request.html">Оставить заявку</a>
+            <a class="header__link font-body-1" href="./request.html"
+              >Оставить заявку</a
+            >
           </li>
         </ul>
       </nav>
@@ -39,82 +39,121 @@
         >Войти в личный кабинет</a
       >
     </header>
-
     <main class="container main-content">
       <section class="container__page1 main-content__section" id="start">
-        <div class="page1 page1__content-outer-wrapper ">
+        <div class="page1 page1__content-outer-wrapper">
           <div class="page1__content-inner-wrapper">
             <h1 class="page1__title font-heading-reg-52">
               с <span class="text-color-accent">нами</span> начинается<br />
               уют <span class="text-color-accent">вашего</span> дома
             </h1>
             <p class="font-body-1 page1__tagline">
-              ПРОИЗВОДСТВО МЕБЕЛИ НА ЗАКАЗ <br />
+              ПРОИЗВОДСТВО МЕБЕЛИ НА ЗАКАЗ<br />
               В САНКТ-ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ
             </p>
-            <button class="button page1__button">Записаться на встречу</button>
+            <button
+              class="button page1__button"
+              data-modal="registerModal"
+              id="page1makeAppointmentBtn"
+            >
+              Записаться на встречу
+            </button>
           </div>
         </div>
-        <img src="./src/assets/images/content/home-page-1-bg-1.png" alt="" />
+        <img
+          src="./src/assets/images/content/home-page-1-bg-1.png"
+          alt="home-page-1-bg-1"
+        />
       </section>
       <section class="container__page2 main-content__section" id="benefits">
         <div class="page2__heading-container">
-          <h2 class="font-heading-reg-32 page2__heading">Почему выбирают <span class="text-color-accent">ИСТОК</span>?</h2>
+          <h2 class="font-heading-reg-32 page2__heading">
+            Почему выбирают <span class="text-color-accent">ИСТОК</span>?
+          </h2>
           <p class="font-body-1 page2__tagline">
             Наша команда ежедневно усердно трудится,<br />
             чтобы предоставить вам лучший продукт и сервис!
           </p>
-          </div>
-          <div class="page2__benefit page2__benefit_1">
+        </div>
+        <div class="page2__benefit page2__benefit_1">
           <h3 class="font-heading-bold-16 benefit-heading">Высокое качество</h3>
           <p class="font-body-2 page2__main-text">
             Мы производим мебель на промышленном оборудовании, поэтому
             гарантируем высокое<br />
             качество изделий по разумной цене.
           </p>
-          <img class="benefit__image" src="./src/assets/images/privilege1.png" alt="privilege1" />
-          </div>
-          <div class="page2__benefit page2__benefit_2">
-          <img class="benefit__image" src="./src/assets/images/privilege2.png" alt="privilege2" />
+          <img
+            class="benefit__image"
+            src="./src/assets/images/privilege1.png"
+            alt="privilege1"
+          />
+        </div>
+        <div class="page2__benefit page2__benefit_2">
+          <img
+            class="benefit__image"
+            src="./src/assets/images/privilege2.png"
+            alt="privilege2"
+          />
           <h3 class="font-heading-bold-16 benefit-heading">10 лет гарантии!</h3>
           <p class="font-body-2 page2__main-text">
-            Мы уверены в качестве нашей мебели и предлагаем вам невероятные
-            10 лет гарантии на все изделия. Это означает, что вы сможете
-            наслаждаться комфортом и функциональностью нашей мебели долгие
-            годы, зная, что мы всегда рядом и готовы помочь.
+            Мы уверены в качестве нашей мебели и предлагаем вам невероятные 10
+            лет гарантии на все изделия. Это означает, что вы сможете
+            наслаждаться комфортом и функциональностью нашей мебели долгие годы,
+            зная, что мы всегда рядом и готовы помочь.
           </p>
-          </div>
-          <div class="page2__benefit page2__benefit_3">
-          <h3 class="font-heading-bold-16 benefit-heading">Взаимодействие с мебелью во время <br> проектирования</h3>
+        </div>
+        <div class="page2__benefit page2__benefit_3">
+          <h3 class="font-heading-bold-16 benefit-heading">
+            Взаимодействие с мебелью во время<br />
+            проектирования
+          </h3>
           <p class="font-body-2 page2__main-text">
-            Интерактивная модель в мобильном приложение и/или в масштабе 1:1
-            в VR гарнитуре при встрече. Отслеживание статуса изготовления
-            мебели на всех этапах.
+            Интерактивная модель в мобильном приложение и/или в масштабе 1:1 в
+            VR гарнитуре при встрече. Отслеживание статуса изготовления мебели
+            на всех этапах.
           </p>
-          <img class="benefit__image" src="./src/assets/images/privilege3.png" alt="privilege3" />
-          </div>
-          <div class="page2__benefit page2__benefit_4">
-          <img class="benefit__image" src="./src/assets/images/privilege4.png" alt="privilege4" />
-          <h3 class="font-heading-bold-16 benefit-heading">Бесплатный дизайн-проект</h3>
+          <img
+            class="benefit__image"
+            src="./src/assets/images/privilege3.png"
+            alt="privilege3"
+          />
+        </div>
+        <div class="page2__benefit page2__benefit_4">
+          <img
+            class="benefit__image"
+            src="./src/assets/images/privilege4.png"
+            alt="privilege4"
+          />
+          <h3 class="font-heading-bold-16 benefit-heading">
+            Бесплатный дизайн-проект
+          </h3>
           <p class="font-body-2 page2__main-text">
-            Наши специалисты подскажут, как воплотить в реальность Ваши идеи
-            не только стильно, но и эргономично!
+            Наши специалисты подскажут, как воплотить в реальность Ваши идеи не
+            только стильно, но и эргономично!
           </p>
-          </div>
-          <div class="page2__benefit page2__benefit_5">
+        </div>
+        <div class="page2__benefit page2__benefit_5">
           <h3 class="font-heading-bold-16 benefit-heading">Рассрочка 0-0-6</h3>
           <p class="font-body-2 page2__main-text">
             Честная рассрочка без переплат и первоначального взноса у
             банков-партнеров.
           </p>
-          <img class="benefit__image" src="./src/assets/images/privilege5.png" alt="privilege5" />
+          <img
+            class="benefit__image"
+            src="./src/assets/images/privilege5.png"
+            alt="privilege5"
+          />
         </div>
         <div class="page2__benefit page2__benefit_6">
-          <img class="benefit__image" src="./src/assets/images/privilege6.png" alt="privilege6" />
+          <img
+            class="benefit__image"
+            src="./src/assets/images/privilege6.png"
+            alt="privilege6"
+          />
           <h3 class="font-heading-bold-16 benefit-heading">Мы всегда рядом</h3>
           <p class="font-body-2 page2__main-text">
-            Наши специалисты готовы прийти вам на помощь в любое время
-            суток. Мы всегда на связи.
+            Наши специалисты готовы прийти вам на помощь в любое время суток. Мы
+            всегда на связи.
           </p>
         </div>
       </section>
@@ -167,7 +206,10 @@
           </div>
         </div>
       </section>
-      <section class="page4 container__page4 main-content__section" id="materials">
+      <section
+        class="page4 container__page4 main-content__section"
+        id="materials"
+      >
         <div class="page4__inner-container">
           <h2 class="page4__heading font-heading-reg-32">МАТЕРИАЛЫ</h2>
           <ul class="page4__slider-controls">
@@ -426,8 +468,6 @@
         </ol>
       </section>
       <section class="container__page8 main-content__section" id="orderNow">
-        <!-- slider 3 -->
-
         <div class="page8__slider-container" id="stocks">
           <button class="slider__btn slider__btn_left">
             <svg
@@ -471,10 +511,15 @@
           <div class="slider__visible-space">
             <div class="page8__slider slider__inner-container">
               <div class="page8__slide-1">
-                <!-- commercial block 1 -->
                 <div class="page8__slider-info">
-                  <h2 class="commercial-heading font-heading-bold-52 text-color-accent">СКИДКА 10%</h2>
-                  <p class="commercial-text font-heading-reg-32">НА ЛЮБОЙ ЗАКАЗ</p>
+                  <h2
+                    class="commercial-heading font-heading-bold-52 text-color-accent"
+                  >
+                    СКИДКА 10%
+                  </h2>
+                  <p class="commercial-text font-heading-reg-32">
+                    НА ЛЮБОЙ ЗАКАЗ
+                  </p>
                   <ul>
                     <li>Кухня</li>
                     <li>Гардероб</li>
@@ -483,6 +528,7 @@
                     <li>Стеллаж</li>
                   </ul>
                   <button
+                    data-modal="registerModal"
                     class="button button_white button_short page8__btn-order"
                   >
                     Сделать заказ
@@ -490,11 +536,17 @@
                 </div>
               </div>
               <div class="page8__slide-2">
-                <!-- commercial block 2 -->
                 <div class="page8__slider-info page8__slider-info_slide1">
-                  <h2 class="commercial-heading font-heading-bold-52 text-color-accent">10 000 РУБЛЕЙ</h2>
-                  <p class="commercial-text font-heading-reg-32">ЗА РЕКОМЕНДАЦИЮ И ЗАКАЗ ПО НЕЙ</p>
+                  <h2
+                    class="commercial-heading font-heading-bold-52 text-color-accent"
+                  >
+                    10&nbsp;000 РУБЛЕЙ
+                  </h2>
+                  <p class="commercial-text font-heading-reg-32">
+                    ЗА РЕКОМЕНДАЦИЮ И ЗАКАЗ ПО НЕЙ
+                  </p>
                   <button
+                    data-modal="registerModal"
                     class="button button_white button_short page8__btn-order"
                   >
                     Рекомендовать
@@ -543,9 +595,6 @@
             </svg>
           </button>
         </div>
-
-        <!-- send a request section -->
-
         <div class="page8__consulting" id="consult">
           <h2 class="page8__heading">Оставьте заявку</h2>
           <p class="font-body-1 page8__tagline">
@@ -566,79 +615,76 @@
               удобное для вас время!
             </p>
           </div>
-          <button class="button button_white button_slim">
+          <button data-modal="registerModal" class="button button_white button_slim">
             Заказать звонок
           </button>
         </div>
       </section>
-
-      <!-- footer -->
-
       <footer class="footer">
         <div class="footer__section">
           <h5 class="footer__heading">Связаться с исток</h5>
           <div class="social__links">
-            <a class="social__link">
-              <svg>
+            <a class="social__link"
+              ><svg>
                 <use
                   href="./src/assets/images/interface/icons-sprite-sheet.svg#whatsapp"
                 ></use>
               </svg>
-              <span class="social__link-label">Чат</span>
-            </a>
-            <a class="social__link">
-              <svg>
+              <span class="social__link-label">Чат</span></a
+            >
+            <a class="social__link"
+              ><svg>
                 <use
                   href="./src/assets/images/interface/icons-sprite-sheet.svg#telegram"
                 ></use>
               </svg>
-              <span class="social__link-label">Чат</span>
-            </a>
-            <a class="social__link">
-              <svg>
+              <span class="social__link-label">Чат</span></a
+            >
+            <a class="social__link"
+              ><svg>
                 <use
                   href="./src/assets/images/interface/icons-sprite-sheet.svg#ring"
                 ></use>
               </svg>
-              <span class="social__link-label">Чат</span>
-            </a>
+              <span class="social__link-label">Чат</span></a
+            >
           </div>
         </div>
         <div class="footer__section">
           <h5 class="footer__heading">Подписаться</h5>
           <div class="social__links">
-            <a class="social__link">
-              <svg>
+            <a class="social__link"
+              ><svg>
                 <use
                   href="./src/assets/images/interface/icons-sprite-sheet.svg#vkontakte"
                 ></use>
               </svg>
-              <span class="social__link-label">Сообщество</span>
-            </a>
-            <a class="social__link">
-              <svg>
+              <span class="social__link-label">Сообщество</span></a
+            >
+            <a class="social__link"
+              ><svg>
                 <use
                   href="./src/assets/images/interface/icons-sprite-sheet.svg#telegram"
                 ></use>
               </svg>
-              <span class="social__link-label">Сообщество</span>
-            </a>
+              <span class="social__link-label">Сообщество</span></a
+            >
           </div>
         </div>
         <div class="footer__section">
           <h5 class="footer__heading">Узнать больше</h5>
           <div class="social__links">
-            <a class="social__link">
-              <span class="social__link-label">Вопросы и ответы </span></a
+            <a class="social__link"
+              ><span class="social__link-label">Вопросы и ответы</span></a
             >
-            <a class="social__link">
-              <span class="social__link-label">Программа лояльности</span></a
+            <a class="social__link"
+              ><span class="social__link-label">Программа лояльности</span></a
             >
-            <a class="social__link">
-              <span class="social__link-label">Доставка и возврат</span></a
+            <a class="social__link"
+              ><span class="social__link-label">Доставка и возврат</span></a
             >
-            <a class="social__link">
-              <span class="social__link-label">Инструкция по уходу</span></a
+            <a class="social__link"
+              ><span class="social__link-label">Инструкция по уходу</span></a
             >
           </div>
         </div>
@@ -649,12 +695,9 @@
           <span class="footer__copyright">© ООО "ИСТОК-МЕБЕЛЬ" 2024</span>
         </div>
       </footer>
-
-      <!-- slide-out menu button - часть базового шаблона-->
-
       <div class="side-menu-contact">
-        <label class="side-menu-contact__button">
-          <svg
+        <label class="side-menu-contact__button"
+          ><svg
             class="side-menu-contact__pointer"
             width="32"
             height="32"
@@ -668,11 +711,11 @@
             ></path>
           </svg>
           <span class="side-menu-contact__button-text">Связаться с ИСТОК</span>
-          <input class="side-menu-contact__hidden-input" type="checkbox"/>
-        </label>
+          <input class="side-menu-contact__hidden-input" type="checkbox"
+        /></label>
         <div class="side-menu-contact__links">
-          <a class="side-menu-contact__link">
-            <svg
+          <a class="side-menu-contact__link"
+            ><svg
               width="33"
               height="32"
               viewbox="0 0 33 32"
@@ -708,10 +751,10 @@
                 </clippath>
               </defs>
             </svg>
-            <span class="side-menu-contact__link-text">Чат</span>
-          </a>
-          <a class="side-menu-contact__link">
-            <svg
+            <span class="side-menu-contact__link-text">Чат</span></a
+          >
+          <a class="side-menu-contact__link"
+            ><svg
               width="33"
               height="32"
               viewbox="0 0 33 32"
@@ -739,10 +782,10 @@
                 </clippath>
               </defs>
             </svg>
-            <span class="side-menu-contact__link-text">Чат</span>
-          </a>
-          <a class="side-menu-contact__link">
-            <svg
+            <span class="side-menu-contact__link-text">Чат</span></a
+          >
+          <a class="side-menu-contact__link"
+            ><svg
               width="33"
               height="32"
               viewbox="0 0 33 32"
@@ -770,10 +813,10 @@
                 </clippath>
               </defs>
             </svg>
-            <span class="side-menu-contact__link-text">Звонок</span>
-          </a>
-          <a class="side-menu-contact__link">
-            <svg
+            <span class="side-menu-contact__link-text">Звонок</span></a
+          >
+          <a class="side-menu-contact__link"
+            ><svg
               width="33"
               height="32"
               viewbox="0 0 33 32"
@@ -801,10 +844,10 @@
                 </clippath>
               </defs>
             </svg>
-            <span class="side-menu-contact__link-text">Сообщество</span>
-          </a>
-          <a class="side-menu-contact__link">
-            <svg
+            <span class="side-menu-contact__link-text">Сообщество</span></a
+          >
+          <a class="side-menu-contact__link"
+            ><svg
               width="33"
               height="32"
               viewbox="0 0 33 32"
@@ -832,14 +875,11 @@
                 </clippath>
               </defs>
             </svg>
-            <span class="side-menu-contact__link-text">Сообщество</span>
-          </a>
+            <span class="side-menu-contact__link-text">Сообщество</span></a
+          >
         </div>
       </div>
     </main>
-
-    <!-- progress bar -->
-
     <ul class="bottom-progress-bar">
       <li class="bottom-progress-bar__item">
         <button
@@ -926,10 +966,116 @@
         </button>
       </li>
     </ul>
-    <script
-      src="./src/js/pageEntryPoints/index.js"
-      type="module"
-      defer
-    ></script>
+
+    <!-- modal window to request a quote -->
+    <div class="modal" id="requestQuoteModal">
+      <div class="modal__content">
+        <button
+          class="modal__close"
+          data-modal="requestQuoteModal"
+          id="requestQuoteModalClose"
+        >
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0.209396 0.210303C-0.0697984 0.490706 -0.0697989 0.94533 0.209396 1.22573L6.01138 7.05284L0.314625 12.7743C0.0354299 13.0547 0.0354297 13.5093 0.314624 13.7897C0.593819 14.0701 1.04648 14.0701 1.32568 13.7897L7.02243 8.06827L12.6791 13.7494C12.9582 14.0298 13.4109 14.0298 13.6901 13.7494C13.9693 13.469 13.9693 13.0144 13.6901 12.734L8.03349 7.05284L13.7953 1.26604C14.0745 0.985641 14.0745 0.531016 13.7953 0.250613C13.5161 -0.029791 13.0635 -0.0297915 12.7843 0.250612L7.02243 6.03741L1.22045 0.210303C0.941255 -0.0701008 0.488591 -0.070101 0.209396 0.210303Z"
+              fill="#222222"
+            />
+          </svg>
+        </button>
+        <div class="modal__decoration-container">
+          <img
+            src="./src/assets/images/content/modal-to-request.png"
+            alt="beautiful modern interior"
+          />
+        </div>
+        <div class="modal__info-container">
+          <div class="modal__buttons">
+            <button class="button button_slim_x button_white">Кухня</button>
+            <button class="button button_slim_x button_white">Гардероб</button>
+            <button class="button button_slim_x button_white">Прихожая</button>
+            <button class="button button_slim_x button_white">Комод</button>
+            <button class="button button_slim_x button_white">Стеллаж</button>
+            <button class="button button_slim_x button_white">
+              Комплексный заказ
+            </button>
+          </div>
+          <a class="modal__link font-body-2" href="./request.html"
+            >Пропустить и перейти к заявке</a
+          >
+        </div>
+      </div>
+      <script
+        src="./src/js/pageEntryPoints/index.js"
+        type="module"
+        defer
+      ></script>
+    </div>
+    <!-- modal window to register or continue without registration -->
+    <div class="modal" id="registerModal">
+      <div class="modal__content">
+        <button
+          class="modal__close"
+          data-modal="registerModal"
+          id="registerModalClose"
+        >
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0.209396 0.210303C-0.0697984 0.490706 -0.0697989 0.94533 0.209396 1.22573L6.01138 7.05284L0.314625 12.7743C0.0354299 13.0547 0.0354297 13.5093 0.314624 13.7897C0.593819 14.0701 1.04648 14.0701 1.32568 13.7897L7.02243 8.06827L12.6791 13.7494C12.9582 14.0298 13.4109 14.0298 13.6901 13.7494C13.9693 13.469 13.9693 13.0144 13.6901 12.734L8.03349 7.05284L13.7953 1.26604C14.0745 0.985641 14.0745 0.531016 13.7953 0.250613C13.5161 -0.029791 13.0635 -0.0297915 12.7843 0.250612L7.02243 6.03741L1.22045 0.210303C0.941255 -0.0701008 0.488591 -0.070101 0.209396 0.210303Z"
+              fill="#222222"
+            />
+          </svg>
+        </button>
+        <div class="modal__inner">
+          <h2 class="text-color-accent font-body-1 modal__title">
+            ВЫ НЕ ЗАРЕГИСТРИРОВАНЫ!
+          </h2>
+          <p class="font-body-1 modal__text">
+            Уважаемый пользователь, для обеспечения сохранности ваших данных
+            настоятельно рекомендуем вам пройти процесс регистрации.
+          </p>
+          <p class="font-body-1">
+            После регистрации вы сможете легко и быстро входить в свой профиль,
+            отслеживать заказы, получите персональные предложения и возможность
+            участия в реферальной программе.
+          </p>
+          <p class="font-body-1">
+            Регистрация займёт всего несколько минут, и после её завершения вы
+            сможете пользоваться всеми преимуществами нашего сайта без
+            необходимости постоянно вводить данные. Мы заботимся о наших
+            клиентах и гарантируем, что ваши данные будут использоваться только
+            в соответствии с политикой конфиденциальности.
+          </p>
+          <div class="modal__button-wrapper">
+            <a class="button button_register" href="./register.html"
+              >Зарегистрироваться</a
+            >
+            <a class="font-body-2" href="./request.html"
+              >Продолжить без регистрации</a
+            >
+          </div>
+        </div>
+      </div>
+      <script
+        src="./src/js/pageEntryPoints/index.js"
+        type="module"
+        defer
+      ></script>
+    </div>
   </body>
 </html>
