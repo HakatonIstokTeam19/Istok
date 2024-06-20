@@ -2,6 +2,7 @@
   /* Typography */
 
   --font-main: "VelaSans";
+  --font-10: 10px;
   --font-12: 12px;
   --font-14: 14px;
   --font-16: 16px;
@@ -14,12 +15,15 @@
   --weight-light-x: 200;
   --weight-light: 300;
   --weight-regular: 400;
+  --weight-bold-semi: 600;
   --weight-bold: 700;
   --weight-bold-x: 800;
 
   --line-height-20: 20px;
   --line-height-22: 22px;
   --line-height-26: 26px;
+  --line-height-32: 32px;
+  --line-height-36: 36px;
   --line-height-65: 65px;
 
   /* Colors */
@@ -27,9 +31,47 @@
   --black: #000000;
   --green: #769d22;
   --grey: #807f7e;
-  --light-black: #222222; /* Blackbody */
+  --light-black: #222222;
   --whitish: #fffdfb;
   --beige: #e8e9da;
+
+  /* spaces */
+--padding-102: 102px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:before, *, :after {
+  outline: none;
+  text-decoration: none;
+  border: none;
+  box-sizing: border-box;
+  text-decoration-line: none;
+}
+
+/* С НАМИ НАЧИНАЕТСЯУЮТ ВАШЕГО ДОМА */
+
+
+body {
+  overflow: hidden;
+  background-color: var(--whitish);
+  font-family: var(--font-main);
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.font-btn-light-24 {
+  font-family: var(--font-main);
+  font-size: var(--font-24);
+  font-weight: var(--weight-light);
+  line-height: var(--line-height-32);
+  color: var(--light-black);
 }
 
 .font-body-1 {
@@ -37,6 +79,23 @@
   font-size: var(--font-16);
   font-weight: var(--weight-regular);
   line-height: var(--line-height-26);
+  color: var(--light-black);
+}
+
+.font-body-light-1 {
+  font-family: var(--font-main);
+  font-size: var(--font-16);
+  font-weight: var(--weight-light);
+  line-height: var(--line-height-26);
+  color: var(--light-black);
+}
+
+
+.font-heading-bold-16 {
+  font-family: var(--font-main);
+  font-size: var(--font-16);
+  font-weight: var(--weight-bold-x);
+  line-height: var(--line-height-20);
   color: var(--light-black);
 }
 
@@ -48,10 +107,27 @@
   color: var(--light-black);
 }
 
+.font-body-light-2 {
+  font-family: var(--font-main);
+  font-size: var(--font-14);
+  font-weight: var(--weight-light);
+  line-height: var(--line-height-22);
+  color: var(--light-black);
+  text-transform: none;
+}
+
 .font-body-3 {
   font-family: var(--font-main);
   font-size: var(--font-12);
   font-weight: var(--weight-light-x);
+  line-height: var(--line-height-16);
+  color: var(--light-black);
+}
+
+.font-body-3-bold {
+  font-family: var(--font-main);
+  font-size: var(--font-12);
+  font-weight: var(--weight-bold-x);
   line-height: var(--line-height-16);
   color: var(--light-black);
 }
@@ -76,16 +152,17 @@
   font-family: var(--font-main);
   font-size: var(--font-32);
   font-weight: var(--weight-regular);
+  line-height: var(--line-height-36);
   color: var(--light-black);
 }
 
-.font-heading-bold-16 {
+.font-heading-bold-32 {
   font-family: var(--font-main);
-  font-size: var(--font-16);
+  font-size: var(--font-32);
   font-weight: var(--weight-bold-x);
-  line-height: var(--line-height-20);
   color: var(--light-black);
-}
-.text-color-accent {
-  color: var(--green);
-}
+  }
+
+  .text-color-accent {
+    color: var(--green);
+    }
