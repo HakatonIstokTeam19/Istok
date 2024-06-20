@@ -8,7 +8,7 @@ function scrollToItem(itemId) {
 }
 
 const controls = document.querySelectorAll(".slide-controls__btn");
-controls.forEach((control, index) => {
+controls.forEach((control) => {
   control.addEventListener("click", () => {
     const sectionId = control.getAttribute("data-related-section-id");
     if (sectionId) {
@@ -39,9 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
         if (textContent.innerHTML !== newContent) {
           textContent.innerHTML = newContent;
           textBlock.classList.add("fade");
+          textContent.style.opacity = 0;
           setTimeout(() => {
             textBlock.classList.remove("fade");
           }, 500);
+          setTimeout(() => {
+            textContent.style.opacity = 1;
+          }, 700);
           // change width of text block for brand section
           if (entry.target.id === "brand") {
             textBlock.style.width = "auto";

@@ -16,44 +16,158 @@
     />
     <link
       rel="stylesheet"
-      href="../assets/images/interface/icons-sprite-sheet.svg#logo"
+      href="../assets/images/interface/icons-sprite-sheet.svg"
     />
   </head>
   <body>
-    <header class="about-header">
-      <svg alt="logo" class="about-header__logo">
+    <header class="header">
+      <svg alt="logo" class="header__logo">
         <use
           href="../assets/images/interface/icons-sprite-sheet.svg#logo"
         ></use>
       </svg>
-      <nav class="about-header__nav">
-        <ul class="about-header__links">
-          <li class="about-header__link font-body-1 active">
-            <a
-              class="about-header__link font-body-1 href="
-              href="../../index.html"
+      <nav class="header__nav">
+        <ul class="header__links">
+          <li>
+            <a class="header__link font-body-1" href="../../index.html"
               >Главная</a
             >
           </li>
-          <li class="about-header__link font-body-1">
-            <a class="about-header__link font-body-1 href=">Готовая мебель</a>
-          </li>
-          <li class="about-header__link font-body-1">
-            <a class="about-header__link font-body-1 href=">Мебель на заказ</a>
-          </li>
-          <li class="about-header__link font-body-1">
-            <a
-              class="about-header__link font-body-1"
-              href="./src/about/about.html"
-              >О нас</a
+          <li class="header__link font-body-1 active">
+            <a class="header__link font-body-1" href="furniture.html"
+              >Готовая мебель</a
             >
+          </li>
+          <li class="header__link font-body-1">
+            <a class="header__link font-body-1" href="">Мебель на заказ</a>
+          </li>
+          <li class="header__link font-body-1 active">
+            <a class="header__link font-body-1" href="./about.html">О нас</a>
           </li>
         </ul>
       </nav>
-      <a class="about-header__link font-body-1 header__sign-in" href="#"
+      <a class="header__link font-body-1 header__sign-in" href="#"
         >Войти в личный кабинет</a
       >
     </header>
-    <main class="container"></main>
+    <main class="container">
+      <aside class="main__filter-bar">
+        <!-- <div class="main__filter-wrapper"> -->
+
+        <div class="main__filter-options">
+          <h2 class="main__filter-heading font-body-2">Фильтр</h2>
+          <ul>
+            <li class="main__filter-option font-body-2 active">Популярное</li>
+            <li class="main__filter-option font-body-2">Кухня</li>
+            <li class="main__filter-option font-body-2">Системы хранения</li>
+            <li class="main__filter-option font-body-2">Прихожая</li>
+          </ul>
+          <!-- </div> -->
+        </div>
+      </aside>
+      <section class="main__cards-section">
+        <div class="main__cards">
+          <div class="main__card">
+            <img src="../assets/images/content/kitchen2.png" alt="kitchen" />
+            <div class="main__card-tags">
+              <p class="main__card-tag main font-body-4">Гарантия</p>
+              <p class="main__card-tag main font-body-4">Износостойкость</p>
+              <p class="main__card-tag font-body-4">Кухня</p>
+              <p class="main__card-tag font-body-4">Для дома</p>
+            </div>
+            <h1 id="card-name" class="font-body-1">Кухня «Комфорт»</h1>
+            <p id="card-price" class="font-heading-bold-16">490 500 ₽</p>
+          </div>
+          <div class="main__card">
+            <img src="../assets/images/content/kitchen2.png" alt="kitchen" />
+            <div class="main__card-tags">
+              <p class="main__card-tag main font-body-4">Гарантия</p>
+              <p class="main__card-tag main font-body-4">Износостойкость</p>
+              <p class="main__card-tag font-body-4">Кухня</p>
+              <p class="main__card-tag font-body-4">Для дома</p>
+            </div>
+            <h1 id="card-name" class="font-body-1">Кухня «Комфорт»</h1>
+            <p id="card-price" class="font-heading-bold-16">490 500 ₽</p>
+          </div>
+          <div class="main__card">
+            <img src="../assets/images/content/kitchen2.png" alt="kitchen" />
+            <div class="main__card-tags">
+              <p class="main__card-tag main font-body-4">Гарантия</p>
+              <p class="main__card-tag main font-body-4">Износостойкость</p>
+              <p class="main__card-tag font-body-4">Кухня</p>
+              <p class="main__card-tag font-body-4">Для дома</p>
+            </div>
+            <h1 id="card-name" class="font-body-1">Кухня «Комфорт»</h1>
+            <p id="card-price" class="font-heading-bold-16">490 500 ₽</p>
+          </div>
+          <div class="main__card">
+            <img src="../assets/images/content/kitchen2.png" alt="kitchen" />
+            <div class="main__card-tags">
+              <p class="main__card-tag main font-body-4">Гарантия</p>
+              <p class="main__card-tag main font-body-4">Износостойкость</p>
+              <p class="main__card-tag font-body-4">Кухня</p>
+              <p class="main__card-tag font-body-4">Для дома</p>
+            </div>
+            <h1 id="card-name" class="font-body-1">Кухня «Комфорт»</h1>
+            <p id="card-price" class="font-heading-bold-16">490 500 ₽</p>
+          </div>
+          <div class="main__card">
+            <img src="../assets/images/content/kitchen2.png" alt="kitchen" />
+            <div class="main__card-tags">
+              <p class="main__card-tag main font-body-4">Гарантия</p>
+              <p class="main__card-tag main font-body-4">Износостойкость</p>
+              <p class="main__card-tag font-body-4">Кухня</p>
+              <p class="main__card-tag font-body-4">Для дома</p>
+            </div>
+            <h1 id="card-name" class="font-body-1">Кухня «Комфорт»</h1>
+            <p id="card-price" class="font-heading-bold-16">490 500 ₽</p>
+          </div>
+          <!-- <div class="main__card">
+            <img src="../assets/images/content/kitchen2.png" alt="kitchen" />
+            <div class="main__card-tags">
+              <p class="main__card-tag main font-body-4">Гарантия</p>
+              <p class="main__card-tag main font-body-4">Износостойкость</p>
+              <p class="main__card-tag font-body-4">Кухня</p>
+              <p class="main__card-tag font-body-4">Для дома</p>
+            </div>
+            <h1 id="card-name" class="font-body-1">Кухня «Комфорт»</h1>
+            <p id="card-price" class="font-heading-bold-16">490 500 ₽</p>
+          </div>
+          <div class="main__card">
+            <img src="../assets/images/content/kitchen2.png" alt="kitchen" />
+            <div class="main__card-tags">
+              <p class="main__card-tag main font-body-4">Гарантия</p>
+              <p class="main__card-tag main font-body-4">Износостойкость</p>
+              <p class="main__card-tag font-body-4">Кухня</p>
+              <p class="main__card-tag font-body-4">Для дома</p>
+            </div>
+            <h1 id="card-name" class="font-body-1">Кухня «Комфорт»</h1>
+            <p id="card-price" class="font-heading-bold-16">490 500 ₽</p>
+          </div>
+          <div class="main__card">
+            <img src="../assets/images/content/kitchen2.png" alt="kitchen" />
+            <div class="main__card-tags">
+              <p class="main__card-tag main font-body-4">Гарантия</p>
+              <p class="main__card-tag main font-body-4">Износостойкость</p>
+              <p class="main__card-tag font-body-4">Кухня</p>
+              <p class="main__card-tag font-body-4">Для дома</p>
+            </div>
+            <h1 id="card-name" class="font-body-1">Кухня «Комфорт»</h1>
+            <p id="card-price" class="font-heading-bold-16">490 500 ₽</p>
+          </div>
+          <div class="main__card">
+            <img src="../assets/images/content/kitchen2.png" alt="kitchen" />
+            <div class="main__card-tags">
+              <p class="main__card-tag main font-body-4">Гарантия</p>
+              <p class="main__card-tag main font-body-4">Износостойкость</p>
+              <p class="main__card-tag font-body-4">Кухня</p>
+              <p class="main__card-tag font-body-4">Для дома</p>
+            </div>
+            <h1 id="card-name" class="font-body-1">Кухня «Комфорт»</h1>
+            <p id="card-price" class="font-heading-bold-16">490 500 ₽</p>
+          </div> -->
+        </div>
+      </section>
+    </main>
   </body>
 </html>

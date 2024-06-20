@@ -1,0 +1,69 @@
+.main__filter-bar {
+  width: 15%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8%;
+  gap: 5%;
+}
+
+.main__filter-options ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main__filter-option {
+  cursor: pointer;
+}
+
+.active {
+  color: var(--green);
+}
+
+.main__cards-section {
+  width: 85%;
+  overflow-x: hidden;
+  margin-top: 6%;
+}
+
+.main__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(356px, 1fr));
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.main__card {
+  max-width: 356px;
+  max-height: 244px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.main__card {
+  max-width: 356px;
+  max-height: 244px;
+  width: 100%;
+  height: 100%;
+}
+
+.main__card-tags {
+  display: flex;
+  justify-content: flex-start;
+  gap: 3%;
+}
+
+.main__card-tag {
+  padding: 2px 4px;
+  border: 1px solid var(--light-black);
+  text-transform: none;
+  cursor: pointer;
+}
+
+.main__card-tag.main {
+  border: 1px solid var(--green);
+}

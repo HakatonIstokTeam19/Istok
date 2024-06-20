@@ -2,6 +2,7 @@
   /* Typography */
 
   --font-main: "VelaSans";
+  --font-10: 10px;
   --font-12: 12px;
   --font-14: 14px;
   --font-16: 16px;
@@ -30,6 +31,33 @@
   --light-black: #222222;
   --whitish: #fffdfb;
   --beige: #e8e9da;
+
+  /* spaces */
+  --padding-102: 102px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:before,
+*,
+:after {
+  outline: none;
+  text-decoration: none;
+  border: none;
+  box-sizing: border-box;
+  text-decoration-line: none;
+}
+
+body {
+  overflow: hidden;
+  background-color: var(--whitish);
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .font-body-1 {
@@ -53,6 +81,21 @@
   font-size: var(--font-12);
   font-weight: var(--weight-light-x);
   line-height: var(--line-height-16);
+  color: var(--light-black);
+}
+
+.font-body-3-bold {
+  font-family: var(--font-main);
+  font-size: var(--font-12);
+  font-weight: var(--weight-bold-x);
+  line-height: var(--line-height-16);
+  color: var(--light-black);
+}
+
+.font-body-4 {
+  font-family: var(--font-main);
+  font-size: var(--font-10);
+  font-weight: var(--weight-light);
   color: var(--light-black);
 }
 
