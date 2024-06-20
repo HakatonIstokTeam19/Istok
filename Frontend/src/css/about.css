@@ -264,7 +264,6 @@
 
 /* slide-out side menu */
 
-
 .side-menu-contact {
   position: fixed;
   display: flex;
@@ -284,7 +283,7 @@
 .side-menu-contact__button {
   position: fixed;
   right: 0;
-  top: 5%;
+  top: 90px;
   width: 73px;
   height: 141px;
   background-color: inherit;
@@ -301,7 +300,7 @@
   writing-mode: vertical-lr;
   text-orientation: mixed;
   font-weight: 500;
-  transition: transform 0.5s ease-in-out; /* Ensuring the button transition is smooth */
+  transition: transform 0.5s ease-in-out;
 }
 
 .side-menu-contact__pointer {
@@ -336,7 +335,8 @@
   align-items: center;
   height: 340px;
   justify-content: space-between;
-  margin-top: 171px;
+  margin-top: clamp(27px, 40vh, 338px);
+  margin-bottom: clamp(45px, 20vh, 90px);
 }
 
 .side-menu-contact__link {
