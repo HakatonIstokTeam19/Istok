@@ -152,6 +152,7 @@ a {
   font-family: var(--font-main);
   font-size: var(--font-32);
   font-weight: var(--weight-regular);
+  line-height: var(--line-height-36);
   color: var(--light-black);
 }
 
