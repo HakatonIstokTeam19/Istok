@@ -274,14 +274,7 @@
   text-align: right;
 }
 
-.main__button {
-  font-size: 24px;
-  font-weight: 200;
-  border: 1px solid var(--light-black);
-  background-color: transparent;
-  padding: 17px 35px;
-  cursor: pointer;
-  transition: background-color 0.5s ease-in-out;
+.page1__button {
   margin-top: auto;
 }
 
@@ -936,14 +929,8 @@
   font-weight: 300;
 }
 
-.page8__order {
+.page8__btn-order {
   margin-top: 25px;
-  border: 1px solid var(--black);
-  background-color: var(--whitish);
-  padding: 15px 50px;
-  font-size: 24px;
-  font-weight: 200;
-  cursor: pointer;
 }
 
 /* page 8 - consulting */
@@ -988,11 +975,7 @@
   max-width: 385px;
   cursor: pointer;
 
-  font-family: var(--font-main);
-  font-size: var(--font-16);
-  font-weight: var(--weight-regular);
-  line-height: var(--line-height-26);
-  color: var(--light-black);
+
 }
 
 .footer {
@@ -1086,7 +1069,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   top: 0;
   right: 0;
   width: var(--padding-102);
@@ -1152,6 +1135,7 @@
   align-items: center;
   height: 340px;
   justify-content: space-between;
+  margin-top: 171px;
 }
 
 .side-menu-contact__link {
@@ -1172,7 +1156,7 @@
   font-size: var(--font-12);
   font-weight: var(--weight-light-x);
   line-height: var(--line-height-16);
-  color: var(--whitish);
+  color: var(--beige);
 }
 
 
