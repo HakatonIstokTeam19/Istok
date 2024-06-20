@@ -50,10 +50,14 @@ html {
   text-decoration-line: none;
 }
 
+/* С НАМИ НАЧИНАЕТСЯУЮТ ВАШЕГО ДОМА */
+
+
 body {
   overflow: hidden;
   background-color: var(--whitish);
-  font-family: var(--font-main)
+  font-family: var(--font-main);
+  position: relative;
 }
 
 a {
