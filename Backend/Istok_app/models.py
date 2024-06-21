@@ -151,10 +151,11 @@ class Orders(models.Model):
     order_3D_model = models.ImageField(default='default_mebel.jpg', verbose_name='3D модель')
 
 
+#todo в loyalty_personal_proposal добавил max_length=200 для sqlite
 class Loyalty(models.Model):
     loyalty_user = models.ForeignKey(User, on_delete=models.CASCADE)
     loyalty_bonus_balance = models.IntegerField(null=True, blank=True, verbose_name=' Текущий баланс бонусных баллов')
-    loyalty_personal_proposal = models.CharField(verbose_name='Персональные предложения')
+    loyalty_personal_proposal = models.CharField(max_length=200, verbose_name='Персональные предложения')
     loyalty_QR_code = models.ImageField(verbose_name='QR-код')
 
 

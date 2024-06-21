@@ -1,21 +1,27 @@
 
-{% load crispy_forms_tags %}
-{% block content %}
-    <div class="content-section">
-        <form method="POST">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Вход</legend>
-                {{ form|crispy }}
-            </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Войти</button>
-            </div>
-        </form>
-        <div class="border-top pt-3">
-            <small class="text-muted">
-                Нужен аккаунт? <a class="ml-2" href="{% url 'register' %}">Регистрация</a>
-            </small>
-        </div>
-    </div>
-{% endblock content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+<body>
+  <h2>Авторизоваться(custom)</h2>
+  Если у вас ещё нет учётной записи, пожалуйста, сначала <a href="{% url 'signup' %}">зарегистрируйтесь</a>
+    <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      <p>{{ form.login }}</p>
+      <p>{{ form.password }} <a href="{% url 'password_reset' %}">Забыли Ваш пароль?</a></p>
+      <input type="submit" value="Войти" />
+    </form>
+  <hr>
+  <p>Войти с помощью</p>
+  <p><a href="#">Гугл</a> // <a href="#">ВК</a> // <a href="#">Яндекс</a></p>
+  <p>Нет аккаунта?</p>
+  <button><a href="{% url 'signup' %}"><h4>Зарегистрироваться</h4></a></button>
+</body>
+
+
+</html>
