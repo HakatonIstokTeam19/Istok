@@ -60,7 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
+    # `allauth`
     "allauth.account.middleware.AccountMiddleware",
 ]
 
@@ -90,14 +90,22 @@ WSGI_APPLICATION = 'Istok.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
+# DATABASES = {
+#     'default': {
+#     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#     'NAME': os.getenv("Istok_DB_NAME"),
+#     'USER': os.getenv("Istok_DB_LOGIN"),
+#     'PASSWORD': os.getenv("Istok_DB_PASS"),
+#     'HOST': os.getenv("Istok_DB_HOST"),
+#     'PORT': os.getenv("Istok_DB_PORT"),
+#     }
+# }
+
 DATABASES = {
     'default': {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': os.getenv("Istok_DB_NAME"),
-    'USER': os.getenv("Istok_DB_LOGIN"),
-    'PASSWORD': os.getenv("Istok_DB_PASS"),
-    'HOST': os.getenv("Istok_DB_HOST"),
-    'PORT': os.getenv("Istok_DB_PORT"),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -126,6 +134,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru-RU'
 # LANGUAGE_CODE = 'en'
+
 
 TIME_ZONE = 'UTC'
 
@@ -186,4 +195,5 @@ ACCOUNT_FORMS = {'signup': 'users.forms.CustomSignupForm'}
 #todo был изменен. в env был полный адрес
 # DEFAULT_FROM_EMAIL = EMAIL_HOST_USER + '@yandex.ru'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# AUTH_USER_MODEL = 'users.CustomUser'
 ########## allauth

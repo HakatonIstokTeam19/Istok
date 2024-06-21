@@ -30,7 +30,7 @@ class Orders(models.Model):
 class Loyalty(models.Model):
     loyalty_user = models.ForeignKey(User, on_delete=models.CASCADE)
     loyalty_bonus_balance = models.IntegerField(null=True, blank=True, verbose_name=' Текущий баланс бонусных баллов')
-    loyalty_personal_proposal = models.CharField(verbose_name='Персональные предложения')
+    loyalty_personal_proposal = models.CharField(max_length=200, verbose_name='Персональные предложения')
     loyalty_QR_code = models.ImageField(verbose_name='QR-код')
 
 

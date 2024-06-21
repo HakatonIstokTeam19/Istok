@@ -1,13 +1,14 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import Profile
+from .models import Profile  #, CustomUser
 from .validations import *
 
 from allauth.account.forms import (SignupForm, LoginForm)
 from django.contrib.auth.validators import UnicodeUsernameValidator
 
 from django.forms import SelectDateWidget
+
 
 
 
@@ -43,6 +44,7 @@ class CustomSignupForm(SignupForm):
 
 
     class Meta:
+        # model = CustomUser
         model = User
         fields = ('first_name', 'last_name', 'surname', 'birth_date', 'username', 'email', 'password1', 'password2',
                   'mailing', 'personal_data_processing')
