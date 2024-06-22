@@ -84,8 +84,8 @@ class CustomLoginView(LoginView):
         ret = super().get_context_data()
         ret['form'].fields['login'].widget.attrs.update({'placeholder': 'Email или номер телефона'})
         ret['form'].fields['password'].widget.attrs.update({'placeholder': 'Пароль'})
-        ret['form'].fields['login'].label = ''
-        ret['form'].fields['password'].label = ''
+        ret['form'].fields['login'].label = 'Email или номер телефона'
+        ret['form'].fields['password'].label = 'Пароль'
         return ret
 
 

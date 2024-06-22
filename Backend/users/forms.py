@@ -17,7 +17,7 @@ class CustomSignupForm(SignupForm):
     Необходимо прописать путь в настройкахACCOUNT_FORMS = {'signup': 'news.forms.BasicSignupForm'}"""
 
     username = forms.CharField(
-        widget=forms.TextInput(attrs={'placeholder': 'Номер телефона'}),
+        widget=forms.TextInput(attrs={'placeholder': 'Email или номер телефона'}),
         label='Контактный номер',
         max_length=12,
         required=True,

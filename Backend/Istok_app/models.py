@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.core.validators import RegexValidator
+from users.models import Loyalty
 
 
 class Finished_furniture(models.Model):
@@ -137,9 +138,10 @@ class Orders(models.Model):
         ('6', 'Отклонен'),
     ]
     order_number = models.CharField(null=True, max_length=150, verbose_name='Номер заказа')
+    #todo надо написать сеттер для данного поля и собирать фио из данных объектов user и profile
     order_user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Ф.И.О.')
     order_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата заказа')
-    order_shipment_date =  models.DateTimeField(null=True, verbose_name='Дата доставки')
+    order_shipment_date = models.DateTimeField(null=True, verbose_name='Дата доставки')
     order_status = models.CharField(max_length=1, choices=STATUSES, default='1', verbose_name='Статус заказа')
     order_delivery_address = models.CharField(null=True, max_length=150, verbose_name='Адрес доставки')
     order_contract = models.CharField(max_length=150, verbose_name='Договор')
@@ -150,12 +152,10 @@ class Orders(models.Model):
     order_sketch4 = models.ImageField(default='default_mebel.jpg', verbose_name='Эскиз4')
     order_3D_model = models.ImageField(default='default_mebel.jpg', verbose_name='3D модель')
 
+    # Добавил поле для указания кода лояльности
+    # Позже к нему нужно добавить в форму проверку на существование такого кода
+    # и если существует сохранить отношение.
+    order_by_loyalty_code = models.ForeignKey(Loyalty, models.SET_NULL, blank=True, null=True)
 
-#todo в loyalty_personal_proposal добавил max_length=200 для sqlite
-class Loyalty(models.Model):
-    loyalty_user = models.ForeignKey(User, on_delete=models.CASCADE)
-    loyalty_bonus_balance = models.IntegerField(null=True, blank=True, verbose_name=' Текущий баланс бонусных баллов')
-    loyalty_personal_proposal = models.CharField(max_length=200, verbose_name='Персональные предложения')
-    loyalty_QR_code = models.ImageField(verbose_name='QR-код')
 
 

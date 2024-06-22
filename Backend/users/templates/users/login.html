@@ -12,8 +12,9 @@
   Если у вас ещё нет учётной записи, пожалуйста, сначала <a href="{% url 'signup' %}">зарегистрируйтесь</a>
     <form method="post" action="{% url 'login' %}">
       {% csrf_token %}
-      <p>{{ form.login }}</p>
-      <p>{{ form.password }} <a href="{% url 'password_reset' %}">Забыли Ваш пароль?</a></p>
+      {{ form.as_p }}
+{#      <p>{{ form.login }}</p>#}
+{#      <p>{{ form.password }} <a href="{% url 'password_reset' %}">Забыли Ваш пароль?</a></p>#}
       <input type="submit" value="Войти" />
     </form>
   <hr>

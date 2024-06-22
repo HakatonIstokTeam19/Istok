@@ -1,9 +1,8 @@
 from django.contrib import admin
 
-from Istok_app.models import Orders, Loyalty, Finished_furniture, Application
+from Istok_app.models import Orders, Finished_furniture, Application
 
 admin.site.register(Orders)
-admin.site.register(Loyalty)
 admin.site.register(Finished_furniture)
 admin.site.register(Application)
 
