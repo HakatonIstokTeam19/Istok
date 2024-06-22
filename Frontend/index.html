@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./src/css/global.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
     <link rel="stylesheet" href="./src/css/buttons.css" />
+    <link rel="stylesheet" href="./src/css/modal.css" />
   </head>
   <body class="body">
     <!-- Header - часть базового шаблона -->
@@ -56,7 +57,7 @@
               ПРОИЗВОДСТВО МЕБЕЛИ НА ЗАКАЗ <br />
               В САНКТ-ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ
             </p>
-            <button class="button page1__button">Записаться на встречу</button>
+            <button data-modal="requestQuoteModal" class="button page1__button">Записаться на встречу</button>
           </div>
         </div>
         <img src="./src/assets/images/content/home-page-1-bg-1.png" alt="" />
@@ -527,6 +528,7 @@
                     <li>Стеллаж</li>
                   </ul>
                   <button
+                  data-modal="requestQuoteModal"
                     class="button button_white button_short page8__btn-order"
                   >
                     Сделать заказ
