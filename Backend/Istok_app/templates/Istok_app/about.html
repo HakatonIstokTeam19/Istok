@@ -17,7 +17,7 @@
     <header class="header">
       <svg alt="logo" class="header__logo">
         <use
-          href="{% static './src/assets/images/interface/icons-sprite-sheet.svg#logo' %}"
+          href="{% static './src/assets/images/interface/icons-sprite-sheet.svg' %}#logo"
         ></use>
       </svg>
       <nav class="header__nav">
@@ -32,18 +32,34 @@
               Готовая мебель</a>
           </li>
           <li class="header__link font-body-1">
-            <a class="header__link font-body-1 active" href="{% url 'about' %}">
-              О нас</a>
+            <a class="header__link font-body-1 active" href="{% url 'about' %}"
+            >О нас</a>
           </li>
           <li class="header__link font-body-1">
-            <a class="header__link font-body-1" href="{% url 'application_create' %}"
-            >Оставить заявку</a>
+            <a class="header__link font-body-1" href="{% url 'application_create' %}">
+              Оставить заявку</a>
           </li>
         </ul>
       </nav>
-      <a class="header__link font-body-1 header__sign-in" href="{% url 'profile' %}"
-        >Войти в личный кабинет</a
-      >
+
+      {% if request.user.is_authenticated %}
+
+        <a class="about-header__link font-body-1 header__sign-in"
+         href="{% url 'profile' request.user.pk %}"
+        >Личный кабинет</a>
+
+        <a class="about-header__link font-body-1 header__sign-in"
+         href="{% url 'logout' %}"
+        >Выйти</a>
+
+      {% else %}
+
+        <a class="about-header__link font-body-1 header__sign-in"
+         href="{% url 'login' %}"
+        >Войти в личный кабинет</a>
+
+      {% endif %}
+
     </header>
     <main class="main-content container">
       <div class="text-block" id="fixedTextBlockOnAboutPage" aria-hidden="true">
@@ -239,7 +255,7 @@
                   <a href="#" class="social-links__link font-body-2"
                     ><svg class="social-links__icon">
                       <use
-                        href="{% static './src/assets/images/interface/icons-sprite-sheet.svg#telegram' %}"
+                        href="{% static './src/assets/images/interface/icons-sprite-sheet.svg' %}#telegram"
                       ></use>
                     </svg>
                     Официальное сообщество в Telegram</a
@@ -247,7 +263,7 @@
                   <a href="#" class="social-links__link font-body-2"
                     ><svg class="social-links__icon">
                       <use
-                        href="{% static './src/assets/images/interface/icons-sprite-sheet.svg#vkontakte' %}"
+                        href="{% static './src/assets/images/interface/icons-sprite-sheet.svg' %}#vkontakte"
                       ></use>
                     </svg>
                     Официальное сообщество в VK</a

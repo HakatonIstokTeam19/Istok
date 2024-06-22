@@ -1,54 +1,85 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import Profile
+from .models import Profile  #, CustomUser
+from .validations import *
+
+from allauth.account.forms import (SignupForm, LoginForm)
+from django.contrib.auth.validators import UnicodeUsernameValidator
+
+from django.forms import SelectDateWidget
 
 
-class UserRegisterForm(UserCreationForm):
 
-    PLANING_TIME = [
-        ('1', 'Уже идет'),
-        ('2', 'Скоро приступаем'),
-        ('3', 'В течение полугода'),
-        ('4', 'В течение года')
-    ]
-    MEBEL_TYPE = [
-        ('1', 'Кухня'),
-        ('2', 'Гардероб'),
-        ('3', 'Прихожая'),
-        ('4', 'Стелаж'),
-        ('5', 'Комод')
-    ]
 
-    username = forms.CharField(label='Ф.И.О.')
-    birth_date = forms.DateField(label='Дата рождения')
-    phone = forms.CharField(label='Телефон', max_length=12, required=True,
-                            help_text='Номер телефона в формате +7ХХХХХХХХХХ')
-    email = forms.EmailField()
-    repair_planing = forms.BooleanField(label='Планируете ли Вы ремонт?')
-    repair_planing_time = forms.ChoiceField(label='Когда планируется ремонт?', choices=PLANING_TIME)
-    mebel_type = forms.TypedMultipleChoiceField(label='Какая мебель понадобится?', choices=MEBEL_TYPE)
-    mailing = forms.BooleanField(label='Согласие на рассылку новостей')
-    personal_data_processing = forms.BooleanField(label='Согласие на обработку персональных данных')
-    children_having = forms.BooleanField(label='Есть ли у Вас дети?')
+class CustomSignupForm(SignupForm):
+    """Форма дополняющая регистрационную форму allauth новыми полями.
+    Необходимо прописать путь в настройкахACCOUNT_FORMS = {'signup': 'news.forms.BasicSignupForm'}"""
+
+    username = forms.CharField(
+        widget=forms.TextInput(attrs={'placeholder': 'Email или номер телефона'}),
+        label='Контактный номер',
+        max_length=12,
+        required=True,
+        validators=[phone_regex],
+        error_messages={
+            "unique": "Пользователь с таким номером уже зарегистрирован",
+        },
+    )
+    first_name = forms.CharField(label="Имя", required=True,
+        widget=forms.TextInput(attrs={'placeholder': 'Имя'})
+    )
+    last_name = forms.CharField(label="Фамилия", required=True,
+        widget=forms.TextInput(attrs={'placeholder': 'Фамилия'})
+    )
+    surname = forms.CharField(label="Отчество", required=False,
+        widget=forms.TextInput(attrs={'placeholder': 'Отчество'})
+    )
+    birth_date = forms.DateField(label='Дата рождения', widget=SelectDateWidget(years=years_range()))
+    mailing = forms.BooleanField(label='Согласен получать промокоды, выгодные предложения и информацию о скидках',
+        required=False)
+
+    label = 'Согласен на обработку персональных данных и с условиями пользовательских соглашений.'
+    personal_data_processing = forms.BooleanField(label=label, required=False)
 
 
     class Meta:
+        # model = CustomUser
         model = User
-        fields = ['username', 'birth_date', 'phone', 'email', 'password1', 'password2', 'repair_planing',
-                  'repair_planing_time', 'mebel_type', 'mailing', 'personal_data_processing', 'children_having']
+        fields = ('first_name', 'last_name', 'surname', 'birth_date', 'username', 'email', 'password1', 'password2',
+                  'mailing', 'personal_data_processing')
 
 
-class UserUpdateForm(forms.ModelForm):
-    email = forms.EmailField()
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
 
-    class Meta:
-        model = User
-        fields = ['username', 'email']
+    def save(self, request):
+        user = super().save(request)
+        data = self.cleaned_data
+        try:
+            Profile.objects.create(surname=data.get('surname'), user=user, birth_date=data.get('birth_date'),
+                mailing=data.get('mailing'),
+                personal_data_processing=data.get('personal_data_processing'),)
+
+        except Exception as e:
+            print(f'\n\n!!! НЕИЗВЕТСНАЯ ОШИБКА СОЗДАНИЯ ПРОФИЛЯ!!!\n cleaned_data == {data}\n{e}')
+
+        return user
 
 
-class ProfileUpdateForm(forms.ModelForm):
-    class Meta:
-        model = Profile
-        fields = ['birth_date', 'phone']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -8,8 +8,8 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django_filters.views import FilterView
 
 from Istok_app.filters import FinishedFurnitureFilter
-from .models import Orders, Finished_furniture, Application
-from .forms import OrdersCreateForm, Finished_furnitureCreateForm, ApplicationCreateForm
+from .models import Finished_furniture, Application, Orders, Parts
+from .forms import Finished_furnitureCreateForm, ApplicationCreateForm, OrdersCreateForm, PartsCreateForm
 
 
 def home(request):
@@ -82,6 +82,7 @@ class ApplicationCreate(CreateView):
 def application_accept(request):
     return render(request, 'Istok_app/application_accept.html')
 
+
 class OrdersList(LoginRequiredMixin, ListView):
     model = Orders
     ordering = '-order_date'
@@ -98,8 +99,81 @@ class OrdersDetail(LoginRequiredMixin, DetailView):
 
 class OrdersCreate(LoginRequiredMixin, CreateView):
     raise_exception = False
-    # permission_required = ('Istok_app.add_order',)
     form_class = OrdersCreateForm
     model = Orders
     template_name = 'Istok_app/orders_edit.html'
     success_url = reverse_lazy('orders_list')
+
+    @method_decorator(staff_member_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+
+class OrdersUpdate(LoginRequiredMixin, UpdateView):
+    raise_exception = False
+    form_class = OrdersCreateForm
+    model = Orders
+    template_name = 'Istok_app/orders_edit.html'
+    success_url = reverse_lazy('orders_list')
+
+    @method_decorator(staff_member_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        if 'delete' in request.POST and self.request.user.is_staff:
+            self.object = self.get_object()
+            self.object.delete()
+            return redirect(self.get_success_url())
+        return super().post(request, *args, **kwargs)
+
+class PartsList(LoginRequiredMixin, ListView):
+    model = Parts
+    ordering = 'parts_name'
+    template_name = 'Istok_app/parts_list.html'
+    context_object_name = 'parts_list'
+    paginate_by = 10
+
+    @method_decorator(staff_member_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+class PartsDetail(LoginRequiredMixin, DetailView):
+    model = Parts
+    template_name = 'Istok_app/parts.html'
+    context_object_name = 'parts'
+
+    @method_decorator(staff_member_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+
+class PartsCreate(LoginRequiredMixin, CreateView):
+    raise_exception = False
+    form_class = PartsCreateForm
+    model = Parts
+    template_name = 'Istok_app/parts_edit.html'
+    success_url = reverse_lazy('parts_list')
+
+    @method_decorator(staff_member_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+
+class PartsUpdate(LoginRequiredMixin, UpdateView):
+    raise_exception = False
+    form_class = PartsCreateForm
+    model = Parts
+    template_name = 'Istok_app/parts_edit.html'
+    success_url = reverse_lazy('parts_list')
+
+    @method_decorator(staff_member_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        if 'delete' in request.POST and self.request.user.is_staff:
+            self.object = self.get_object()
+            self.object.delete()
+            return redirect(self.get_success_url())
+        return super().post(request, *args, **kwargs)

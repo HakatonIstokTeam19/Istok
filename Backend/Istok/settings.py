@@ -41,13 +41,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'Istok_app.apps.IstokAppConfig',
-    'users.apps.UsersConfig',
     'crispy_forms',
     'bootstrap4',
     'crispy_bootstrap4',
-    'django_email_verification',
 
+    'users.apps.UsersConfig',
+    'allauth',
+    'allauth.account',
 ]
 
 MIDDLEWARE = [
@@ -58,6 +60,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # `allauth`
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = 'Istok.urls'
@@ -73,6 +77,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # `allauth` needs this from django
+                'django.template.context_processors.request',
             ],
         },
     },
@@ -84,17 +90,23 @@ WSGI_APPLICATION = 'Istok.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#     'NAME': os.getenv("Istok_DB_NAME"),
+#     'USER': os.getenv("Istok_DB_LOGIN"),
+#     'PASSWORD': os.getenv("Istok_DB_PASS"),
+#     'HOST': os.getenv("Istok_DB_HOST"),
+#     'PORT': os.getenv("Istok_DB_PORT"),
+#     }
+# }
+
 DATABASES = {
     'default': {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': os.getenv("Istok_DB_NAME"),
-    'USER': os.getenv("Istok_DB_LOGIN"),
-    'PASSWORD': os.getenv("Istok_DB_PASS"),
-    'HOST': os.getenv("Istok_DB_HOST"),
-    'PORT': os.getenv("Istok_DB_PORT"),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -134,33 +146,13 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_URL = 'static/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# функция, которая сделает пользователя активным
-# после того, как он перейдет по ссылке
-def verified_callback(user):
-    user.is_active = True
-
-EMAIL_VERIFIED_CALLBACK = verified_callback
-
-# тема письма
-EMAIL_MAIL_SUBJECT = 'Confirm your email'
-# шаблон письма в html
-EMAIL_MAIL_HTML = 'mail_body.html'
-# текстовый шаблон
-EMAIL_MAIL_PLAIN = 'mail_body.txt'
-# время жизни ссылки
-EMAIL_MAIL_TOKEN_LIFE = 60 * 60
-# шаблон, который увидят после перехода по ссылке
-EMAIL_MAIL_PAGE_TEMPLATE = 'confirm_template.html'
-# домен для использования в ссылке
-EMAIL_PAGE_DOMAIN = 'http://127.0.0.1:8000/'
-EMAIL_MULTI_USER = True
 
 # настройки вашего SMTP сервера
 EMAIL_HOST = os.getenv('EMAIL_HOST')
@@ -175,7 +167,29 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'login'
+
+########## allauth
+AUTHENTICATION_BACKENDS = [
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by email
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
 LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
 LOGOUT_URL = 'logout'
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+# ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+# своя форма регистрации юзера
+ACCOUNT_FORMS = {'signup': 'users.forms.CustomSignupForm'}
+#todo был изменен. в env был полный адрес
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER + '@yandex.ru'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# AUTH_USER_MODEL = 'users.CustomUser'
+########## allauth

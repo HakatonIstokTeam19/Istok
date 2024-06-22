@@ -30,20 +30,33 @@
 }
 
 .button_white {
-    background-color: var(--whitish);
+  background-color: var(--whitish);
 }
 
 .button_short {
-    max-width: 263px;
+  max-width: 263px;
 }
 
 .button_slim {
-    height: 48px;
-    font-size: var(--font-16);
-    font-weight: var(--weight-regular);
-    line-height: var(--line-height-26);
-    color: var(--light-black);
+  height: 48px;
+  font-size: var(--font-16);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-height-26);
+  color: var(--light-black);
 }
 
+.button_slim_x {
+  height: 40px;
+  max-width: 148px;
+  font-size: var(--font-12);
+  font-weight: var(--weight-regular);
+  color: var(--light-black);
+}
 
-
+.button_register {
+  height: 40px;
+  max-width: 236px;
+  font-size: var(--font-14);
+  font-weight: var(--weight-regular);
+  color: var(--light-black);
+}

@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание/Редактирование комплектующих деталей</title>
+</head>
+<body>
+    <h1>Создание/Редактирование комплектующих деталей</h1>
+
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Сохранить</button>
+        <button type="submit" name="delete" onclick="return confirm('Вы уверены, что хотите удалить эту карточку?')">Удалить деталь</button>
+    </form>
+</body>
+</html>
