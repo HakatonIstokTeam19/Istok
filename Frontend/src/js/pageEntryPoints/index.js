@@ -1,6 +1,7 @@
 import handleResize from "../shared/handleResize.js";
 import initHomeScrollAndSlider1 from "../shared/handleHomeScrollAndSlider.js";
 import initScrollToViewByClick from "../shared/scrollToViewByClick.js";
+import initModals from "../shared/handleModals.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
@@ -12,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", resizeHandler);
     scrollHandler();
   } else console.debug("No container found");
+
+  initModals();
 
   const controls = document.querySelectorAll(".bottom-progress-bar__btn");
   initScrollToViewByClick(controls);

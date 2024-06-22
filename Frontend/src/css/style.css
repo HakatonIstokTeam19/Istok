@@ -105,13 +105,13 @@
 
 .container {
   --_main-padding-top: 124px;
+  position: relative;
+  z-index: 90;
   height: 100vh;
   flex-direction: row;
   flex-wrap: nowrap;
   display: flex;
   white-space: nowrap;
-  position: relative;
-  z-index: 90;
 }
 
 .container::-webkit-scrollbar {
@@ -874,7 +874,7 @@
   align-items: center;
   width: 180px;
   height: 100%;
-  z-index: 20000;
+  z-index: 200;
   padding: 12px 17px;
   background-color: var(--light-black);
 }
@@ -1131,3 +1131,4 @@
 .slide-control__circle_active:hover {
   background-color: var(--whitish);
 }
+
