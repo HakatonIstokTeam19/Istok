@@ -52,7 +52,6 @@ html {
   text-decoration-line: none;
 }
 
-/* С НАМИ НАЧИНАЕТСЯУЮТ ВАШЕГО ДОМА */
 
 
 body {
@@ -65,6 +64,14 @@ body {
 a {
   text-decoration: none;
   cursor: pointer;
+}
+
+.font-heading-24 {
+  font-family: var(--font-main);
+  font-size: var(--font-24);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-height-28);
+  color: var(--light-black);
 }
 
 .font-btn-light-24 {
@@ -145,6 +152,14 @@ a {
   font-family: var(--font-main);
   font-size: var(--font-52);
   font-weight: var(--weight-bold);
+  line-height: var(--line-height-65);
+  color: var(--light-black);
+}
+
+.font-heading-48 {
+  font-family: var(--font-main);
+  font-size: var(--font-48);
+  font-weight: var(--weight-regular);
   line-height: var(--line-height-65);
   color: var(--light-black);
 }

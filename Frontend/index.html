@@ -29,7 +29,7 @@
             <a class="header__link font-body-1" href="./about.html">О нас</a>
           </li>
           <li class="header__link font-body-1">
-            <a class="header__link font-body-1" href="./request.html"
+            <a class="header__link font-body-1" href="./request-select-furniture.html"
               >Оставить заявку</a
             >
           </li>
@@ -615,9 +615,9 @@
               удобное для вас время!
             </p>
           </div>
-          <button data-modal="registerModal" class="button button_white button_slim">
+          <a class="button button_white button_slim" href="./request-skip-selection.html">
             Заказать звонок
-          </button>
+          </a>
         </div>
       </section>
       <footer class="footer">
@@ -998,16 +998,15 @@
         </div>
         <div class="modal__info-container">
           <div class="modal__buttons">
-            <button class="button button_slim_x button_white">Кухня</button>
-            <button class="button button_slim_x button_white">Гардероб</button>
-            <button class="button button_slim_x button_white">Прихожая</button>
-            <button class="button button_slim_x button_white">Комод</button>
-            <button class="button button_slim_x button_white">Стеллаж</button>
-            <button class="button button_slim_x button_white">
-              Комплексный заказ
-            </button>
+            <a class="button button_slim_x button_white" href="./request-select-furniture.html">Кухня</a>
+            <a class="button button_slim_x button_white" href="./request-select-furniture.html">Гардероб</a>
+            <a class="button button_slim_x button_white" href="./request-select-furniture.html">Прихожая</a>
+            <a class="button button_slim_x button_white" href="./request-select-furniture.html">Комод</a>
+            <a class="button button_slim_x button_white" href="./request-select-furniture.html">Стеллаж</a>
+            <a class="button button_slim_x button_white" href="./request-select-furniture.html">
+              Комплексный заказ</a>
           </div>
-          <a class="modal__link font-body-2" href="./request.html"
+          <a class="modal__link font-body-2" href="./request-skip-selection.html"
             >Пропустить и перейти к заявке</a
           >
         </div>
@@ -1065,8 +1064,11 @@
             <a class="button button_register" href="./register.html"
               >Зарегистрироваться</a
             >
-            <a class="font-body-2" href="./request.html"
-              >Продолжить без регистрации</a
+            <button 
+            class="button_transparent_slim" 
+            data-close-modal="registerModal"
+            data-modal="requestQuoteModal"
+              >Продолжить без регистрации</button
             >
           </div>
         </div>
