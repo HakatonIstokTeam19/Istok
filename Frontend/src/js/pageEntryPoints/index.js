@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-
         const sectionId = entry.target.id;
         controls.forEach((control) => {
           const controlCircle = control.querySelector(".slide-control__circle");
@@ -51,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
   sections.forEach((section) => {
     observer.observe(section);
   });
-  
 });
 
 // slider 3 - materials
