@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="./src/css/global.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
     <link rel="stylesheet" href="./src/css/buttons.css" />
-    <link rel="stylesheet" href="./src/css/modal.css" />
   </head>
   <body class="body">
+    <!-- Header - часть базового шаблона -->
     <header class="header">
       <svg alt="logo" class="header__logo">
         <use
@@ -20,10 +20,14 @@
       <nav class="header__nav">
         <ul class="header__links">
           <li class="header__link font-body-1">
-            <a class="header__link active font-body-1" href="#">Главная</a>
+            <a class="header__link active font-body-1" href="./index.html"
+              >Главная</a
+            >
           </li>
           <li class="header__link font-body-1">
-            <a class="header__link font-body-1" href="#">Готовая мебель</a>
+            <a class="header__link font-body-1" href="./furniture.html"
+              >Готовая мебель</a
+            >
           </li>
           <li class="header__link font-body-1">
             <a class="header__link font-body-1" href="./about.html">О нас</a>
@@ -39,6 +43,7 @@
         >Войти в личный кабинет</a
       >
     </header>
+
     <main class="container main-content">
       <section class="container__page1 main-content__section" id="start">
         <div class="page1 page1__content-outer-wrapper">
@@ -48,22 +53,13 @@
               уют <span class="text-color-accent">вашего</span> дома
             </h1>
             <p class="font-body-1 page1__tagline">
-              ПРОИЗВОДСТВО МЕБЕЛИ НА ЗАКАЗ<br />
+              ПРОИЗВОДСТВО МЕБЕЛИ НА ЗАКАЗ <br />
               В САНКТ-ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ
             </p>
-            <button
-              class="button page1__button"
-              data-modal="registerModal"
-              id="page1makeAppointmentBtn"
-            >
-              Записаться на встречу
-            </button>
+            <button class="button page1__button">Записаться на встречу</button>
           </div>
         </div>
-        <img
-          src="./src/assets/images/content/home-page-1-bg-1.png"
-          alt="home-page-1-bg-1"
-        />
+        <img src="./src/assets/images/content/home-page-1-bg-1.png" alt="" />
       </section>
       <section class="container__page2 main-content__section" id="benefits">
         <div class="page2__heading-container">
@@ -104,7 +100,7 @@
         </div>
         <div class="page2__benefit page2__benefit_3">
           <h3 class="font-heading-bold-16 benefit-heading">
-            Взаимодействие с мебелью во время<br />
+            Взаимодействие с мебелью во время <br />
             проектирования
           </h3>
           <p class="font-body-2 page2__main-text">
@@ -468,6 +464,8 @@
         </ol>
       </section>
       <section class="container__page8 main-content__section" id="orderNow">
+        <!-- slider 3 -->
+
         <div class="page8__slider-container" id="stocks">
           <button class="slider__btn slider__btn_left">
             <svg
@@ -511,6 +509,7 @@
           <div class="slider__visible-space">
             <div class="page8__slider slider__inner-container">
               <div class="page8__slide-1">
+                <!-- commercial block 1 -->
                 <div class="page8__slider-info">
                   <h2
                     class="commercial-heading font-heading-bold-52 text-color-accent"
@@ -528,7 +527,6 @@
                     <li>Стеллаж</li>
                   </ul>
                   <button
-                    data-modal="registerModal"
                     class="button button_white button_short page8__btn-order"
                   >
                     Сделать заказ
@@ -536,17 +534,17 @@
                 </div>
               </div>
               <div class="page8__slide-2">
+                <!-- commercial block 2 -->
                 <div class="page8__slider-info page8__slider-info_slide1">
                   <h2
                     class="commercial-heading font-heading-bold-52 text-color-accent"
                   >
-                    10&nbsp;000 РУБЛЕЙ
+                    10 000 РУБЛЕЙ
                   </h2>
                   <p class="commercial-text font-heading-reg-32">
                     ЗА РЕКОМЕНДАЦИЮ И ЗАКАЗ ПО НЕЙ
                   </p>
                   <button
-                    data-modal="registerModal"
                     class="button button_white button_short page8__btn-order"
                   >
                     Рекомендовать
@@ -595,6 +593,9 @@
             </svg>
           </button>
         </div>
+
+        <!-- send a request section -->
+
         <div class="page8__consulting" id="consult">
           <h2 class="page8__heading">Оставьте заявку</h2>
           <p class="font-body-1 page8__tagline">
@@ -620,71 +621,74 @@
           </a>
         </div>
       </section>
+
+      <!-- footer -->
+
       <footer class="footer">
         <div class="footer__section">
           <h5 class="footer__heading">Связаться с исток</h5>
           <div class="social__links">
-            <a class="social__link"
-              ><svg>
+            <a class="social__link">
+              <svg>
                 <use
                   href="./src/assets/images/interface/icons-sprite-sheet.svg#whatsapp"
                 ></use>
               </svg>
-              <span class="social__link-label">Чат</span></a
-            >
-            <a class="social__link"
-              ><svg>
+              <span class="social__link-label">Чат</span>
+            </a>
+            <a class="social__link">
+              <svg>
                 <use
                   href="./src/assets/images/interface/icons-sprite-sheet.svg#telegram"
                 ></use>
               </svg>
-              <span class="social__link-label">Чат</span></a
-            >
-            <a class="social__link"
-              ><svg>
+              <span class="social__link-label">Чат</span>
+            </a>
+            <a class="social__link">
+              <svg>
                 <use
                   href="./src/assets/images/interface/icons-sprite-sheet.svg#ring"
                 ></use>
               </svg>
-              <span class="social__link-label">Чат</span></a
-            >
+              <span class="social__link-label">Чат</span>
+            </a>
           </div>
         </div>
         <div class="footer__section">
           <h5 class="footer__heading">Подписаться</h5>
           <div class="social__links">
-            <a class="social__link"
-              ><svg>
+            <a class="social__link">
+              <svg>
                 <use
                   href="./src/assets/images/interface/icons-sprite-sheet.svg#vkontakte"
                 ></use>
               </svg>
-              <span class="social__link-label">Сообщество</span></a
-            >
-            <a class="social__link"
-              ><svg>
+              <span class="social__link-label">Сообщество</span>
+            </a>
+            <a class="social__link">
+              <svg>
                 <use
                   href="./src/assets/images/interface/icons-sprite-sheet.svg#telegram"
                 ></use>
               </svg>
-              <span class="social__link-label">Сообщество</span></a
-            >
+              <span class="social__link-label">Сообщество</span>
+            </a>
           </div>
         </div>
         <div class="footer__section">
           <h5 class="footer__heading">Узнать больше</h5>
           <div class="social__links">
-            <a class="social__link"
-              ><span class="social__link-label">Вопросы и ответы</span></a
+            <a class="social__link">
+              <span class="social__link-label">Вопросы и ответы </span></a
             >
-            <a class="social__link"
-              ><span class="social__link-label">Программа лояльности</span></a
+            <a class="social__link">
+              <span class="social__link-label">Программа лояльности</span></a
             >
-            <a class="social__link"
-              ><span class="social__link-label">Доставка и возврат</span></a
+            <a class="social__link">
+              <span class="social__link-label">Доставка и возврат</span></a
             >
-            <a class="social__link"
-              ><span class="social__link-label">Инструкция по уходу</span></a
+            <a class="social__link">
+              <span class="social__link-label">Инструкция по уходу</span></a
             >
           </div>
         </div>
@@ -695,9 +699,12 @@
           <span class="footer__copyright">© ООО "ИСТОК-МЕБЕЛЬ" 2024</span>
         </div>
       </footer>
+
+      <!-- slide-out menu button - часть базового шаблона-->
+
       <div class="side-menu-contact">
-        <label class="side-menu-contact__button"
-          ><svg
+        <label class="side-menu-contact__button">
+          <svg
             class="side-menu-contact__pointer"
             width="32"
             height="32"
@@ -711,11 +718,11 @@
             ></path>
           </svg>
           <span class="side-menu-contact__button-text">Связаться с ИСТОК</span>
-          <input class="side-menu-contact__hidden-input" type="checkbox"
-        /></label>
+          <input class="side-menu-contact__hidden-input" type="checkbox" />
+        </label>
         <div class="side-menu-contact__links">
-          <a class="side-menu-contact__link"
-            ><svg
+          <a class="side-menu-contact__link">
+            <svg
               width="33"
               height="32"
               viewbox="0 0 33 32"
@@ -751,10 +758,10 @@
                 </clippath>
               </defs>
             </svg>
-            <span class="side-menu-contact__link-text">Чат</span></a
-          >
-          <a class="side-menu-contact__link"
-            ><svg
+            <span class="side-menu-contact__link-text">Чат</span>
+          </a>
+          <a class="side-menu-contact__link">
+            <svg
               width="33"
               height="32"
               viewbox="0 0 33 32"
@@ -782,10 +789,10 @@
                 </clippath>
               </defs>
             </svg>
-            <span class="side-menu-contact__link-text">Чат</span></a
-          >
-          <a class="side-menu-contact__link"
-            ><svg
+            <span class="side-menu-contact__link-text">Чат</span>
+          </a>
+          <a class="side-menu-contact__link">
+            <svg
               width="33"
               height="32"
               viewbox="0 0 33 32"
@@ -813,10 +820,10 @@
                 </clippath>
               </defs>
             </svg>
-            <span class="side-menu-contact__link-text">Звонок</span></a
-          >
-          <a class="side-menu-contact__link"
-            ><svg
+            <span class="side-menu-contact__link-text">Звонок</span>
+          </a>
+          <a class="side-menu-contact__link">
+            <svg
               width="33"
               height="32"
               viewbox="0 0 33 32"
@@ -844,10 +851,10 @@
                 </clippath>
               </defs>
             </svg>
-            <span class="side-menu-contact__link-text">Сообщество</span></a
-          >
-          <a class="side-menu-contact__link"
-            ><svg
+            <span class="side-menu-contact__link-text">Сообщество</span>
+          </a>
+          <a class="side-menu-contact__link">
+            <svg
               width="33"
               height="32"
               viewbox="0 0 33 32"
@@ -875,11 +882,14 @@
                 </clippath>
               </defs>
             </svg>
-            <span class="side-menu-contact__link-text">Сообщество</span></a
-          >
+            <span class="side-menu-contact__link-text">Сообщество</span>
+          </a>
         </div>
       </div>
     </main>
+
+    <!-- progress bar -->
+
     <ul class="bottom-progress-bar">
       <li class="bottom-progress-bar__item">
         <button
