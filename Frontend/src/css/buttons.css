@@ -1,0 +1,49 @@
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid var(--light-black);
+
+  font-family: var(--font-main);
+  font-size: var(--font-24);
+  font-weight: var(--weight-light-x);
+  line-height: var(--line-height-32);
+  color: var(--light-black);
+  background-color: transparent;
+  height: 68px;
+  width: 100%;
+  max-width: 345px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--beige);
+}
+
+.button:active {
+  background-color: var(--green);
+  color: var(--whitish);
+}
+
+.button_white {
+    background-color: var(--whitish);
+}
+
+.button_short {
+    max-width: 263px;
+}
+
+.button_slim {
+    height: 48px;
+    font-size: var(--font-16);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-height-26);
+    color: var(--light-black);
+}
+
+
+

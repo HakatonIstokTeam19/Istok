@@ -15,12 +15,15 @@
   --weight-light-x: 200;
   --weight-light: 300;
   --weight-regular: 400;
+  --weight-bold-semi: 600;
   --weight-bold: 700;
   --weight-bold-x: 800;
 
   --line-height-20: 20px;
   --line-height-22: 22px;
   --line-height-26: 26px;
+  --line-height-32: 32px;
+  --line-height-36: 36px;
   --line-height-65: 65px;
 
   /* Colors */
@@ -50,9 +53,13 @@ html {
   text-decoration-line: none;
 }
 
+/* С НАМИ НАЧИНАЕТСЯУЮТ ВАШЕГО ДОМА */
+
 body {
   overflow: hidden;
   background-color: var(--whitish);
+  font-family: var(--font-main);
+  position: relative;
 }
 
 a {
@@ -60,11 +67,35 @@ a {
   cursor: pointer;
 }
 
+.font-btn-light-24 {
+  font-family: var(--font-main);
+  font-size: var(--font-24);
+  font-weight: var(--weight-light);
+  line-height: var(--line-height-32);
+  color: var(--light-black);
+}
+
 .font-body-1 {
   font-family: var(--font-main);
   font-size: var(--font-16);
   font-weight: var(--weight-regular);
   line-height: var(--line-height-26);
+  color: var(--light-black);
+}
+
+.font-body-light-1 {
+  font-family: var(--font-main);
+  font-size: var(--font-16);
+  font-weight: var(--weight-light);
+  line-height: var(--line-height-26);
+  color: var(--light-black);
+}
+
+.font-heading-bold-16 {
+  font-family: var(--font-main);
+  font-size: var(--font-16);
+  font-weight: var(--weight-bold-x);
+  line-height: var(--line-height-20);
   color: var(--light-black);
 }
 
@@ -76,6 +107,15 @@ a {
   color: var(--light-black);
 }
 
+.font-body-light-2 {
+  font-family: var(--font-main);
+  font-size: var(--font-14);
+  font-weight: var(--weight-light);
+  line-height: var(--line-height-22);
+  color: var(--light-black);
+  text-transform: none;
+}
+
 .font-body-3 {
   font-family: var(--font-main);
   font-size: var(--font-12);
@@ -84,18 +124,18 @@ a {
   color: var(--light-black);
 }
 
+.font-body-4 {
+  font-family: var(--font-main);
+  font-size: var(--font-10);
+  font-weight: var(--weight-light);
+  color: var(--light-black);
+}
+
 .font-body-3-bold {
   font-family: var(--font-main);
   font-size: var(--font-12);
   font-weight: var(--weight-bold-x);
   line-height: var(--line-height-16);
-  color: var(--light-black);
-}
-
-.font-body-4 {
-  font-family: var(--font-main);
-  font-size: var(--font-10);
-  font-weight: var(--weight-light);
   color: var(--light-black);
 }
 
@@ -119,16 +159,17 @@ a {
   font-family: var(--font-main);
   font-size: var(--font-32);
   font-weight: var(--weight-regular);
+  line-height: var(--line-height-36);
   color: var(--light-black);
 }
 
-.font-heading-bold-16 {
+.font-heading-bold-32 {
   font-family: var(--font-main);
-  font-size: var(--font-16);
+  font-size: var(--font-32);
   font-weight: var(--weight-bold-x);
-  line-height: var(--line-height-20);
   color: var(--light-black);
 }
+
 .text-color-accent {
   color: var(--green);
 }
