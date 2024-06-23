@@ -106,22 +106,22 @@ class Application(models.Model):
         ('2', 'Telegram'),
         ('3', 'ВКонтакте'),
     ]
-    type = models.CharField(null=True, blank=True, max_length=1, choices=TYPES, default=None, verbose_name='Тип мебели')
-    form = models.CharField(null=True, blank=True, max_length=1, choices=FORMS, default=None, verbose_name='Форма мебели')
-    addition = models.CharField(null=True, blank=True, max_length=1, choices=ADDS, default=None, verbose_name='Дополнения')
-    facades_material = models.CharField(null=True, blank=True, max_length=1, choices=MATERIAL, default=None, verbose_name='Материал фасада')
-    table_material = models.CharField(null=True, blank=True, max_length=1, choices=TABLE, default=None, verbose_name='Материал столешницы')
-    plumb = models.CharField(null=True, blank=True, max_length=1, choices=PLUMB, default=None, verbose_name='Кухонная сантехника')
-    appliances = models.CharField(null=True, blank=True, max_length=1, choices=APPLIANCES, default=None, verbose_name='Бытовая техника')
-    budget = models.CharField(null=True, blank=True, max_length=1, choices=BUDGET, default=None, verbose_name='Бюджет проекта')
-    consultation = models.CharField(null=True, blank=True, max_length=1, choices=CONSULTATION, default=None,
+    type = models.CharField(null=True, blank=True, max_length=150, verbose_name='Тип мебели')
+    form = models.CharField(null=True, blank=True, max_length=150, verbose_name='Форма мебели')
+    addition = models.CharField(null=True, blank=True, max_length=150, verbose_name='Дополнения')
+    facades_material = models.CharField(null=True, blank=True, max_length=150, verbose_name='Материал фасада')
+    table_material = models.CharField(null=True, blank=True, max_length=150, verbose_name='Материал столешницы')
+    plumb = models.CharField(null=True, blank=True, max_length=150, verbose_name='Кухонная сантехника')
+    appliances = models.CharField(null=True, blank=True, max_length=150, default=None, verbose_name='Бытовая техника')
+    budget = models.CharField(null=True, blank=True, max_length=150, verbose_name='Бюджет проекта')
+    consultation = models.CharField(null=True, blank=True, max_length=150,
                                     verbose_name='Консультация с экспертом по обустройству дома')
     last_name = models.CharField(max_length=150, verbose_name='Фамилия')
     first_name = models.CharField(max_length=150, verbose_name='Имя')
     patronymic = models.CharField(null=True, blank=True, max_length=150, verbose_name='Отчество')
     phone = models.CharField(validators=[phone_regex], max_length=12,
                              blank=False, verbose_name='Ваш номер телефона')
-    connection = models.CharField(max_length=1, choices=CONNECTION, default=None, verbose_name='Как с Вами связаться?')
+    connection = models.CharField(null=True, blank=True, max_length=150, verbose_name='Как с Вами связаться?')
     link = models.CharField(null=True, blank=True, max_length=150, verbose_name='Ваша ссылка на Telegram/ВКонтакте')
     data = models.CharField(null=True, blank=True, max_length=30, verbose_name='Дата')
     time = models.CharField(null=True, blank=True, max_length=30, verbose_name='Время')

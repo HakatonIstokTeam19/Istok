@@ -37,22 +37,22 @@
   --beige: #e8e9da;
 
   /* spaces */
---padding-102: 102px;
+  --padding-102: 102px;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-:before, *, :after {
+:before,
+*,
+:after {
   outline: none;
   text-decoration: none;
   border: none;
   box-sizing: border-box;
   text-decoration-line: none;
 }
-
-/* С НАМИ НАЧИНАЕТСЯУЮТ ВАШЕГО ДОМА */
 
 
 body {
@@ -65,6 +65,14 @@ body {
 a {
   text-decoration: none;
   cursor: pointer;
+}
+
+.font-heading-24 {
+  font-family: var(--font-main);
+  font-size: var(--font-24);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-height-28);
+  color: var(--light-black);
 }
 
 .font-btn-light-24 {
@@ -90,7 +98,6 @@ a {
   line-height: var(--line-height-26);
   color: var(--light-black);
 }
-
 
 .font-heading-bold-16 {
   font-family: var(--font-main);
@@ -125,6 +132,13 @@ a {
   color: var(--light-black);
 }
 
+.font-body-4 {
+  font-family: var(--font-main);
+  font-size: var(--font-10);
+  font-weight: var(--weight-light);
+  color: var(--light-black);
+}
+
 .font-body-3-bold {
   font-family: var(--font-main);
   font-size: var(--font-12);
@@ -149,6 +163,14 @@ a {
   color: var(--light-black);
 }
 
+.font-heading-48 {
+  font-family: var(--font-main);
+  font-size: var(--font-48);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-height-65);
+  color: var(--light-black);
+}
+
 .font-heading-reg-32 {
   font-family: var(--font-main);
   font-size: var(--font-32);
@@ -162,8 +184,8 @@ a {
   font-size: var(--font-32);
   font-weight: var(--weight-bold-x);
   color: var(--light-black);
-  }
+}
 
-  .text-color-accent {
-    color: var(--green);
-    }
+.text-color-accent {
+  color: var(--green);
+}

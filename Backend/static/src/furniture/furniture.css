@@ -1,0 +1,113 @@
+.main__furniture {
+  display: flex;
+  gap: 3%;
+}
+
+.main__filter-bar {
+  width: 15%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8%;
+  gap: 5%;
+}
+
+.filtered {
+  width: 25%;
+}
+
+.main__filter-heading {
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+.main__filter-arrow.clicked {
+  transform: rotate(180deg);
+}
+
+.main__filter-options ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main__filter,
+.main__form-option {
+  display: flex;
+  flex-direction: column;
+}
+
+.main__filter {
+  display: none;
+}
+.main__form-option h3 {
+  margin-bottom: 10px;
+}
+
+.main__form-option {
+  gap: 3px;
+}
+
+.main__filter {
+  padding: 25px 45px;
+  width: 100%;
+  background-color: var(--beige);
+  gap: 20px;
+}
+
+.main__filter-option {
+  cursor: pointer;
+}
+
+.active {
+  color: var(--green);
+}
+
+.main__cards-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 100%;
+  height: 90vh;
+  margin-top: 6%;
+}
+.main__cards-section::-webkit-scrollbar {
+  display: none;
+}
+.main__cards {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(356px, 1fr));
+  grid-template-rows: repeat(2, auto);
+  grid-auto-flow: column;
+  gap: 2%;
+}
+
+.main__card {
+  max-width: 356px;
+  max-height: 328px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.main__card-tags {
+  display: flex;
+  justify-content: flex-start;
+  gap: 3%;
+}
+
+.main__card-tag {
+  padding: 2px 4px;
+  border: 1px solid var(--light-black);
+  text-transform: none;
+  cursor: pointer;
+}
+
+.main__card-tag.main {
+  border: 1px solid var(--green);
+}

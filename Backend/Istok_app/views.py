@@ -64,22 +64,34 @@ class Finished_furnitureUpdate(LoginRequiredMixin, UpdateView):
         return super().post(request, *args, **kwargs)
 
 
-class ApplicationCreate(CreateView):
-    raise_exception = False
-    form_class = ApplicationCreateForm
-    model = Application
-    template_name = 'Istok_app/application_edit.html'
-    success_url = reverse_lazy('application_accept')
-
-    def form_valid(self, form):
-        slider_value = self.request.POST.get('slider')
-        if slider_value == '100':
-            return super().form_valid(form)
-        else:
-            messages.error(self.request, 'Передвиньте ползунок вправо для подтверждения, что вы человек.')
-            return self.form_invalid(form)
+def application_create(request):
+    return render(request, 'Istok_app/application_edit.html')
 
 def application_accept(request):
+    if request.method == 'GET':
+        application_data = request.GET.dict()
+
+        application = Application(
+            type=application_data.get('type', ''),
+            form=application_data.get('form', ''),
+            addition=application_data.get('addition', ''),
+            facades_material=application_data.get('facades_material', ''),
+            table_material=application_data.get('table_material', ''),
+            plumb=application_data.get('plumb', ''),
+            appliances=application_data.get('appliances', ''),
+            budget=application_data.get('budget', ''),
+            consultation=application_data.get('consultation', ''),
+            last_name=application_data.get('last_name', ''),
+            first_name=application_data.get('first_name', ''),
+            patronymic=application_data.get('patronymic', ''),
+            phone=application_data.get('phone', ''),
+            connection=application_data.get('connection', ''),
+            link=application_data.get('link', ''),
+            data=application_data.get('data', ''),
+            time=application_data.get('time', ''),
+        )
+        application.save()
+
     return render(request, 'Istok_app/application_accept.html')
 
 

@@ -13,7 +13,7 @@ class ApplicationCreateForm(forms.ModelForm):
 
     class Meta:
         model = Application
-        fields = ('type', 'form', 'form', 'addition', 'facades_material', 'table_material', 'plumb', 'appliances',
+        fields = ('type', 'form', 'addition', 'facades_material', 'table_material', 'plumb', 'appliances',
                   'budget', 'consultation', 'last_name', 'first_name', 'patronymic', 'phone', 'connection', 'link',
                   'data', 'time')
 

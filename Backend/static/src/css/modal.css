@@ -85,6 +85,13 @@
   margin-top: auto;
 }
 
+.modal__link:active {
+  color: var(--green);
+}
+.modal__link:hover {
+  opacity: .7;
+}
+
 
 .modal__inner {
     grid-column: 1 / -1;

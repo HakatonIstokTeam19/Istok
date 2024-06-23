@@ -874,7 +874,7 @@
   align-items: center;
   width: 180px;
   height: 100%;
-  z-index: 200;
+  z-index: 300;
   padding: 12px 17px;
   background-color: var(--light-black);
 }

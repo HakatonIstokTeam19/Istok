@@ -1,4 +1,5 @@
 export default function initModals() {
+  // openButtons are buttons that open one modal and close the current one if it exists
     const openButtons = document.querySelectorAll('[data-modal]');
     const closeButtons = document.querySelectorAll('.modal__close');
   
@@ -11,10 +12,17 @@ export default function initModals() {
     }
   
     openButtons.forEach(button => {
-      const modalId = button.getAttribute('data-modal');
-      const modal = document.getElementById(modalId);
+      const targetOpenModalId = button.getAttribute('data-modal');
+      const closeModalId = button.getAttribute('data-close-modal');
   
-      button.addEventListener('click', () => openModal(modal));
+      button.addEventListener('click', () => {
+        if (closeModalId) {
+          const targetCloseModal = document.getElementById(closeModalId);
+          closeModal(targetCloseModal);
+        }
+        const targetOpenModal = document.getElementById(targetOpenModalId);
+        openModal(targetOpenModal);
+      });
     });
   
     closeButtons.forEach(button => {
