@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./src/css/global.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
     <link rel="stylesheet" href="./src/css/buttons.css" />
+    <link rel="stylesheet" href="./src/css/modal.css" />
   </head>
   <body class="body">
     <!-- Header - часть базового шаблона -->
@@ -33,7 +34,7 @@
             <a class="header__link font-body-1" href="./about.html">О нас</a>
           </li>
           <li class="header__link font-body-1">
-            <a class="header__link font-body-1" href="./request.html"
+            <a class="header__link font-body-1" href="./request-select-furniture.html"
               >Оставить заявку</a
             >
           </li>
@@ -56,7 +57,7 @@
               ПРОИЗВОДСТВО МЕБЕЛИ НА ЗАКАЗ <br />
               В САНКТ-ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ
             </p>
-            <button class="button page1__button">Записаться на встречу</button>
+            <button data-modal="registerModal" class="button page1__button">Записаться на встречу</button>
           </div>
         </div>
         <img src="./src/assets/images/content/home-page-1-bg-1.png" alt="" />
@@ -527,6 +528,7 @@
                     <li>Стеллаж</li>
                   </ul>
                   <button
+                  data-modal="registerModal"
                     class="button button_white button_short page8__btn-order"
                   >
                     Сделать заказ
@@ -616,9 +618,9 @@
               удобное для вас время!
             </p>
           </div>
-          <button class="button button_white button_slim">
+          <a class="button button_white button_slim" href="./request-skip-selection.html">
             Заказать звонок
-          </button>
+          </a>
         </div>
       </section>
 
@@ -976,10 +978,118 @@
         </button>
       </li>
     </ul>
-    <script
-      src="./src/js/pageEntryPoints/index.js"
-      type="module"
-      defer
-    ></script>
+
+    <!-- modal window to request a quote -->
+    <div class="modal" id="requestQuoteModal">
+      <div class="modal__content">
+        <button
+          class="modal__close"
+          data-modal="requestQuoteModal"
+          id="requestQuoteModalClose"
+        >
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0.209396 0.210303C-0.0697984 0.490706 -0.0697989 0.94533 0.209396 1.22573L6.01138 7.05284L0.314625 12.7743C0.0354299 13.0547 0.0354297 13.5093 0.314624 13.7897C0.593819 14.0701 1.04648 14.0701 1.32568 13.7897L7.02243 8.06827L12.6791 13.7494C12.9582 14.0298 13.4109 14.0298 13.6901 13.7494C13.9693 13.469 13.9693 13.0144 13.6901 12.734L8.03349 7.05284L13.7953 1.26604C14.0745 0.985641 14.0745 0.531016 13.7953 0.250613C13.5161 -0.029791 13.0635 -0.0297915 12.7843 0.250612L7.02243 6.03741L1.22045 0.210303C0.941255 -0.0701008 0.488591 -0.070101 0.209396 0.210303Z"
+              fill="#222222"
+            />
+          </svg>
+        </button>
+        <div class="modal__decoration-container">
+          <img
+            src="./src/assets/images/content/modal-to-request.png"
+            alt="beautiful modern interior"
+          />
+        </div>
+        <div class="modal__info-container">
+          <div class="modal__buttons">
+            <a class="button button_slim_x button_white" href="./request-select-furniture.html">Кухня</a>
+            <a class="button button_slim_x button_white" href="./request-select-furniture.html">Гардероб</a>
+            <a class="button button_slim_x button_white" href="./request-select-furniture.html">Прихожая</a>
+            <a class="button button_slim_x button_white" href="./request-select-furniture.html">Комод</a>
+            <a class="button button_slim_x button_white" href="./request-select-furniture.html">Стеллаж</a>
+            <a class="button button_slim_x button_white" href="./request-select-furniture.html">
+              Комплексный заказ</a>
+          </div>
+          <a class="modal__link font-body-2" href="./request-skip-selection.html"
+            >Пропустить и перейти к заявке</a
+          >
+        </div>
+      </div>
+      <script
+        src="./src/js/pageEntryPoints/index.js"
+        type="module"
+        defer
+      ></script>
+    </div>
+    <!-- modal window to register or continue without registration -->
+    <div class="modal" id="registerModal">
+      <div class="modal__content">
+        <button
+          class="modal__close"
+          data-modal="registerModal"
+          id="registerModalClose"
+        >
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0.209396 0.210303C-0.0697984 0.490706 -0.0697989 0.94533 0.209396 1.22573L6.01138 7.05284L0.314625 12.7743C0.0354299 13.0547 0.0354297 13.5093 0.314624 13.7897C0.593819 14.0701 1.04648 14.0701 1.32568 13.7897L7.02243 8.06827L12.6791 13.7494C12.9582 14.0298 13.4109 14.0298 13.6901 13.7494C13.9693 13.469 13.9693 13.0144 13.6901 12.734L8.03349 7.05284L13.7953 1.26604C14.0745 0.985641 14.0745 0.531016 13.7953 0.250613C13.5161 -0.029791 13.0635 -0.0297915 12.7843 0.250612L7.02243 6.03741L1.22045 0.210303C0.941255 -0.0701008 0.488591 -0.070101 0.209396 0.210303Z"
+              fill="#222222"
+            />
+          </svg>
+        </button>
+        <div class="modal__inner">
+          <h2 class="text-color-accent font-body-1 modal__title">
+            ВЫ НЕ ЗАРЕГИСТРИРОВАНЫ!
+          </h2>
+          <p class="font-body-1 modal__text">
+            Уважаемый пользователь, для обеспечения сохранности ваших данных
+            настоятельно рекомендуем вам пройти процесс регистрации.
+          </p>
+          <p class="font-body-1">
+            После регистрации вы сможете легко и быстро входить в свой профиль,
+            отслеживать заказы, получите персональные предложения и возможность
+            участия в реферальной программе.
+          </p>
+          <p class="font-body-1">
+            Регистрация займёт всего несколько минут, и после её завершения вы
+            сможете пользоваться всеми преимуществами нашего сайта без
+            необходимости постоянно вводить данные. Мы заботимся о наших
+            клиентах и гарантируем, что ваши данные будут использоваться только
+            в соответствии с политикой конфиденциальности.
+          </p>
+          <div class="modal__button-wrapper">
+            <a class="button button_register" href="./register.html"
+              >Зарегистрироваться</a
+            >
+            <button 
+            class="button_transparent_slim" 
+            data-close-modal="registerModal"
+            data-modal="requestQuoteModal"
+              >Продолжить без регистрации</button
+            >
+          </div>
+        </div>
+      </div>
+      <script
+        src="./src/js/pageEntryPoints/index.js"
+        type="module"
+        defer
+      ></script>
+    </div>
   </body>
 </html>
