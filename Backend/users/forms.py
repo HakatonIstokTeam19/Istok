@@ -18,7 +18,7 @@ class CustomSignupForm(SignupForm):
 
     username = forms.CharField(
         widget=forms.TextInput(attrs={'placeholder': 'Номер телефона'}),
-        label='Контактный номер',
+        label='Номер телефона',
         max_length=12,
         required=True,
         validators=[phone_regex],
