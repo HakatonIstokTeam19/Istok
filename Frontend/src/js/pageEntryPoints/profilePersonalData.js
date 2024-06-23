@@ -13,4 +13,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
     maskPasswordById(".profile__password-mask");
 
+    // script to customize the imported date flatpickr
+
+    flatpickr("#id_birth_date_day", {
+      altInput: true,
+      altFormat: "F j, Y",
+      dateFormat: "Y-m-d",
+  });
+
+
   });
