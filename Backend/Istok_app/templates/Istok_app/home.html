@@ -43,11 +43,7 @@
 
         <a class="about-header__link font-body-1 header__sign-in"
          href="{% url 'profile' request.user.pk %}"
-        >Личный кабинет</a>
-
-        <a class="about-header__link font-body-1 header__sign-in"
-         href="{% url 'logout' %}"
-        >Выйти</a>
+        >Войти в личный кабинет</a>
 
       {% else %}
 
@@ -70,6 +66,9 @@
               ПРОИЗВОДСТВО МЕБЕЛИ НА ЗАКАЗ<br />
               В САНКТ-ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ
             </p>
+            {% if request.user.is_authenticated %}
+            <a class="button page1__button" href="/application_skip_selection/">Записаться на встречу</a>
+            {% else %}
             <button
               class="button page1__button"
               data-modal="registerModal"
@@ -77,6 +76,7 @@
             >
               Записаться на встречу
             </button>
+            {% endif %}
           </div>
         </div>
         <img
@@ -546,12 +546,16 @@
                     <li>Комод</li>
                     <li>Стеллаж</li>
                   </ul>
-                  <button
-                    data-modal="registerModal"
-                    class="button button_white button_short page8__btn-order"
-                  >
-                    Сделать заказ
-                  </button>
+                   {% if request.user.is_authenticated %}
+                      <a class="button button_white button_short page8__btn-order" href="/application_skip_selection/">Сделать заказ</a>
+                    {% else %}
+                      <button
+                        data-modal="registerModal"
+                        class="button button_white button_short page8__btn-order"
+                      >
+                        Сделать заказ
+                      </button>
+                  {% endif %}
                 </div>
               </div>
               <div class="page8__slide-2">
@@ -634,9 +638,13 @@
               удобное для вас время!
             </p>
           </div>
-          <button data-modal="registerModal" class="button button_white button_slim">
-            Заказать звонок
-          </button>
+          {% if request.user.is_authenticated %}
+              <a class="button button_white button_slim" href="/application_skip_selection/">Заказать звонок</a>
+          {% else %}
+              <button data-modal="registerModal" class="button button_white button_slim">
+                Заказать звонок
+              </button>
+          {% endif %}
         </div>
       </section>
       <footer class="footer">
@@ -1081,10 +1089,10 @@
             в соответствии с политикой конфиденциальности.
           </p>
           <div class="modal__button-wrapper">
-            <a class="button button_register" href="./register.html"
+            <a class="button button_register" href="{% url 'signup' %}"
               >Зарегистрироваться</a
             >
-            <a class="font-body-2" href="./request.html"
+            <a class="font-body-2" href="{% url 'application_skip_selection' %}"
               >Продолжить без регистрации</a
             >
           </div>

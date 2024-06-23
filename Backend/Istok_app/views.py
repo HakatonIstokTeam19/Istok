@@ -67,6 +67,9 @@ class Finished_furnitureUpdate(LoginRequiredMixin, UpdateView):
 def application_create(request):
     return render(request, 'Istok_app/application_edit.html')
 
+def application_skip_selection(request):
+    return render(request, 'Istok_app/application_skip_selection.html')
+
 def application_accept(request):
     if request.method == 'GET':
         application_data = request.GET.dict()

@@ -8,6 +8,7 @@ urlpatterns = [
     path('finished_furniture_detail/<int:pk>/', Finished_furnitureDetail.as_view(), name='finished_furniture_detail'),
     path('finished_furniture_update/<int:pk>/', Finished_furnitureUpdate.as_view(), name='finished_furniture_update'),
     path('application_create/', application_create, name='application_create'),
+    path('application_skip_selection/', application_skip_selection, name='application_skip_selection'),
     path('application_accept/', application_accept, name='application_accept'),
     path('about/', about, name='about'),
     path('orders_list/', OrdersList.as_view(), name='orders_list'),
