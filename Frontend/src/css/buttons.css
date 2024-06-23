@@ -53,6 +53,15 @@
   color: var(--light-black);
 }
 
+.button_mid {
+  height: 52px !important;
+  max-width: 312px !important;
+  font-size: var(--font-16);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-height-26);
+  color: var(--light-black);
+}
+
 .button_register {
   height: 40px;
   max-width: 236px;
