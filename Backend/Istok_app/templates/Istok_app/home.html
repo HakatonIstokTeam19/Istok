@@ -5,11 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Istok - Home</title>
-    <link rel="stylesheet" href="{% static './src/css/reset.css' %}" />
-    <link rel="stylesheet" href="{% static './src/css/global.css' %}" />
-    <link rel="stylesheet" href="{% static './src/css/style.css' %}" />
-    <link rel="stylesheet" href="{% static './src/css/buttons.css' %}" />
-    <link rel="stylesheet" href="{% static './src/css/modal.css' %}" />
+    <link rel="stylesheet" href="{% static 'src/css/reset.css' %}" />
+    <link rel="stylesheet" href="{% static 'src/css/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'src/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'src/css/buttons.css' %}" />
+    <link rel="stylesheet" href="{% static 'src/css/modal.css' %}" />
   </head>
   <body class="body">
     <header class="header">
@@ -40,20 +40,25 @@
         </ul>
       </nav>
       {% if request.user.is_authenticated %}
+
         <a class="about-header__link font-body-1 header__sign-in"
-         href="{% url 'profile' request.user.pk %}"
+         href="{% url 'profile' %}"
         >Личный кабинет</a>
 
         <a class="about-header__link font-body-1 header__sign-in"
          href="{% url 'logout' %}"
         >Выйти</a>
+
       {% else %}
+
         <a class="about-header__link font-body-1 header__sign-in"
          href="{% url 'login' %}"
         >Войти в личный кабинет</a>
+
         <a class="about-header__link font-body-1 header__sign-in"
          href="{% url 'login' %}"
         >Войти</a>
+
       {% endif %}
     </header>
     <main class="container main-content">
@@ -644,7 +649,7 @@
             <a class="social__link"
               ><svg>
                 <use
-                  href="{% static './src/assets/images/interface/icons-sprite-sheet.svg#whatsapp' %}"
+                  href="{% static './src/assets/images/interface/icons-sprite-sheet.svg' %}#whatsapp"
                 ></use>
               </svg>
               <span class="social__link-label">Чат</span></a
@@ -652,7 +657,7 @@
             <a class="social__link"
               ><svg>
                 <use
-                  href="{% static './src/assets/images/interface/icons-sprite-sheet.svg#telegram' %}"
+                  href="{% static './src/assets/images/interface/icons-sprite-sheet.svg' %}#telegram"
                 ></use>
               </svg>
               <span class="social__link-label">Чат</span></a
@@ -660,7 +665,7 @@
             <a class="social__link"
               ><svg>
                 <use
-                  href="{% static './src/assets/images/interface/icons-sprite-sheet.svg#ring' %}"
+                  href="{% static './src/assets/images/interface/icons-sprite-sheet.' %}svg#ring"
                 ></use>
               </svg>
               <span class="social__link-label">Чат</span></a
@@ -673,7 +678,7 @@
             <a class="social__link"
               ><svg>
                 <use
-                  href="{% static './src/assets/images/interface/icons-sprite-sheet.svg#vkontakte' %}"
+                  href="{% static './src/assets/images/interface/icons-sprite-sheet.svg' %}#vkontakte"
                 ></use>
               </svg>
               <span class="social__link-label">Сообщество</span></a
@@ -681,7 +686,7 @@
             <a class="social__link"
               ><svg>
                 <use
-                  href="{% static './src/assets/images/interface/icons-sprite-sheet.svg#telegram' %}"
+                  href="{% static './src/assets/images/interface/icons-sprite-sheet.svg' %}#telegram"
                 ></use>
               </svg>
               <span class="social__link-label">Сообщество</span></a

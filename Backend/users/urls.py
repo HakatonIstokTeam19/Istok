@@ -7,7 +7,7 @@ from allauth.account import views as allauth_view
 
 
 urlpatterns = [
-    path('profile/<int:pk>', views.profile, name='profile'),
+    path('profile/', views.profile, name='profile'),
     path('signup/', views.signup, name='signup'),
     path('logout/', views.logout, name='logout'),  # без шаблона
     path('login/', views.login, name='login'),
@@ -29,8 +29,12 @@ urlpatterns = [
         name="account_confirm_email",
     ),
 
-    # allauth
+    # allauth все стандартные пути. если нет кастомной въюшки будет работать оригинал.
     path('accounts/', include('allauth.urls')),
+
+    #######
+    path('test/', views.form_for_test, name='test'),
+    #######
 ]
 
 

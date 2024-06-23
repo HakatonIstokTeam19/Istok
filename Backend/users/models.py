@@ -62,7 +62,7 @@ class Loyalty(models.Model):
 
 
     def increase_balance(self, order_cost: int) -> None:
-        self.balance = self.balance + round(order_cost * 0.05)
+        self.balance = self.balance + round(order_cost * 0.01)
         self.save()
 
 
@@ -76,7 +76,7 @@ class Loyalty(models.Model):
 
 
 
-# В дальнейшем реализую свою модель базового пользователя.
+#todo В дальнейшем реализую свою модель базового пользователя.
 ################
 # from django.utils import timezone
 # from django.forms import TextInput

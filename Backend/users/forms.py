@@ -1,13 +1,13 @@
 from django import forms
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from .models import Profile  #, CustomUser
 from .validations import *
 
-from allauth.account.forms import (SignupForm, LoginForm)
+from allauth.account.forms import (SignupForm, LoginForm, ChangePasswordForm)
 from django.contrib.auth.validators import UnicodeUsernameValidator
 
-from django.forms import SelectDateWidget
+from django.forms import SelectDateWidget, ModelForm
 
 
 
@@ -17,7 +17,7 @@ class CustomSignupForm(SignupForm):
     Необходимо прописать путь в настройкахACCOUNT_FORMS = {'signup': 'news.forms.BasicSignupForm'}"""
 
     username = forms.CharField(
-        widget=forms.TextInput(attrs={'placeholder': 'Email или номер телефона'}),
+        widget=forms.TextInput(attrs={'placeholder': 'Номер телефона'}),
         label='Контактный номер',
         max_length=12,
         required=True,
@@ -69,17 +69,84 @@ class CustomSignupForm(SignupForm):
 
 
 
+class FirstLastNameEdit(ModelForm):
+
+    first_name = forms.CharField(
+        widget=forms.TextInput(attrs={'placeholder': 'Ваше имя'}),
+        label='Имя',
+        validators=[no_number_in_name],
+        required=True,
+    )
+    last_name = forms.CharField(
+        widget=forms.TextInput(attrs={'placeholder': 'Ваша фамилия'}),
+        label='Фамилия',
+        validators=[no_number_in_name],
+        required=True,
+    )
+
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name')
 
 
+class SurnameEdit(ModelForm):
+    surname = forms.CharField(
+        widget=forms.TextInput(attrs={'placeholder': 'Ваше Отчество(необязательно)'}),
+        label='Отчество',
+        validators=[no_number_in_name],
+        required=False,
+    )
+
+    class Meta:
+        model = Profile
+        fields = ('surname', )
 
 
+class BirthDateEdit(ModelForm):
+    birth_date = forms.DateField(
+        label='Дата рождения',
+        widget=SelectDateWidget(years=years_range()),
+    )
+
+    class Meta:
+        model = Profile
+        fields = ('birth_date', )
 
 
+class MobileNuberEdit(ModelForm):
+    """Для выполнения условия входа путем ввода как email так и по телефону,
+    с учетом, что настройках allauth можно прописать лишь
+    ACCOUNT_AUTHENTICATION_METHOD = 'username_email',
+    пришлось поле username неявно переделать в телефон."""
+    username = forms.CharField(
+        widget=forms.TextInput(attrs={'placeholder': 'Номер телефона'}),
+        label='Контактный номер',
+        max_length=12,
+        required=True,
+        validators=[phone_regex],
+        error_messages={
+            "unique": "Пользователь с таким номером уже зарегистрирован",
+        },
+    )
+
+    class Meta:
+        model = User
+        fields = ('username', )
 
 
+from django.core.validators import validate_email
 
 
+class EmailEdit(ModelForm):
+    email = forms.EmailField(
+        widget=forms.EmailInput(attrs={'placeholder': 'Email'}),
+        label='Email',
+        required=True,
+        validators=[validate_email],
+    )
 
-
+    class Meta:
+        model = User
+        fields = ('email', )
 
 

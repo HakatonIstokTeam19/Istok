@@ -1,3 +1,84 @@
 
-Личный кабинет в разработке!
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Личный кабинет</title>
+</head>
+
+
+<body>
+
+  <p>Меню личного кабинета</p>
+  <u>
+    <li><a href="#">Мои заказы</a></li>
+
+    <li><a href="#">Программа лояльности </a></li>
+    <li><a href="#">История заказов</a></li>
+    <li><a href="{% url 'profile' %}">Личные данные </a></li>
+    <li><a href="#">Поддержка</a></li>
+    <li><a href="{% url 'logout' %}">Выйти</a></li>
+  </u>
+
+  <h1>Личные данные</h1>
+
+
+  <p>ФИО: {{ fio }}</p>
+  {% for error in form_first_last_name.errors.first_name %}
+    <p>{{ error }}</p>
+  {% endfor %}
+
+  <form action="" method="post">
+    {% csrf_token %}
+    <p>{{ form_first_last_name.last_name }}</p>
+    <p>{{ form_first_last_name.first_name }}</p>
+    <p>{{ form_surname.surname }}</p>
+    <input type="submit" value="Сохранить" />
+    </form>
+  <hr>
+
+  <p>Дата рождения: {{ user.profile.birth_date }}</p>
+  <form action="" method="post">
+    {% csrf_token %}
+    <p>{{ form_birth_day.birth_date }}</p>
+    <input type="submit" value="Сохранить" />
+  </form>
+  <hr>
+
+  <p>Номер телефона: {{ user.username }}</p>
+  <form action="" method="post">
+    {% csrf_token %}
+    <p>{{ form_mobile_number.username }}</p>
+    <input type="submit" value="Сохранить" />
+  </form>
+  <hr>
+
+  <p>Email: {{ user.email }}</p>
+  <form action="" method="post">
+    {% csrf_token %}
+    <p>{{ form_email.email }}</p>
+    <input type="submit" value="Сохранить" />
+  </form>
+  <hr>
+
+  <p>Пароль: •••••••••</p>
+  <form action="" method="post">
+    {% csrf_token %}
+      <p>{{ form_password.old_password }}</p>
+      <p>{{ form_password.new_password1 }}</p>
+      <p>{{ form_password.new_password2 }}</p>
+    <input type="submit" value="Сохранить" />
+  </form>
+  <hr>
+
+
+  {% if user_loyalty %}
+    <p>Код лояльности: {{ user_loyalty }}</p>
+  {% else %}
+    <p>Для присоединения к программе лояльности пройдите по <a href="#">ссылке</a>.</p>
+  {% endif %}
+
+</body>
+</html>
 

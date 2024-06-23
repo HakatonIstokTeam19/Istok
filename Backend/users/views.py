@@ -1,26 +1,24 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+
 from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
+
 from django.urls import reverse, reverse_lazy
-# from django.utils.decorators import method_decorator
 from django.views.generic.base import TemplateView
 from django.views.generic import (ListView, DetailView, CreateView,
                                   UpdateView, DeleteView, View)
 
-from django.contrib.auth.models import User
-from .forms import CustomSignupForm
+from .forms import (CustomSignupForm, FirstLastNameEdit, SurnameEdit,
+                    BirthDateEdit, MobileNuberEdit, EmailEdit)
 from .models import Profile
-
 from allauth.account.views import (SignupView, LogoutView, LoginView, PasswordResetView, PasswordResetDoneView,
                                    PasswordResetFromKeyView, PasswordResetFromKeyDoneView, EmailVerificationSentView,
                                    ConfirmEmailView)
 
-
-class UserProfile(DetailView):
-    model = User
-    template_name = "users/profile.html"
-
-profile = UserProfile.as_view()
 
 
 class CustomSignupView(SignupView):
@@ -92,7 +90,6 @@ class CustomLoginView(LoginView):
 login = CustomLoginView.as_view()
 
 
-
 class CustomPasswordResetView(PasswordResetView):
 
     template_name = "users/password_reset.html"
@@ -146,6 +143,106 @@ class CustomPasswordResetFromKeyDoneView(PasswordResetFromKeyDoneView):
 
 
 password_reset_from_key_done = CustomPasswordResetFromKeyDoneView.as_view()
+
+
+
+@login_required
+def profile(request):
+    user = get_object_or_404(User, pk=request.user.pk)
+    profile = get_object_or_404(Profile, user=user)
+
+    try:
+        user_loyalty = user.loyalty.loyalty_code
+    except Exception:
+        user_loyalty = ''
+
+    fio = f"{user.last_name.capitalize()} {user.first_name.capitalize()} {profile.surname.capitalize()}"
+
+    form_first_last_name = FirstLastNameEdit(instance=user)
+    form_surname = SurnameEdit(instance=profile)
+    form_birth_day = BirthDateEdit(instance=profile)
+    form_mobile_number = MobileNuberEdit(instance=user)
+
+    form_email = EmailEdit(instance=user)
+    form_email.fields['email'].widget.attrs.update({'placeholder': 'Email'})
+
+    form_password = PasswordChangeForm(user=user)
+    form_password.fields['old_password'].widget.attrs.update({'placeholder': 'Старый пароль'})
+    form_password.fields['new_password1'].widget.attrs.update({'placeholder': 'Новый пароль'})
+    form_password.fields['new_password2'].widget.attrs.update({'placeholder': 'Повторите новый пароль'})
+
+    data = request.POST
+
+    #####
+    lst = [form_first_last_name, form_surname, form_birth_day, form_mobile_number, form_email, form_password]
+    # for form in lst:
+    #     print(form.fields)
+    ######
+
+    if request.method == "POST":
+        form_first_last_name = FirstLastNameEdit(instance=user, data=data)
+        form_surname = SurnameEdit(instance=profile, data=data)
+        form_birth_day = BirthDateEdit(instance=profile, data=data)
+        form_mobile_number = MobileNuberEdit(instance=user, data=data)
+        form_email = EmailEdit(instance=user, data=data)
+        form_password = PasswordChangeForm(user=user, data=data)
+
+        if form_first_last_name.is_valid() and form_surname.is_valid():
+            form_first_last_name.save()
+            form_surname.save()
+            print('\nform_first_last_name and form_surname SAVED\n')
+            return redirect('profile')
+
+        if form_birth_day.is_valid():
+            form_birth_day.save()
+            print('\nform_birth_day SAVED\n')
+            return redirect('profile')
+
+        if form_mobile_number.is_valid():
+            form_mobile_number.save()
+            print('\nform_mobile_number SAVED\n')
+            return redirect('profile')
+
+        if form_email.is_valid():
+            form_email.save()
+            print('\nform_email SAVED\n')
+            return redirect('profile')
+
+        if form_password.is_valid():
+            form_password.save()
+            print('\nform_password SAVED\n')
+            # Автоматическая авторизация после заполнения формы
+            update_session_auth_hash(request, user)
+            return redirect('profile')
+
+        #####
+        tic = 1
+        for form in lst:
+            print(f'Форма №{tic} валидна? =', form.is_valid())
+            if not form.is_valid():
+                print(f'Форма №{tic} ERROR == ', form.errors.as_data())
+            tic += 1
+        ####
+
+
+    context = {'user': user, 'fio': fio, 'user_loyalty': user_loyalty,
+               'form_first_last_name': form_first_last_name, 'form_surname': form_surname,
+               'form_birth_day': form_birth_day, 'form_mobile_number': form_mobile_number,
+               'form_email': form_email, 'form_password': form_password}
+
+    return render(request, 'users/profile.html', context=context)
+
+
+
+
+#########
+class FormForTest(TemplateView):
+    template_name = "users/profile-personal-data.html"
+
+
+form_for_test = FormForTest.as_view()
+###########
+
 
 
 

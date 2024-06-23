@@ -1,7 +1,61 @@
+@font-face {
+  font-family: "VelaSans";
+  src: url(../assets/fonts/VelaSans/Static/Web/VelaSans-Light.woff2)
+      format("woff2"),
+    url(../assets/fonts/VelaSans/Static/Web/VelaSans-Light.woff) format("woff");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "VelaSans";
+  src: url(../assets/fonts/VelaSans/Static/Web/VelaSans-Medium.woff2)
+      format("woff2"),
+    url(../assets/fonts/VelaSans/Static/Web/VelaSans-Medium.woff) format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "VelaSans";
+  src: url(../assets/fonts/VelaSans/Static/Web/VelaSans-Bold.woff2)
+      format("woff2"),
+    url(../assets/fonts/VelaSans/Static/Web/VelaSans-Bold.woff) format("woff");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "VelaSans";
+  src: url(../assets/fonts/VelaSans/Static/Web/VelaSans-ExtraBold.woff2)
+      format("woff2"),
+    url(../assets/fonts/VelaSans/Static/Web/VelaSans-ExtraBold.woff)
+      format("woff");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "VelaSans";
+  src: url(../assets/fonts/VelaSans/Static/Web/VelaSans-SemiBold.woff2)
+      format("woff2"),
+    url(../assets/fonts/VelaSans/Static/Web/VelaSans-SemiBold.woff)
+      format("woff");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "VelaSans";
+  src: url(../assets/fonts/VelaSans/Static/Web/VelaSans-ExtraLight.woff2)
+      format("woff2"),
+    url(../assets/fonts/VelaSans/Static/Web/VelaSans-ExtraLight.woff)
+      format("woff");
+  font-weight: 200;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
 :root {
   /* Typography */
 
   --font-main: "VelaSans";
+  --font-secondary: "Inter";
   --font-10: 10px;
   --font-12: 12px;
   --font-14: 14px;
@@ -9,6 +63,7 @@
   --font-20: 20px;
   --font-24: 24px;
   --font-32: 32px;
+  --font-40: 40px;
   --font-48: 48px;
   --font-52: 52px;
 
@@ -37,22 +92,22 @@
   --beige: #e8e9da;
 
   /* spaces */
---padding-102: 102px;
+  --padding-102: 102px;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-:before, *, :after {
+:before,
+*,
+:after {
   outline: none;
   text-decoration: none;
   border: none;
   box-sizing: border-box;
   text-decoration-line: none;
 }
-
-/* С НАМИ НАЧИНАЕТСЯУЮТ ВАШЕГО ДОМА */
 
 
 body {
@@ -65,6 +120,14 @@ body {
 a {
   text-decoration: none;
   cursor: pointer;
+}
+
+.font-heading-24 {
+  font-family: var(--font-main);
+  font-size: var(--font-24);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-height-28);
+  color: var(--light-black);
 }
 
 .font-btn-light-24 {
@@ -90,7 +153,6 @@ a {
   line-height: var(--line-height-26);
   color: var(--light-black);
 }
-
 
 .font-heading-bold-16 {
   font-family: var(--font-main);
@@ -125,6 +187,13 @@ a {
   color: var(--light-black);
 }
 
+.font-body-4 {
+  font-family: var(--font-main);
+  font-size: var(--font-10);
+  font-weight: var(--weight-light);
+  color: var(--light-black);
+}
+
 .font-body-3-bold {
   font-family: var(--font-main);
   font-size: var(--font-12);
@@ -149,6 +218,14 @@ a {
   color: var(--light-black);
 }
 
+.font-heading-48 {
+  font-family: var(--font-main);
+  font-size: var(--font-48);
+  font-weight: var(--weight-regular);
+  line-height: var(--line-height-65);
+  color: var(--light-black);
+}
+
 .font-heading-reg-32 {
   font-family: var(--font-main);
   font-size: var(--font-32);
@@ -162,8 +239,8 @@ a {
   font-size: var(--font-32);
   font-weight: var(--weight-bold-x);
   color: var(--light-black);
-  }
+}
 
-  .text-color-accent {
-    color: var(--green);
-    }
+.text-color-accent {
+  color: var(--green);
+}

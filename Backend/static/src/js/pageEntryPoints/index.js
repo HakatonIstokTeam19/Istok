@@ -1,7 +1,7 @@
 import handleResize from "../shared/handleResize.js";
+import initModals from "../shared/handleModals.js";
 import initHomeScrollAndSlider1 from "../shared/handleHomeScrollAndSlider.js";
 import initScrollToViewByClick from "../shared/scrollToViewByClick.js";
-import initModals from "../shared/handleModals.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-
         const sectionId = entry.target.id;
         controls.forEach((control) => {
           const controlCircle = control.querySelector(".slide-control__circle");
@@ -51,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
   sections.forEach((section) => {
     observer.observe(section);
   });
-  
 });
 
 // slider 3 - materials
