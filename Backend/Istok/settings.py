@@ -28,8 +28,10 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
-ALLOWED_HOSTS = ['192.168.0.228', '127.0.0.1', 'localhost', '188.235.131.11']
+ALLOWED_HOSTS = ["127.0.0.1", "team19.pythonanywhere.com"]
 
 
 # Application definition
