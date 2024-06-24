@@ -79,7 +79,7 @@
   }
   
   .profile__title {
-    max-width: 318px;
+    /* max-width: 318px; */
     height: 48px;
     margin-bottom: 48px;
     font-family: var(--font-secondary);
