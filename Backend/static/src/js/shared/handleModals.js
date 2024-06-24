@@ -15,7 +15,8 @@ export default function initModals() {
       const targetOpenModalId = button.getAttribute('data-modal');
       const closeModalId = button.getAttribute('data-close-modal');
   
-      button.addEventListener('click', () => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
         if (closeModalId) {
           const targetCloseModal = document.getElementById(closeModalId);
           closeModal(targetCloseModal);
@@ -29,7 +30,11 @@ export default function initModals() {
       const modalId = button.getAttribute('data-modal');
       const modal = document.getElementById(modalId);
   
-      button.addEventListener('click', () => closeModal(modal));
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        closeModal(modal)
+      });
     });
   
     window.addEventListener('click', (event) => {

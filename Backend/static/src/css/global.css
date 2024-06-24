@@ -1,7 +1,61 @@
+@font-face {
+  font-family: "VelaSans";
+  src: url(../assets/fonts/VelaSans/Static/Web/VelaSans-Light.woff2)
+      format("woff2"),
+    url(../assets/fonts/VelaSans/Static/Web/VelaSans-Light.woff) format("woff");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "VelaSans";
+  src: url(../assets/fonts/VelaSans/Static/Web/VelaSans-Medium.woff2)
+      format("woff2"),
+    url(../assets/fonts/VelaSans/Static/Web/VelaSans-Medium.woff) format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "VelaSans";
+  src: url(../assets/fonts/VelaSans/Static/Web/VelaSans-Bold.woff2)
+      format("woff2"),
+    url(../assets/fonts/VelaSans/Static/Web/VelaSans-Bold.woff) format("woff");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "VelaSans";
+  src: url(../assets/fonts/VelaSans/Static/Web/VelaSans-ExtraBold.woff2)
+      format("woff2"),
+    url(../assets/fonts/VelaSans/Static/Web/VelaSans-ExtraBold.woff)
+      format("woff");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "VelaSans";
+  src: url(../assets/fonts/VelaSans/Static/Web/VelaSans-SemiBold.woff2)
+      format("woff2"),
+    url(../assets/fonts/VelaSans/Static/Web/VelaSans-SemiBold.woff)
+      format("woff");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "VelaSans";
+  src: url(../assets/fonts/VelaSans/Static/Web/VelaSans-ExtraLight.woff2)
+      format("woff2"),
+    url(../assets/fonts/VelaSans/Static/Web/VelaSans-ExtraLight.woff)
+      format("woff");
+  font-weight: 200;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
 :root {
   /* Typography */
 
   --font-main: "VelaSans";
+  --font-secondary: "Inter";
   --font-10: 10px;
   --font-12: 12px;
   --font-14: 14px;
@@ -9,6 +63,7 @@
   --font-20: 20px;
   --font-24: 24px;
   --font-32: 32px;
+  --font-40: 40px;
   --font-48: 48px;
   --font-52: 52px;
 
@@ -35,6 +90,7 @@
   --light-black: #222222;
   --whitish: #fffdfb;
   --beige: #e8e9da;
+  --error: #CC0000;
 
   /* spaces */
   --padding-102: 102px;

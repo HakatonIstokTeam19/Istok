@@ -1,33 +1,67 @@
 function clickFilter() {
-  const filterText = document.querySelector(".main__filter-heading");
-  const filterArrow = document.querySelector(".main__filter-arrow");
+  const filterText1 = document.querySelector(".main__filter-heading1");
+  const filterText2 = document.querySelector(".main__filter-heading2");
   const filterAside = document.querySelector(".main__filter-bar");
   const filter = document.querySelector(".main__filter");
   const filterOptions = document.querySelector(".main__filter-options");
-  filterText.addEventListener("click", () => {
-    const isVisible = filterOptions.style.display == "flex";
-    if (isVisible) {
-      filterOptions.style.display = "none";
-      filter.style.display = "flex";
-      filterArrow.classList.add("clicked");
-      filterAside.classList.add("filtered");
-    } else {
-      filterOptions.style.display = "flex";
-      filter.style.display = "none";
-      filterArrow.classList.remove("clicked");
-      filterAside.classList.remove("filtered");
-    }
+
+  filterText1.addEventListener("click", () => {
+    filterOptions.style.display = "none";
+    filter.style.display = "flex";
+    filterAside.classList.add("filtered");
+  });
+  filterText2.addEventListener("click", () => {
+    filterOptions.style.display = "flex";
+    filter.style.display = "none";
+    filterAside.classList.remove("filtered");
+  });
+}
+
+const scrollContainer = document.querySelector(".main__cards-section");
+
+function handleScroll(e) {
+  e.preventDefault();
+  scrollContainer.scrollLeft += e.deltaY;
+}
+
+// function addFilterOptions() {
+//   const checkbox = document.querySelector(".main__form-checkbox");
+//   const filterContainer = document.querySelector(".main__filter");
+
+//   if (checkbox.value === "Кухня") {
+//     let card = document.createElement("div");
+//     card.classList.add("main__form-option");
+//     filterContainer.innerHTML = `
+
+//     `;
+//   }
+// }
+
+function sliderImage() {
+  const cards = document.querySelectorAll(".main__card");
+  let activeSlide = 0;
+  cards.forEach((card) => {
+    const sliderArrows = card.querySelectorAll(".main__card-image-line");
+    const slides = card.querySelectorAll(".main__image");
+    let slideslength = slides.length;
+    sliderArrows.forEach((arrow, index) => {
+      arrow.addEventListener("click", () => {
+        slides[activeSlide].classList.remove("active");
+        sliderArrows[activeSlide].classList.remove("active");
+
+        activeSlide = index;
+
+        sliderArrows[activeSlide].classList.add("active");
+        slides[activeSlide].classList.add("active");
+      });
+    });
+    console.log(slideslength);
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const scrollContainer = document.querySelector(".main__cards-section");
-
-  function handleScroll(e) {
-    e.preventDefault();
-    scrollContainer.scrollLeft += e.deltaY;
-  }
-
   scrollContainer.addEventListener("wheel", handleScroll);
   clickFilter();
+
+  sliderImage();
 });
