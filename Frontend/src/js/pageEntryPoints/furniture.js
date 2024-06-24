@@ -24,23 +24,11 @@ function handleScroll(e) {
   scrollContainer.scrollLeft += e.deltaY;
 }
 
-// function addFilterOptions() {
-//   const checkbox = document.querySelector(".main__form-checkbox");
-//   const filterContainer = document.querySelector(".main__filter");
-
-//   if (checkbox.value === "Кухня") {
-//     let card = document.createElement("div");
-//     card.classList.add("main__form-option");
-//     filterContainer.innerHTML = `
-
-//     `;
-//   }
-// }
-
 function sliderImage() {
   const cards = document.querySelectorAll(".main__card");
-  let activeSlide = 0;
+
   cards.forEach((card) => {
+    let activeSlide = 0;
     const sliderArrows = card.querySelectorAll(".main__card-image-line");
     const slides = card.querySelectorAll(".main__image");
     let slideslength = slides.length;
