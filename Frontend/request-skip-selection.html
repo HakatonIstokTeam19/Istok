@@ -4,10 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Istok - Request quote</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="./favicon_io/site.webmanifest">
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/global.css" />
     <link rel="stylesheet" href="./src/css/request-skip-selection.css" />
-    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/base-elements.css" />
     <link rel="stylesheet" href="./src/css/buttons.css" />
     <link rel="stylesheet" href="./src/css/forms.css" />
     <link
@@ -18,18 +22,20 @@
   </head>
   <body class="page__body">
     <header class="header">
-      <svg alt="logo" class="header__logo">
-        <use
-          href="./src/assets/images/interface/icons-sprite-sheet.svg#logo"
-        ></use>
-      </svg>
+      <a href="./index.html">
+        <svg alt="logo" class="header__logo">
+          <use
+            href="./src/assets/images/interface/icons-sprite-sheet.svg#logo"
+          ></use>
+        </svg>
+      </a>
       <nav class="header__nav">
         <ul class="header__links">
           <li class="header__link font-body-1">
             <a class="header__link font-body-1" href="./index.html">Главная</a>
           </li>
           <li class="header__link font-body-1">
-            <a class="header__link font-body-1" href="#">Готовая мебель</a>
+            <a class="header__link font-body-1" href="./furniture.html">Готовая мебель</a>
           </li>
           <li class="header__link font-body-1">
             <a class="header__link font-body-1" href="./about.html">О нас</a>
@@ -39,11 +45,13 @@
               >Оставить заявку</a
             >
           </li>
+          <li class="header__link font-body-1">
+            <a class="header__link font-body-1 header__sign-in" href="./profile-personal-data.html"
+            >Войти в личный кабинет</a
+          >
+          </li>
         </ul>
       </nav>
-      <a class="header__link font-body-1 header__sign-in" href="./profile.html"
-        >Войти в личный кабинет</a
-      >
     </header>
     <form
       class="skip-selection__submit-request-form"
@@ -203,7 +211,11 @@
         <input class="side-menu-contact__hidden-input" type="checkbox"
       /></label>
       <div class="side-menu-contact__links">
-        <a class="side-menu-contact__link"
+        <a
+          class="side-menu-contact__link"
+          href="https://wa.me/79311213900?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B2%D1%8F%D0%B7%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D1%81%D0%BE%20%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%BC%21"
+          target="_blank"
+          aria-label="Чат whatsapp"
           ><svg
             width="33"
             height="32"
@@ -242,7 +254,11 @@
           </svg>
           <span class="side-menu-contact__link-text">Чат</span></a
         >
-        <a class="side-menu-contact__link"
+        <a
+          class="side-menu-contact__link"
+          href="https://t.me/ISTOKsupport_bot"
+          target="_blank"
+          aria-label="Телеграм бот"
           ><svg
             width="33"
             height="32"
@@ -273,7 +289,12 @@
           </svg>
           <span class="side-menu-contact__link-text">Чат</span></a
         >
-        <a class="side-menu-contact__link"
+        <a
+          href="tel:+78129662997"
+          target="_blank"
+          rel="nofollow"
+          aria-label="Телефон"
+          class="side-menu-contact__link"
           ><svg
             width="33"
             height="32"
@@ -304,7 +325,11 @@
           </svg>
           <span class="side-menu-contact__link-text">Звонок</span></a
         >
-        <a class="side-menu-contact__link"
+        <a
+          class="side-menu-contact__link"
+          href="https://t.me/ISTOK_Connect"
+          target="_blank"
+          aria-label="Телеграм канал"
           ><svg
             width="33"
             height="32"
@@ -335,7 +360,11 @@
           </svg>
           <span class="side-menu-contact__link-text">Сообщество</span></a
         >
-        <a class="side-menu-contact__link"
+        <a
+          class="side-menu-contact__link"
+          href="https://vk.com/istokmebel"
+          target="_blank"
+          aria-label="Группа вконтакте"
           ><svg
             width="33"
             height="32"

@@ -3,49 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Istok - Home</title>
+    <title>Istok - Главная</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon_io/site.webmanifest" />
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/global.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/base-elements.css" />
     <link rel="stylesheet" href="./src/css/buttons.css" />
     <link rel="stylesheet" href="./src/css/modal.css" />
   </head>
   <body class="body">
-    <!-- Header - часть базового шаблона -->
-    <header class="header">
-      <svg alt="logo" class="header__logo">
-        <use
-          href="./src/assets/images/interface/icons-sprite-sheet.svg#logo"
-        ></use>
-      </svg>
-      <nav class="header__nav">
-        <ul class="header__links">
-          <li class="header__link font-body-1">
-            <a class="header__link active font-body-1" href="./index.html"
-              >Главная</a
-            >
-          </li>
-          <li class="header__link font-body-1">
-            <a class="header__link font-body-1" href="./furniture.html"
-              >Готовая мебель</a
-            >
-          </li>
-          <li class="header__link font-body-1">
-            <a class="header__link font-body-1" href="./about.html">О нас</a>
-          </li>
-          <li class="header__link font-body-1">
-            <a class="header__link font-body-1" href="./request-select-furniture.html"
-              >Оставить заявку</a
-            >
-          </li>
-        </ul>
-      </nav>
-      <a class="header__link font-body-1 header__sign-in" href="./profile.html"
-        >Войти в личный кабинет</a
-      >
-    </header>
 
     <main class="container main-content">
+      <header class="header">
+        <svg alt="logo" class="header__logo">
+          <use
+            href="./src/assets/images/interface/icons-sprite-sheet.svg#logo"
+          ></use>
+        </svg>
+        <nav class="header__nav">
+          <ul class="header__links">
+            <li class="header__link font-body-1">
+              <a class="header__link active font-body-1" href="./index.html"
+                >Главная</a
+              >
+            </li>
+            <li class="header__link font-body-1">
+              <a class="header__link font-body-1" href="./furniture.html"
+                >Готовая мебель</a
+              >
+            </li>
+            <li class="header__link font-body-1">
+              <a class="header__link font-body-1" href="./about.html">О нас</a>
+            </li>
+            <li class="header__link font-body-1">
+              <a
+                class="header__link font-body-1"
+                href="./request-select-furniture.html"
+                >Оставить заявку</a
+              >
+            </li>
+            <li class="header__link font-body-1">
+              <a
+                class="header__link font-body-1 header__sign-in"
+                href="./profile-personal-data.html"
+                >Войти в личный кабинет</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
       <section class="container__page1 main-content__section" id="start">
         <div class="page1 page1__content-outer-wrapper">
           <div class="page1__content-inner-wrapper">
@@ -54,13 +78,18 @@
               уют <span class="text-color-accent">вашего</span> дома
             </h1>
             <p class="font-body-1 page1__tagline">
-              ПРОИЗВОДСТВО МЕБЕЛИ НА ЗАКАЗ <br />
+              ПРОИЗВОДСТВО МЕБЕЛИ НА ЗАКАЗ<br />
               В САНКТ-ПЕТЕРБУРГЕ И ЛЕНИНГРАДСКОЙ ОБЛАСТИ
             </p>
-            <button data-modal="registerModal" class="button page1__button">Записаться на встречу</button>
+            <button data-modal="registerModal" class="button page1__button">
+              Записаться на встречу
+            </button>
           </div>
         </div>
-        <img src="./src/assets/images/content/home-page-1-bg-1.png" alt="" />
+        <img
+          src="./src/assets/images/content/home-page-1-bg-1.png"
+          alt="home-page-1-bg-1"
+        />
       </section>
       <section class="container__page2 main-content__section" id="benefits">
         <div class="page2__heading-container">
@@ -101,7 +130,7 @@
         </div>
         <div class="page2__benefit page2__benefit_3">
           <h3 class="font-heading-bold-16 benefit-heading">
-            Взаимодействие с мебелью во время <br />
+            Взаимодействие с мебелью во время<br />
             проектирования
           </h3>
           <p class="font-body-2 page2__main-text">
@@ -465,8 +494,6 @@
         </ol>
       </section>
       <section class="container__page8 main-content__section" id="orderNow">
-        <!-- slider 3 -->
-
         <div class="page8__slider-container" id="stocks">
           <button class="slider__btn slider__btn_left">
             <svg
@@ -510,7 +537,6 @@
           <div class="slider__visible-space">
             <div class="page8__slider slider__inner-container">
               <div class="page8__slide-1">
-                <!-- commercial block 1 -->
                 <div class="page8__slider-info">
                   <h2
                     class="commercial-heading font-heading-bold-52 text-color-accent"
@@ -528,7 +554,7 @@
                     <li>Стеллаж</li>
                   </ul>
                   <button
-                  data-modal="registerModal"
+                    data-modal="registerModal"
                     class="button button_white button_short page8__btn-order"
                   >
                     Сделать заказ
@@ -536,12 +562,11 @@
                 </div>
               </div>
               <div class="page8__slide-2">
-                <!-- commercial block 2 -->
                 <div class="page8__slider-info page8__slider-info_slide1">
                   <h2
                     class="commercial-heading font-heading-bold-52 text-color-accent"
                   >
-                    10 000 РУБЛЕЙ
+                    10&nbsp;000 РУБЛЕЙ
                   </h2>
                   <p class="commercial-text font-heading-reg-32">
                     ЗА РЕКОМЕНДАЦИЮ И ЗАКАЗ ПО НЕЙ
@@ -595,9 +620,6 @@
             </svg>
           </button>
         </div>
-
-        <!-- send a request section -->
-
         <div class="page8__consulting" id="consult">
           <h2 class="page8__heading">Оставьте заявку</h2>
           <p class="font-body-1 page8__tagline">
@@ -618,27 +640,35 @@
               удобное для вас время!
             </p>
           </div>
-          <a class="button button_white button_slim" href="./request-skip-selection.html">
-            Заказать звонок
-          </a>
+          <a
+            class="button button_white button_slim"
+            href="./request-skip-selection.html"
+            >Заказать звонок</a
+          >
         </div>
       </section>
-
-      <!-- footer -->
-
       <footer class="footer">
         <div class="footer__section">
           <h5 class="footer__heading">Связаться с исток</h5>
           <div class="social__links">
-            <a class="social__link">
-              <svg>
+            <a
+              class="social__link"
+              href="https://wa.me/79311213900?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B2%D1%8F%D0%B7%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D1%81%D0%BE%20%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%BC%21"
+              target="_blank"
+              aria-label="Чат whatsapp"
+              ><svg>
                 <use
                   href="./src/assets/images/interface/icons-sprite-sheet.svg#whatsapp"
                 ></use>
               </svg>
-              <span class="social__link-label">Чат</span>
-            </a>
-            <a class="social__link">
+              <span class="social__link-label">Чат</span></a
+            >
+            <a
+              class="social__link"
+              href="https://t.me/ISTOKsupport_bot"
+              target="_blank"
+              aria-label="Телеграм бот"
+            >
               <svg>
                 <use
                   href="./src/assets/images/interface/icons-sprite-sheet.svg#telegram"
@@ -646,67 +676,81 @@
               </svg>
               <span class="social__link-label">Чат</span>
             </a>
-            <a class="social__link">
-              <svg>
+            <a
+              class="social__link"
+              href="tel:+78129662997"
+              target="_blank"
+              rel="nofollow"
+              aria-label="Телефон"
+              ><svg>
                 <use
                   href="./src/assets/images/interface/icons-sprite-sheet.svg#ring"
                 ></use>
               </svg>
-              <span class="social__link-label">Чат</span>
-            </a>
+              <span class="social__link-label">Чат</span></a
+            >
           </div>
         </div>
         <div class="footer__section">
           <h5 class="footer__heading">Подписаться</h5>
           <div class="social__links">
-            <a class="social__link">
-              <svg>
+            <a
+              class="social__link"
+              href="https://vk.com/istokmebel"
+              target="_blank"
+              aria-label="Группа вконтакте"
+              ><svg>
                 <use
                   href="./src/assets/images/interface/icons-sprite-sheet.svg#vkontakte"
                 ></use>
               </svg>
-              <span class="social__link-label">Сообщество</span>
-            </a>
-            <a class="social__link">
-              <svg>
+              <span class="social__link-label">Сообщество</span></a
+            >
+            <a
+              class="social__link"
+              href="https://t.me/ISTOK_Connect"
+              target="_blank"
+              aria-label="Телеграм канал"
+              ><svg>
                 <use
                   href="./src/assets/images/interface/icons-sprite-sheet.svg#telegram"
                 ></use>
               </svg>
-              <span class="social__link-label">Сообщество</span>
-            </a>
+              <span class="social__link-label">Сообщество</span></a
+            >
           </div>
         </div>
         <div class="footer__section">
           <h5 class="footer__heading">Узнать больше</h5>
           <div class="social__links">
-            <a class="social__link">
-              <span class="social__link-label">Вопросы и ответы </span></a
+            <a class="social__link"
+              ><span class="social__link-label">Вопросы и ответы</span></a
             >
-            <a class="social__link">
-              <span class="social__link-label">Программа лояльности</span></a
+            <a class="social__link"
+              ><span class="social__link-label">Программа лояльности</span></a
             >
-            <a class="social__link">
-              <span class="social__link-label">Доставка и возврат</span></a
+            <a class="social__link"
+              ><span class="social__link-label">Доставка и возврат</span></a
             >
-            <a class="social__link">
-              <span class="social__link-label">Инструкция по уходу</span></a
+            <a class="social__link"
+              ><span class="social__link-label">Инструкция по уходу</span></a
             >
           </div>
         </div>
         <div class="footer__legal-info">
-          <a class="footer__policy-notice" href="https://istok-mebel.ru/policy"
+          <a
+            class="footer__policy-notice"
+            href="https://istok-mebel.ru/policy"
+            target="_blank"
             >Политика конфиденциальности</a
           >
           <span class="footer__copyright">© ООО "ИСТОК-МЕБЕЛЬ" 2024</span>
         </div>
       </footer>
 
-      <!-- slide-out menu button - часть базового шаблона-->
-
       <div class="side-menu-contact">
-        <label class="side-menu-contact__button">
-          <svg
+        <label class="side-menu-contact__button"
+          ><svg
             class="side-menu-contact__pointer"
             width="32"
             height="32"
@@ -720,11 +764,15 @@
             ></path>
           </svg>
           <span class="side-menu-contact__button-text">Связаться с ИСТОК</span>
-          <input class="side-menu-contact__hidden-input" type="checkbox" />
-        </label>
+          <input class="side-menu-contact__hidden-input" type="checkbox"
+        /></label>
         <div class="side-menu-contact__links">
-          <a class="side-menu-contact__link">
-            <svg
+          <a
+            class="side-menu-contact__link"
+            href="https://wa.me/79311213900?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B2%D1%8F%D0%B7%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D1%81%D0%BE%20%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%BC%21"
+            target="_blank"
+            aria-label="Чат whatsapp"
+            ><svg
               width="33"
               height="32"
               viewbox="0 0 33 32"
@@ -760,10 +808,14 @@
                 </clippath>
               </defs>
             </svg>
-            <span class="side-menu-contact__link-text">Чат</span>
-          </a>
-          <a class="side-menu-contact__link">
-            <svg
+            <span class="side-menu-contact__link-text">Чат</span></a
+          >
+          <a
+            class="side-menu-contact__link"
+            href="https://t.me/ISTOKsupport_bot"
+            target="_blank"
+            aria-label="Телеграм бот"
+            ><svg
               width="33"
               height="32"
               viewbox="0 0 33 32"
@@ -791,10 +843,15 @@
                 </clippath>
               </defs>
             </svg>
-            <span class="side-menu-contact__link-text">Чат</span>
-          </a>
-          <a class="side-menu-contact__link">
-            <svg
+            <span class="side-menu-contact__link-text">Чат</span></a
+          >
+          <a
+            href="tel:+78129662997"
+            target="_blank"
+            rel="nofollow"
+            aria-label="Телефон"
+            class="side-menu-contact__link"
+            ><svg
               width="33"
               height="32"
               viewbox="0 0 33 32"
@@ -822,10 +879,14 @@
                 </clippath>
               </defs>
             </svg>
-            <span class="side-menu-contact__link-text">Звонок</span>
-          </a>
-          <a class="side-menu-contact__link">
-            <svg
+            <span class="side-menu-contact__link-text">Звонок</span></a
+          >
+          <a
+            class="side-menu-contact__link"
+            href="https://t.me/ISTOK_Connect"
+            target="_blank"
+            aria-label="Телеграм канал"
+            ><svg
               width="33"
               height="32"
               viewbox="0 0 33 32"
@@ -853,10 +914,14 @@
                 </clippath>
               </defs>
             </svg>
-            <span class="side-menu-contact__link-text">Сообщество</span>
-          </a>
-          <a class="side-menu-contact__link">
-            <svg
+            <span class="side-menu-contact__link-text">Сообщество</span></a
+          >
+          <a
+            class="side-menu-contact__link"
+            href="https://vk.com/istokmebel"
+            target="_blank"
+            aria-label="Группа вконтакте"
+            ><svg
               width="33"
               height="32"
               viewbox="0 0 33 32"
@@ -884,14 +949,11 @@
                 </clippath>
               </defs>
             </svg>
-            <span class="side-menu-contact__link-text">Сообщество</span>
-          </a>
+            <span class="side-menu-contact__link-text">Сообщество</span></a
+          >
         </div>
       </div>
     </main>
-
-    <!-- progress bar -->
-
     <ul class="bottom-progress-bar">
       <li class="bottom-progress-bar__item">
         <button
@@ -978,8 +1040,6 @@
         </button>
       </li>
     </ul>
-
-    <!-- modal window to request a quote -->
     <div class="modal" id="requestQuoteModal">
       <div class="modal__content">
         <button
@@ -990,7 +1050,7 @@
           <svg
             width="14"
             height="14"
-            viewBox="0 0 14 14"
+            viewbox="0 0 14 14"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -999,7 +1059,7 @@
               clip-rule="evenodd"
               d="M0.209396 0.210303C-0.0697984 0.490706 -0.0697989 0.94533 0.209396 1.22573L6.01138 7.05284L0.314625 12.7743C0.0354299 13.0547 0.0354297 13.5093 0.314624 13.7897C0.593819 14.0701 1.04648 14.0701 1.32568 13.7897L7.02243 8.06827L12.6791 13.7494C12.9582 14.0298 13.4109 14.0298 13.6901 13.7494C13.9693 13.469 13.9693 13.0144 13.6901 12.734L8.03349 7.05284L13.7953 1.26604C14.0745 0.985641 14.0745 0.531016 13.7953 0.250613C13.5161 -0.029791 13.0635 -0.0297915 12.7843 0.250612L7.02243 6.03741L1.22045 0.210303C0.941255 -0.0701008 0.488591 -0.070101 0.209396 0.210303Z"
               fill="#222222"
-            />
+            ></path>
           </svg>
         </button>
         <div class="modal__decoration-container">
@@ -1010,17 +1070,43 @@
         </div>
         <div class="modal__info-container">
           <div class="modal__buttons">
-            <a class="button button_slim_x button_white" href="./request-select-furniture.html">Кухня</a>
-            <a class="button button_slim_x button_white" href="./request-select-furniture.html">Гардероб</a>
-            <a class="button button_slim_x button_white" href="./request-select-furniture.html">Прихожая</a>
-            <a class="button button_slim_x button_white" href="./request-select-furniture.html">Комод</a>
-            <a class="button button_slim_x button_white" href="./request-select-furniture.html">Стеллаж</a>
-            <a class="button button_slim_x button_white" href="./request-select-furniture.html">
-              Комплексный заказ</a>
-          </div>
-          <a class="modal__link font-body-2" href="./request-skip-selection.html"
+            <a
+              class="button button_slim_x button_white"
+              href="./request-select-furniture.html"
+              >Кухня</a
+            >
+            <a
+              class="button button_slim_x button_white"
+              href="./request-select-furniture.html"
+              >Гардероб</a
+            >
+            <a
+              class="button button_slim_x button_white"
+              href="./request-select-furniture.html"
+              >Прихожая</a
+            >
+            <a
+              class="button button_slim_x button_white"
+              href="./request-select-furniture.html"
+              >Комод</a
+            >
+            <a
+              class="button button_slim_x button_white"
+              href="./request-select-furniture.html"
+              >Стеллаж</a
+            >
+            <a
+              class="button button_slim_x button_white"
+              href="./request-select-furniture.html"
+              >Комплексный заказ</a
+            >
+            <a
+            class="modal__link font-body-2"
+            href="./request-skip-selection.html"
             >Пропустить и перейти к заявке</a
           >
+          </div>
+
         </div>
       </div>
       <script
@@ -1029,7 +1115,6 @@
         defer
       ></script>
     </div>
-    <!-- modal window to register or continue without registration -->
     <div class="modal" id="registerModal">
       <div class="modal__content">
         <button
@@ -1040,7 +1125,7 @@
           <svg
             width="14"
             height="14"
-            viewBox="0 0 14 14"
+            viewbox="0 0 14 14"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -1049,7 +1134,7 @@
               clip-rule="evenodd"
               d="M0.209396 0.210303C-0.0697984 0.490706 -0.0697989 0.94533 0.209396 1.22573L6.01138 7.05284L0.314625 12.7743C0.0354299 13.0547 0.0354297 13.5093 0.314624 13.7897C0.593819 14.0701 1.04648 14.0701 1.32568 13.7897L7.02243 8.06827L12.6791 13.7494C12.9582 14.0298 13.4109 14.0298 13.6901 13.7494C13.9693 13.469 13.9693 13.0144 13.6901 12.734L8.03349 7.05284L13.7953 1.26604C14.0745 0.985641 14.0745 0.531016 13.7953 0.250613C13.5161 -0.029791 13.0635 -0.0297915 12.7843 0.250612L7.02243 6.03741L1.22045 0.210303C0.941255 -0.0701008 0.488591 -0.070101 0.209396 0.210303Z"
               fill="#222222"
-            />
+            ></path>
           </svg>
         </button>
         <div class="modal__inner">
@@ -1076,12 +1161,13 @@
             <a class="button button_register" href="./register.html"
               >Зарегистрироваться</a
             >
-            <button 
-            class="button_transparent_slim" 
-            data-close-modal="registerModal"
-            data-modal="requestQuoteModal"
-              >Продолжить без регистрации</button
+            <button
+              class="button_transparent_slim"
+              data-close-modal="registerModal"
+              data-modal="requestQuoteModal"
             >
+              Продолжить без регистрации
+            </button>
           </div>
         </div>
       </div>
