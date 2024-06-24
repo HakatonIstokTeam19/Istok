@@ -125,7 +125,7 @@ height: 100px;
 
 .top-card__text-block {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   line-break: loose;
   max-width: 246px;
 }
