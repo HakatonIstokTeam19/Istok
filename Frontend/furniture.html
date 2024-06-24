@@ -4,15 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Istok - Furniture</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="./favicon_io/site.webmanifest">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon_io/site.webmanifest" />
     <link rel="stylesheet" href="./src/css/fonts.css" />
     <link rel="stylesheet" href="./src/css/reset.css" />
-    <link rel="stylesheet" href="./src/css/style.css" />
+    <!-- <link rel="stylesheet" href="./src/css/style.css" /> -->
     <link rel="stylesheet" href="./src/css/global.css" />
-    <link rel="stylesheet" href="./src/css/about.css" />
+    <link rel="stylesheet" href="./src/css/base-elements.css" />
     <link rel="stylesheet" href="./src/furniture/furniture.css" />
 
     <link
@@ -22,34 +36,42 @@
   </head>
   <body>
     <header class="header">
-      <svg alt="logo" class="header__logo">
-        <use
-          href="./src/assets/images/interface/icons-sprite-sheet.svg#logo"
-        ></use>
-      </svg>
+      <a href="./index.html">
+        <svg alt="logo" class="header__logo">
+          <use
+            href="./src/assets/images/interface/icons-sprite-sheet.svg#logo"
+          ></use>
+        </svg>
+      </a>
       <nav class="header__nav">
         <ul class="header__links">
           <li>
-            <a class="header__link font-body-1" href="./index.html"
-              >Главная</a
-            >
+            <a class="header__link font-body-1" href="./index.html">Главная</a>
           </li>
           <li class="header__link font-body-1">
             <a class="header__link font-body-1 active" href="furniture.html"
               >Готовая мебель</a
             >
           </li>
-          <li class="header__link font-body-1">
-            <a class="header__link font-body-1" href="./request-select-furniture.html">Оставить заявку</a>
-          </li>
           <li class="header__link font-body-1 active">
             <a class="header__link font-body-1" href="./about.html">О нас</a>
           </li>
+          <li class="header__link font-body-1">
+            <a
+              class="header__link font-body-1"
+              href="./request-select-furniture.html"
+              >Оставить заявку</a
+            >
+          </li>
+          <li class="header__link font-body-1">
+            <a
+              class="header__link font-body-1 header__sign-in"
+              href="./profile-personal-data.html"
+              >Войти в личный кабинет</a
+            >
+          </li>
         </ul>
       </nav>
-      <a class="header__link font-body-1 header__sign-in" href="./profile-personal-data.html"
-        >Войти в личный кабинет</a
-      >
     </header>
     <main class="main__furniture container">
       <aside class="main__filter-bar">

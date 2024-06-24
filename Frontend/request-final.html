@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/global.css" />
     <link rel="stylesheet" href="./src/css/request-final.css" />
-    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/base-elements.css" />
     <link rel="stylesheet" href="./src/css/buttons.css" />
     <link rel="stylesheet" href="./src/css/forms.css" />
     <link
@@ -22,11 +22,13 @@
   </head>
   <body class="page__body">
     <header class="header">
-      <svg alt="logo" class="header__logo">
-        <use
-          href="./src/assets/images/interface/icons-sprite-sheet.svg#logo"
-        ></use>
-      </svg>
+      <a href="./index.html">
+        <svg alt="logo" class="header__logo">
+          <use
+            href="./src/assets/images/interface/icons-sprite-sheet.svg#logo"
+          ></use>
+        </svg>
+      </a>
       <nav class="header__nav">
         <ul class="header__links">
           <li class="header__link font-body-1">
@@ -43,25 +45,29 @@
               >Оставить заявку</a
             >
           </li>
+          <li class="header__link font-body-1">
+            <a class="header__link font-body-1 header__sign-in" href="./profile-personal-data.html"
+            >Войти в личный кабинет</a
+          >
+          </li>
         </ul>
       </nav>
-      <a class="header__link font-body-1 header__sign-in" href="./profile-personal-data.html"
-        >Войти в личный кабинет</a
-      >
     </header>
     <main class="request-final__content">
-      <img
+      <div class="request-final__img-wrapper">
+        <img
         class="request-final__img"
         src="./src/assets/images/content/request-final-screen.png"
         alt="scandinavian style living room with a chair"
       />
+      </div>
       <div class="request-final__right-wrapper">
         <div class="request-final__text-content">
             <h1 class="request-final__title font-heading-48" ><span class="text-color-accent">Мы очень благодарны вам </span><br> за оставленную заявку!</h1>
-            <p class="request-final__text font-heading-24">
+            <p class="request-final__text">
                 Ваше доверие и поддержка важны для нас.
             </p>
-            <p class="request-final__text font-heading-24">
+            <p class="request-final__text">
                 Наш менеджер свяжется c вами.
             </p>
         </div>

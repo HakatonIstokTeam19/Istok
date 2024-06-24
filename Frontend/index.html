@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Istok - Home</title>
+    <title>Istok - Главная</title>
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -25,47 +25,51 @@
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/global.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/base-elements.css" />
     <link rel="stylesheet" href="./src/css/buttons.css" />
     <link rel="stylesheet" href="./src/css/modal.css" />
   </head>
   <body class="body">
-    <header class="header">
-      <svg alt="logo" class="header__logo">
-        <use
-          href="./src/assets/images/interface/icons-sprite-sheet.svg#logo"
-        ></use>
-      </svg>
-      <nav class="header__nav">
-        <ul class="header__links">
-          <li class="header__link font-body-1">
-            <a class="header__link active font-body-1" href="./index.html"
-              >Главная</a
-            >
-          </li>
-          <li class="header__link font-body-1">
-            <a class="header__link font-body-1" href="./furniture.html"
-              >Готовая мебель</a
-            >
-          </li>
-          <li class="header__link font-body-1">
-            <a class="header__link font-body-1" href="./about.html">О нас</a>
-          </li>
-          <li class="header__link font-body-1">
-            <a
-              class="header__link font-body-1"
-              href="./request-select-furniture.html"
-              >Оставить заявку</a
-            >
-          </li>
-        </ul>
-      </nav>
-      <a
-        class="header__link font-body-1 header__sign-in"
-        href="./profile-personal-data.html"
-        >Войти в личный кабинет</a
-      >
-    </header>
+
     <main class="container main-content">
+      <header class="header">
+        <svg alt="logo" class="header__logo">
+          <use
+            href="./src/assets/images/interface/icons-sprite-sheet.svg#logo"
+          ></use>
+        </svg>
+        <nav class="header__nav">
+          <ul class="header__links">
+            <li class="header__link font-body-1">
+              <a class="header__link active font-body-1" href="./index.html"
+                >Главная</a
+              >
+            </li>
+            <li class="header__link font-body-1">
+              <a class="header__link font-body-1" href="./furniture.html"
+                >Готовая мебель</a
+              >
+            </li>
+            <li class="header__link font-body-1">
+              <a class="header__link font-body-1" href="./about.html">О нас</a>
+            </li>
+            <li class="header__link font-body-1">
+              <a
+                class="header__link font-body-1"
+                href="./request-select-furniture.html"
+                >Оставить заявку</a
+              >
+            </li>
+            <li class="header__link font-body-1">
+              <a
+                class="header__link font-body-1 header__sign-in"
+                href="./profile-personal-data.html"
+                >Войти в личный кабинет</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
       <section class="container__page1 main-content__section" id="start">
         <div class="page1 page1__content-outer-wrapper">
           <div class="page1__content-inner-wrapper">
@@ -1096,12 +1100,13 @@
               href="./request-select-furniture.html"
               >Комплексный заказ</a
             >
-          </div>
-          <a
+            <a
             class="modal__link font-body-2"
             href="./request-skip-selection.html"
             >Пропустить и перейти к заявке</a
           >
+          </div>
+
         </div>
       </div>
       <script

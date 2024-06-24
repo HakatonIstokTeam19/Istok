@@ -21,25 +21,27 @@
       href="./favicon_io/favicon-16x16.png"
     />
     <link rel="manifest" href="./favicon_io/site.webmanifest" />
-    <title>Istok - About us</title>
+    <title>Istok - О нас</title>
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/global.css" />
-    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/base-elements.css" />
     <link rel="stylesheet" href="./src/css/about.css" />
   </head>
-  <body class="body">
+  <body class="about__body">
     <!-- Header - часть базового шаблона -->
 
     <header class="header">
-      <svg alt="logo" class="header__logo">
-        <use
-          href="./src/assets/images/interface/icons-sprite-sheet.svg#logo"
-        ></use>
-      </svg>
+      <a href="./index.html">
+        <svg alt="logo" class="header__logo">
+          <use
+            href="./src/assets/images/interface/icons-sprite-sheet.svg#logo"
+          ></use>
+        </svg>
+      </a>
       <nav class="header__nav">
         <ul class="header__links">
           <li class="header__link font-body-1">
-            <a class="header__link font-body-1 href=" href="./index.html"
+            <a class="header__link font-body-1" href="./index.html"
               >Главная</a
             >
           </li>
@@ -60,13 +62,15 @@
               >Оставить заявку</a
             >
           </li>
+          <li class="header__link font-body-1">
+            <a
+              class="header__link font-body-1 header__sign-in"
+              href="./profile-personal-data.html"
+              >Войти в личный кабинет</a
+            >
+          </li>
         </ul>
       </nav>
-      <a
-        class="header__link font-body-1 header__sign-in"
-        href="./profile-personal-data.html"
-        >Войти в личный кабинет</a
-      >
     </header>
     <main class="main-content container">
       <div class="text-block" id="fixedTextBlockOnAboutPage" aria-hidden="true">
@@ -267,11 +271,11 @@
                   ЧТО НУЖНО ЛЮДЯМ И ЕГО СОТРУДНИКАМ.
                 </p>
                 <div class="social-links__wrapper">
-                  <a 
-                  href="https://t.me/ISTOK_Connect"
-                  target="_blank"
-                  aria-label="Телеграм канал"
-                  class="social-links__link font-body-2"
+                  <a
+                    href="https://t.me/ISTOK_Connect"
+                    target="_blank"
+                    aria-label="Телеграм канал"
+                    class="social-links__link font-body-2"
                     ><svg class="social-links__icon">
                       <use
                         href="./src/assets/images/interface/icons-sprite-sheet.svg#telegram"

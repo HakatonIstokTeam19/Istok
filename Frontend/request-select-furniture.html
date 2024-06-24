@@ -4,14 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Istok - Request quote</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="./favicon_io/site.webmanifest">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon_io/site.webmanifest" />
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/global.css" />
     <link rel="stylesheet" href="./src/css/request.css" />
-    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/base-elements.css" />
     <link rel="stylesheet" href="./src/css/buttons.css" />
     <link rel="stylesheet" href="./src/css/forms.css" />
     <link
@@ -22,32 +36,42 @@
   </head>
   <body class="request-page__body">
     <header class="header">
-      <svg alt="logo" class="header__logo">
-        <use
-          href="./src/assets/images/interface/icons-sprite-sheet.svg#logo"
-        ></use>
-      </svg>
+      <a href="./index.html">
+        <svg alt="logo" class="header__logo">
+          <use
+            href="./src/assets/images/interface/icons-sprite-sheet.svg#logo"
+          ></use>
+        </svg>
+      </a>
       <nav class="header__nav">
         <ul class="header__links">
           <li class="header__link font-body-1">
             <a class="header__link font-body-1" href="./index.html">Главная</a>
           </li>
           <li class="header__link font-body-1">
-            <a class="header__link font-body-1" href="./furniture.html">Готовая мебель</a>
+            <a class="header__link font-body-1" href="./furniture.html"
+              >Готовая мебель</a
+            >
           </li>
           <li class="header__link font-body-1">
             <a class="header__link font-body-1" href="./about.html">О нас</a>
           </li>
           <li class="header__link font-body-1">
-            <a class="header__link font-body-1 active" href="./request-select-furniture.html"
+            <a
+              class="header__link font-body-1 active"
+              href="./request-select-furniture.html"
               >Оставить заявку</a
+            >
+          </li>
+          <li class="header__link font-body-1">
+            <a
+              class="header__link font-body-1 header__sign-in"
+              href="./profile-personal-data.html"
+              >Войти в личный кабинет</a
             >
           </li>
         </ul>
       </nav>
-      <a class="header__link font-body-1 header__sign-in" href="./profile-personal-data.html"
-        >Войти в личный кабинет</a
-      >
     </header>
     <form
       class="request__submit-request-form"
@@ -328,7 +352,7 @@
           >
           <label class="button button-select_slim"
             ><input
-            data-parameter="frontMaterial"
+              data-parameter="frontMaterial"
               type="radio"
               name="frontMaterial"
               value="pvcFilm"
@@ -339,7 +363,7 @@
           >
           <label class="button button-select_slim"
             ><input
-            data-parameter="frontMaterial"
+              data-parameter="frontMaterial"
               type="radio"
               name="frontMaterial"
               value="agt"
@@ -350,7 +374,7 @@
           >
           <label class="button button-select_slim"
             ><input
-            data-parameter="frontMaterial"
+              data-parameter="frontMaterial"
               type="radio"
               name="frontMaterial"
               value="fenix"
@@ -361,7 +385,7 @@
           >
           <label class="button button-select_slim"
             ><input
-            data-parameter="frontMaterial"
+              data-parameter="frontMaterial"
               type="radio"
               name="frontMaterial"
               value="enamel"
@@ -386,7 +410,7 @@
         >
           <label class="button button-select_slim button-select_slim_long"
             ><input
-            data-parameter="countertopMaterial"
+              data-parameter="countertopMaterial"
               type="radio"
               name="countertopMaterial"
               value="compactLaminat"
@@ -397,7 +421,7 @@
           >
           <label class="button button-select_slim button-select_slim_long"
             ><input
-            data-parameter="countertopMaterial"
+              data-parameter="countertopMaterial"
               type="radio"
               name="countertopMaterial"
               value="quartz"
@@ -408,7 +432,7 @@
           >
           <label class="button button-select_slim button-select_slim_long"
             ><input
-            data-parameter="countertopMaterial"
+              data-parameter="countertopMaterial"
               type="radio"
               name="countertopMaterial"
               value="dspAndHplCoating"
@@ -419,7 +443,7 @@
           >
           <label class="button button-select_slim button-select_slim_long"
             ><input
-            data-parameter="countertopMaterial"
+              data-parameter="countertopMaterial"
               type="radio"
               name="countertopMaterial"
               value="acryllic"
@@ -444,7 +468,7 @@
         >
           <label class="button button-select_slim button-select_slim_long"
             ><input
-            data-parameter="kitchenPlumbingFixtures"
+              data-parameter="kitchenPlumbingFixtures"
               type="radio"
               name="helpSelectPlumbing"
               value="true"
@@ -455,7 +479,7 @@
           >
           <label class="button button-select_slim button-select_slim_long"
             ><input
-            data-parameter="kitchenPlumbingFixtures"
+              data-parameter="kitchenPlumbingFixtures"
               type="radio"
               name="helpSelectPlumbing"
               value="false"
@@ -483,7 +507,7 @@
         >
           <label class="button button-select_slim button-select_slim_long"
             ><input
-            data-parameter="householdAppliances"
+              data-parameter="householdAppliances"
               type="radio"
               name="helpSelectAppliances"
               value="true"
@@ -494,7 +518,7 @@
           >
           <label class="button button-select_slim button-select_slim_long"
             ><input
-            data-parameter="householdAppliances"
+              data-parameter="householdAppliances"
               type="radio"
               name="helpSelectAppliances"
               value="false"
@@ -522,7 +546,7 @@
         >
           <label class="button button-select_slim button-select_slim_long"
             ><input
-            data-parameter="projectBudget"
+              data-parameter="projectBudget"
               type="radio"
               name="budget"
               value="lessThan300K"
@@ -533,7 +557,7 @@
           >
           <label class="button button-select_slim button-select_slim_long"
             ><input
-            data-parameter="projectBudget"
+              data-parameter="projectBudget"
               type="radio"
               name="budget"
               value="300Kto500K"
@@ -544,7 +568,7 @@
           >
           <label class="button button-select_slim button-select_slim_long"
             ><input
-            data-parameter="projectBudget"
+              data-parameter="projectBudget"
               type="radio"
               name="budget"
               value="500Kto700K"
@@ -555,7 +579,7 @@
           >
           <label class="button button-select_slim button-select_slim_long"
             ><input
-            data-parameter="projectBudget"
+              data-parameter="projectBudget"
               type="radio"
               name="budget"
               value="over700K"
@@ -580,7 +604,7 @@
         >
           <label class="button button-select_slim button-select_slim_long"
             ><input
-            data-parameter="houseExpertConsultation"
+              data-parameter="houseExpertConsultation"
               type="radio"
               name="expertColsultationrequired"
               value="500Kto700K"
@@ -591,7 +615,7 @@
           >
           <label class="button button-select_slim button-select_slim_long"
             ><input
-            data-parameter="houseExpertConsultation"
+              data-parameter="houseExpertConsultation"
               type="radio"
               name="expertColsultationrequired"
               value="over700K"
