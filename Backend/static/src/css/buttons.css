@@ -20,7 +20,8 @@
   transition: all 0.2s ease-in-out;
 }
 
-.button:hover, .button:focus {
+.button:hover,
+.button:focus {
   background-color: var(--beige);
 }
 

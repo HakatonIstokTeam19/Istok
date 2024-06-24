@@ -29,6 +29,9 @@
     <p>{{ error }}</p>
   {% endfor %}
 
+  first_name.value
+  {{ form_first_last_name.first_name.value }}
+
   <form action="" method="post">
     {% csrf_token %}
     <p>{{ form_first_last_name.last_name }}</p>

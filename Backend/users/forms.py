@@ -123,7 +123,7 @@ class MobileNuberEdit(ModelForm):
         label='Контактный номер',
         max_length=12,
         required=True,
-        validators=[phone_regex],
+        validators=[phone_regex, mobile_number_min_len],
         error_messages={
             "unique": "Пользователь с таким номером уже зарегистрирован",
         },

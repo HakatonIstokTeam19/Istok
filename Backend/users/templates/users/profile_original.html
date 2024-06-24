@@ -26,8 +26,10 @@
     <link rel="stylesheet" href="{% static 'src/css/reset.css' %}" />
     <link rel="stylesheet" href="{% static 'src/css/global.css' %}" />
     <link rel="stylesheet" href="{% static 'src/css/buttons.css' %}" />
-    <link rel="stylesheet"  href="{% static 'src/css/modal.css' %}" />
-    <link rel="stylesheet"  href="{% static 'src/css/profile-personal-data.css' %}" />
+    <link rel="stylesheet" href="{% static 'src/css/modal.css' %}" />
+    <link rel="stylesheet" href="{% static 'src/css/base-elements.css' %}" />
+    <link rel="stylesheet" href="{% static 'src/css/profile-personal-data.css' %}" />
+    <link rel="stylesheet" href="{% static 'src/css/profile-base-elements.css' %}" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
@@ -35,18 +37,19 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   </head>
   <body class="profile__body">
-    <header class="header">
-      <svg alt="logo" class="header__logo">
-        <use
-          href="./src/assets/images/interface/icons-sprite-sheet.svg#logo"
-        ></use>
-      </svg>
+      <header class="header">
+      <a href="{% url 'home' %}">
+        <svg alt="logo" class="header__logo">
+          <use
+            href="{% static 'src/assets/images/interface/icons-sprite-sheet.svg' %}#logo"
+          ></use>
+        </svg>
+      </a>
       <nav class="header__nav">
         <ul class="header__links">
           <li class="header__link font-body-1">
             <a class="header__link font-body-1" href="{% url 'home' %}">Главная</a>
           </li>
-{#          todo ! Поставить ссылку!!#}
           <li class="header__link font-body-1">
             <a class="header__link font-body-1" href="#"
               >Готовая мебель</a
@@ -55,7 +58,6 @@
           <li class="header__link font-body-1">
             <a class="header__link font-body-1" href="{% url 'about' %}">О нас</a>
           </li>
-{#          todo ССЫЛКА!!!#}
           <li class="header__link font-body-1">
             <a
               class="header__link font-body-1"
@@ -63,30 +65,22 @@
               >Оставить заявку</a
             >
           </li>
+          <li>
+            <a
+              class="header__link font-body-1 header__sign-in active"
+                  {#        todo !!!!! СМЕНИТЬ ПОЗЖЕ на мои заказы! #}
+              href="{% url 'profile' %}"
+              >Личный кабинет</a
+            >
+          </li>
         </ul>
       </nav>
-
-      {% if request.user.is_authenticated %}
-        <a
-          class="header__link font-body-1 header__sign-in active"
-    {#        todo !!!!! СМЕНИТЬ ПОЗЖЕ на мои заказы! #}
-          href="{% url 'profile' %}"
-          >Личный кабинет</a
-        >
-      {% else %}
-        <a
-          class="header__link font-body-1 header__sign-in active"
-          href="{% url 'login' %}"
-          >Войти в личный кабинет</a
-        >
-      {% endif %}
-
     </header>
 
     <main class="profile__main">
       <div class="profile__nav">
         <div class="profile__nav-container">
-          <ul class="profile__navlinks">
+          <ul class="profile__nav-links">
             <li>
               <a href="#" class="font-body-1 profile__navlink"
                 >Мои заказы</a
@@ -114,12 +108,10 @@
                 >Поддержка</a
               >
             </li>
-            <li>
-              <a href="{% url 'logout' %}" class="font-body-1 profile__navlink"
-                >Выйти</a
-              >
-            </li>
           </ul>
+          <a href="{% url 'logout' %}" class="font-body-1 profile__navlink profile__navlink_exit"
+          >Выйти</a
+        >
         </div>
       </div>
 
@@ -128,7 +120,7 @@
         <div class="profile__content-wrapper">
           <section class="data-item">
             <h3 class="data-item__title font-body-3">ФИО</h3>
-            <p class="data-item__entry font-body-1">Иванова Анна Ивановна</p>
+            <p class="data-item__entry font-body-1">{{ fio }}</p>
             <button
               class="data-item__edit"
               id="id_edit_full_name"
@@ -140,10 +132,30 @@
                 ></use>
               </svg>
             </button>
+
+            {% if form_first_last_name.errors %}
+              {% for field in form_first_last_name %}
+                {% for error in field.errors %}
+                  <div class="error_message">{{ error }}</div>
+                {% endfor %}
+              {% endfor %}
+            {% endif %}
+            {% if form_surname.errors %}
+              {% for field in form %}
+                {% for error in field.errors %}
+                  <div class="error_message">{{ error }}</div>
+                {% endfor %}
+              {% endfor %}
+            {% endif %}
+{#            {% for error in form_first_last_name.errors.first_name %}#}
+{#              <div class="error_message">{{ error }}</div>#}
+{#            {% endfor %}#}
+
           </section>
+
           <section class="data-item">
             <h3 class="data-item__title font-body-3">Дата рождения</h3>
-            <p class="data-item__entry font-body-1">ДД.ММ.ГГ</p>
+            <p class="data-item__entry font-body-1">{{ profile.birth_date|date:"d.m.Y" }}</p>
             <button
               class="data-item__edit"
               id="id_edit_birth_date"
@@ -155,10 +167,18 @@
                 ></use>
               </svg>
             </button>
+            {% if form_birth_day.errors %}
+              {% for field in form_birth_day %}
+                {% for error in field.errors %}
+                  <div class="error_message">{{ error }}</div>
+                {% endfor %}
+              {% endfor %}
+            {% endif %}
           </section>
+
           <section class="data-item">
             <h3 class="data-item__title font-body-3">Номер телефона</h3>
-            <p class="data-item__entry font-body-1">+ 7 (999) 999-99-99</p>
+            <p class="data-item__entry font-body-1">{{ mobile_number }}</p>
             <button
               class="data-item__edit"
               id="id_edit_phone_nr"
@@ -170,10 +190,18 @@
                 ></use>
               </svg>
             </button>
+            {% if form_mobile_number.errors %}
+              {% for field in form_mobile_number %}
+                {% for error in field.errors %}
+                  <div class="error_message">{{ error }}</div>
+                {% endfor %}
+              {% endfor %}
+            {% endif %}
           </section>
+
           <section class="data-item">
             <h3 class="data-item__title font-body-3">Email</h3>
-            <p class="data-item__entry font-body-1">IvanovaAn@gmail.com</p>
+            <p class="data-item__entry font-body-1">{{ user.email }}</p>
             <button
               class="data-item__edit"
               id="id_edit_email"
@@ -185,7 +213,15 @@
                 ></use>
               </svg>
             </button>
+            {% if form_email.errors %}
+              {% for field in form_email %}
+                {% for error in field.errors %}
+                  <div class="error_message">{{ error }}</div>
+                {% endfor %}
+              {% endfor %}
+            {% endif %}
           </section>
+
           <section class="data-item">
             <h3 class="data-item__title font-body-3">Пароль</h3>
             <p class="data-item__entry font-body-1 profile__password-mask">
@@ -202,13 +238,47 @@
                 ></use>
               </svg>
             </button>
+            {% if form_password.errors %}
+{#              {% for field in form_password %}#}
+{#                {% for error in field.errors %}#}
+{#                  <div class="error_message">{{ error }}</div>#}
+{#                {% endfor %}#}
+{#              {% endfor %}#}
+              {% if form_password.old_password.errors %}
+                <div class="error_message">{{ form_password.old_password.errors }}</div>
+              {% elif form_password.new_password1.errors %}
+                <div class="error_message">{{ form_password.new_password1.errors }}</div>
+              {% elif form_password.new_password2.errors %}
+                <div class="error_message">{{ form_password.new_password2.errors }}</div>
+              {% endif %}
+            {% endif %}
           </section>
-          <section class="data-item">
-            <h3 class="data-item__title font-body-3">Код лояльности</h3>
-            <p class="data-item__entry font-body-1">
-              SADS11
-            </p>
-          </section>
+
+{#        #}
+            {% if user_loyalty %}
+              <section class="data-item">
+                <h3 class="data-item__title font-body-3">Код лояльности</h3>
+                <p class="data-item__entry font-body-1" id="id_referral_code">SADS11</p>
+                <button
+                  class="data-item__copy"
+                  id="id_copy_code"
+                >
+                <svg class="copy__icon">
+                  <use
+                    href="{% static 'src/assets/images/interface/icons-sprite-sheet.svg' %}#copy"
+                  ></use>
+                </svg>
+                <span class="tooltip">Скопировать код</span>
+                </button>
+              </section>
+            {% else %}
+              <section class="data-item">
+                <h3 class="data-item__title font-body-3">Код лояльности</h3>
+{#                todo вставить сслыку на код лояльности #}
+                <a href="#" class="data-item__entry font-body-1" id="id_referral_code">Получить код</a>
+              </section>
+            {% endif %}
+{##}
         </div>
       </section>
 
@@ -219,9 +289,11 @@
           <form
             class="profile__modal-form"
             id="id_edit_full_name_form"
-            action="./profile-personal-data.html"
+            action=""
+            method="post"
             name="id_edit_full_name_form"
           >
+            {% csrf_token %}
             <button
               class="modal__close"
               data-modal="modal_edit_name"
@@ -252,7 +324,7 @@
                 type="text"
                 id="id_last_name"
                 name="last_name"
-                value="Иванова"
+                value="{{ form_first_last_name.last_name.value }}"
             /></label>
             <label
               class="profile__input-wrapper font-body-3"
@@ -262,19 +334,19 @@
                 class="profile__modal-input font-body-1"
                 type="text"
                 id="id_first_name"
-                name="name"
-                value="Анна"
+                name="first_name"
+                value="{{ form_first_last_name.first_name.value }}"
             /></label>
             <label
               class="profile__modal-label font-body-3 profile__input-wrapper"
               for="id_surname"
-              >Фамилия
+              >Отчество
               <input
                 class="profile__modal-input font-body-1"
                 type="text"
                 id="id_surname"
                 name="surname"
-                value="Ивановна"
+                value="{{ form_surname.surname.value }}"
             /></label>
             <label
               class="profile__modal-label font-body-3 profile__input-wrapper"
@@ -297,9 +369,11 @@
           <form
             class="profile__modal-form"
             id="id_edit_phone_nr_form"
-            action="./profile-personal-data.html"
+            action=""
+            method="post"
             name="id_edit_phone_form"
           >
+            {% csrf_token %}
             <button
               class="modal__close"
               data-modal="modal_edit_phone"
@@ -335,9 +409,9 @@
               <input
                 class="profile__modal-input font-body-1"
                 type="text"
-                id="id_phone"
-                name="phone"
-                value="+7(999) 999-99-98"
+                id="id_username"
+                name="username"
+                value="{{ form_mobile_number.username.value }}"
             /></label>
 
             <button
@@ -357,9 +431,11 @@
           <form
             class="profile__modal-form"
             id="id_edit_email_form"
-            action="./profile-personal-data.html"
+            action=""
+            method="post"
             name="id_edit_email_form"
           >
+            {% csrf_token %}
             <button
               class="modal__close"
               data-modal="modal_edit_email"
@@ -395,7 +471,7 @@
                 type="email"
                 id="id_email"
                 name="email"
-                value="IvanovaAn@gmail.com"
+                value="{{ form_email.email.value }}"
             /></label>
             <button
               class="button_mid profile__save-btn button"
@@ -407,16 +483,18 @@
         </div>
       </div>
 
-      <!-- modal form to edit birth date  -->
+      <!-- modal form to edit birthdate  -->
 
       <div class="modal profile__modal" id="modal_edit_birth_date">
         <div class="profile__modal-content">
           <form
             class="profile__modal-form"
             id="birth_date"
-            action="./profile-personal-data.html"
+            action=""
+            method="post"
             name="birth_date"
           >
+            {% csrf_token %}
             <button
               class="modal__close"
               data-modal="modal_edit_birth_date"
@@ -430,6 +508,7 @@
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
+
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
@@ -438,18 +517,20 @@
                 ></path>
               </svg>
             </button>
-            <h3 class="font-body-1 edit-phone-title">Введите новый email</h3>
-            <p class="font-body-3">Введите новую дату рождения</p>
+            <h3 class="font-body-1 edit-phone-title">
+              Измените дату рождения
+            </h3>
             <label
               class="profile__modal-label font-body-3 profile__input-wrapper"
               for="id_birth_date_day"
               >Дата рождения
               <input
                 class="profile__modal-input font-body-1"
-                type="email"
-                id="id_birth_date_day"
-                name="birth_date_day"
-                value=""
+                type="text"
+                id="id_birth_date"
+                name="birth_date"
+                value="{{ form_birth_day.birth_date.value|date:"d.m.Y" }}"
+                placeholder="ДД.ММ.ГГ"
             /></label>
             <button
               class="button_mid profile__save-btn button"
@@ -468,9 +549,11 @@
           <form
             class="profile__modal-form"
             id="id_edit_password_form"
-            action="./profile-personal-data.html"
+            action=""
+            method="post"
             name="id_edit_password_form"
           >
+            {% csrf_token %}
             <button
               class="modal__close"
               data-modal="modal_edit_password"
@@ -501,6 +584,7 @@
                 type="password"
                 id="id_old_password"
                 name="old_password"
+                value=""
                 required
               />
               <button
@@ -523,6 +607,7 @@
                 type="password"
                 id="id_new_password1"
                 name="new_password"
+                value=""
                 required
               />
               <button
@@ -779,6 +864,7 @@
     </div>
 
     <script
+{#      src="./src/js/pageEntryPoints/profilePersonalData.js"#}
       src="{% static 'src/js/pageEntryPoints/profilePersonalData.js' %}"
       type="module"
       defer

@@ -4,8 +4,7 @@ from django.core.exceptions import ValidationError
 
 phone_regex = RegexValidator(
         regex=r'^\+?1?\d{9,12}$',
-        message="Телефон должен быть указан в формате: "
-                                         "'+7ХХХХХХХХХХ'. Максимум 12 символов.")
+        message="Телефон должен быть указан в формате: +7ХХХХХХХХХХ (12 символов).")
 
 def years_range():
     current_year = int(datetime.now().year)
@@ -19,5 +18,12 @@ def no_number_in_name(value):
     if is_digit_present:
         raise ValidationError(
             'В вашем имени, фамилии или отчестве не должно быть цифр.',
+            params={"value": value},
+        )
+
+def mobile_number_min_len(value):
+    if len(value) != 12:
+        raise ValidationError(
+            'Телефон должен быть указан в формате: +7ХХХХХХХХХХ (12 символов).',
             params={"value": value},
         )

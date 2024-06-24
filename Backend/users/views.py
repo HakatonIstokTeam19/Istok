@@ -157,6 +157,12 @@ def profile(request):
         user_loyalty = ''
 
     fio = f"{user.last_name.capitalize()} {user.first_name.capitalize()} {profile.surname.capitalize()}"
+    num = user.username
+
+    if num[0] == '+':
+        mobile_number = f"+{num[1]}({num[2:5]}) {num[5:8]}-{num[8:10]}-{num[10:12]}"
+    else:
+        mobile_number = num
 
     form_first_last_name = FirstLastNameEdit(instance=user)
     form_surname = SurnameEdit(instance=profile)
@@ -172,72 +178,95 @@ def profile(request):
     form_password.fields['new_password2'].widget.attrs.update({'placeholder': 'Повторите новый пароль'})
 
     data = request.POST
+    print('data == ', data)
 
     #####
     lst = [form_first_last_name, form_surname, form_birth_day, form_mobile_number, form_email, form_password]
     # for form in lst:
     #     print(form.fields)
     ######
+    # print('form_first_last_name == ', form_first_last_name.fields['first_name'])
+
 
     if request.method == "POST":
-        form_first_last_name = FirstLastNameEdit(instance=user, data=data)
-        form_surname = SurnameEdit(instance=profile, data=data)
-        form_birth_day = BirthDateEdit(instance=profile, data=data)
-        form_mobile_number = MobileNuberEdit(instance=user, data=data)
-        form_email = EmailEdit(instance=user, data=data)
-        form_password = PasswordChangeForm(user=user, data=data)
 
-        if form_first_last_name.is_valid() and form_surname.is_valid():
+        if data.get('last_name'):
+            form_first_last_name = FirstLastNameEdit(instance=user, data=data)
+        else:
+            form_first_last_name = FirstLastNameEdit(instance=user)
+
+        if data.get('surname'):
+            form_surname = SurnameEdit(instance=profile, data=data)
+        else:
+            form_surname = SurnameEdit(instance=profile)
+
+        if data.get('birth_date'):
+            form_birth_day = BirthDateEdit(instance=profile, data=data)
+        else:
+            form_birth_day = BirthDateEdit(instance=profile)
+
+        if data.get('username'):
+            form_mobile_number = MobileNuberEdit(instance=user, data=data)
+        else:
+            form_mobile_number = MobileNuberEdit(instance=user)
+
+        if data.get('email'):
+            form_email = EmailEdit(instance=user, data=data)
+        else:
+            form_email = EmailEdit(instance=user)
+
+        if data.get('old_password'):
+            form_password = PasswordChangeForm(user=user, data=data)
+        else:
+            form_password = PasswordChangeForm(user=user)
+
+
+
+        if form_first_last_name.is_valid() and form_surname.is_valid() and data.get('last_name'):
             form_first_last_name.save()
             form_surname.save()
             print('\nform_first_last_name and form_surname SAVED\n')
             return redirect('profile')
 
-        if form_birth_day.is_valid():
+        if form_birth_day.is_valid() and data.get('birth_date'):
             form_birth_day.save()
             print('\nform_birth_day SAVED\n')
             return redirect('profile')
 
-        if form_mobile_number.is_valid():
+        if form_mobile_number.is_valid() and data.get('username'):
             form_mobile_number.save()
             print('\nform_mobile_number SAVED\n')
             return redirect('profile')
 
-        if form_email.is_valid():
+        if form_email.is_valid() and data.get('email'):
             form_email.save()
             print('\nform_email SAVED\n')
             return redirect('profile')
 
-        if form_password.is_valid():
+        if form_password.is_valid() and data.get('old_password'):
             form_password.save()
             print('\nform_password SAVED\n')
             # Автоматическая авторизация после заполнения формы
             update_session_auth_hash(request, user)
             return redirect('profile')
 
-        #####
-        tic = 1
-        for form in lst:
-            print(f'Форма №{tic} валидна? =', form.is_valid())
-            if not form.is_valid():
-                print(f'Форма №{tic} ERROR == ', form.errors.as_data())
-            tic += 1
-        ####
+        print('\nЧто-то не валидно!!!!\n')
 
-
-    context = {'user': user, 'fio': fio, 'user_loyalty': user_loyalty,
+    context = {'user': user, 'user_loyalty': user_loyalty, 'profile': profile,
+               'mobile_number': mobile_number, 'fio': fio,
                'form_first_last_name': form_first_last_name, 'form_surname': form_surname,
                'form_birth_day': form_birth_day, 'form_mobile_number': form_mobile_number,
                'form_email': form_email, 'form_password': form_password}
 
-    return render(request, 'users/profile.html', context=context)
+    return render(request, 'users/profile_original.html', context=context)
+    # return render(request, 'users/profile.html', context=context)
 
 
 
 
 #########
 class FormForTest(TemplateView):
-    template_name = "users/profile-personal-data.html"
+    template_name = "users/profile_original.html"
 
 
 form_for_test = FormForTest.as_view()
