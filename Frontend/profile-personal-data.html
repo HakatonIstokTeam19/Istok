@@ -72,7 +72,7 @@
     <main class="profile__main">
       <div class="profile__nav">
         <div class="profile__nav-container">
-          <ul class="profile__navlinks">
+          <ul class="profile__nav-links">
             <li>
               <a href="./profile/orders" class="font-body-1 profile__navlink"
                 >Мои заказы</a
@@ -100,12 +100,10 @@
                 >Поддержка</a
               >
             </li>
-            <li>
-              <a href="./profile/orders" class="font-body-1 profile__navlink"
-                >Выйти</a
-              >
-            </li>
           </ul>
+          <a href="./profile/orders" class="font-body-1 profile__navlink profile__navlink_exit"
+          >Выйти</a
+        >
         </div>
       </div>
       <section class="profile__main-content">
@@ -125,6 +123,7 @@
                 ></use>
               </svg>
             </button>
+            <div class="error_message">Введите корректные данные</div>
           </section>
           <section class="data-item">
             <h3 class="data-item__title font-body-3">Дата рождения</h3>
@@ -140,6 +139,7 @@
                 ></use>
               </svg>
             </button>
+            <div class="error_message"></div>
           </section>
           <section class="data-item">
             <h3 class="data-item__title font-body-3">Номер телефона</h3>
@@ -155,6 +155,7 @@
                 ></use>
               </svg>
             </button>
+            <div class="error_message"></div>
           </section>
           <section class="data-item">
             <h3 class="data-item__title font-body-3">Email</h3>
@@ -170,6 +171,7 @@
                 ></use>
               </svg>
             </button>
+            <div class="error_message"></div>
           </section>
           <section class="data-item">
             <h3 class="data-item__title font-body-3">Пароль</h3>
@@ -187,12 +189,24 @@
                 ></use>
               </svg>
             </button>
+            <div class="error_message"></div>
           </section>
           <section class="data-item">
             <h3 class="data-item__title font-body-3">Код лояльности</h3>
             <p class="data-item__entry font-body-1">
               SADS11
             </p>
+            <button
+            class="data-item__edit"
+            id="id_edit_code"
+            data-modal="modal_edit_code"
+          >
+            <svg class="edit__icon">
+              <use
+                href="./src/assets/images/interface/icons-sprite-sheet.svg#edit"
+              ></use>
+            </svg>
+          </button>
           </section>
         </div>
       </section>
@@ -423,8 +437,7 @@
                 ></path>
               </svg>
             </button>
-            <h3 class="font-body-1 edit-phone-title">Введите новый email</h3>
-            <p class="font-body-3">Введите новую дату рождения</p>
+            <h3 class="font-body-1 edit-phone-title">Введите новую дату рождения</h3>
             <label
               class="profile__modal-label font-body-3 profile__input-wrapper"
               for="id_birth_date_day"
@@ -435,6 +448,7 @@
                 id="id_birth_date_day"
                 name="birth_date_day"
                 value=""
+                placeholder="ДД.ММ.ГГ"
             /></label>
             <button
               class="button_mid profile__save-btn button"
@@ -486,6 +500,7 @@
                 type="password"
                 id="id_old_password"
                 name="old_password"
+                value=""
                 required
               />
               <button
@@ -508,6 +523,7 @@
                 type="password"
                 id="id_new_password1"
                 name="new_password"
+                value=""
                 required
               />
               <button
@@ -553,6 +569,62 @@
           </form>
         </div>
       </div>
+
+            <!-- modal form to edit code -->
+
+            <div class="modal profile__modal" id="modal_edit_code">
+              <div class="profile__modal-content">
+                <form
+                  class="profile__modal-form"
+                  id="id_edit_code_form"
+                  action="./profile-personal-data.html"
+                  name="id_edit_code_form"
+                >
+                  <button
+                    class="modal__close"
+                    data-modal="modal_edit_code"
+                    data-close-modal="modal_edit_code"
+                    id="modal_edit_phone_close"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewbox="0 0 14 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M0.209396 0.210303C-0.0697984 0.490706 -0.0697989 0.94533 0.209396 1.22573L6.01138 7.05284L0.314625 12.7743C0.0354299 13.0547 0.0354297 13.5093 0.314624 13.7897C0.593819 14.0701 1.04648 14.0701 1.32568 13.7897L7.02243 8.06827L12.6791 13.7494C12.9582 14.0298 13.4109 14.0298 13.6901 13.7494C13.9693 13.469 13.9693 13.0144 13.6901 12.734L8.03349 7.05284L13.7953 1.26604C14.0745 0.985641 14.0745 0.531016 13.7953 0.250613C13.5161 -0.029791 13.0635 -0.0297915 12.7843 0.250612L7.02243 6.03741L1.22045 0.210303C0.941255 -0.0701008 0.488591 -0.070101 0.209396 0.210303Z"
+                        fill="#222222"
+                      ></path>
+                    </svg>
+                  </button>
+                  <h3 class="font-body-1">
+                    Введите новый код программы лояльности
+                  </h3>
+                  <label
+                    class="profile__modal-label font-body-3 profile__input-wrapper"
+                    for="id_code"
+                    >Новый код
+                    <input
+                      class="profile__modal-input font-body-1"
+                      type="text"
+                      id="id_code"
+                      name="phone"
+                      value="CODE555"
+                  /></label>
+      
+                  <button
+                    class="button_mid profile__save-btn button"
+                    data-close-modal="modal_edit_code"
+                  >
+                    Сохранить
+                  </button>
+                </form>
+              </div>
+            </div>
     </main>
 
     <!-- side menu -->

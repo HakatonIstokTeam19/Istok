@@ -1,7 +1,6 @@
 .profile__body {
   --_profile-space-side: 102px;
   --_profile-space-gap: 80px;
-  outline: 1px solid red;
   position: relative;
   max-width: 1440px;
   margin: 0 auto;
@@ -32,10 +31,14 @@
   column-gap: var(--_profile-space-gap);
 }
 
-.profile__nav-container {
-  --padding-left: 24px;
+.profile__nav {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
+}
+
+.profile__nav-container {
+  --padding-left: 24px;
+
   max-height: 418px;
   padding: 16px 42px 26px var(--padding-left);
   border: 1px solid #e8e9da;
@@ -46,6 +49,10 @@
   grid-template-columns: 1fr;
   grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
   height: 100%;
+}
+
+.profile__navlink_exit {
+  margin-top: 40px;
 }
 
 .profile__navlink {
@@ -59,6 +66,8 @@
   transition: all 0.2s ease-in-out;
   border-radius: 2px;
 }
+
+
 
 .profile__navlink:hover {
   background-color: var(--whitish);
@@ -109,6 +118,29 @@
   height: 100px;
   border: 0.5px solid #e8e9da;
 }
+
+.data-item:has(.error_message:not(:empty)) {
+  border: 1px solid var(--error);
+}
+
+.data-item:has(.error_message:not(:empty)) > * {
+  color: var(--error)
+}
+
+.error_message {
+  position: absolute;
+  bottom: -20px;
+  left: -1px;
+  color: var(--error);
+  font-size: 12px;
+  font-weight: var(--weight-light-x);
+  line-height: 16px;
+}
+
+.error_message:empty {
+  display: none;
+}
+
 .data-item__title {
   width: 205px;
   height: 16px;
@@ -139,6 +171,7 @@
   color: var(--light-black);
   letter-spacing: 4px;
 }
+
 
 /*  edit forms  */
 
