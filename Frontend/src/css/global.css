@@ -48,8 +48,7 @@
   font-weight: 200;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
 :root {
   /* Typography */
@@ -60,6 +59,7 @@
   --font-12: 12px;
   --font-14: 14px;
   --font-16: 16px;
+  --font-18: 18px;
   --font-20: 20px;
   --font-24: 24px;
   --font-32: 32px;
@@ -90,7 +90,7 @@
   --light-black: #222222;
   --whitish: #fffdfb;
   --beige: #e8e9da;
-  --error: #CC0000;
+  --error: #cc0000;
 
   /* spaces */
   --padding-102: 102px;
@@ -109,7 +109,6 @@ html {
   box-sizing: border-box;
   text-decoration-line: none;
 }
-
 
 body {
   overflow: hidden;
