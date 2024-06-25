@@ -14,7 +14,7 @@ from django.views.generic import (ListView, DetailView, CreateView,
 
 from .forms import (CustomSignupForm, FirstLastNameEdit, SurnameEdit,
                     BirthDateEdit, MobileNuberEdit, EmailEdit)
-from .models import Profile
+from .models import Profile, Loyalty
 from allauth.account.views import (SignupView, LogoutView, LoginView, PasswordResetView, PasswordResetDoneView,
                                    PasswordResetFromKeyView, PasswordResetFromKeyDoneView, EmailVerificationSentView,
                                    ConfirmEmailView)
@@ -263,13 +263,49 @@ def profile(request):
 
 
 
-#########
+######### для теста html
 class FormForTest(TemplateView):
     template_name = "users/profile.html"
 
-
 form_for_test = FormForTest.as_view()
 ###########
+
+
+#todo Обсудить нюансы с заказчиками
+def loyalty_start(request):
+    user = get_object_or_404(User, pk=request.user.pk)
+
+    try:
+        loyalty = Loyalty.objects.get(user=user)
+    except Exception:
+        loyalty = False
+
+    print('\nloyalty == ', loyalty)
+    context = {}
+
+    if request.POST and loyalty:
+        data = request.POST
+        print('\ndata post== ', data)
+        # loyalty.survey_children = data['user_has_children']
+        # loyalty.survey_repair = data['user_renov']
+        # loyalty.save()
+    else:
+        print('\ndata get== ', )
+
+    return render(request, 'users/loyalty_start.html', context=context)
+
+
+def loyalty_next(request):
+    user = get_object_or_404(User, pk=request.user.pk)
+    print(user.last_name, user.first_name)
+    try:
+        loyalty = Loyalty.objects.get(user=user)
+    except Exception:
+        loyalty = ''
+
+    context = {'loyalty': loyalty, 'user': user}
+
+    return render(request, 'users/loyalty_next.html', context=context)
 
 
 

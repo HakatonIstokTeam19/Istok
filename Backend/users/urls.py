@@ -28,6 +28,8 @@ urlpatterns = [
         views.confirm_email,
         name="account_confirm_email",
     ),
+    path('loyalty_start/', views.loyalty_start, name='loyalty_start'),
+    path('loyalty_next/', views.loyalty_next, name='loyalty_next'),
 
     # allauth все стандартные пути. если нет кастомной въюшки будет работать оригинал.
     path('accounts/', include('allauth.urls')),
