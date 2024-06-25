@@ -84,16 +84,17 @@
   display: block;
 }
 
-.edit__icon {
-  width: 20px;
-  height: 20px;
-}
-
 .copy__icon {
   width: 30px;
   height: 30px;
 
 }
+
+.edit__icon {
+  width: 20px;
+  height: 20px;
+}
+
 
 .profile__password-mask {
   color: var(--light-black);

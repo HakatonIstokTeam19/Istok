@@ -48,13 +48,21 @@
   font-weight: 200;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"); */
+
+@font-face {
+  font-family: 'Inter';
+  src: url(../assets/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf) format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   /* Typography */
 
   --font-main: "VelaSans";
-  --font-secondary: "Inter";
+  --font-secondary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --font-10: 10px;
   --font-12: 12px;
   --font-14: 14px;
@@ -70,6 +78,7 @@
   --weight-light-x: 200;
   --weight-light: 300;
   --weight-regular: 400;
+  --weight-medium: 500;
   --weight-bold-semi: 600;
   --weight-bold: 700;
   --weight-bold-x: 800;
@@ -77,6 +86,7 @@
   --line-height-14: 14px;
   --line-height-20: 20px;
   --line-height-22: 22px;
+  --line-height-24: 24px;
   --line-height-26: 26px;
   --line-height-32: 32px;
   --line-height-36: 36px;
