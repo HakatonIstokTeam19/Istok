@@ -258,15 +258,14 @@ def profile(request):
                'form_birth_day': form_birth_day, 'form_mobile_number': form_mobile_number,
                'form_email': form_email, 'form_password': form_password}
 
-    return render(request, 'users/profile_original.html', context=context)
-    # return render(request, 'users/profile.html', context=context)
+    return render(request, 'users/profile.html', context=context)
 
 
 
 
 #########
 class FormForTest(TemplateView):
-    template_name = "users/profile_original.html"
+    template_name = "users/profile.html"
 
 
 form_for_test = FormForTest.as_view()
