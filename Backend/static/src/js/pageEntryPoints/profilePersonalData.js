@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // script to customize the imported date flatpickr
 
-  flatpickr("#id_birth_date_day", {
+  flatpickr("#id_birth_date", {
     altInput: true,
     altFormat: "F j, Y",
     dateFormat: "Y-m-d",
