@@ -37,42 +37,44 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   </head>
   <body class="profile__body">
-      <header class="header">
+    <header class="header">
       <a href="{% url 'home' %}">
         <svg alt="logo" class="header__logo">
           <use
-            href="{% static 'src/assets/images/interface/icons-sprite-sheet.svg' %}#logo"
+            href="{% static './src/assets/images/interface/icons-sprite-sheet.svg' %}#logo"
           ></use>
         </svg>
       </a>
       <nav class="header__nav">
         <ul class="header__links">
-          <li class="header__link font-body-1">
-            <a class="header__link font-body-1" href="{% url 'home' %}">Главная</a>
+          <li>
+            <a class="header__link font-body-1" href="{% url 'home' %}"
+              >Главная</a
+            >
           </li>
           <li class="header__link font-body-1">
-            <a class="header__link font-body-1" href="#"
+            <a class="header__link font-body-1" href="{% url 'finished_furniture_list' %}"
               >Готовая мебель</a
             >
           </li>
           <li class="header__link font-body-1">
-            <a class="header__link font-body-1" href="{% url 'about' %}">О нас</a>
+            <a class="header__link font-body-1" href="{% url 'about' %}"
+            >О нас</a>
           </li>
           <li class="header__link font-body-1">
             <a
               class="header__link font-body-1"
-              href="#"
+              href="{% url 'application_create' %}"
               >Оставить заявку</a
             >
           </li>
-          <li>
-            <a
-              class="header__link font-body-1 header__sign-in active"
-                  {#        todo !!!!! СМЕНИТЬ ПОЗЖЕ на мои заказы! #}
-              href="{% url 'profile' %}"
-              >Личный кабинет</a
-            >
-          </li>
+            <li class="header__link font-body-1">
+              <a
+                class="header__link font-body-1 header__sign-in active"
+                href="{% url 'profile' %}"
+                >Личный кабинет</a
+              >
+            </li>
         </ul>
       </nav>
     </header>
@@ -87,7 +89,7 @@
               >
             </li>
             <li>
-              <a href="{% url 'loyalty_start' %}" class="font-body-1 profile__navlink"
+              <a href="#" class="font-body-1 profile__navlink"
                 >Программа лояльности</a
               >
             </li>
