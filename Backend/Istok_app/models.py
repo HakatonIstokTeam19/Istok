@@ -4,6 +4,13 @@ from django.core.validators import RegexValidator
 from users.models import Loyalty
 
 
+class Tags(models.Model):
+    tag = models.CharField(max_length=20, unique=True)
+
+    def __str__(self):
+        return f'{self.tag}'
+
+
 class Finished_furniture(models.Model):
 
     TYPES = [
@@ -41,8 +48,12 @@ class Finished_furniture(models.Model):
     image_2 = models.ImageField(null=True, blank=True, verbose_name='Изображение 2')
     image_3 = models.ImageField(null=True, blank=True, verbose_name='Изображение 3')
     image_4 = models.ImageField(null=True, blank=True, verbose_name='Изображение 4')
+    tags = models.ManyToManyField(Tags, through='Finished_furniture_tags')
 
 
+class Finished_furniture_tags(models.Model):
+    finished_furniture = models.ForeignKey(Finished_furniture, on_delete=models.CASCADE)
+    finished_furniture_tags = models.ForeignKey(Tags, on_delete=models.CASCADE)
 
 class Application(models.Model):
 

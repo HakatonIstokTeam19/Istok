@@ -91,8 +91,11 @@
           <div class="main__product-pic">
             <div class="main__product-image">
               <img
-                src="{% static './src/assets/images/content/product.png' %}"
+                src="{{ finished_furniture_detail.image_1.url }}"
                 alt="product"
+                width="600"
+                height="400"
+
               />
               <div class="main__product-image-lines lines">
                 <svg
@@ -133,52 +136,45 @@
           </div>
           <div class="main__product-info">
             <div class="main__product-detail">
-              <h2 class="font-heading-bold-32">Кухня “Комфорт”</h2>
+              <h2 class="font-heading-bold-32">{{ finished_furniture_detail.name }}</h2>
               <div class="main__product-tags tags">
-                <p class="main__product-tag tag main font-body-4">Гарантия</p>
-                <p class="main__product-tag tag main font-body-4">
-                  Износостойкость
-                </p>
-                <p class="main__product-tag tag font-body-4">Кухня</p>
-                <p class="main__product-tag tag font-body-4">Для дома</p>
+                {% for tag in finished_furniture_detail.tags.all %}
+                  <p class="main__card-tag tag main font-body-4">{{ tag.tag }}</p>
+                {% endfor %}
               </div>
               <div class="main__product-description">
                 <p class="font-body-2">
-                  Размер кухни: 2390х3000х600. Размер кухни может быть
-                  адаптирован под Ваше помещение по всем параметрами.
+                  Размеры:
                 </p>
                 <p class="font-body-2">
-                  Материалы: Корпус Egger, фасады (двери) Эмаль матовая, петли с
-                  доводчиком Hettich, врезные нажимные механизмы (верхние
-                  модули), интегрированные ручки, столешница Slotex, стеновая
-                  панель Slotex
+                  Материалы:
                 </p>
                 <p class="font-body-2">
-                  Наполнение: 2 ящика типа тандем бокс полного выдвижения с
-                  доводчиком Hettich, посудосушитель, системы для сортировки
-                  мусора
+                  Наполнение:
                 </p>
               </div>
               <div class="main__product-order">
-                <h3 class="font-heading-bold-32">490 500 ₽</h3>
-                <button class="main__product-order-btn button">
-                  Заказать проект
-                </button>
+                <h3 class="font-heading-bold-32">{{ finished_furniture_detail.price }} ₽</h3>
+
+                <a href="{% url 'application_create' %}" class="main__product-order-btn button">
+                    Заказать проект
+                </a>
+
               </div>
             </div>
-            <div class="main__product-liked">
-              <p>Вам может понравится:</p>
-              <div class="main__product-liked-cards">
-                <!-- Шаблон мини карточки -->
-                <div class="main__product-liked-card">
-                  <img src="" alt="card" />
-                  <h4 class="font-body-3">
-                    Кухня “Зелень” <br />
-                    386 698 ₽
-                  </h4>
-                </div>
-              </div>
-            </div>
+<!--            <div class="main__product-liked">-->
+<!--              <p>Вам может понравится:</p>-->
+<!--              <div class="main__product-liked-cards">-->
+<!--                &lt;!&ndash; Шаблон мини карточки &ndash;&gt;-->
+<!--                <div class="main__product-liked-card">-->
+<!--                  <img src="" alt="card" />-->
+<!--                  <h4 class="font-body-3">-->
+<!--                    Кухня “Зелень” <br />-->
+<!--                    386 698 ₽-->
+<!--                  </h4>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
           </div>
         </div>
       </section>

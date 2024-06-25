@@ -78,7 +78,6 @@
     </header>
     <main class="main__furniture container">
       <aside class="main__filter-bar">
-        <form method="get">
         <div class="main__filter-options">
           <h2 class="main__filter-heading1 font-body-2">
             Фильтр
@@ -88,6 +87,12 @@
               alt="arrow-down"
             />
           </h2>
+          <ul>
+            <li class="main__filter-option font-body-2 active">Популярное</li>
+            <li class="main__filter-option font-body-2">Кухня</li>
+            <li class="main__filter-option font-body-2">Системы хранения</li>
+            <li class="main__filter-option font-body-2">Прихожая</li>
+          </ul>
         </div>
         <div class="main__filter">
           <h2 class="main__filter-heading2 font-body-2">
@@ -104,19 +109,19 @@
               ><input
                 class="main__form-checkbox"
                 type="checkbox"
-                name="type"
+                name="Кухня"
                 value="Кухня"
               />Кухня</label
             ><label class="font-body-light-2"
               ><input
                 type="checkbox"
-                name="type"
+                name="Гардероб"
                 value="Гардероб"
               />Гардероб</label
             ><label class="font-body-light-2"
               ><input
                 type="checkbox"
-                name="type"
+                name="Прихожая"
                 value="Прихожая"
               />Прихожая</label
             ><label class="font-body-light-2"
@@ -124,9 +129,9 @@
             ><label class="font-body-light-2"
               ><input
                 type="checkbox"
-                name="type"
-                value="Детская"
-              />Детская</label
+                name="Стеллаж"
+                value="Стеллаж"
+              />Стеллаж</label
             >
           </div>
           <div class="main__form-option">
@@ -195,78 +200,75 @@
             >
           </div>
         </div>
-        <button type="submit">Применить фильтр</button>
-        </form>
       </aside>
       <section class="main__cards-section">
-                  <!-- а card template/Шаблон карточки -->
         <div class="main__cards">
+          <!-- а card template/начало шаблона карточки -->
           {% for furniture in finished_furniture_list %}
             <div class="main__card">
-            <div class="main__card-image">
-              <div class="main__card-image-lines">
-                <svg
-                  class="main__card-image-line active"
-                  width="12"
-                  height="3"
-                  viewBox="0 0 12 3"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
+              <div class="main__card-image">
+                <div class="main__card-image-lines">
+                  <svg
+                    class="main__card-image-line line active"
                     width="12"
-                    height="2"
-                    transform="translate(0 0.25)"
-                    fill="black"
-                  /></svg
-                ><svg
-                  class="main__card-image-line"
-                  width="12"
-                  height="3"
-                  viewBox="0 0 12 3"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
+                    height="3"
+                    viewBox="0 0 12 3"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      width="12"
+                      height="2"
+                      transform="translate(0 0.25)"
+                      fill="black"
+                    /></svg
+                  ><svg
+                    class="main__card-image-line line"
                     width="12"
-                    height="2"
-                    transform="translate(0 0.25)"
-                    fill="black"
-                    fill-opacity="0.5"
-                  />
-                </svg>
+                    height="3"
+                    viewBox="0 0 12 3"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      width="12"
+                      height="2"
+                      transform="translate(0 0.25)"
+                      fill="black"
+                      fill-opacity="0.5"
+                    />
+                  </svg>
+                </div>
+
+                <img
+                  class="main__image active"
+                  src="{{ furniture.image_1.url }}"
+                  alt="Изображение 1"
+                  width="350"
+                  height="240"
+                  onclick="window.location.href='{% url 'finished_furniture_detail' furniture.pk %}'"
+                  style="cursor: pointer;"
+                /><img
+                  class="main__image"
+                  src="{{ furniture.image_2.url }}"
+                  alt="Изображение 2"
+                  width="350"
+                  height="240"
+                  onclick="window.location.href='{% url 'finished_furniture_detail' furniture.pk %}'"
+                  style="cursor: pointer;"
+                />
               </div>
 
-              <img
-                class="main__image active"
-                src="{{ furniture.image_1.url }}"
-                alt="Изображение 1"
-                width="350"
-                height="240"
-                onclick="window.location.href='{% url 'finished_furniture_detail' furniture.pk %}'"
-                style="cursor: pointer;"
-              /><img
-                class="main__image"
-                src="{{ furniture.image_2.url }}"
-                alt="Изображение 2"
-                width="350"
-                height="240"
-                onclick="window.location.href='{% url 'finished_furniture_detail' furniture.pk %}'"
-                style="cursor: pointer;"
-              />
+              <div class="main__card-tags tags">
+                {% for tag in furniture.tags.all %}
+                  <p class="main__card-tag tag main font-body-4">{{ tag.tag }}</p>
+                {% endfor %}
+              </div>
+              <h1 id="card-name" class="font-body-1">{{furniture.name}}</h1>
+              <p id="card-price" class="font-heading-bold-16">{{furniture.price}} ₽</p>
             </div>
-
-<!--            <div class="main__card-tags">-->
-<!--              <p class="main__card-tag main font-body-4">Гарантия</p>-->
-<!--              <p class="main__card-tag main font-body-4">Износостойкость</p>-->
-<!--              <p class="main__card-tag font-body-4">Кухня</p>-->
-<!--              <p class="main__card-tag font-body-4">Для дома</p>-->
-<!--            </div>-->
-            <h1 id="card-name" class="font-body-1">{{furniture.name}}</h1>
-            <p id="card-price" class="font-heading-bold-16">{{furniture.price}} ₽</p>
-          </div>
-            {% endfor %}
-          </div>
+           {% endfor %}
+          <!-- конец шаблона -->
         </div>
       </section>
     </div>

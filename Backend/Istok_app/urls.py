@@ -12,6 +12,7 @@ urlpatterns = [
     path('application_accept/', application_accept, name='application_accept'),
     path('about/', about, name='about'),
     path('orders_list/', OrdersList.as_view(), name='orders_list'),
+    path('orders_list_completed/', OrdersList.as_view(), name='orders_list_completed'),
     path('orders/<int:pk>/', OrdersDetail.as_view(), name='orders_detail'),
     path('orders_create/', OrdersCreate.as_view(), name='orders_create'),
     path('orders_update/<int:pk>/', OrdersUpdate.as_view(), name='orders_update'),

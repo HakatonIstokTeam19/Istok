@@ -7,7 +7,7 @@ class Finished_furnitureCreateForm(forms.ModelForm):
     class Meta:
         model = Finished_furniture
         fields = ('name', 'type', 'form', 'body_material', 'facades_material', 'price',
-                  'image_1', 'image_2', 'image_3', 'image_4')
+                  'image_1', 'image_2', 'image_3', 'image_4', 'tags')
 
 class ApplicationCreateForm(forms.ModelForm):
 
