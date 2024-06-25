@@ -1,6 +1,4 @@
 from django.test import TestCase
 from datetime import datetime
-# Create your tests here.
-st = 'oleg'
-print(st[:-1])
-
+text = '1234567890'
+print(text[0:333])

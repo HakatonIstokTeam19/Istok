@@ -29,7 +29,7 @@ class Finished_furnitureList(FilterView):
 
 class Finished_furnitureDetail(DetailView):
     model = Finished_furniture
-    template_name = 'Istok_app/finished_furniture_detail.html'
+    template_name = 'Istok_app/card.html'
     context_object_name = 'finished_furniture_detail'
 
 

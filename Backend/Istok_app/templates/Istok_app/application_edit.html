@@ -63,23 +63,13 @@
               >Оставить заявку</a
             >
           </li>
-                    {% if request.user.is_authenticated %}
             <li class="header__link font-body-1">
               <a
                 class="header__link font-body-1 header__sign-in"
-                href="{% url 'profile' request.user.pk %}"
+                href="{% url 'profile' %}"
                 >Войти в личный кабинет</a
               >
             </li>
-          {% else %}
-            <li class="header__link font-body-1">
-              <a
-                class="header__link font-body-1 header__sign-in"
-                href="{% url 'login' %}"
-                >Войти в личный кабинет</a
-              >
-            </li>
-          {% endif %}
         </ul>
       </nav>
     </header>

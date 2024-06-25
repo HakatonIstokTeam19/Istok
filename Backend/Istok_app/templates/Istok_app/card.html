@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Istok - Готовая мебель</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static './favicon_io/apple-touch-icon.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{% static './favicon_io/favicon-32x32.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{% static './favicon_io/favicon-16x16.png' %}"
+    />
+    <link rel="manifest" href="{% static './favicon_io/site.webmanifest' %}" />
+    <link rel="stylesheet" href="{% static './src/css/card.css' %}" />
+    <link rel="stylesheet" href="{% static './src/css/fonts.css' %}" />
+    <link rel="stylesheet" href="{% static './src/css/reset.css' %}" />
+    <link rel="stylesheet" href="{% static './src/css/furniture.css' %}" />
+    <link rel="stylesheet" href="{% static './src/css/buttons.css' %}" />
+    <link rel="stylesheet" href="{% static './src/css/global.css' %}" />
+    <link rel="stylesheet" href="{% static './src/css/base-elements.css' %}" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.4.0/uicons-bold-rounded/css/uicons-bold-rounded.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <a href="{% url 'home' %}">
+        <svg alt="logo" class="header__logo">
+          <use
+            href="{% static './src/assets/images/interface/icons-sprite-sheet.svg' %}#logo"
+          ></use>
+        </svg>
+      </a>
+      <nav class="header__nav">
+        <ul class="header__links">
+          <li>
+            <a class="header__link font-body-1" href="{% url 'home' %}"
+              >Главная</a
+            >
+          </li>
+          <li class="header__link font-body-1">
+            <a class="header__link font-body-1 active" href="{% url 'finished_furniture_list' %}"
+              >Готовая мебель</a
+            >
+          </li>
+          <li class="header__link font-body-1">
+            <a class="header__link font-body-1" href="{% url 'about' %}"
+            >О нас</a>
+          </li>
+          <li class="header__link font-body-1">
+            <a
+              class="header__link font-body-1"
+              href="{% url 'application_create' %}"
+              >Оставить заявку</a
+            >
+          </li>
+            <li class="header__link font-body-1">
+              <a
+                class="header__link font-body-1 header__sign-in"
+                href="{% url 'profile' %}"
+                >Войти в личный кабинет</a
+              >
+            </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main__product-container container">
+      <section class="main__product">
+        <h1>
+          <img
+            src="{% static './src/assets/images/interface/arrowCard.svg' %}"
+            alt="arrowCard"
+          />
+          Назад
+        </h1>
+        <div class="main__product-wrapper">
+          <div class="main__product-pic">
+            <div class="main__product-image">
+              <img
+                src="{% static './src/assets/images/content/product.png' %}"
+                alt="product"
+              />
+              <div class="main__product-image-lines lines">
+                <svg
+                  class="main__product-image-line line active"
+                  width="12"
+                  height="3"
+                  viewBox="0 0 12 3"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    width="12"
+                    height="2"
+                    transform="translate(0 0.25)"
+                    fill="black"
+                  /></svg
+                ><svg
+                  class="main__product-image-line line"
+                  width="12"
+                  height="3"
+                  viewBox="0 0 12 3"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    width="12"
+                    height="2"
+                    transform="translate(0 0.25)"
+                    fill="black"
+                    fill-opacity="0.5"
+                  />
+                </svg>
+              </div>
+            </div>
+            <button class="main__product-btn button">
+              Посмотреть 3D проект
+            </button>
+          </div>
+          <div class="main__product-info">
+            <div class="main__product-detail">
+              <h2 class="font-heading-bold-32">Кухня “Комфорт”</h2>
+              <div class="main__product-tags tags">
+                <p class="main__product-tag tag main font-body-4">Гарантия</p>
+                <p class="main__product-tag tag main font-body-4">
+                  Износостойкость
+                </p>
+                <p class="main__product-tag tag font-body-4">Кухня</p>
+                <p class="main__product-tag tag font-body-4">Для дома</p>
+              </div>
+              <div class="main__product-description">
+                <p class="font-body-2">
+                  Размер кухни: 2390х3000х600. Размер кухни может быть
+                  адаптирован под Ваше помещение по всем параметрами.
+                </p>
+                <p class="font-body-2">
+                  Материалы: Корпус Egger, фасады (двери) Эмаль матовая, петли с
+                  доводчиком Hettich, врезные нажимные механизмы (верхние
+                  модули), интегрированные ручки, столешница Slotex, стеновая
+                  панель Slotex
+                </p>
+                <p class="font-body-2">
+                  Наполнение: 2 ящика типа тандем бокс полного выдвижения с
+                  доводчиком Hettich, посудосушитель, системы для сортировки
+                  мусора
+                </p>
+              </div>
+              <div class="main__product-order">
+                <h3 class="font-heading-bold-32">490 500 ₽</h3>
+                <button class="main__product-order-btn button">
+                  Заказать проект
+                </button>
+              </div>
+            </div>
+            <div class="main__product-liked">
+              <p>Вам может понравится:</p>
+              <div class="main__product-liked-cards">
+                <!-- Шаблон мини карточки -->
+                <div class="main__product-liked-card">
+                  <img src="" alt="card" />
+                  <h4 class="font-body-3">
+                    Кухня “Зелень” <br />
+                    386 698 ₽
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
