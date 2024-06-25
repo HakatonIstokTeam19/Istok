@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Istok - Программа лояльности</title>
+    <title>Istok - Request quote</title>
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -24,20 +24,19 @@
     <link rel="manifest" href="./favicon_io/site.webmanifest" />
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/global.css" />
-    <link rel="stylesheet" href="./src/css/buttons.css" />
     <link rel="stylesheet" href="./src/css/base-elements.css" />
-    <link rel="stylesheet" href="./src/css/profile-base-elements.css" />
-    <link rel="stylesheet" href="./src/css/profile-loyalty.css" />
+    <link rel="stylesheet" href="./src/css/buttons.css" />
+    <link rel="stylesheet" href="./src/css/forms.css" />
+    <link rel="stylesheet" href="./src/css/auth.css" />
   </head>
-  <body class="profile__body">
+  <body class="auth__body">
     <header class="header">
-      <a href="./index.html">
-        <svg alt="logo" class="header__logo">
+      <a href="./index.html"
+        ><svg alt="logo" class="header__logo">
           <use
             href="./src/assets/images/interface/icons-sprite-sheet.svg#logo"
-          ></use>
-        </svg>
-      </a>
+          ></use></svg
+      ></a>
       <nav class="header__nav">
         <ul class="header__links">
           <li class="header__link font-body-1">
@@ -52,174 +51,150 @@
             <a class="header__link font-body-1" href="./about.html">О нас</a>
           </li>
           <li class="header__link font-body-1">
-            <a
-              class="header__link font-body-1"
-              href="./request-select-furniture.html"
-              >Оставить заявку</a
-            >
+            <a class="header__link font-body-1" href="#">Оставить заявку</a>
           </li>
-          <li>
+          <li class="header__link font-body-1">
             <a
               class="header__link font-body-1 header__sign-in active"
               href="./profile-personal-data.html"
-              >Личный кабинет</a
+              >Войти в личный кабинет</a
             >
           </li>
         </ul>
       </nav>
     </header>
-
-    <main class="profile__main">
-      <div class="profile__nav">
-        <div class="profile__nav-container">
-          <ul class="profile__nav-links">
-            <li>
-              <a
-                href="./profile-orders.html"
-                class="font-body-1 profile__navlink"
-                >Мои заказы</a
+    <main class="auth__main">
+      <div
+        class="auth__form-wrapper"
+        id="auth_sign_in_form"
+        name="auth_sign_in_form"
+      >
+        <h1 class="auth__title">Авторизоваться</h1>
+        <form
+          class="auth__credential-group"
+          action="./profile-personal-data.html"
+        >
+          <div class="auth__input-wrapper">
+            <input
+              class="auth__input font-body-1"
+              type="text"
+              id="id_email_or_phone"
+              name="email_or_phone"
+              placeholder="Email или номер телефона"
+              required=""
+            />
+            <div class="error-message"></div>
+          </div>
+          <div class="auth__input-wrapper">
+            <input
+              class="auth__input"
+              type="password"
+              id="id_auth_password"
+              name="auth_password"
+              placeholder="Пароль"
+              required=""
+            />
+            <div class="error-message">Укажите пароль</div>
+            <button
+              type="button"
+              class="toggle-password"
+              onclick="togglePasswordVisibility('id_auth_password')"
+            >
+              <svg
+                width="22"
+                height="18"
+                viewbox="0 0 22 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-            </li>
-            <li>
-              <a
-                href="./profile-loyalty-start.html"
-                class="font-body-1 profile__navlink profile__navlink_active"
-                >Программа лояльности</a
+                <path
+                  d="M2.44113 1L19.5585 17M15.8141 13.7559C14.367 14.4845 12.7315 14.9999 10.9998 14.9999C7.22261 14.9999 3.9029 12.5478 1.9992 10.7788C1.49669 10.3119 1.24548 10.0784 1.08555 9.62012C0.9715 9.29328 0.971464 8.70657 1.08555 8.37974C1.24553 7.92147 1.49726 7.68745 2.00077 7.21967C2.96029 6.32821 4.27924 5.26359 5.83498 4.42676M19.0236 11.6335C19.3799 11.3405 19.7062 11.0523 19.9991 10.7803L20.0022 10.7772C20.5035 10.3114 20.7549 10.0779 20.9145 9.62061C21.0286 9.29378 21.0284 8.70684 20.9143 8.38C20.7545 7.92187 20.5029 7.68775 20.0008 7.22111C18.0971 5.45208 14.7771 3 10.9998 3C10.6388 3 10.2819 3.02241 9.92999 3.06448M12.4151 10.5C12.0379 10.8112 11.5425 11 10.9998 11C9.81812 11 8.86015 10.1046 8.86015 9C8.86015 8.4605 9.08869 7.97108 9.4602 7.61133"
+                  stroke="#222222"
+                  stroke-opacity="0.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <p class="auth__input-footnote">
+            <a class="font-body-2" href="./auth-recover-pw.html"
+              >Забыли пароль?</a
+            >
+          </p>
+          <button class="button button_mid auth__sign-in-btn">Войти</button>
+        </form>
+        <div class="social-auth__container">
+          <h2 class="social-auth__heading">Войти с помощью</h2>
+          <div class="social-auth__links">
+            <a class="social-auth-links__item href="
+              ><svg
+                width="40"
+                height="40"
+                viewbox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-            </li>
-            <li>
-              <a
-                href="./profile-orders-history.html"
-                class="font-body-1 profile__navlink"
-                >История заказов</a
+                <path
+                  d="M40 20.0002C40 31.045 31.0278 39.9962 19.9691 39.9962C8.91036 39.9962 -0.0192886 31.0176 3.1291e-05 19.9531C3.1291e-05 8.97486 9.02244 -0.0429747 19.9923 0.000154061C31.0665 0.0119165 40 8.95134 40 20.0002ZM37.8749 20.0002C37.8749 10.108 29.8493 2.11739 19.9305 2.12523C10.1391 2.12523 2.12909 10.1746 2.12909 20.0002C2.12909 29.8257 10.1275 37.8163 19.9537 37.8241C29.8493 37.8398 37.8787 29.8492 37.8749 20.0041V20.0002Z"
+                  fill="#222222"
+                ></path>
+                <path
+                  d="M24.1044 15.4726C23.0469 14.4817 21.7018 13.9772 20.2037 13.9772C17.5464 13.9772 15.2972 15.7357 14.4944 18.0986C14.2904 18.6986 14.1744 19.3404 14.1744 19.9995C14.1744 20.6586 14.2904 21.2995 14.4944 21.8995L14.4935 21.9001C15.296 24.2637 17.546 26.0228 20.2037 26.0228C21.5766 26.0228 22.7454 25.6683 23.6592 25.0683C24.7399 24.3592 25.4592 23.2996 25.6957 22.0496H20.2041V18.1815H29.8145C29.9351 18.836 30 19.5178 30 20.2269C30 23.2723 28.8868 25.8359 26.9573 27.5768C25.269 29.104 22.9588 30 20.2037 30C16.2148 30 12.764 27.7591 11.0849 24.491V24.4895C10.3941 23.1397 10 21.6128 10 19.9995C10 18.3861 10.3942 16.859 11.0851 15.5091C12.7641 12.241 16.2148 10 20.2037 10C22.9541 10 25.264 10.9909 27.0311 12.6045L24.1044 15.4726Z"
+                  fill="black"
+                ></path></svg
+            ></a>
+            <a class="social-auth-links__item href="
+              ><svg
+                width="40"
+                height="40"
+                viewbox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-            </li>
-            <li>
-              <a
-                href="./profile-personal-data.html"
-                class="font-body-1 profile__navlink"
-                >Личные данные</a
+                <path
+                  d="M40 20.0002C40 31.045 31.0278 39.9962 19.9691 39.9962C8.91036 39.9962 -0.0192886 31.0176 3.1291e-05 19.9531C3.1291e-05 8.97486 9.02244 -0.0429747 19.9923 0.000154061C31.0665 0.0119165 40 8.95134 40 20.0002ZM37.8749 20.0002C37.8749 10.108 29.8493 2.11739 19.9305 2.12523C10.1391 2.12523 2.12909 10.1746 2.12909 20.0002C2.12909 29.8257 10.1275 37.8163 19.9537 37.8241C29.8493 37.8398 37.8787 29.8492 37.8749 20.0041V20.0002Z"
+                  fill="#222222"
+                ></path>
+                <path
+                  d="M21.6074 17.9016C21.6074 18.6858 21.5842 19.4699 21.6074 20.2541C21.6074 20.5129 21.7388 20.9481 21.8894 20.9834C22.0333 21.0027 22.1796 20.9903 22.3183 20.9469C22.4571 20.9036 22.5849 20.8305 22.6932 20.7324C23.2386 20.2145 23.7247 19.6358 24.1422 19.0073C24.8456 17.8507 25.4904 16.6586 26.0742 15.4354C26.3872 14.7846 26.7851 14.4474 27.5 14.4748C28.2148 14.5023 28.9451 14.4748 29.6677 14.4944C30.3902 14.514 30.6568 14.8199 30.3902 15.5491C30.1659 16.1865 29.8826 16.8009 29.544 17.3841C28.8485 18.5603 28.1105 19.6856 27.3647 20.8187C26.7697 21.7283 26.7852 21.893 27.527 22.7046C28.4389 23.7044 29.3277 24.7277 30.2318 25.7432C30.3964 25.9124 30.5276 26.1121 30.6182 26.3313C30.7535 26.7587 31.0046 27.3155 30.8655 27.6252C30.7264 27.9349 30.0927 28.0173 29.6677 28.0173C26.6422 27.9859 27.4227 28.4094 25.2859 26.1314C24.6318 25.4286 23.9065 24.7978 23.1221 24.2494C22.16 23.5828 21.6383 23.9083 21.6229 25.0688C21.6229 25.6452 21.6229 26.2215 21.6229 26.7979C21.6229 27.7154 21.4103 27.9271 20.4637 28.0055C18.7738 28.1196 17.0933 27.6723 15.6762 26.7313C13.7017 25.5001 12.3802 23.6652 11.194 21.7126C9.99884 19.8714 9.10986 17.8435 8.56256 15.7099C8.34617 14.7375 8.53551 14.4788 9.53242 14.4905C10.176 14.5257 10.8209 14.5257 11.4644 14.4905C12.2372 14.4239 12.558 14.7963 12.8516 15.4511C13.5896 17.1214 14.3663 18.772 15.2009 20.3913C15.5168 20.9288 15.9072 21.4173 16.3601 21.842C16.4465 21.9316 16.5521 21.9998 16.6687 22.0413C16.7853 22.0828 16.9098 22.0964 17.0324 22.0812C17.1335 22.0139 17.2176 21.9236 17.278 21.8173C17.3384 21.7111 17.3734 21.592 17.3802 21.4695C17.4034 20.0306 17.4382 18.5838 17.33 17.1567C17.2913 16.5999 16.9204 16.051 16.6344 15.5334C16.2789 14.8865 16.4181 14.5062 17.1406 14.4866C18.381 14.4552 19.6213 14.4866 20.8578 14.4866C21.4606 14.4866 21.5842 14.8787 21.592 15.3766C21.6151 16.2274 21.6074 17.0665 21.6074 17.9016Z"
+                  fill="#222222"
+                ></path></svg
+            ></a>
+            <a class="social-auth-links__item href="
+              ><svg
+                width="40"
+                height="40"
+                viewbox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-            </li>
-            <li>
-              <a
-                href="./profile-support.html"
-                class="font-body-1 profile__navlink"
-                >Поддержка</a
-              >
-            </li>
-          </ul>
-          <a
-            href="./profile/orders"
-            class="font-body-1 profile__navlink profile__navlink_exit"
-            >Выйти</a
+                <path
+                  d="M40 20.0002C40 31.045 31.0278 39.9962 19.9691 39.9962C8.91036 39.9962 -0.0192886 31.0176 3.1291e-05 19.9531C3.1291e-05 8.97486 9.02244 -0.0429747 19.9923 0.000154061C31.0665 0.0119165 40 8.95134 40 20.0002ZM37.8749 20.0002C37.8749 10.108 29.8493 2.11739 19.9305 2.12523C10.1391 2.12523 2.12909 10.1746 2.12909 20.0002C2.12909 29.8257 10.1275 37.8163 19.9537 37.8241C29.8493 37.8398 37.8787 29.8492 37.8749 20.0041V20.0002Z"
+                  fill="#222222"
+                ></path>
+                <path
+                  d="M30 12.7171L27.2335 10.0027L20.0048 17.0941L12.7744 10C11.8468 10.9103 10.9313 11.8084 10 12.7221C10.0244 12.7358 10.0473 12.7518 10.0684 12.77C12.7024 15.3531 15.3363 17.9362 17.9702 20.5193C17.9956 20.5423 18.0156 20.5706 18.0288 20.602C18.042 20.6335 18.048 20.6674 18.0464 20.7013C18.0444 23.7648 18.0439 26.8286 18.0447 29.8927V30H21.9343C21.9358 29.965 21.9387 29.9311 21.9387 29.8972C21.9387 26.8358 21.9382 23.7744 21.9373 20.7131C21.9356 20.6778 21.9417 20.6425 21.9554 20.6098C21.9691 20.5771 21.9899 20.5477 22.0164 20.5238C24.6528 17.9397 27.2884 15.3548 29.9232 12.7691C29.947 12.7493 29.9727 12.7319 30 12.7171Z"
+                  fill="black"
+                ></path></svg
+            ></a>
+          </div>
+        </div>
+        <div class="sign-up__container">
+          <p class="font-body-2 input__top-note">Нет аккаунта?</p>
+          <a class="button button_mid" href="./auth-sign-up.html"
+            >Зарегистрироваться</a
           >
         </div>
       </div>
-      <section class="profile__main-content">
-        <h1 class="profile__title">Программа лояльности</h1>
-        <div class="loyalty__content-wrapper">
-          <h2 class="loyalty__sub-heading">
-            Пройдите опрос, чтобы стать участником программы лояльности
-          </h2>
-          <form action="./profile-loyalty-next.html" class="font-body-2 loyalty__form" name="user_questionnaire" id="user_questionnaire">
-            <fieldset class="profile__input-group" name="user_has_children">
-              <legend class="font-body-2 profile__group-title" >Есть ли у Вас дети?</legend>
-              <label class="radio__label_profile" for="id_user_has_children_true">
-                <input
-                  class="radio hidden__input"
-                  type="radio"
-                  name="user_has_children"
-                  value="true"
-                  id="id_user_has_children_true"
-                />
-                Да
-              </label>
-              <label class="radio__label_profile" for="id_user_has_children_false">
-                <input
-                  class="radio hidden__input"
-                  type="radio"
-                  name="user_has_children"
-                  value="false"
-                  id="id_user_has_children_false"
-                />
-                Нет
-              </label>
-            </fieldset>
-            <fieldset class="profile__input-group" name="user_renov">
-              <legend class="font-body-2 profile__group-title">Вы планируете ремонт?</legend>
-              <label class="radio__label_profile" for="id_user_plan_renov_false">
-                <input
-                  class="radio hidden hidden__input"
-                  type="radio"
-                  name="user_renov"
-                  value="false"
-                  id="id_user_plan_renov_false"
-                />
-                Нет, не планируем
-              </label>
-              <label class="radio__label_profile" for="id_user_plan_renov_ongoing">
-                <input
-                  class="radio hidden__input"
-                  type="radio"
-                  name="user_renov"
-                  value="ongoing"
-                  id="id_user_plan_renov_ongoing"
-                />
-                Уже идёт
-              </label>
-              <label class="radio__label_profile" for="id_user_renov_soon">
-                <input
-                  class="radio hidden__input"
-                  type="radio"
-                  name="user_renov"
-                  value="soon"
-                  id="id_user_renov_soon"
-                />
-                Скоро начнется 
-              </label>
-              <label class="radio__label_profile" for="id_user_renov_half_year">
-                <input
-                  class="radio hidden__input"
-                  type="radio"
-                  name="user_renov"
-                  value="half_year"
-                  id="id_user_renov_half_year"
-                />
-                В течение полугода
-              </label>
-              <label class="radio__label_profile" for="id_user_renov_year">
-                <input
-                  class="radio hidden__input"
-                  type="radio"
-                  name="user_renov"
-                  value="year"
-                  id="id_user_renov_year"
-                />
-                В течение года
-              </label>
-              <label class="radio__label_profile" for="id_user_renov_plan_true">
-                <input
-                  class="radio hidden__input"
-                  type="radio"
-                  name="user_renov"
-                  value="true"
-                  id="id_user_renov_plan_true"
-                />
-                Планируем, но не определились со временем 
-              </label>
-            </fieldset>
-            <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 10px">
-              <button style="margin-top: 10px" class="button button_mid loyalty__submit-btn">Сохранить</button>
-              <a style="margin-top: 10px" class="button button_mid loyalty__submit-btn" href="./profile-loyalty-next.html">Далее</a>
-            </div>
-          </form>
-        </div>
-      </section>
+      <div class="auth__img-wrapper">
+        <img
+          class="auth__img"
+          src="./src/assets/images/content/auth-sign-in.png"
+          alt="corner of a modern neatly designed kitchen in a loft style"
+        />
+      </div>
     </main>
-
-    <!-- side menu -->
-
     <div class="side-menu-contact">
       <label class="side-menu-contact__button"
         ><svg
@@ -425,5 +400,14 @@
         >
       </div>
     </div>
+    <script src="./src/js/pageEntryPoints/auth.js" type="module" defer></script>
+    <script>
+      function togglePasswordVisibility(id) {
+        const input = document.getElementById(id);
+        const type =
+          input.getAttribute("type") === "password" ? "text" : "password";
+        input.setAttribute("type", type);
+      }
+    </script>
   </body>
 </html>

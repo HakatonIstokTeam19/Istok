@@ -60,8 +60,6 @@
     border-radius: 2px;
   }
   
-  
-  
   .profile__navlink:hover {
     background-color: var(--whitish);
     transform: translateX(calc(-1 * var(--padding-left)));
