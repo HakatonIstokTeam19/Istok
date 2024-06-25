@@ -22,25 +22,27 @@
       href="{% static './favicon_io/favicon-16x16.png' %}"
     />
     <link rel="manifest" href="{% static './favicon_io/site.webmanifest' %}" />
-    <title>Istok - About us</title>
+    <title>Istok - О нас</title>
     <link rel="stylesheet" href="{% static './src/css/reset.css' %}" />
     <link rel="stylesheet" href="{% static './src/css/global.css' %}" />
-    <link rel="stylesheet" href="{% static './src/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static './src/css/base-elements.css' %}" />
     <link rel="stylesheet" href="{% static './src/css/about.css' %}" />
   </head>
-  <body class="body">
+  <body class="about__body">
     <!-- Header - часть базового шаблона -->
 
     <header class="header">
-      <svg alt="logo" class="header__logo">
-        <use
-          href="{% static './src/assets/images/interface/icons-sprite-sheet.svg' %}#logo"
-        ></use>
-      </svg>
+      <a href="{% url 'home' %}">
+        <svg alt="logo" class="header__logo">
+          <use
+            href="{% static './src/assets/images/interface/icons-sprite-sheet.svg' %}#logo"
+          ></use>
+        </svg>
+      </a>
       <nav class="header__nav">
         <ul class="header__links">
           <li class="header__link font-body-1">
-            <a class="header__link font-body-1 href=" href="{% url 'home' %}"
+            <a class="header__link font-body-1" href="{% url 'home' %}"
               >Главная</a
             >
           </li>
@@ -60,21 +62,25 @@
               >Оставить заявку</a
             >
           </li>
+          {% if request.user.is_authenticated %}
+            <li class="header__link font-body-1">
+              <a
+                class="header__link font-body-1 header__sign-in"
+                href="{% url 'profile' request.user.pk %}"
+                >Войти в личный кабинет</a
+              >
+            </li>
+          {% else %}
+            <li class="header__link font-body-1">
+              <a
+                class="header__link font-body-1 header__sign-in"
+                href="{% url 'login' %}"
+                >Войти в личный кабинет</a
+              >
+            </li>
+          {% endif %}
         </ul>
       </nav>
-      {% if request.user.is_authenticated %}
-      <a
-        class="header__link font-body-1 header__sign-in"
-        href="{% url 'profile' request.user.pk %}"
-        >Войти в личный кабинет</a
-      >
-      {% else %}
-      <a
-        class="header__link font-body-1 header__sign-in"
-        href="{% url 'login' %}"
-        >Войти в личный кабинет</a
-      >
-      {% endif %}
     </header>
     <main class="main-content container">
       <div class="text-block" id="fixedTextBlockOnAboutPage" aria-hidden="true">
@@ -276,10 +282,10 @@
                 </p>
                 <div class="social-links__wrapper">
                   <a
-                  href="https://t.me/ISTOK_Connect"
-                  target="_blank"
-                  aria-label="Телеграм канал"
-                  class="social-links__link font-body-2"
+                    href="https://t.me/ISTOK_Connect"
+                    target="_blank"
+                    aria-label="Телеграм канал"
+                    class="social-links__link font-body-2"
                     ><svg class="social-links__icon">
                       <use
                         href="{% static './src/assets/images/interface/icons-sprite-sheet.svg' %}#telegram"

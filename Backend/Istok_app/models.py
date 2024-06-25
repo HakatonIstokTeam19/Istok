@@ -36,7 +36,7 @@ class Finished_furniture(models.Model):
     form = models.CharField(max_length=1, choices=FORMS, default='1', verbose_name='Форма мебели')
     body_material = models.CharField(max_length=1, choices=MATERIAL, default='1', verbose_name='Материал корпуса')
     facades_material = models.CharField(max_length=1, choices=MATERIAL, default='1', verbose_name='Материал фасадов')
-    price = models.FloatField(null=True, blank=True, verbose_name='Стоимость')
+    price = models.CharField(null=True, blank=True, max_length=150, verbose_name='Стоимость')
     image_1 = models.ImageField(null=True, blank=True, verbose_name='Изображение 1')
     image_2 = models.ImageField(null=True, blank=True, verbose_name='Изображение 2')
     image_3 = models.ImageField(null=True, blank=True, verbose_name='Изображение 3')

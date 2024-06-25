@@ -26,6 +26,19 @@ window.addEventListener("DOMContentLoaded", () => {
     altInput: true,
     altFormat: "F j, Y",
     dateFormat: "Y-m-d",
-    maxDate: formattedDate
+    maxDate: formattedDate,
   });
+
+  document
+    .getElementById("id_copy_code")
+    .addEventListener("click", function () {
+      const referralCode =
+        document.getElementById("id_referral_code").textContent;
+      navigator.clipboard
+        .writeText(referralCode)
+        .then(function () {})
+        .catch(function (err) {
+          console.error("Ошибка при копировании текста: ", err);
+        });
+    });
 });

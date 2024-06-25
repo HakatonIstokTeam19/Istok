@@ -4,15 +4,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Istok - Thank you!</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static './favicon_io/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static './favicon_io/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static './favicon_io/favicon-16x16.png' %}">
-    <link rel="manifest" href="{% static './favicon_io/site.webmanifest' %}">
+    <title>Istok - Благодарим Вас!</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{% static './favicon_io/apple-touch-icon.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{% static './favicon_io/favicon-32x32.png' %}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{% static './favicon_io/favicon-16x16.png' %}"
+    />
+    <link rel="manifest" href="{% static './favicon_io/site.webmanifest' %}" />
     <link rel="stylesheet" href="{% static './src/css/reset.css' %}" />
     <link rel="stylesheet" href="{% static './src/css/global.css' %}" />
     <link rel="stylesheet" href="{% static './src/css/request-final.css' %}" />
-    <link rel="stylesheet" href="{% static './src/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static './src/css/base-elements.css' %}" />
     <link rel="stylesheet" href="{% static './src/css/buttons.css' %}" />
     <link rel="stylesheet" href="{% static './src/css/forms.css' %}" />
     <link
@@ -23,11 +37,13 @@
   </head>
   <body class="page__body">
     <header class="header">
-      <svg alt="logo" class="header__logo">
-        <use
-          href="{% static './src/assets/images/interface/icons-sprite-sheet.svg' %}#logo"
-        ></use>
-      </svg>
+      <a href="{% url 'home' %}">
+        <svg alt="logo" class="header__logo">
+          <use
+            href="{% static './src/assets/images/interface/icons-sprite-sheet.svg' %}#logo"
+          ></use>
+        </svg>
+      </a>
       <nav class="header__nav">
         <ul class="header__links">
           <li class="header__link font-body-1">
@@ -47,35 +63,41 @@
               >Оставить заявку</a
             >
           </li>
+          {% if request.user.is_authenticated %}
+            <li class="header__link font-body-1">
+              <a
+                class="header__link font-body-1 header__sign-in"
+                href="{% url 'profile' request.user.pk %}"
+                >Войти в личный кабинет</a
+              >
+            </li>
+          {% else %}
+            <li class="header__link font-body-1">
+              <a
+                class="header__link font-body-1 header__sign-in"
+                href="{% url 'login' %}"
+                >Войти в личный кабинет</a
+              >
+            </li>
+          {% endif %}
         </ul>
       </nav>
-      {% if request.user.is_authenticated %}
-        <a
-          class="header__link font-body-1 header__sign-in"
-          href="{% url 'profile' request.user.pk %}"
-          >Войти в личный кабинет</a
-        >
-      {% else %}
-        <a
-          class="header__link font-body-1 header__sign-in"
-          href="{% url 'login' %}"
-          >Войти в личный кабинет</a
-        >
-      {% endif %}
     </header>
     <main class="request-final__content">
-      <img
+      <div class="request-final__img-wrapper">
+        <img
         class="request-final__img"
         src="{% static './src/assets/images/content/request-final-screen.png' %}"
         alt="scandinavian style living room with a chair"
       />
+      </div>
       <div class="request-final__right-wrapper">
         <div class="request-final__text-content">
             <h1 class="request-final__title font-heading-48" ><span class="text-color-accent">Мы очень благодарны вам </span><br> за оставленную заявку!</h1>
-            <p class="request-final__text font-heading-24">
+            <p class="request-final__text">
                 Ваше доверие и поддержка важны для нас.
             </p>
-            <p class="request-final__text font-heading-24">
+            <p class="request-final__text">
                 Наш менеджер свяжется c вами.
             </p>
         </div>

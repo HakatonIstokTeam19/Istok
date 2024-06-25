@@ -25,7 +25,7 @@ class Finished_furnitureList(FilterView):
     filterset_class = FinishedFurnitureFilter
     template_name = 'Istok_app/finished_furniture_list.html'
     context_object_name = 'finished_furniture_list'
-    paginate_by = 5
+
 
 class Finished_furnitureDetail(DetailView):
     model = Finished_furniture

@@ -1,7 +1,7 @@
 .request-page__body {
     height: 100vh;
     margin: 0 auto;
-    max-width: 1440px;
+    /* max-width: 1440px; */
 }
 
 
@@ -15,7 +15,7 @@
   height: 100%;
   /* max-height: 800px; */
   width: 100%;
-  padding: clamp(68px, 3dvh, 93px) 0;
+  padding: clamp(68px, 15dvh, 93px) 0;
   
 }
 
