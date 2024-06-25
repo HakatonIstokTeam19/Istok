@@ -47,6 +47,46 @@ function sliderImage() {
   });
 }
 
+function filter() {
+  const divCont = document.querySelector(".main__form-option");
+  divCont.addEventListener("click", (e) => {
+    const div = e.target;
+    let innerDiv = `
+       <div class="main__form-option">
+            <h3 class="font-body-2">По форме</h3>
+            <label class="font-body-light-2"
+              ><input
+                class="main__form-checkbox"
+                type="checkbox"
+                name="Прямая"
+                value="Прямая"
+              />Прямая</label
+            ><label class="font-body-light-2"
+              ><input
+                type="checkbox"
+                name="Угловая"
+                value="Угловая"
+              />Угловая</label
+            ><label class="font-body-light-2"
+              ><input
+                type="checkbox"
+                name="П-образная"
+                value="П-образная"
+              />П-образная</label
+            ><label class="font-body-light-2"
+              ><input type="checkbox" name="Комод" value="Комод" />Комод</label
+            ><label class="font-body-light-2"
+              ><input
+                type="checkbox"
+                name="Г-образная"
+                value="Г-образная"
+              />Г-образная</label
+            >
+          </div>
+    `;
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   scrollContainer.addEventListener("wheel", handleScroll);
   clickFilter();
