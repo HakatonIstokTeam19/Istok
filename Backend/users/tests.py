@@ -1,4 +1,7 @@
 from django.test import TestCase
 from datetime import datetime
-text = '1234567890'
-print(text[0:333])
+import random
+
+dct = ''.join([str(random.randint(0, 9)) for _ in range(4)])
+
+print(dct)

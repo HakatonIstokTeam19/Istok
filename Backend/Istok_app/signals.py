@@ -10,7 +10,11 @@ from django.core.exceptions import ObjectDoesNotExist
 @receiver(post_save, sender=Orders)
 def create_profile(sender, instance, created, **kwargs):
     if created:
-        code = instance.order_by_loyalty_code.loyalty_code
+        try:
+            code = instance.order_by_loyalty_code.loyalty_code
+        except Exception:
+            code = ''
+
         if code:
             order_user = instance.order_user
             orders_quantity = len(Orders.objects.filter(order_user=order_user))
@@ -43,4 +47,4 @@ def send_application_email(sender, instance, created, **kwargs):
         Дата: {instance.data}
         Время: {instance.time}
         '''
-        send_mail(subject, message, 'myrsin.s@yandex.com', ['myrsin.s@yandex.com'])
+        send_mail(subject, message, 'myrsin.s@yandex.com', ['eminence_grise@inbox.ru'])

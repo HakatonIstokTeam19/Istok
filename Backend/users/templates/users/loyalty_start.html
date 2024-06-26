@@ -137,7 +137,7 @@
                   class="radio hidden__input"
                   type="radio"
                   name="user_has_children"
-                  value="true"
+                  value="1"
                   id="id_user_has_children_true"
                 />
                 Да
@@ -147,20 +147,20 @@
                   class="radio hidden__input"
                   type="radio"
                   name="user_has_children"
-                  value="false"
+                  value=""
                   id="id_user_has_children_false"
                 />
                 Нет
               </label>
             </fieldset>
-            <fieldset class="profile__input-group" name="user_renov">
+            <fieldset class="profile__input-group" name="user_renov" required="True">
               <legend class="font-body-2 profile__group-title">Вы планируете ремонт?</legend>
               <label class="radio__label_profile" for="id_user_plan_renov_false">
                 <input
                   class="radio hidden hidden__input"
                   type="radio"
                   name="user_renov"
-                  value="false"
+                  value="0"
                   id="id_user_plan_renov_false"
                 />
                 Нет, не планируем
@@ -170,7 +170,7 @@
                   class="radio hidden__input"
                   type="radio"
                   name="user_renov"
-                  value="ongoing"
+                  value="1"
                   id="id_user_plan_renov_ongoing"
                 />
                 Уже идёт
@@ -180,7 +180,7 @@
                   class="radio hidden__input"
                   type="radio"
                   name="user_renov"
-                  value="soon"
+                  value="2"
                   id="id_user_renov_soon"
                 />
                 Скоро начнется 
@@ -190,7 +190,7 @@
                   class="radio hidden__input"
                   type="radio"
                   name="user_renov"
-                  value="half_year"
+                  value="3"
                   id="id_user_renov_half_year"
                 />
                 В течение полугода
@@ -200,25 +200,28 @@
                   class="radio hidden__input"
                   type="radio"
                   name="user_renov"
-                  value="year"
-                  required
+                  value="4"
                   id="id_user_renov_year"
                 />
                 В течение года
               </label>
               <label class="radio__label_profile" for="id_user_renov_plan_true">
+
+                <input
                   class="radio hidden__input"
                   type="radio"
                   name="user_renov"
-                  value="true"
-                  required
-                  id="id_user_renov_plan_true"
+                  value="5"
+                  id="id_user_renov_plan_true"/>
                 Планируем, но не определились со временем 
               </label>
             </fieldset>
             <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 10px">
               <button style="margin-top: 10px" class="button button_mid loyalty__submit-btn">Сохранить</button>
-              <a style="margin-top: 10px" class="button button_mid loyalty__submit-btn" href="{% url 'loyalty_next' %}">Далее</a>
+              {% if loyalty %}
+                <a style="margin-top: 10px" class="button button_mid loyalty__submit-btn" href="{% url 'loyalty_next' %}">Далее</a>
+              {% endif %}
+
             </div>
           </form>
         </div>

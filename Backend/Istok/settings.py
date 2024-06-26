@@ -89,6 +89,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'Istok.wsgi.application'
 
 
+#todo база данных перемещена на sqlite для выставления сайта на бесплатный боевой сервер
+
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -186,8 +188,9 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-# ACCOUNT_EMAIL_VERIFICATION = 'none'
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+#todo на бесплатном сервере не работает отправка email. опция обязательного подтверждения email временно остановлено.
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 # своя форма регистрации юзера
 ACCOUNT_FORMS = {'signup': 'users.forms.CustomSignupForm'}
 #todo был изменен. в env был полный адрес

@@ -69,6 +69,8 @@ class CustomSignupForm(SignupForm):
 
 
 
+#todo у учетом наличия сильного фронтэндера, все формы можно перенести на html. Въюшки будут лишь проверять и создавать
+# объекты в бд.
 class FirstLastNameEdit(ModelForm):
 
     first_name = forms.CharField(

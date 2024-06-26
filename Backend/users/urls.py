@@ -34,20 +34,11 @@ urlpatterns = [
     # allauth все стандартные пути. если нет кастомной въюшки будет работать оригинал.
     path('accounts/', include('allauth.urls')),
 
-    #######
+    ####### для тестирования html
     path('test/', views.form_for_test, name='test'),
     #######
 ]
 
-
-# password_reset/ [name='password_reset']
-# password_reset_done/ [name='password_set']
-# accounts/ login/ [name='account_login']
-# accounts/ logout/ [name='account_logout']
-# accounts/ signup/ [name='account_signup']
-# accounts/ confirm-email/ [name='account_email_verification_sent']
-# accounts/ password/reset/ [name='account_reset_password']
-# accounts/ password/reset/done/ [name='account_reset_password_done']
 
 
 

@@ -84,17 +84,17 @@
         <div class="profile__nav-container">
           <ul class="profile__nav-links">
             <li>
-              <a href="#" class="font-body-1 profile__navlink"
+              <a href="{% url 'orders_list' %}" class="font-body-1 profile__navlink"
                 >Мои заказы</a
               >
             </li>
             <li>
-              <a href="#" class="font-body-1 profile__navlink"
+              <a href="{% url 'loyalty_start' %}" class="font-body-1 profile__navlink"
                 >Программа лояльности</a
               >
             </li>
             <li>
-              <a href="#" class="font-body-1 profile__navlink"
+              <a href="{% url 'orders_list_completed' %}" class="font-body-1 profile__navlink"
                 >История заказов</a
               >
             </li>
@@ -135,6 +135,8 @@
               </svg>
             </button>
 
+{#            todo послылать ошибки чрезе свою функцию. Макс 1 ошибка на поле. Или организовать #}
+{#          вывод большого количества ошибок на фронту #}
             {% if form_first_last_name.errors %}
               {% for field in form_first_last_name %}
                 {% for error in field.errors %}
@@ -149,9 +151,6 @@
                 {% endfor %}
               {% endfor %}
             {% endif %}
-{#            {% for error in form_first_last_name.errors.first_name %}#}
-{#              <div class="error_message">{{ error }}</div>#}
-{#            {% endfor %}#}
 
           </section>
 
@@ -866,7 +865,6 @@
     </div>
 
     <script
-{#      src="./src/js/pageEntryPoints/profilePersonalData.js"#}
       src="{% static 'src/js/pageEntryPoints/profilePersonalData.js' %}"
       type="module"
       defer

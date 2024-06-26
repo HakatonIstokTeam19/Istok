@@ -1,3 +1,5 @@
+import random
+import string
 from django.shortcuts import render, redirect, get_object_or_404
 
 from django.contrib import messages
@@ -271,8 +273,9 @@ form_for_test = FormForTest.as_view()
 ###########
 
 
-#todo Обсудить нюансы с заказчиками
+#todo Обсудить нюансы с заказчиками. Въюшка написана в качестве эксперимента без форм.
 def loyalty_start(request):
+    """"""
     user = get_object_or_404(User, pk=request.user.pk)
 
     try:
@@ -281,32 +284,44 @@ def loyalty_start(request):
         loyalty = False
 
     print('\nloyalty == ', loyalty)
-    context = {}
 
-    if request.POST and loyalty:
+    # если создается новая лояльность
+    if not loyalty and request.POST:
         data = request.POST
-        print('\ndata post== ', data)
-        # loyalty.survey_children = data['user_has_children']
-        # loyalty.survey_repair = data['user_renov']
-        # loyalty.save()
-    else:
-        print('\ndata get== ', )
+        all_symbols = string.ascii_uppercase
 
+        while True:
+            code = ''.join(random.choice(all_symbols) for _ in range(6))
+            same_code = Loyalty.objects.filter(loyalty_code=code).exists()
+            card_number = f"{rand_n()} {rand_n()} {rand_n()} {rand_n()}"
+            same_card_number = Loyalty.objects.filter(card_number=code).exists()
+            if not same_code and not same_card_number:
+                break
+        user_has_children = True if data.get('user_has_children') else False
+
+        try:
+            Loyalty.objects.create(user=user, survey_repair=data.get('user_renov')[0],
+                survey_children=user_has_children, card_number=card_number, loyalty_code=code
+            )
+        except Exception as e:
+            print(f"\n!!Ошибка создания объекта лояльности!!\nERROR == {e}")
+
+    # если есть лояльность можно изменить анкету
+    if loyalty and request.POST:
+        data = request.POST
+        user_has_children = True if data.get('user_has_children') else False
+        Loyalty.objects.update(survey_repair=data.get('user_renov'), survey_children=user_has_children
+        )
+
+    context = {'loyalty': loyalty}
     return render(request, 'users/loyalty_start.html', context=context)
+
+def rand_n():
+    return ''.join([str(random.randint(0, 9)) for _ in range(4)])
 
 
 def loyalty_next(request):
-    user = get_object_or_404(User, pk=request.user.pk)
-    print(user.last_name, user.first_name)
-    try:
-        loyalty = Loyalty.objects.get(user=user)
-    except Exception:
-        loyalty = ''
+    loyalty = get_object_or_404(Loyalty, user=request.user)
 
-    context = {'loyalty': loyalty, 'user': user}
-
+    context = {'loyalty': loyalty}
     return render(request, 'users/loyalty_next.html', context=context)
-
-
-
-

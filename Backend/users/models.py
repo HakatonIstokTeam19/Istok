@@ -51,7 +51,7 @@ class Loyalty(models.Model):
         verbose_name='Планируете ли вы ремонт')
     survey_children = models.BooleanField(default=False, verbose_name='Есть ли у вас дети')
     bonus = models.CharField(max_length=1, choices=BONUS_CHOICE, default='1',
-        verbose_name='Планируете ли вы ремонт')
+        verbose_name='Планируете ли вы ремонт', blank=True)
     card_number = models.CharField(max_length=19, verbose_name='Номер карты')
     loyalty_url = models.URLField(max_length=200, verbose_name='Ссылка для друга', blank=True)
     loyalty_code = models.CharField(max_length=20, verbose_name='Код программы лояльности')
