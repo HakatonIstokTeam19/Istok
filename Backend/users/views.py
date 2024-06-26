@@ -283,8 +283,6 @@ def loyalty_start(request):
     except Exception:
         loyalty = False
 
-    print('\nloyalty == ', loyalty)
-
     # если создается новая лояльность
     if not loyalty and request.POST:
         data = request.POST
@@ -298,9 +296,9 @@ def loyalty_start(request):
             if not same_code and not same_card_number:
                 break
         user_has_children = True if data.get('user_has_children') else False
-
+        survey_repair = '0' if not data.get('user_renov') else data.get('user_renov')
         try:
-            Loyalty.objects.create(user=user, survey_repair=data.get('user_renov')[0],
+            Loyalty.objects.create(user=user, survey_repair=survey_repair,
                 survey_children=user_has_children, card_number=card_number, loyalty_code=code
             )
         except Exception as e:
@@ -309,8 +307,9 @@ def loyalty_start(request):
     # если есть лояльность можно изменить анкету
     if loyalty and request.POST:
         data = request.POST
+        survey_repair = '0' if not data.get('user_renov') else data.get('user_renov')
         user_has_children = True if data.get('user_has_children') else False
-        Loyalty.objects.update(survey_repair=data.get('user_renov'), survey_children=user_has_children
+        Loyalty.objects.update(survey_repair=survey_repair, survey_children=user_has_children
         )
 
     context = {'loyalty': loyalty}
