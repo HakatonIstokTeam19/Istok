@@ -1,17 +1,7 @@
 .orders__body {
-  /* height: calc(100vh - 52px); */
-    padding-bottom: 52px;
-    /* overflow: hidden; */
+  padding-bottom: 52px;
 }
 
-/* .orders__content-wrapper {
-    display: flex;
-    flex-flow: row wrap;
-    overflow-x: auto;
-    width: 100%;
-    row-gap: 16px;
-    column-gap: 60px;
-} */
 .orders__content-section {
   overflow: hidden;
 }
@@ -27,16 +17,14 @@
 .order-card {
   display: grid;
   grid-template-columns: repeat(3, auto);
-  grid-template-rows: auto auto;
+  grid-template-rows: repeat(2, auto);
   padding: 16px 24px;
   row-gap: 16px;
   column-gap: 60px;
-  /* max-height: 240px; */
-  border: 1px solid #e8e9da;
+  border: 1px solid var(--beige);
   width: 804px;
   box-sizing: border-box;
 }
-
 
 .order-heading {
   grid-column: 1 / span 3;
@@ -63,7 +51,6 @@
 .order-details td {
   color: var(--light-black);
   font-weight: var(--weight-light);
-
 }
 .order-details a {
   color: var(--green);
@@ -71,12 +58,74 @@
 }
 
 .order-image {
-width: 298px;
-height: 200px;
-
+  width: 298px;
+  height: 200px;
 }
 
 .order-image img {
   max-width: 100%;
   height: auto;
+}
+
+/* styles for order history page */
+
+.order-card_history {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.order-hist__content {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 16px 0;
+  padding-bottom: 8px;
+  border-top: 1px solid #C4C4C4;
+  min-height: 140px;
+}
+
+.order-hist__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 4px;
+  margin-right: 56px;
+}
+.order-hist__address {
+}
+.order-hist__date {
+}
+
+.order-hist__price {
+  margin-top: 8px;
+}
+
+.order-hist__title {
+  font-family: var(--font-main);
+  font-size: var(--font-14);
+  font-weight: var(--weight-bold-x);
+  line-height: var(--line-height-20);
+  color: var(--light-black);
+}
+
+.order-hist-images {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-grow: 1;
+  gap: 20px;
+  margin-right: 23px;
+}
+
+.order-hist__image {
+  width: 100px;
+  height: 100px;
+  max-width: 80px;
+  max-height: 80px;
+}
+
+.button_slim_order-hist {
+  width: 128px;
+  align-self: flex-end;
+  margin: 8px 0 -8px;
 }
