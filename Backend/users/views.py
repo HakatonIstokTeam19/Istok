@@ -163,8 +163,10 @@ def profile(request):
 
     if num[0] == '+':
         mobile_number = f"+{num[1]}({num[2:5]}) {num[5:8]}-{num[8:10]}-{num[10:12]}"
-    else:
+    elif num[0].isalpha():
         mobile_number = num
+    else:
+        mobile_number = f"{num[0:1]}({num[1:4]}) {num[4:7]}-{num[7:9]}-{num[9:11]}"
 
     form_first_last_name = FirstLastNameEdit(instance=user)
     form_surname = SurnameEdit(instance=profile)
@@ -180,7 +182,7 @@ def profile(request):
     form_password.fields['new_password2'].widget.attrs.update({'placeholder': 'Повторите новый пароль'})
 
     data = request.POST
-    print('data == ', data)
+    print('data == ', data.dict())
 
     #####
     lst = [form_first_last_name, form_surname, form_birth_day, form_mobile_number, form_email, form_password]
@@ -253,6 +255,7 @@ def profile(request):
             return redirect('profile')
 
         print('\nЧто-то не валидно!!!!\n')
+
 
     context = {'user': user, 'user_loyalty': user_loyalty, 'profile': profile,
                'mobile_number': mobile_number, 'fio': fio,

@@ -410,7 +410,10 @@
               <input
                 class="profile__modal-input font-body-1"
                 type="text"
+                required=""
                 id="id_username"
+                pattern="^\+?[0-9]{11,12}$"
+                title="Телефон должен быть указан в формате: '+7XXXXXXXXXX'. Максимум 12 цифр."
                 name="username"
                 value="{{ form_mobile_number.username.value }}"
             /></label>

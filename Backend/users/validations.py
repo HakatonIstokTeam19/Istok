@@ -3,7 +3,7 @@ from django.core.validators import RegexValidator
 from django.core.exceptions import ValidationError
 
 phone_regex = RegexValidator(
-        regex=r'^\+?1?\d{9,12}$',
+        regex=r'^\+?1?\d{10,12}$',
         message="Телефон должен быть указан в формате: +7ХХХХХХХХХХ (12 символов).")
 
 def years_range():
@@ -21,9 +21,9 @@ def no_number_in_name(value):
             params={"value": value},
         )
 
-def mobile_number_min_len(value):
-    if len(value) != 12:
-        raise ValidationError(
-            'Телефон должен быть указан в формате: +7ХХХХХХХХХХ (12 символов).',
-            params={"value": value},
-        )
+# def mobile_number_min_len(value):
+#     if len(value) != 12:
+#         raise ValidationError(
+#             'Телефон должен быть указан в формате: +7ХХХХХХХХХХ (12 символов).',
+#             params={"value": value},
+#         )
