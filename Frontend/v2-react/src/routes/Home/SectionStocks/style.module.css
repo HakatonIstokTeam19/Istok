@@ -1,0 +1,158 @@
+
+/* slider 3 - discounts */
+
+.container {
+    display: flex;
+    margin-left: 75px;
+    margin-right: 243px;
+    gap: 196px;
+    height: 100%;
+    min-width: 1909px;
+  }
+  
+  .sliderContainer {
+    --_slide-width: 1075px;
+    position: relative;
+    position: relative;
+    display: grid;
+    grid-template-columns: 47px var(--_slide-width) 47px;
+    grid-template-rows: auto;
+    height: 100%;
+    width: 1169px;
+  }
+  
+  .visibleSpace {
+    grid-column: 2/3;
+    width: var(--_slide-width);
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .sliderBtn {
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 100%;
+    width: 47px;
+    background-color: var(--whitish);
+    color: var(--light-black)
+  }
+  
+  .sliderBtn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
+  .sliderBtnRight,
+  .sliderBtnLeft {
+    position: absolute;
+    top: 0;
+  }
+  
+  .sliderBtnLeft {
+    grid-column: 1/2;
+  }
+  
+  .sliderBtnRight {
+    grid-column: 3/4;
+  }
+  
+  .innerContainer {
+    display: flex;
+    height: 100%;
+    width: calc((var(--_slide-width) * 2));
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide1,
+  .slide2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: var(--_slide-width);
+    height: 100%;
+    background: no-repeat center center;
+  }
+  
+  .slide1 {
+    background-image: url("./src/assets/images/content/home-slider-3-card-1.png");
+  }
+  .slide2 {
+    background-image: url("./src/assets/images/content/home-slider-3-card-2.png");
+  }
+  
+  .arrow {
+    width: 29px;
+    height: 31px;
+  }
+  
+  .arrowRight {
+    transform: rotate(180deg);
+  }
+  
+  .sliderInfo {
+    background-color: var(--beige);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 630px;
+    padding: 40px;
+  }
+  
+  .commercialHeading {
+    margin-bottom: 12px;
+  }
+  
+  .sliderInfo ul {
+    height: 32px;
+    margin-top: 25px;
+    display: flex;
+    gap: 25px;
+  }
+  
+  .sliderInfo ul li {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  
+  .btnOrder {
+    margin-top: 69px;
+  }
+
+.consulting {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 40px;
+    padding-top: clamp(84px, 8vh, 146px);
+  }
+  
+  .heading {
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    font-size: var(--font-32);
+    font-weight: var(--weight-bold-semi);
+    line-height: var(--line-height-36);
+    color: var(--green);
+  }
+  
+  .tagline {
+    margin-bottom: clamp(30px, 8vh, 60px);
+  }
+  .textContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: clamp(35px, 8vh, 70px);
+  }
+  
+  .paragraph {
+    max-width: 467px;
+    text-wrap: balance;
+    text-transform: none;
+  }

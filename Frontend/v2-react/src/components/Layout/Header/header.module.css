@@ -1,0 +1,59 @@
+.header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100vw;
+  height: auto;
+  position: fixed;
+  left: 0%;
+  top: 20px;
+  z-index: 1000;
+  padding: 0 var(--padding-102);
+}
+
+.logo {
+  width: 226px;
+  height: 26px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 610px;
+  max-width: 934px;
+  margin-left: auto;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.link {
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+  mix-blend-mode: difference;
+}
+
+.active {
+  color: var(--green);
+}
+
+.link:hover {
+  opacity: 0.7;
+}
+
+.signIn {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  min-width: 226px;
+}

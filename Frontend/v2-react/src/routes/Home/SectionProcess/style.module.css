@@ -1,0 +1,60 @@
+.heading {
+  margin-bottom: clamp(52px, 8vh, var(--padding-102));
+  width: 1693px;
+  height: 36px;
+
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 36px;
+}
+
+.process {
+  height: 100%;
+  max-height: 280px;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.stepDescription {
+  max-width: 312px;
+  text-transform: none;
+}
+
+.processStep {
+  height: 94px;
+  counter-increment: list-counter;
+  position: relative;
+}
+
+.processStep::before {
+  content: counter(list-counter) ".";
+  position: absolute;
+  color: var(--green);
+  display: block;
+
+  font-weight: var(--weight-regular);
+  font-size: var(--font-48);
+}
+
+.processStep:nth-child(even) {
+  align-self: flex-start;
+}
+.processStep:nth-child(odd)::before {
+  top: -70px;
+}
+
+.processStep:nth-child(2) {
+  margin-right: -70px;
+}
+.processStep:nth-child(5) {
+  margin-right: -70px;
+}
+
+.processStep:nth-child(odd) {
+  align-self: flex-end;
+}
+.processStep:nth-child(even)::before {
+  bottom: -70px;
+}

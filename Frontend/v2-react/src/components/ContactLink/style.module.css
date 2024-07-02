@@ -1,0 +1,26 @@
+.link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: opacity 0.2s ease-in-out;
+  text-transform: none;
+  font-family: var(--font-main);
+  font-size: var(--font-12);
+  font-weight: var(--weight-light-x);
+  line-height: var(--line-height-16);
+  color: var(--beige);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.link:hover {
+  opacity: 0.7;
+}
+
+.link:active {
+  color: var(--green);
+}
