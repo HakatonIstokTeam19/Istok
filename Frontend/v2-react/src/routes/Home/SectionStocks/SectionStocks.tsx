@@ -1,6 +1,7 @@
 import style from './style.module.css';
-import spritesheet from "./../../../assets/images/interface/icons-sprite-sheet.svg"
+import spritesheet from "../../../assets/images/interface/icons-sprite-sheet.svg"
 import { ReactNode, useEffect, useRef, useState } from 'react';
+import Button from '../../../components/Button/Button';
 
 export default function SectionStocks() {
     return (
@@ -44,7 +45,7 @@ function Slider({ children }: { children: ReactNode[] }) {
             <button className={`${style.sliderBtn} ${style.sliderBtnLeft}`} onClick={prevSlide}>
                 <svg className={`${style.arrow} ${style.arrowRight}`}>
                     <use
-                        href={`${spritesheet}#cardArrowright`}
+                        href={`${spritesheet}#cardArrowRight`}
                     ></use>
                 </svg>
             </button>
@@ -56,7 +57,7 @@ function Slider({ children }: { children: ReactNode[] }) {
             <button className={`${style.sliderBtn} ${style.sliderBtnRight}`} onClick={nextSlide}>
                 <svg className={style.arrow}>
                     <use
-                        href={`${spritesheet}#cardArrowright`}
+                        href={`${spritesheet}#cardArrowRight`}
                     ></use>
                 </svg>
             </button>
@@ -76,11 +77,10 @@ function Slide1() {
                 <p className={`${style.commercialText} font-heading-reg-32`}>
                     ЗА РЕКОМЕНДАЦИЮ И ЗАКАЗ ПО НЕЙ
                 </p>
-                <button
-                    className="button button_white button_short page8__btn-order"
-                >
+                <Button
+                    className={style.btnOrder}>
                     Рекомендовать
-                </button>
+                </Button>
             </div>
         </div>
     )
@@ -105,12 +105,10 @@ function Slide2() {
                     <li>Комод</li>
                     <li>Стеллаж</li>
                 </ul>
-                <button
-                    data-modal="registerModal"
-                    className="button button_white button_short page8__btn-order"
-                >
+                <Button
+                    className={style.btnOrder}>
                     Сделать заказ
-                </button>
+                </Button>
             </div>
         </div>
     )
@@ -138,10 +136,14 @@ function Consult() {
                     удобное для вас время!
                 </p>
             </div>
-            <a
-                className="button button_white button_slim"
-                href="./request-skip-selection.html"
-            >Заказать звонок</a>
+            <Button
+                    size='smallL'
+                    as='a'
+                    href='/request-skip-selection'
+                    className={style.reqCallBtn}
+                    >
+                    Заказать звонок
+                </Button>
         </div>
     )
 }

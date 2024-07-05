@@ -1,39 +1,40 @@
-import React, { ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
-import './Button.css';
+import React from 'react';
+import style from './style.module.css';
 
-type ButtonProps = {
+type ButtonProps<C extends React.ElementType> = {
     variant?: 'primary' | 'secondary' | 'success' | 'danger';
-    size?: 'small' | 'medium' | 'large';
-    disabled?: boolean;
+    size?: 'smallX' | 'smallM' | 'smallL' | 'medium' | 'large';
+    className?: string;
+    loading? : boolean;
     onClick?: () => void;
-} & ButtonHTMLAttributes<HTMLButtonElement> &
-    AnchorHTMLAttributes<HTMLAnchorElement>;
+    as?: C;
+  } & Omit<React.ComponentPropsWithoutRef<C>, 'as'>;
 
-const Button: React.FC<ButtonProps> = ({
+  type PolymorphicButtonComponent = <C extends React.ElementType = 'button'>(
+    props: ButtonProps<C>
+  ) => React.ReactElement | null;
+
+  const Button: PolymorphicButtonComponent = ({
     variant = 'primary',
-    size = 'medium',
+    size = 'large',
     disabled = false,
+    loading = false,
+    className = '',
     onClick,
-    children,
-    ...rest
-}) => {
-    const buttonClasses = `button button-${variant} button-${size} ${
-        disabled ? 'button-disabled' : ''
-    }`;
-
-    if (rest.href) {
-        return (
-            <a className={buttonClasses} onClick={onClick} {...rest}>
-                {children}
-            </a>
-        );
-    }
-
+    as,
+    ...props
+  }) => {
+    const Component = as || 'button';
     return (
-        <button className={buttonClasses} onClick={onClick} disabled={disabled} {...rest}>
-            {children}
-        </button>
+      <Component
+        className={`${style.button} ${style[variant]} ${style[size]} ${className}`}
+        disabled={disabled}
+        onClick={onClick}
+        {...props}
+      >
+        {loading ? 'Loading...' : props.children}
+      </Component>
     );
-};
+  };
 
 export default Button;

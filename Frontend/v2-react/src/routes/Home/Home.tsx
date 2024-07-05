@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import style from './home.module.css';
 import SectionStart from './SectionStart/SectionStart';
@@ -9,64 +9,63 @@ import SectionProjects from './SectionProjects/SectionProjects';
 import SectionProcess from './SectionProcess/SectionProcess';
 import SectionStocks from './SectionStocks/SectionStocks';
 import Footer from '../../components/Footer/Footer';
+import { homePageProgressBarItems } from '../../configs/config';
+import ProgressBar from '../../components/ProgressBar/ProgressBar';
+import useSectionObserver from '../../hooks/useSectionObserver';
+import { useHorizontalScroll } from '../../hooks/useHorizontalScroll';
 
 export default function Home() {
+    const [activeSectionId, setActiveSectionId] = useState(homePageProgressBarItems[0].id);
+    const { setIsScrolling, containerRef } = useHorizontalScroll();
+    useSectionObserver({setActiveSectionId});
 
-    const containerRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const container = containerRef.current;
-        if (container) {
-            const handleWheel = (e: WheelEvent) => {
-                e.preventDefault();
-                container.scrollLeft += e.deltaY;
-            };
-            container.addEventListener('wheel', handleWheel);
-            return () => container.removeEventListener('wheel', handleWheel);
-        }
-    }, []);
-    
     return (
         <>
             <Helmet>
                 <title>Istok - Главная</title>
                 <meta name="description" content="Добро пожаловать в Istok" />
             </Helmet>
-            <div ref={containerRef}  className={style.container}>
-                <section className={`${style.sectionStart} ${style.section}`} id="start">
+            <div ref={containerRef} className={style.container}>
+                <section className={`${style.sectionStart} ${style.section}`} id={homePageProgressBarItems[0].id}>
                     <SectionStart />
                 </section>
                 <section
-                    className={`${style.section}`}
-                    id="benefits">
-                        <SectionBenefits />
+                    id={homePageProgressBarItems[1].id}>
+                    <SectionBenefits />
                 </section>
                 <section
                     className={`${style.section} ${style.sectionProducts}`}
-                    id="products">
-                        <SectionProducts />
+                    id={homePageProgressBarItems[2].id}>
+                    <SectionProducts 
+                    isSliderActive={activeSectionId === homePageProgressBarItems[2].id}
+                    setAscendantScroll={setIsScrolling}
+                    />
                 </section>
                 <section
                     className={`${style.section} ${style.sectionMaterials}`}
-                    id="materials"
+                    id={homePageProgressBarItems[3].id}
                 >
                     <SectionMaterials />
                 </section>
                 <section
                     className={`${style.section} ${style.sectionProjects}`}
-                    id="projects">
-                        <SectionProjects />
+                    id={homePageProgressBarItems[4].id}>
+                    <SectionProjects />
                 </section>
                 <section
                     className={`${style.sectionProcess}`}
-                    id="process"
+                    id={homePageProgressBarItems[5].id}
                 >
                     <SectionProcess />
                 </section>
                 <section
-                    id="orderNow">
-                        <SectionStocks />
+                    id={homePageProgressBarItems[6].id}>
+                    <SectionStocks />
                 </section>
+                <ProgressBar
+                    activeSectionId={activeSectionId}
+                    setActiveSectionId={setActiveSectionId}
+                    items={homePageProgressBarItems} />
                 <Footer />
             </div>
         </>

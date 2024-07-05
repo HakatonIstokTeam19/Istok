@@ -1,8 +1,10 @@
 .container {
+  position: relative;
   --_main-padding-top: 124px;
   position: relative;
-  z-index: 90;
+  z-index: 4;
   height: 100vh;
+  width: auto;
   flex-direction: row;
   flex-wrap: nowrap;
   display: flex;
@@ -12,14 +14,14 @@
 }
 
 .container::-webkit-scrollbar {
-    display: none;
-  }
+  display: none;
+}
 
 .section {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-width: 1440px;
+  width: 1440px;
 }
 
 .sectionStart {
@@ -80,8 +82,6 @@ width: 1440px;
   padding: 0 var(--padding-102);
   padding-top: clamp(90px, 10vh, var(--_main-padding-top));
 }
-
-
 
 /* bottom progress bar */
 

@@ -1,4 +1,10 @@
 import style from './style.module.css'
+import image1 from '../../../assets/images/content/home-benefits-1.png'
+import image2 from '../../../assets/images/content/home-benefits-2.png'
+import image3 from '../../../assets/images/content/home-benefits-3.png'
+import image4 from '../../../assets/images/content/home-benefits-4.png'
+import image5 from '../../../assets/images/content/home-benefits-5.png'
+import image6 from '../../../assets/images/content/home-benefits-6.png'
 
 export default function SectionBenefits() {
     return (
@@ -21,15 +27,15 @@ export default function SectionBenefits() {
             </p>
             <img
                 className={style.benefitImage}
-                src="./src/assets/images/privilege1.png"
-                alt="privilege1"
+                src={image1}
+                aria-hidden="true"
             />
         </div>
         <div className={`${style.benefit} ${style.benefit2}`}>
             <img
                 className={style.benefitImage}
-                src="./src/assets/images/privilege2.png"
-                alt="privilege2"
+                src={image2}
+                aria-hidden="true"
             />
             <h3 className={`${style.benefitHeading} font-heading-bold-16`}>10 лет гарантии!</h3>
             <p className={`${style.mainText} font-body-2`}>
@@ -51,15 +57,15 @@ export default function SectionBenefits() {
             </p>
             <img
                 className={style.benefitImage}
-                src="./src/assets/images/privilege3.png"
-                alt="privilege3"
+                src={image3}
+                aria-hidden="true"
             />
         </div>
         <div className={`${style.benefit} ${style.benefit4}`}>
             <img
                 className={style.benefitImage}
-                src="./src/assets/images/privilege4.png"
-                alt="privilege4"
+                src={image4}
+                aria-hidden="true"
             />
             <h3 className={`${style.benefitHeading} font-heading-bold-16`}>
                 Бесплатный дизайн-проект
@@ -77,15 +83,15 @@ export default function SectionBenefits() {
             </p>
             <img
                 className={style.benefitImage}
-                src="./src/assets/images/privilege5.png"
-                alt="privilege5"
+                src={image5}
+                aria-hidden="true"
             />
         </div>
         <div className={`${style.benefit} ${style.benefit6}`}>
             <img
                 className={style.benefitImage}
-                src="./src/assets/images/privilege6.png"
-                alt="privilege6"
+                src={image6}
+                aria-hidden="true"
             />
             <h3 className={`${style.benefitHeading} font-heading-bold-16`}>Мы всегда рядом</h3>
             <p className={`${style.mainText} font-body-2`}>

@@ -11,7 +11,7 @@
   background-color: var(--light-black);
   transition: transform 0.5s ease-in-out;
   transform: translateX(102px);
-  z-index: 100;
+  z-index: 4;
 
   font-family: var(--font-main);
   color: var(--whitish);
