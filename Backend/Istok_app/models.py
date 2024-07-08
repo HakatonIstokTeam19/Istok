@@ -38,7 +38,7 @@ class Finished_furniture(models.Model):
         ('6', 'Эмаль'),
     ]
 
-    name = models.CharField(null=True, max_length=150, verbose_name='Название')
+    name = models.CharField(max_length=150, verbose_name='Название')
     type = models.CharField(max_length=1, choices=TYPES, default='1', verbose_name='Тип мебели')
     form = models.CharField(max_length=1, choices=FORMS, default='1', verbose_name='Форма мебели')
     body_material = models.CharField(max_length=1, choices=MATERIAL, default='1', verbose_name='Материал корпуса')
@@ -54,6 +54,8 @@ class Finished_furniture(models.Model):
 class Finished_furniture_tags(models.Model):
     finished_furniture = models.ForeignKey(Finished_furniture, on_delete=models.CASCADE)
     finished_furniture_tags = models.ForeignKey(Tags, on_delete=models.CASCADE)
+
+
 
 class Application(models.Model):
 
