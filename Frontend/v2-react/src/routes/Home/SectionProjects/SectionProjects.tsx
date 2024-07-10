@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import style from './style.module.css';
+import Modal from '../../../components/Modal/Modal';
 
 export default function SectionProjects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -24,9 +25,9 @@ export default function SectionProjects() {
       </div>
       <Modal isOpen={!!selectedProject} onClose={closeModal}>
         {selectedProject && (
-          <div>
-            <h3>{selectedProject.title}</h3>
-            <p>Тут будет ваша 3D моделька</p>
+          <div className={style.modalContent}>
+            <h3 className='font-heading-bold-32'>{selectedProject.title}</h3>
+            <p className='font-body-1'>Тут будет ваша 3D моделька</p>
           </div>
         )}
       </Modal>
@@ -72,19 +73,4 @@ interface Project {
       </div>
     </div>
   );
-  
-  const Modal: React.FC<{ isOpen: boolean; onClose: () => void; children: React.ReactNode }> = ({ isOpen, onClose, children }) => {
-    if (!isOpen) return null;
-  
-    return (
-      <div className={style.modalOverlay} onClick={onClose}>
-        <div className={style.modalContent} onClick={(e) => e.stopPropagation()}>
-          <button className={style.closeButton} onClick={onClose} aria-label="Close modal">
-            &times;
-          </button>
-          {children}
-        </div>
-      </div>
-    );
-  };
   

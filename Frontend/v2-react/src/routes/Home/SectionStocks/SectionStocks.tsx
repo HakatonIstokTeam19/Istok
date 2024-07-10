@@ -2,6 +2,8 @@ import style from './style.module.css';
 import spritesheet from "../../../assets/images/interface/icons-sprite-sheet.svg"
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import Button from '../../../components/Button/Button';
+import ModalSignUp from '../../../components/Modal/ModalContent/SignUp/ModalSignUp';
+import Modal from '../../../components/Modal/Modal';
 
 export default function SectionStocks() {
     return (
@@ -66,6 +68,8 @@ function Slider({ children }: { children: ReactNode[] }) {
 }
 
 function Slide1() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
         <div className={style.slide2}>
             <div className={`${style.sliderInfo} ${style.sliderInfoSlide1} `}>
@@ -78,15 +82,23 @@ function Slide1() {
                     ЗА РЕКОМЕНДАЦИЮ И ЗАКАЗ ПО НЕЙ
                 </p>
                 <Button
+                onClick={() => setIsModalOpen(true)}
                     className={style.btnOrder}>
                     Рекомендовать
                 </Button>
             </div>
+            <Modal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+            >
+                <ModalSignUp onPrevModalClose={()=> setIsModalOpen(false)}/>
+            </Modal>
         </div>
     )
 }
 
 function Slide2() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
     return (
         <div className={style.slide1}>
             <div className={style.sliderInfo}>
@@ -106,10 +118,17 @@ function Slide2() {
                     <li>Стеллаж</li>
                 </ul>
                 <Button
+                onClick={() => setIsModalOpen(true)}
                     className={style.btnOrder}>
                     Сделать заказ
                 </Button>
             </div>
+            <Modal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}  
+            >
+                <ModalSignUp onPrevModalClose={()=> setIsModalOpen(false)}/>
+            </Modal>
         </div>
     )
 }

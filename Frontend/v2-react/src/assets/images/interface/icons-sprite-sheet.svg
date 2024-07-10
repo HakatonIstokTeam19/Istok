@@ -45,7 +45,7 @@
 			</clipPath>
 		</defs>
 	</symbol>
-	<symbol id="logo" width="117" height="26" viewBox="0 0 117 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<symbol id="logo" viewBox="0 0 117 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path d="M3.75578 0.785156V16.7704L16.8259 0.785156H20.0633V23.4074H16.3076V6.82963L2.60649 23.4074H0V0.785156H3.75578Z" fill="black" />
 		<path d="M50.9658 0.785156H66.034V4.04443H60.776V23.4074H57.0202V4.04443H51.0109L50.9658 0.785156Z" fill="black" />
 		<path d="M96.9594 0.785156H100.715V10.3112L111.276 0.785156H116.144L104.524 11.1555L100.678 14.6074V23.4222H96.9219L96.9594 0.785156Z" fill="black" />
@@ -63,7 +63,7 @@
 		</defs>
 	</symbol>
 	<symbol id="chevron" fill="none" height="26px" width="26px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 407.437 407.437" xml:space="preserve">
-		<polygon points="386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815" fill="currentColor"/>
+		<polygon points="386.258,91.567 203.718,273.512 21.179,91.567 0,112.815 203.718,315.87 407.437,112.815" fill="currentColor" />
 	</symbol>
 	<symbol id="breadcrumbCircle" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<circle cx="10" cy="10" r="10" fill="currentColor" />
@@ -78,7 +78,12 @@
 		<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1">
 		</path>
 	</symbol>
-<symbol id="cardArrowRight" width="29" height="31" viewBox="0 0 29 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M10 6C10 6 19 14.5 19 15.5C19 16.5 10 25 10 25" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-</symbol>
+	<symbol id="cardArrowRight" width="29" height="31" viewBox="0 0 29 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M10 6C10 6 19 14.5 19 15.5C19 16.5 10 25 10 25" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+	</symbol>
+	<symbol id="close" width="14" height="14" viewbox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path fill-rule="evenodd" clip-rule="evenodd" d="M0.209396 0.210303C-0.0697984 0.490706 -0.0697989 0.94533 0.209396 1.22573L6.01138 7.05284L0.314625 12.7743C0.0354299 13.0547 0.0354297 13.5093 0.314624 13.7897C0.593819 14.0701 1.04648 14.0701 1.32568 13.7897L7.02243 8.06827L12.6791 13.7494C12.9582 14.0298 13.4109 14.0298 13.6901 13.7494C13.9693 13.469 13.9693 13.0144 13.6901 12.734L8.03349 7.05284L13.7953 1.26604C14.0745 0.985641 14.0745 0.531016 13.7953 0.250613C13.5161 -0.029791 13.0635 -0.0297915 12.7843 0.250612L7.02243 6.03741L1.22045 0.210303C0.941255 -0.0701008 0.488591 -0.070101 0.209396 0.210303Z" fill="currentColor">
+		</path>
+	</symbol>
+
 </svg>

@@ -10,7 +10,7 @@ export default function Layout({ header, sidebar }: LayoutProps) {
     return (
       <div  className={style.layout}>
         <header className={style.header}>{header}</header>
-          <main className={style.content}>
+          <main className={style.main}>
             <Outlet />
           {sidebar}
           </main>

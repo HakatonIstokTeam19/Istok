@@ -6,7 +6,7 @@
   justify-content: flex-start;
   top: 0;
   right: 0;
-  width: var(--padding-102);
+  width: var(--space-102);
   height: 100vh;
   background-color: var(--light-black);
   transition: transform 0.5s ease-in-out;
@@ -77,4 +77,11 @@
   justify-content: space-between;
   margin-top: clamp(27px, 40vh, 338px);
   margin-bottom: clamp(45px, 20vh, 90px);
+}
+
+@media (max-width: 768px) {
+  .sideMenu, .button {
+    display: none;
+  }
+
 }

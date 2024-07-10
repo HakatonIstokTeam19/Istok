@@ -1,15 +1,30 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, useCallback } from 'react';
+
 
 export function useHorizontalScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isScrolling, setIsScrolling] = useState(true);
+  const [isNormalScroll, setIsNormalScroll] = useState(false);
+  const [isScrollingEnabled, setIsScrollingEnabled] = useState(true);
+
+  const checkScreenWidth = useCallback(() => {
+    setIsNormalScroll(window.innerWidth <= 768);
+  }, []);
+
+  useEffect(() => {
+    checkScreenWidth();
+    window.addEventListener('resize', checkScreenWidth);
+
+    return () => {
+      window.removeEventListener('resize', checkScreenWidth);
+    };
+  }, [checkScreenWidth]);
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
     const handleScroll = (e: WheelEvent) => {
-      if (window.innerWidth <= 768 || !isScrolling) return;
+      if (isNormalScroll || !isScrollingEnabled) return;
 
       e.preventDefault();
       container.scrollLeft += e.deltaY;
@@ -20,7 +35,11 @@ export function useHorizontalScroll() {
     return () => {
       container.removeEventListener('wheel', handleScroll);
     };
-  }, [isScrolling]);
+  }, [isNormalScroll, isScrollingEnabled]);
 
-  return { containerRef, setIsScrolling };
+  const setIsScrolling = useCallback((value: boolean) => {
+    setIsScrollingEnabled(value);
+  }, []);
+
+  return { containerRef, isNormalScroll, setIsScrolling };
 }

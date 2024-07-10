@@ -6,9 +6,20 @@
     flex-wrap: nowrap; */
   }
   
-  .content {
+  .main {
     display: flex;
     flex-direction: row;
-    /* position: relative;
-    z-index: 1; */
+
+  }
+
+  @media (max-width: 768px) {
+    .main {
+      flex-direction: column;
+      overflow: auto;
+    }
+
+    .layout {
+      overflow: auto;
+    }
+  
   }

@@ -1,0 +1,30 @@
+.card {
+  flex: 0 0 auto;
+}
+
+.slideImage {
+    height: 100%;
+    height: calc(100% - 85px);
+    object-fit: cover;
+  } 
+  
+  
+  .headingWrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: start;
+    gap: 4px;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      margin: 20px 0;
+    }
+
+    .headingWrapper {
+      margin-bottom: 12px;
+    }
+  }

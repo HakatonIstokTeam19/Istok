@@ -1,0 +1,85 @@
+
+.content {
+  --_p-bottom: var(--space-131);
+  position: relative;
+  padding: var(--space-102) 0;
+  padding-bottom: var(--space-131);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: start;
+  flex-flow: row nowrap;
+}
+
+@media (max-height: 610px) {
+  .content {
+    --_p-bottom: var(--space-102);
+  }
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+.section {
+  position: relative;
+  margin-right: var(--space-102);
+}
+
+
+
+.section.us {
+  padding-left: 487px;
+}
+.section.team {
+  display: flex;
+  gap: var(--space-102);
+}
+
+.section.brand {
+  margin-right: 0;
+}
+
+.slideImage:not(.slideImage.team) {
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.textContainer {
+  position: fixed;
+  left: 0;
+  z-index: 4;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  background-color: var(--whitish);
+  width: fit-content;
+  padding: 0 80px 0 var(--space-102);
+  height: calc(100vh - var(--space-102) - var(--_p-bottom) + 10px);
+}
+
+@media (max-width: 768px) {
+
+  .content {
+    flex-flow: column nowrap;
+    align-items: start;
+    justify-content: start;
+    width: 100%;
+    padding: 0;
+    padding-top: 60px;
+    overflow: auto;
+  }
+
+  .textContainer {
+    position: static;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    background-color: var(--whitish);
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+}

@@ -1,0 +1,33 @@
+.heading {
+  font-family: var(--font-main);
+  color: var(--light-black);
+  font-weight: var(--weight-regular);
+  line-break: loose;
+  text-wrap: wrap;
+}
+
+.heading1 {
+  font-size: var(--font-52);
+  line-height: var(--line-height-65);
+  text-transform: uppercase;
+}
+
+.heading2 {
+  font-size: var(--font-32);
+  line-height: var(--line-height-36);
+}
+
+.heading3 {
+  font-size: var(--font-16);
+  font-weight: var(--weight-bold-x);
+  line-height: var(--line-height-20);
+}
+
+@media (max-width: 768px) {
+  .heading,
+  .heading1,
+  .heading2 {
+    font-size: var(--font-28);
+    line-height: var(--line-height-34);
+  }
+}

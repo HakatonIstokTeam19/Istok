@@ -17,7 +17,7 @@ export default function ProgressBar( { activeSectionId, setActiveSectionId, item
     return (
         <ul className={style.progressBar}>
             {items.map(({id, text}) => (
-                <ProgressBarItem id={id} text={text} setActiveSectionId={setActiveSectionId} activeSectionId={activeSectionId}/>
+                <ProgressBarItem key={id} id={id} text={text} setActiveSectionId={setActiveSectionId} activeSectionId={activeSectionId}/>
             ))}
         </ul>
     );

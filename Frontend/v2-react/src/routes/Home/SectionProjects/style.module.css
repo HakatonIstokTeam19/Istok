@@ -10,6 +10,7 @@
     align-items: flex-start;
     text-align: start;
     width: calc(100% / 3);
+
   }
   
   .cardTextWrapper {
@@ -27,6 +28,7 @@
   }
 
   .imgWrapper {
+    cursor: pointer;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -44,32 +46,13 @@
     scale: 1.1;
   }
 
-  
-  .modalOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
   .modalContent {
-    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     padding: 20px;
-    border-radius: 5px;
-    position: relative;
-  }
-  
-  .closeButton {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 10px;
   }

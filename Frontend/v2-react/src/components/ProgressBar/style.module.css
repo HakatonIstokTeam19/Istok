@@ -6,7 +6,7 @@
   bottom: 31px;
   left: 0;
   width: 100vw;
-  height: 52px;
+  /* height: 52px; */
   padding: 0 var(--padding-102);
   background-color: var(--beige);
   z-index: 9;
@@ -18,16 +18,12 @@
   display: block;
   position: absolute;
   left: 0;
-  bottom: 40px;
+  bottom: 10px;
   content: "";
   height: 1px;
   background-color: var(--black);
   width: 100vw;
   z-index: 80;
-}
-
-.progressBar:has(.item button:has(span))::before  {
-    bottom: 10px;
 }
 
 .item {
@@ -48,14 +44,19 @@
   position: relative;
 }
 
-.button:has(.circle.active) > span,
-.button:hover > span,
-.button:active > span {
+.button:has(.circle.active) .text,
+.button:hover .text,
+.button:active .text {
   font-weight: var(--weight-bold-x);
+}
+
+.button:active .text {
+  color: var(--green);
 }
 
 .text {
   margin-bottom: 14px;
+  transition: font-weight 0.3s ease-in-out;
 }
 
 .circle {
@@ -68,12 +69,12 @@
   transition: all 0.3s ease-in-out;
 }
 
-.circle:hover {
-  background-color: var(--green);
+.button:hover .circle {
+  background-color: var(--whitish);
 }
 
-.circle:active {
-  background-color: var(--whitish);
+.button:active .circle{
+  background-color: var(--green);
 }
 
 .circle.active {
@@ -81,6 +82,10 @@
   background-color: var(--whitish);
 }
 
-.circle.active:hover {
-  background-color: var(--whitish);
+
+@media (max-width: 768px) {
+  .progressBar {
+    display: none;
+  }
+
 }

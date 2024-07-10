@@ -101,9 +101,23 @@
   --error: #cc0000;
 
   /* spaces */
-  --padding-102: 102px;
-  --_main-padding-top: 124px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-40: 40px;
+  --space-60: 60px;
+  --space-102: 102px;
+  --space-124: 124px;
+  --space-131: 131px;
+
+  /*breakpoints  */
+  --desktop-L: 1440px;
+  --desktop: 1120px;
+  --tablet-L: 1024px;
+  --tablet: 768px;
+  --mobile: 480px;
 }
+
+
 
 html {
   scroll-behavior: smooth;
@@ -135,6 +149,25 @@ a {
   cursor: pointer;
 }
 
+
+/* static font size*/
+
+.body-1-st {
+  font-size: var(--font-16);
+  line-height: var(--line-height-26);
+
+}
+
+
+
+.font-heading-bold-16 {
+  font-family: var(--font-main);
+  font-size: var(--font-16);
+  font-weight: var(--weight-bold-x);
+  line-height: var(--line-height-20);
+  color: var(--light-black);
+}
+
 .font-heading-24 {
   font-family: var(--font-main);
   font-size: var(--font-24);
@@ -159,19 +192,19 @@ a {
   color: var(--light-black);
 }
 
+.font-body-1 {
+  font-family: var(--font-main);
+  font-size: clamp(12px, 2.5vw, var(--font-16));
+  font-weight: var(--weight-regular);
+  line-height: clamp(16px, 2.5vw, var(--line-height-26));
+  color: var(--light-black);
+}
+
 .font-body-light-1 {
   font-family: var(--font-main);
   font-size: var(--font-16);
   font-weight: var(--weight-light);
   line-height: var(--line-height-26);
-  color: var(--light-black);
-}
-
-.font-heading-bold-16 {
-  font-family: var(--font-main);
-  font-size: var(--font-16);
-  font-weight: var(--weight-bold-x);
-  line-height: var(--line-height-20);
   color: var(--light-black);
 }
 
@@ -223,11 +256,55 @@ a {
   color: var(--light-black);
 }
 
+
+
+/* --------------- EXPERIMENTAL FONTS -----------------*/
+
+.b {
+  font-weight: var(--weight-bold);
+}
+
+.head-28-fl-52 {
+  font-size: clamp(28px, 2.5vw, var(--font-52));
+  line-height: clamp(34px, 2.5vw, var(--line-height-65));
+}
+
+.head-28-fl-34 {
+  font-size: clamp(28px, 2.5vw, var(--font-32));
+  line-height: clamp(34px, 2.5vw, var(--line-height-36));
+
+}
+
+/* main font family and color */
+
+.fm {
+  font-family: var(--font-main);
+  font-weight: var(--weight-regular);
+  color: var(--light-black);
+}
+
+/* from body-1 on desktop to body-2 on mobile */
+
+.body-14-fl-16 {
+  font-size: clamp(14px, 2.5vw, var(--font-16));
+  line-height: clamp(22px, 2.5vw, var(--line-height-26));
+}
+
+/* from body-1 on desktop to 12/18 on mobile */
+
+.body-12-fl-16 {
+  font-size: clamp(12px, 2.5vw, var(--font-16));
+  line-height: clamp(18px, 2.5vw, var(--line-height-26));
+}
+
+/* --------------- END OF EXPERIMENTAL FONTS -----------------*/
+
+
 .font-heading-bold-52 {
   font-family: var(--font-main);
-  font-size: var(--font-52);
+  font-size: clamp(28px, 2.5vw, var(--font-52));
   font-weight: var(--weight-bold);
-  line-height: var(--line-height-65);
+  line-height: clamp(32px, 2.5vw, var(--line-height-65));
   color: var(--light-black);
 }
 
@@ -241,9 +318,9 @@ a {
 
 .font-heading-reg-32 {
   font-family: var(--font-main);
-  font-size: var(--font-32);
+  font-size: clamp(28px, 2.5vw, var(--font-32));
   font-weight: var(--weight-regular);
-  line-height: var(--line-height-36);
+  line-height: clamp(32px, 2.5vw, var(--line-height-36));
   color: var(--light-black);
 }
 

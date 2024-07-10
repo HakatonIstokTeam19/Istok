@@ -2,9 +2,15 @@
 import { motion } from 'framer-motion';
 import style from './style.module.css';
 import Button from '../../../components/Button/Button';
+import hero from '../../../assets/images/content/home-page-1-bg-1.png';
+import { useState } from 'react';
+import Modal from '../../../components/Modal/Modal';
+import ModalSignUp from '../../../components/Modal/ModalContent/SignUp/ModalSignUp';
 
 export default function SectionStart() {
+    const isUserSignedUp = false;
     const titleWords = ['с', 'нами', 'начинается', 'уют', 'вашего', 'дома'];
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
         <>
@@ -43,20 +49,26 @@ export default function SectionStart() {
                     animate={{ opacity: 1, scale: 1}}
                     transition={{ delay: 2, duration: 0.5 }}
                     >
-                        <Button >
+                        <Button onClick={()=> setIsModalOpen(true)}>
                                 Записаться на встречу
                         </Button>
                     </motion.div>
                 </div>
             </motion.div>
             <motion.img
-                src="./src/assets/images/content/home-page-1-bg-1.png"
+                src={hero}
                 alt="living room interior"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 2 }}
-                whileHover={{ scale: 1.05 }}
             />
+            {!isUserSignedUp && isModalOpen &&
+                <Modal
+                onClose={() => setIsModalOpen(false)}
+                isOpen={isModalOpen}>
+                    <ModalSignUp onPrevModalClose={() => setIsModalOpen(false)}/>
+                </Modal>
+            }
         </>
     )
 }

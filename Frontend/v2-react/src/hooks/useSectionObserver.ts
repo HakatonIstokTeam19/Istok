@@ -16,7 +16,7 @@ export default function useSectionObserver({ setActiveSectionId}: UseSectionObse
             },
             { threshold: 0.5 }
         );
-        document.querySelectorAll('section').forEach((section) => {
+        document.querySelectorAll('*[data-h-slide]').forEach((section) => {
             observer.observe(section);
         });
 

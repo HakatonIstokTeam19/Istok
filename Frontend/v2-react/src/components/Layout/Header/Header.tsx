@@ -1,48 +1,51 @@
 import { NavLink } from 'react-router-dom';
 import style from './header.module.css';
+import { headerLinks } from '../../../configs/config';
+import { useState } from 'react';
+import Burger from '../../Burger/Burger';
+import spritesheet from 'src/assets/images/interface/icons-sprite-sheet.svg';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export default function Header() {
-    
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     return (
         <header className={style.header}>
             <svg className={style.logo}>
-                <use href="./src/assets/images/interface/icons-sprite-sheet.svg#logo"></use>
+                <use href={`${spritesheet}#logo`}></use>
             </svg>
-            <nav className={`${style.nav} ${"font-body-1"}`}>
-                <ul className={style.links}>
-                    <li>
-                        <NavLink className={({ isActive }) => `${style.link} ${isActive ? style.active : ''}`} to="/">
-                            Главная
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink className={({ isActive }) => `${style.link} ${isActive ? style.active : ''}`} to="/furniture">
-                            Готовая мебель
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink className={({ isActive }) => `${style.link} ${isActive ? style.active : ''}`} to="/about">
-                            О нас
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            className={({ isActive }) => `${style.link} ${isActive ? style.active : ''}`}
-                            to="./request-select-furniture"
-                        >
-                            Оставить заявку
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            className={({ isActive }) => `${style.link} ${isActive ? style.active : ''}`}
-                            to="/profile"
-                        >
-                            Войти в личный кабинет
-                        </NavLink>
-                    </li>
-                </ul>
-            </nav>
+            
+            <AnimatePresence mode="wait">
+            {isMenuOpen &&
+                <motion.nav
+                className={style.nav}
+                key={"headerMenu"}
+                
+                        initial={{ y: -50, opacity: 0}}
+                        animate={{ y: 0, opacity: 1}}
+                        exit={{ y: -20, opacity: 0}}
+                >
+                        <ul className={style.links}>
+                            {headerLinks.map((link, index) => (
+                                <li key={index}>
+                                    <NavLink
+                                        className={({ isActive }) => `${style.link} ${isActive ? style.active : ''}`}
+                                        to={link.to}
+                                    >
+                                        {link.title}
+                                    </NavLink>
+                                </li>
+                            ))}
+                        </ul>
+                </motion.nav>}
+            </AnimatePresence>
+
+            <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className={style.burgerButton}>
+                <Burger isOpen={isMenuOpen} />
+            </button>
         </header>
     );
 }
+

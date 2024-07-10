@@ -17,7 +17,7 @@ import { useHorizontalScroll } from '../../hooks/useHorizontalScroll';
 export default function Home() {
     const [activeSectionId, setActiveSectionId] = useState(homePageProgressBarItems[0].id);
     const { setIsScrolling, containerRef } = useHorizontalScroll();
-    useSectionObserver({setActiveSectionId});
+    useSectionObserver({ setActiveSectionId });
 
     return (
         <>
@@ -26,39 +26,48 @@ export default function Home() {
                 <meta name="description" content="Добро пожаловать в Istok" />
             </Helmet>
             <div ref={containerRef} className={style.container}>
-                <section className={`${style.sectionStart} ${style.section}`} id={homePageProgressBarItems[0].id}>
+                <section
+                    data-h-slide
+                    className={`${style.sectionStart} ${style.section}`}
+                    id={homePageProgressBarItems[0].id}>
                     <SectionStart />
                 </section>
                 <section
+                    data-h-slide
                     id={homePageProgressBarItems[1].id}>
                     <SectionBenefits />
                 </section>
                 <section
+                    data-h-slide
                     className={`${style.section} ${style.sectionProducts}`}
                     id={homePageProgressBarItems[2].id}>
-                    <SectionProducts 
-                    isSliderActive={activeSectionId === homePageProgressBarItems[2].id}
-                    setAscendantScroll={setIsScrolling}
+                    <SectionProducts
+                        isSliderActive={activeSectionId === homePageProgressBarItems[2].id}
+                        setAscendantScroll={setIsScrolling}
                     />
                 </section>
                 <section
+                    data-h-slide
                     className={`${style.section} ${style.sectionMaterials}`}
                     id={homePageProgressBarItems[3].id}
                 >
                     <SectionMaterials />
                 </section>
                 <section
+                    data-h-slide
                     className={`${style.section} ${style.sectionProjects}`}
                     id={homePageProgressBarItems[4].id}>
                     <SectionProjects />
                 </section>
                 <section
+                    data-h-slide
                     className={`${style.sectionProcess}`}
                     id={homePageProgressBarItems[5].id}
                 >
                     <SectionProcess />
                 </section>
                 <section
+                    data-h-slide
                     id={homePageProgressBarItems[6].id}>
                     <SectionStocks />
                 </section>

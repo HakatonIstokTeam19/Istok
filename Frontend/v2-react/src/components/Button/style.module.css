@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 8px;
+  padding: 8px 48px;
   text-align: center;
   border: 1px solid var(--light-black);
   font-family: var(--font-main);
@@ -16,6 +16,11 @@
   &:hover,
   &:focus {
     background-color: var(--beige);
+  }
+    
+  &:focus {
+    outline: 2px solid var(--green);
+
   }
 
   &:active {
@@ -38,7 +43,6 @@
   font-weight: var(--weight-light-x);
   line-height: var(--line-height-32);
 }
-
 
 .medium {
   height: 52px;
@@ -64,24 +68,64 @@
   height: 40px;
   max-width: 148px;
   font-size: var(--font-12);
-}
-/* 
-.transparentSlim {
-  all: unset;
-  display: flex;
-  align-items: center;
-  max-width: fit-content;
-  height: 40px;
-  font-size: var(--font-12);
-  font-weight: var(--weight-regular);
-  color: var(--light-black);
-  background-color: transparent;
-  cursor: pointer;
-  border: none;
   padding: 0;
-  margin: 0;
 }
 
+.wrap {
+  width: fit-content;
+  height: fit-content;
+  padding: 0;
+  border: none;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+  }
+    
+  &:focus {
+    outline: 2px solid var(--green);
+
+  }
+
+  &:active {
+    background-color: transparent;
+
+  }
+}
+
+.close {
+  all: unset;
+  cursor: pointer;
+  position: absolute;
+  inset: 22px 22px auto auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+
+}
+
+.closeIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.transparent {
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0;
+  &:hover {
+    color: var(--green)
+  }   
+}
+
+.outline {
+  background-color: transparent;
+}
+
+/*
 .selectSlim {
   display: flex;
   height: 40px;

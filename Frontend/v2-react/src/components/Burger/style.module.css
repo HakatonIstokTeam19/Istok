@@ -1,0 +1,29 @@
+.burgerIcon {
+  width: 34px;
+  height: 17px;
+}
+
+.burgerIcon path {
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.top,
+.bottom {
+  stroke-dasharray: 32;
+  stroke-dashoffset: 0;
+}
+
+.burgerIcon.active .top {
+  transform: rotate(45deg) translateY(-13px);
+  stroke-dashoffset: 19;
+}
+
+.burgerIcon.active .middle {
+  display: none;
+}
+
+.burgerIcon.active .bottom {
+  transform: rotate(-45deg) translateY(5px);
+  stroke-dashoffset: 19;
+}

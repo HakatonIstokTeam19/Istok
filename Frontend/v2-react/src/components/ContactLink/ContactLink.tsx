@@ -6,14 +6,16 @@ interface ContactLinkProps {
     linkTitle: string;
     iconId: string;
     ariaLabel?: string;
+    direction?: "h" | "v";
+    color?: "dark" | "light";
     to: string;
 }
 
 
-export default function ContactLink({ linkTitle, iconId, ariaLabel, to }: ContactLinkProps) {
+export default function ContactLink({ linkTitle, iconId, ariaLabel, to, direction = "v", color = "light" }: ContactLinkProps) {
     return (
         <Link
-            className={style.link}
+            className={`${style.link} ${style[direction]} ${style[color]}`}
             to={to}
             target="_blank"
             aria-label={ariaLabel}

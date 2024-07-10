@@ -17,7 +17,7 @@
   }
   
   .sliderOuterContainer {
-    transform: translateX(calc(var(--padding-102) * -1));
+    transform: translateX(calc(var(--space-102) * -1));
     display: flex;
     width: 1440px;
     height: 100%;
