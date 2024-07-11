@@ -315,7 +315,7 @@ def loyalty_start(request):
         Loyalty.objects.update(survey_repair=survey_repair, survey_children=user_has_children
         )
 
-    context = {'loyalty': loyalt}
+    context = {'loyalty': loyalty}
     return render(request, 'users/loyalty_start.html', context=context)
 
 def rand_n():

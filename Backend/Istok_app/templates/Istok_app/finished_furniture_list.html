@@ -240,6 +240,7 @@
                   </svg>
                 </div>
 
+                {% if furniture.image_1.url %}
                 <img
                   class="main__image active"
                   src="{{ furniture.image_1.url }}"
@@ -248,7 +249,10 @@
                   height="240"
                   onclick="window.location.href='{% url 'finished_furniture_detail' furniture.pk %}'"
                   style="cursor: pointer;"
-                /><img
+                />
+                {% endif %}
+                {% if furniture.image_2.url %}
+                <img
                   class="main__image"
                   src="{{ furniture.image_2.url }}"
                   alt="Изображение 2"
@@ -257,6 +261,7 @@
                   onclick="window.location.href='{% url 'finished_furniture_detail' furniture.pk %}'"
                   style="cursor: pointer;"
                 />
+              {% endif %}
               </div>
 
               <div class="main__card-tags tags">

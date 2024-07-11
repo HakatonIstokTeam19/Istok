@@ -3,7 +3,8 @@ from .views import *
 
 urlpatterns = [
     path('', home, name='home'),
-    path('finished_furniture_list/', Finished_furnitureList.as_view(), name='finished_furniture_list'),
+    # path('finished_furniture_list/', Finished_furnitureList.as_view(), name='finished_furniture_list'),
+    path('finished_furniture_list/', home, name='finished_furniture_list'),
     path('finished_furniture_create/', Finished_furnitureCreate.as_view(), name='finished_furniture_create'),
     path('finished_furniture_detail/<int:pk>/', Finished_furnitureDetail.as_view(), name='finished_furniture_detail'),
     path('finished_furniture_update/<int:pk>/', Finished_furnitureUpdate.as_view(), name='finished_furniture_update'),
