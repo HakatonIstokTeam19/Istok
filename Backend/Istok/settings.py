@@ -31,7 +31,7 @@ DEBUG = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "team19.pythonanywhere.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "team19.pythonanywhere.com", 'leshiy.fun', 'www.leshiy.fun']
 
 
 # Application definition
