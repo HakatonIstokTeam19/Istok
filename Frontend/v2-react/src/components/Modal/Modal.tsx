@@ -1,4 +1,4 @@
-import Button from '../Button/Button';
+import { Button } from 'src/components';
 import style from './style.module.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useRef } from 'react';
@@ -9,7 +9,7 @@ type ModalProps = {
     isOpen: boolean;
     onClose: () => void;
 };
-export default function Modal({ children, onClose, isOpen }: ModalProps) {
+export function Modal({ children, onClose, isOpen }: ModalProps) {
     const closeButtonRef = useRef<HTMLButtonElement | null>(null);
 
     useEffect(() => {

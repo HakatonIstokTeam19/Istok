@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import style from './style.module.css';
-import ContactLink from '../ContactLink/ContactLink';
-import { connectLinks, infoLinks, subscriptionLinks } from '../../configs/config';
+import { ContactLink } from 'src/components';
+import { connectLinks, infoLinks, subscriptionLinks } from 'src/configs/config';
 
 
-export default function Footer() {
+export function Footer() {
 
     return (
         <footer className={style.footer}>

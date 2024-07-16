@@ -9,4 +9,12 @@ export default defineConfig({
       src: "/src",
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://leshiy.fun',
+        changeOrigin: true,
+      },
+    },
+  }
 })

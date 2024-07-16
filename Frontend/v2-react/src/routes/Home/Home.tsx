@@ -1,22 +1,24 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { homePageProgressBarItems } from 'src/configs/config';
+import { ProgressBar, Footer, } from 'src/components';
+import { useHorizontalScroll, useSectionObserver, useWindowWidth} from 'src/hooks';
+import {SectionStart} from './SectionStart/SectionStart';
+import {SectionBenefits} from './SectionBenefits/SectionBenefits';
+import {SectionProducts} from './SectionProducts/SectionProducts';
+import {SectionMaterials} from './SectionMaterials/SectionMaterials';
+import {SectionProjects} from './SectionProjects/SectionProjects';
+import {SectionProcess} from './SectionProcess/SectionProcess';
+import {SectionStocks} from './SectionStocks/SectionStocks';
 import style from './home.module.css';
-import SectionStart from './SectionStart/SectionStart';
-import SectionBenefits from './SectionBenefits/sectionBenefits';
-import SectionProducts from './SectionProducts/SectionProducts';
-import SectionMaterials from './SectionMaterials/SectionMaterials';
-import SectionProjects from './SectionProjects/SectionProjects';
-import SectionProcess from './SectionProcess/SectionProcess';
-import SectionStocks from './SectionStocks/SectionStocks';
-import Footer from '../../components/Footer/Footer';
-import { homePageProgressBarItems } from '../../configs/config';
-import ProgressBar from '../../components/ProgressBar/ProgressBar';
-import useSectionObserver from '../../hooks/useSectionObserver';
-import { useHorizontalScroll } from '../../hooks/useHorizontalScroll';
+import { breakpoints } from 'src/configs';
 
-export default function Home() {
+export function Home() {
     const [activeSectionId, setActiveSectionId] = useState(homePageProgressBarItems[0].id);
-    const { setIsScrolling, containerRef } = useHorizontalScroll();
+    const [isScrolling, setIsScrolling] = useState(true);
+    const containerRef = useHorizontalScroll({ enabled: isScrolling });
+    const windowWidth = useWindowWidth();
+    const isScrollHorizontal = windowWidth > breakpoints.md;
     useSectionObserver({ setActiveSectionId });
 
     return (
@@ -28,12 +30,13 @@ export default function Home() {
             <div ref={containerRef} className={style.container}>
                 <section
                     data-h-slide
-                    className={`${style.sectionStart} ${style.section}`}
+                    className={`${style.section} ${style.sectionStart} `}
                     id={homePageProgressBarItems[0].id}>
-                    <SectionStart />
+                    <SectionStart isScrollHorizontal={isScrollHorizontal}/>
                 </section>
                 <section
                     data-h-slide
+                    className={`${style.section} ${style.sectionBenefits} `}
                     id={homePageProgressBarItems[1].id}>
                     <SectionBenefits />
                 </section>
@@ -61,13 +64,14 @@ export default function Home() {
                 </section>
                 <section
                     data-h-slide
-                    className={`${style.sectionProcess}`}
+                    className={`${style.section} ${style.sectionProcess} `}
                     id={homePageProgressBarItems[5].id}
                 >
                     <SectionProcess />
                 </section>
                 <section
                     data-h-slide
+                    className={`${style.section} ${style.sectionStocks} `}
                     id={homePageProgressBarItems[6].id}>
                     <SectionStocks />
                 </section>

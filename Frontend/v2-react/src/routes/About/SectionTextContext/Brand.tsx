@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
+import { ContactLink } from "src/components"; 
 import style from './style.module.css';
-import ContactLink from "../../../components/ContactLink/ContactLink";
 import image from 'src/assets/images/content/about-slide9-m.png';
 
-export default function Brand({isNormalScroll} : {isNormalScroll: boolean}) {
+export function Brand({isNormalScroll} : {isNormalScroll: boolean}) {
     return (
         <motion.div
         className={style.content}

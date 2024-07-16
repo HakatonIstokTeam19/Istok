@@ -1,6 +1,7 @@
 import style from './style.module.css';
 
-export default function SectionProcess() {
+export function SectionProcess() {
+
     return (
         <>
             <h2 className={style.heading}>
@@ -9,63 +10,46 @@ export default function SectionProcess() {
                 технологии
             </h2>
             <ol className={style.process}>
-                <li className={style.processStep}>
-                    <h3 className="font-heading-bold-16">Онлайн консультация</h3>
-                    <p className={`${style.stepDescription} font-body-2`}>
-                        Наш специалист свяжется<br />
-                        с Вами, поможет сделать выбор<br />
-                        и запишет на встречу с дизайнером
-                    </p>
-                </li>
-                <li className={style.processStep}>
-                    <h3 className="font-heading-bold-16">Встреча с дизайнером</h3>
-                    <p className={`${style.stepDescription} font-body-2`}>
-                        Дизайнер привезет с собой материалы,<br />
-                        спроектирует стильный<br />
-                        и эргономичный проект, и оформит Ваш заказ.
-                    </p>
-                </li>
-                <li className={style.processStep}>
-                    <h3 className="font-heading-bold-16">Технический замер</h3>
-                    <p className={`${style.stepDescription} font-body-2`}>
-                        Мы приедет со специализированным<br />
-                        оборудованием, замерим каждую<br />
-                        деталь Вашего помещения.
-                    </p>
-                </li>
-                <li className={style.processStep}>
-                    <h3 className="font-heading-bold-16">Конструирование</h3>
-                    <p className={`${style.stepDescription} font-body-2`}>
-                        Наши конструктора создадут<br />
-                        Вашу мебель с нуля.<br />
-                        Каждый модуль уникален!
-                    </p>
-                </li>
-                <li className={style.processStep}>
-                    <h3 className="font-heading-bold-16">Производство</h3>
-                    <p className={`${style.stepDescription} font-body-2`}>
-                        Современное промышленное оборудование<br />
-                        создаст для Вас мебель, соответствующую<br />
-                        самым высоким стандартам качества.
-                    </p>
-                </li>
-                <li className={style.processStep}>
-                    <h3 className="font-heading-bold-16">Доставка и монтаж</h3>
-                    <p className={`${style.stepDescription} font-body-2`}>
-                        Наш специалист свяжется<br />
-                        для согласования даты<br />
-                        доставки и монтажа.
-                    </p>
-                </li>
-                <li className={style.processStep}>
-                    <h3 className="font-heading-bold-16">Онлайн консультация</h3>
-                    <p className={`${style.stepDescription} font-body-2`}>
-                        Специалист контроля качества<br />
-                        позвонит после сборки<br />
-                        и узнает, все ли Вам понравилось!
-                    </p>
-                </li>
+                {steps.map((step, index) => (
+                    <li className={style.processStep} key={index}>
+                        <h3 className={`${style.stepHeading} font-heading-bold-16`}>{step.title}</h3>
+                        <p className={`${style.stepDescription} font-body-2`}>
+                            {step.description}
+                        </p>
+                    </li>
+                ))}
             </ol>
         </>
-    )
+    );
 }
+
+const steps = [
+    {
+        title: "Онлайн консультация",
+        description: "Наш специалист свяжется с Вами, поможет сделать выбор и запишет на встречу с дизайнером"
+    },
+    {
+        title: "Встреча с дизайнером",
+        description: "Дизайнер привезет с собой материалы, спроектирует стильный и эргономичный проект, и оформит Ваш заказ."
+    },
+    {
+        title: "Технический замер",
+        description: "Мы приедет со специализированным оборудованием, замерим каждую деталь Вашего помещения."
+    },
+    {
+        title: "Конструирование",
+        description: "Наши конструктора создадут Вашу мебель с нуля. Каждый модуль уникален!"
+    },
+    {
+        title: "Производство",
+        description: "Современное промышленное оборудование создаст для Вас мебель, соответствующую самым высоким стандартам качества."
+    },
+    {
+        title: "Доставка и монтаж",
+        description: "Наш специалист свяжется для согласования даты доставки и монтажа."
+    },
+    {
+        title: "Онлайн консультация",
+        description: "Специалист контроля качества позвонит после сборки и узнает, все ли Вам понравилось!"
+    }
+];

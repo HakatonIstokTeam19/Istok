@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import style from './style.module.css';
 import image from 'src/assets/images/content/about-slide3-m.png';
 
-export default function Values1({ isNormalScroll} : { isNormalScroll: boolean }) {
+export function Values1({ isNormalScroll} : { isNormalScroll: boolean }) {
     return (
         <motion.div
             className={style.content}

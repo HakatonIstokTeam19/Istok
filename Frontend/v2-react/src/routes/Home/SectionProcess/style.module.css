@@ -1,5 +1,5 @@
 .heading {
-  margin-bottom: clamp(52px, 8vh, var(--space-102));
+  margin-bottom: clamp(40px, 8vh, var(--space-102));
   width: 1693px;
   height: 36px;
   font-weight: 400;
@@ -16,9 +16,15 @@
   justify-content: flex-start;
 }
 
+.stepHeading {
+  white-space: wrap;
+}
+
 .stepDescription {
   max-width: 312px;
   text-transform: none;
+  white-space: wrap;
+  text-align: left;
 }
 
 .processStep {
@@ -32,7 +38,6 @@
   position: absolute;
   color: var(--green);
   display: block;
-
   font-weight: var(--weight-regular);
   font-size: var(--font-48);
 }
@@ -56,4 +61,69 @@
 }
 .processStep:nth-child(even)::before {
   bottom: -70px;
+}
+
+@media (max-width: 768px) {
+  .heading {
+    width: 100%;
+    white-space: wrap;
+    height: auto;
+    margin-bottom: 40px;
+  }
+
+  .process {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 40px;
+    max-height: unset;
+
+  }
+
+  .stepDescription {
+    max-width: 100%;
+    text-align: start;
+  }
+
+  .processStep {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: start;
+    justify-content: start; */
+    align-items: start;
+    padding-left: 68px;
+    row-gap: 8px;
+  }
+
+  .processStep::before {
+    display: flex;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 46px;
+    align-items: center;
+  }
+
+  .processStep:nth-child(even) {
+    align-self: unset;
+  }
+  .processStep:nth-child(odd)::before {
+    top: 0;
+  }
+  
+  .processStep:nth-child(2) {
+    margin-right:0;
+  }
+  .processStep:nth-child(5) {
+    margin-right: 0;
+  }
+  
+  .processStep:nth-child(odd) {
+    align-self: unset;
+  }
+  .processStep:nth-child(even)::before {
+    bottom: 0;
+  }
 }

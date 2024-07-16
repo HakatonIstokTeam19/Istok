@@ -1,6 +1,6 @@
 import styles from './style.module.css';
 
-const UnderDevelopment = () => {
+export const UnderDevelopment = () => {
   return (
     <div className={styles.container}>
       <h1 className='font-heading-bold-52'>Page Under Development</h1>
@@ -15,5 +15,3 @@ const UnderDevelopment = () => {
     </div>
   );
 };
-
-export default UnderDevelopment;

@@ -4,7 +4,7 @@ type UseSectionObserverProps = {
     setActiveSectionId: (id: string) => void;
 }
 
-export default function useSectionObserver({ setActiveSectionId}: UseSectionObserverProps) {
+export function useSectionObserver({ setActiveSectionId}: UseSectionObserverProps) {
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {

@@ -18,7 +18,7 @@ type PolymorphicButtonComponent = <C extends React.ElementType = 'button'>(
   props: ButtonProps<C> & { ref?: PolymorphicRef<C> }
 ) => React.ReactElement | null;
 
-const Button: PolymorphicButtonComponent = forwardRef(function Button<C extends React.ElementType = 'button'>(
+export const Button: PolymorphicButtonComponent = forwardRef(function Button<C extends React.ElementType = 'button'>(
   {
     variant = 'primary',
     size = 'large',
@@ -51,4 +51,3 @@ const Button: PolymorphicButtonComponent = forwardRef(function Button<C extends 
   );
 }) as PolymorphicButtonComponent;
 
-export default Button;

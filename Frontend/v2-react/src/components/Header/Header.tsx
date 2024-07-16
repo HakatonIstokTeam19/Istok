@@ -1,22 +1,37 @@
 import { NavLink } from 'react-router-dom';
-import style from './header.module.css';
-import { headerLinks } from '../../../configs/config';
+import style from './style.module.css';
+import { headerLinks } from 'src/configs/config';
 import { useState } from 'react';
-import Burger from '../../Burger/Burger';
+import { Burger} from 'src/components';
 import spritesheet from 'src/assets/images/interface/icons-sprite-sheet.svg';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useWindowWidth } from 'src/hooks';
+import { breakpoints } from 'src/configs';
 
-export default function Header() {
+export function Header() {
+    const windowWIdth = useWindowWidth();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    const toggleMenu = () => {
+        if (windowWIdth < breakpoints.xl) {
+          setIsMenuOpen(!isMenuOpen);
+        }
+      };
+    
+      const shouldMenuBeOpen = windowWIdth > breakpoints.xl || isMenuOpen;
+
+      const headerStyleOnOpen = {
+        backgroundColor: `${isMenuOpen ? 'var(--whitish)' : 'transparent'}`,
+      }
+
     return (
-        <header className={style.header}>
+        <header className={style.header} style={headerStyleOnOpen}>
             <svg className={style.logo}>
                 <use href={`${spritesheet}#logo`}></use>
             </svg>
             
             <AnimatePresence mode="wait">
-            {isMenuOpen &&
+            {shouldMenuBeOpen && 
                 <motion.nav
                 className={style.nav}
                 key={"headerMenu"}
@@ -41,7 +56,7 @@ export default function Header() {
             </AnimatePresence>
 
             <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                onClick={toggleMenu}
                 className={style.burgerButton}>
                 <Burger isOpen={isMenuOpen} />
             </button>

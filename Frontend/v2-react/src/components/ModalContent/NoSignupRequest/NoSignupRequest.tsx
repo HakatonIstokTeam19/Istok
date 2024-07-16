@@ -1,8 +1,8 @@
 import style from './style.module.css';
-import bgImage from '../../../../assets/images/content/modal-to-request.png';
-import Button from '../../../Button/Button';
+import bgImage from 'src/assets/images/content/modal-to-request.png';
+import { Button } from 'src/components';
 
-export default function NoSignupRequest() {
+export function NoSignupRequest() {
 
 
     return (

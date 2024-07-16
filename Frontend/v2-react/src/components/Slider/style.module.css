@@ -1,0 +1,39 @@
+
+.sliderContainer {
+    position: relative;
+    display: grid;
+    grid-template-columns: 47px 1fr 47px;
+    grid-template-rows: auto;
+  }
+
+  .displayWindow {
+    position: relative;
+    grid-column: 1/-1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .innerContainer {
+    position: relative;
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .dotWrapper {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    bottom: 0px;
+  }
+
+  .dots {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    height: max-content;
+
+  }

@@ -1,5 +1,4 @@
 .container {
-  position: relative;
   --space-124: 124px;
   position: relative;
   z-index: 4;
@@ -8,8 +7,6 @@
   flex-direction: row;
   flex-wrap: nowrap;
   display: flex;
-  white-space: nowrap;
-  overflow-x: scroll;
   overflow-y: hidden;
 }
 
@@ -30,6 +27,19 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
+}
+
+.sectionBenefits {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  grid-template-rows: 52px 1fr;
+  row-gap: clamp(30px, 7dvh, 52px);
+  column-gap: 20px;
+  padding: 0 var(--space-102);
+  padding-top: clamp(90px, 10vh, var(--space-124));
+  max-height: 1000px;
+  width: auto;
 }
 
 .sectionProducts {
@@ -83,87 +93,72 @@
   padding-top: clamp(90px, 10vh, var(--space-124));
 }
 
-/* bottom progress bar */
-
-.bottom-progress-bar {
+.sectionStocks {
   display: flex;
-  justify-content: space-around;
-  align-items: start;
-  position: fixed;
-  bottom: 31px; /*check this */
-  left: 0;
-  width: 100vw;
-  height: 20px;
-  padding: 0 var(--space-102);
-  background-color: var(--beige);
-  z-index: 100;
-  background-color: transparent;
-  list-style: none;
-}
-
-.bottom-progress-bar::before {
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: 10px;
-  content: "";
-  height: 1px;
-  background-color: var(--black);
-  width: 100vw;
-  z-index: 80;
-}
-
-.bottom-progress-bar__item {
+  flex-direction: row;
+  margin-left: 75px;
+  margin-right: 243px;
+  gap: 196px;
   height: 100%;
-  z-index: 90;
+  min-width: 1909px;
 }
 
-.bottom-progress-bar__btn {
-  all: unset;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 20px;
-  height: 100%;
-  background-color: inherit;
-  cursor: pointer;
-  position: relative;
-}
 
-.bottom-progress-bar__btn:has(.slide-control__circle_active) > span,
-.bottom-progress-bar__btn:hover > span,
-.bottom-progress-bar__btn:active > span {
-  font-weight: var(--weight-bold-x);
-}
 
-.bottom-progress-bar_txt {
-  margin-bottom: 14px;
-}
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    display: flex;
+    white-space: nowrap;
+    overflow-y: auto;
+    /* height: auto; */
+    padding: var(--space-16);
+  }
 
-.slide-control__circle {
-  width: 20px;
-  height: 20px;
-  z-index: 100;
-  border-radius: 50px;
-  background-color: var(--beige);
-  scale: 1;
-  transition: all 0.3s ease-in-out;
-}
+  .section {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    min-width: 0;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 68px;
+  }
 
-.slide-control__circle:hover {
-  background-color: var(--green);
-}
+  .sectionStart {
+    justify-content: flex-start;
+  }
 
-.slide-control__circle:active {
-  background-color: var(--whitish);
-}
+  .sectionBenefits {
+    display: flex;
+    row-gap: 32px;
+    margin: 0 calc(var(--space-16) * -1);
+    width: calc(100% + var(--space-16) *2);
+  }
 
-.slide-control__circle_active {
-  scale: 2.1;
-  background-color: var(--whitish);
-}
+  .sectionProducts {
+    margin: 0 calc(var(--space-16) * -1);
+    width: calc(100% + var(--space-16) *2);
+    background: none;
+  }
 
-.slide-control__circle_active:hover {
-  background-color: var(--whitish);
+  .sectionMaterials {
+    margin: 0 calc(var(--space-16) * -1);
+    width: calc(100% + var(--space-16) *2);
+    background: none;
+  }
+
+  .sectionProjects {
+    margin: 0 calc(var(--space-16) * -1);
+    width: calc(100% + var(--space-16) *2);
+  }
+
+  .sectionStocks {
+    gap: 68px;
+    margin: 0 calc(var(--space-16) * -1);
+    width: calc(100% + var(--space-16) *2);
+  }
 }

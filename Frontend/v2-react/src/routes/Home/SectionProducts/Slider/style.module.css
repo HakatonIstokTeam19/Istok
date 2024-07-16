@@ -1,0 +1,18 @@
+
+.sliderOuterContainer {
+    transform: translateX(calc(var(--space-102) * -1));
+    display: flex;
+    width: 1440px;
+    height: 100%;
+    max-height: 380px;
+    overflow: hidden;
+  }
+  
+  .sliderInnerContainer {
+    display: flex;
+    flex-flow: row;
+    height: 100%;
+    max-height: 380px;
+    gap: 40px;
+    transform: translateX(493px);
+  }

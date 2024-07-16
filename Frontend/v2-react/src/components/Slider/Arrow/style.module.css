@@ -1,0 +1,48 @@
+  
+  .arrow {
+    width: 29px;
+    height: 31px;
+    transform: rotate(180deg);
+  }
+  
+  .arrowRight {
+    transform: rotate(0deg);
+  }
+
+  
+   
+  .sliderBtn {
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 100%;
+    width: 47px;
+    background-color: var(--whitish);
+    color: var(--light-black);
+    &:active {
+      color: var(--green);
+  }
+  &:hover {
+      opacity: 0.7;
+  }
+  &:disabled {
+  display: none;
+  }
+}
+
+  .sliderBtnRight,
+  .sliderBtnLeft {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+  }
+  
+  .sliderBtnLeft {
+    left: 0;
+  }
+  
+  .sliderBtnRight {
+    right: 0;
+  }

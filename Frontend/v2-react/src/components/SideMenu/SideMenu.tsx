@@ -1,11 +1,11 @@
-import spritesheet from '../../assets/images/interface/icons-sprite-sheet.svg';
-import style from './style.module.css'
-import ContactLink from "../ContactLink/ContactLink";
-import { linksConfig } from '../../configs/config';
 import { useEffect, useRef } from 'react';
+import style from './style.module.css'
+import spritesheet from '../../assets/images/interface/icons-sprite-sheet.svg';
+import { ContactLink } from "src/components";
+import { linksConfig } from 'src/configs';
 
 
-export default function SideMenu() {
+export function SideMenu() {
     const sideMenuRef = useRef<HTMLDivElement>(null);
 
     // hide menu when footer is visible. Could not handle that with z-index only as footer and side menu are in different containers

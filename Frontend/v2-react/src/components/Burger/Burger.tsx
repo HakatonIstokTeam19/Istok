@@ -1,6 +1,6 @@
 import style from './style.module.css';
 
-export default function Burger({ isOpen }: { isOpen: boolean }) {
+export function Burger({ isOpen }: { isOpen: boolean }) {
 
     return (
         <svg

@@ -11,6 +11,10 @@ import aboutSlide5m from "src/assets/images/content/about-slide5-m.png";
 import aboutSlide6m from "src/assets/images/content/about-slide6-m.png";
 import aboutSlide7m from "src/assets/images/content/about-slide7-m.png";
 import aboutSlide8m from "src/assets/images/content/about-slide8-m.png";
+import image1 from 'src/assets/images/content/home-slider-1-card-1.png';
+import image2 from 'src/assets/images/content/home-slider-1-card-2.png';
+import image3 from 'src/assets/images/content/home-slider-1-card-3.png';
+import image4 from 'src/assets/images/content/home-slider-1-card-4.png';
 
 export const headerLinks = [
     { to: '/', title: 'Главная' },
@@ -187,3 +191,10 @@ export const progressBarItems = aboutPageConfig.reduce((acc, item) => {
     }
     return acc;
 }, [] as Array<{ id: string, text: string }>);
+
+export const sectionProductSlides = [
+    { to: '/furniture/kitchens', name: 'Кухни', imageSrc: image1, imageAlt: 'Кухни' },
+    { to: '/furniture/storageSystems', name: 'Системы хранения', imageSrc: image2, imageAlt: 'Системы хранения' },
+    { to: '/furniture/vestibules', name: 'Прихожие', imageSrc: image3, imageAlt: 'Прихожие' },
+    { to: '/furniture/fullPack', name: 'Комплексный заказ', imageSrc: image4, imageAlt: 'Комплексный заказ' },
+];

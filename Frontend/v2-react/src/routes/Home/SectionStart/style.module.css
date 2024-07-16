@@ -1,6 +1,7 @@
 
 .contentOuterWrapper {
     width: fit-content;
+    height: 100%;
     max-height: 100%;
     display: flex;
     flex-direction: column;
@@ -41,8 +42,59 @@
     max-width: 403px;
     text-align: right;
     margin-bottom: 14px;
+    line-break: loose;
+    text-wrap: balance;
+  }
+
+  .buttonWrapper {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
   }
   
-  .button {
-    margin-top: auto;
+@media (max-width: 768px) {
+    
+.contentOuterWrapper {
+  max-height: max-content;
+  height: max-content;
+  flex-shrink: 3;
+  width: 100%;
+  padding-top: 79px;
+}
+
+.contentInnerWrapper {
+  margin-top: unset;
+  height: max-content;
+  max-height: max-content;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.title {
+  column-gap: 6px;
+  width: 100%;
+  max-width: unset;
+  margin-bottom: 20px;
+  margin-right: 0;
+  justify-content: start;
+}
+
+.tagline {
+  width: 80%;
+  max-width: unset;
+  margin-bottom: 20px;
+}
+
+.button {
+  margin-top: 40px;
+  max-width: 100% !important;
+}
+
+.image {
+  /* width: 100vw;
+  height: auto; */
+  margin: 0 calc(var(--space-16) * -1);
+}
   }

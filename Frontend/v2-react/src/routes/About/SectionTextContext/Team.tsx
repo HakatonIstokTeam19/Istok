@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import style from './style.module.css';
-import TeamSectionCard from "../TeamSectionCard/TeamSectionCard";
-import { teamSlides } from "../../../configs/config";
+import { TeamSectionCard } from "../TeamSectionCard/TeamSectionCard";
+import { teamSlides } from "src/configs/config";
 
-export default function Team({ isNormalScroll }: { isNormalScroll: boolean }) {
+export function Team({ isNormalScroll }: { isNormalScroll: boolean }) {
     return (
         <motion.div
             className={style.content}

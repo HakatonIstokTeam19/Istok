@@ -1,0 +1,87 @@
+
+.slide1,
+.slide2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: no-repeat center center;
+  background-size: cover;
+}
+
+.slide1 {
+  background-image: url("./src/assets/images/content/home-slider-3-card-1.png");
+}
+.slide2 {
+  background-image: url("./src/assets/images/content/home-slider-3-card-2.png");
+}
+
+.sliderInfo {
+  background-color: var(--beige);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 630px;
+  padding: 40px;
+}
+
+.commercialHeading {
+  margin-bottom: 12px;
+}
+
+.commercialText {
+  text-align: center;
+  max-width: 400px;
+  white-space: wrap;
+}
+
+.sliderInfo ul {
+  height: 32px;
+  margin-top: 25px;
+  display: flex;
+  gap: 25px;
+}
+
+.sliderInfo ul li {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.btnOrder {
+  margin-top: 69px;
+  max-width: 264px;
+}
+
+@media (max-width: 768px) {
+  .sliderInfo {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .sliderInfo ul {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin-top: 0;
+  }
+
+  .commercialText {
+    margin-bottom: 18px;
+  }
+
+  .btnOrder {
+    margin-top: 20px;
+  }
+
+  .slide1,
+.slide2 {
+  width: 100%;
+  height: 100%;
+  background-image: none;
+}
+
+}

@@ -11,8 +11,7 @@ interface ContactLinkProps {
     to: string;
 }
 
-
-export default function ContactLink({ linkTitle, iconId, ariaLabel, to, direction = "v", color = "light" }: ContactLinkProps) {
+export function ContactLink({ linkTitle, iconId, ariaLabel, to, direction = "v", color = "light" }: ContactLinkProps) {
     return (
         <Link
             className={`${style.link} ${style[direction]} ${style[color]}`}

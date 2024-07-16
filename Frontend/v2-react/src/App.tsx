@@ -1,9 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Layout from './components/Layout/Layout.tsx';
-import Home from './routes/Home/Home.tsx';
-import About from './routes/About/About.tsx'
-import Header from './components/Layout/Header/Header.tsx';
-import SideMenu from './components/SideMenu/SideMenu.tsx';
+import { Layout } from 'src/components';
+import { Home } from './routes/Home/Home.tsx';
+import { About } from './routes/About/About.tsx'
 import Furniture from './routes/Furniture/Furniture.tsx';
 import RequestSelect from './routes/RequestSelect/RequestSelect.tsx';
 import Profile from './routes/Profile/Profile.tsx';
@@ -13,7 +11,7 @@ import Profile from './routes/Profile/Profile.tsx';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout header={<Header/>} sidebar={<SideMenu />}/>,
+    element: <Layout />,
     children: [
       { index: true, element: <Home /> },
       { path: 'about', element: <About /> },

@@ -21,25 +21,12 @@
     gap: 20px;
 }
 
-.sliderBtn {
-    all: unset;
-    cursor: pointer;
-    font-family: var(--font-main);
-    font-weight: var(--weight-bold);
-    color: var(--light-black)
-}
-
-.sliderBtn.active {
-    color: var(--green);
-}
-
 .text {
     grid-column: 2/3;
     grid-row: 1/2;
     text-transform: none;
     max-width: 692px;
-    line-break: loose;
-    text-wrap: balance;
+    white-space: wrap;
 }
 
 .slideTxtBlock {
@@ -48,16 +35,6 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
-}
-
-.slideTxtBlockList {
-    width: 850px;
-    visibility: hidden;
-    opacity: 0;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    transition: visibility 0s, opacity 0.5s ease-in-out;
 }
 
 .imageContainer {
@@ -73,28 +50,12 @@
 .image {
     width: 100%;
     height: auto;
-    visibility: hidden;
-    opacity: 0;
-    height: 0px;
     transform: translateY(-10px);
     animation: slide-up-down 10s linear infinite;
     object-fit: cover;
     object-position: center;
-    transition: height 0s, visibility 0s, opacity 0.5s ease-in-out;
 }
 
-.imageActive,
-.slideTxtBlockListActive {
-    visibility: visible;
-    opacity: 1;
-    height: auto;
-}
-
-.detailTitle {
-    font-size: var( --font-16);
-    font-weight: var(--weight-bold-x);
-    line-height: var(--line-height-20);
-}
 
 @keyframes slide-up-down {
     0%,
@@ -106,37 +67,54 @@
     }
 }
 
-.image,
-.slideTxtBlockList {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
+@media (max-width: 768px) {
+    .innerContainer {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0;
+    }
 
-.imageActive,
-.slideTxtBlockListActive {
-    display: grid;
-    opacity: 1;
-}
+    .imageContainer {
+        display: none;
+    }
 
-.slideTxtBlock h3 {
-    line-height: 1.4;
-    font-size: 16px;
-    font-weight: 300;
-}
+    .heading {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        background-color: var(--beige);
+        padding: var(--space-16);
+        padding-top: calc(var(--space-16) * 2);
+    }
 
-.slideTxtBlockListElement {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+    .text {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        max-width: 100%;
+        padding: 0 var(--space-16) calc(var(--space-16) * 2);
+        background-color: var(--beige) ;
+        max-width: 100%;
+        width: 100%;
+    }
 
-.slideTxtBlockListElement h1 {
-    font-size: 16px;
-    font-weight: 800;
-}
+    .sliderControls {
+        grid-column: 1/2;
+        grid-row: 3/4;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 12px;
+        background-color: var(--beige);
+        padding: var(--space-16);
+        margin-bottom: var(--space-16);
+    }
 
-.slideTxtBlockListElement p {
-    text-transform: none;
-    font-size: 14px;
-    font-weight: 300;
+    .slideTxtBlock {
+        grid-column: 1/2;
+        grid-row: 4/5;
+        gap: 50px;
+        padding: 0 calc(var(--space-16) * 2);
+    }
+
 }

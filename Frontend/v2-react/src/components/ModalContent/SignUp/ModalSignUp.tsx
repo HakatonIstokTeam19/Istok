@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import Button from '../../../Button/Button';
-import Modal from '../../Modal';
-import NoSignupRequest from '../NoSignupRequest/NoSignupRequest';
+import {Button} from 'src/components';
+import {Modal} from 'src/components';
+import { NoSignupRequest } from 'src/components';
 import style from './style.module.css';
 
 
 
-export default function ModalSignUp({ onPrevModalClose }: { onPrevModalClose: () => void }) {
+export function ModalSignUp({ onPrevModalClose }: { onPrevModalClose: () => void }) {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (

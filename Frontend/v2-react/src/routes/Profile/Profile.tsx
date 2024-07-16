@@ -1,4 +1,4 @@
-import UnderDevelopment from '../../components/UnderDevelopment/UnderDevelopment';
+import {UnderDevelopment} from 'src/components';
 // import style from './style.module.css';
 import { Helmet } from 'react-helmet';
 

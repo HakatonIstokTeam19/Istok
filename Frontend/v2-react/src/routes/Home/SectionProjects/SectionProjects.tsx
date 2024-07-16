@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
+import { Modal } from 'src/components';
+import { Project } from 'src/types/types';
+import { ProjectCard } from './Card/ProjectCard';
 import style from './style.module.css';
-import Modal from '../../../components/Modal/Modal';
+import img1 from '/src/assets/images/content/home-projects-card-1.png'
+import img2 from '/src/assets/images/content/home-projects-card-2.png'
+import img3 from '/src/assets/images/content/home-projects-card-3.png'
 
-export default function SectionProjects() {
+export function SectionProjects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const openModal = (project: Project) => {
@@ -15,7 +20,7 @@ export default function SectionProjects() {
 
   return (
     <>
-      <h2 className="font-heading-reg-32">
+      <h2 className={`${style.heading} font-heading-reg-32`}>
         НАШИ <span className="font-heading-bold-32 text-color-accent">ПРОЕКТЫ</span>
       </h2>
       <div className={style.contentWrapper}>
@@ -35,42 +40,24 @@ export default function SectionProjects() {
   );
 }
 
-
-interface Project {
-    title: string;
-    image: string;
-    alt: string;
-  }
   
   const projects: Project[] = [
     {
       title: 'Кухня в квартиру',
-      image: './src/assets/images/content/home-projects-card-1.png',
+      image: img1,
       alt: 'kitchen',
     },
     {
       title: 'Шкаф',
-      image: './src/assets/images/content/home-projects-card-2.png',
+      image: img2,
       alt: 'wardrobe',
     },
     {
       title: 'Гардероб в спальню',
-      image: './src/assets/images/content/home-projects-card-3.png',
+      image: img3,
       alt: 'wardrobe',
     },
   ];
   
-  const ProjectCard: React.FC<{ project: Project; onClick: () => void }> = ({ project, onClick }) => (
-    <div className={style.card} onClick={onClick} role="button" tabIndex={0}>
-      <div className={style.textWrapper}>
-        <h3 className="font-heading-bold-16">{project.title}</h3>
-        <p className={`${style.text} font-body-2`}>
-          Нажмите на изображение, чтобы увидеть интерактивную 3D-модель.
-        </p>
-      </div>
-      <div className={style.imgWrapper}>
-        <img src={project.image} alt={project.alt} />
-      </div>
-    </div>
-  );
+
   

@@ -8,7 +8,7 @@ export type TeamCardProps = {
     imgClass?: string
 };
 
-export default function TeamSectionCard({ src, alt, heading, subheading, imgClass = ''}: TeamCardProps) {
+export function TeamSectionCard({ src, alt, heading, subheading, imgClass = ''}: TeamCardProps) {
     return (
             <div className={style.card}>
                 <div className={style.headingWrapper}>
