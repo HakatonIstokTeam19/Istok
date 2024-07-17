@@ -1,4 +1,5 @@
 import styles from './style.module.css';
+import cat from 'src/assets/images/content/underdevelopment-kitty-coder.jpg';
 
 export const UnderDevelopment = () => {
   return (
@@ -8,7 +9,7 @@ export const UnderDevelopment = () => {
       <p className='font-body-1'>Stay tuned!</p>
       <img
       style={{ width: '400px', height: '300px', objectFit: 'cover' }}
-        src="./src/assets/images/content/underdevelopment-kitty-coder.jpg"
+        src={cat}
         alt="A cat coding on a laptop"
         className={styles.image}
       />

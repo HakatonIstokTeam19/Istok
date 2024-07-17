@@ -1,26 +1,26 @@
 import {UnderDevelopment} from 'src/components';
-import style from './style.module.css';
+// import style from './style.module.css';
 import { Helmet } from 'react-helmet';
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 
 export default function Furniture() {
 
-    const [data, setData] = useState({ finished_furniture: [] });
+    // const [data, setData] = useState({ finished_furniture: [] });
 
-    useEffect(() => {
-        async function getFurniture() {
-            try {
-                const response = await fetch('/api/v1/finished_furniture_list');
-                const data = await response.json();
-                console.log(data)
-                return data
-            } catch (error) {
-                console.error(error);
-            }
-        }
-        getFurniture().then(data => setData(data));
-    }
-    , []);
+    // useEffect(() => {
+    //     async function getFurniture() {
+    //         try {
+    //             const response = await fetch('/api/v1/finished_furniture_list');
+    //             const data = await response.json();
+    //             console.log(data)
+    //             return data
+    //         } catch (error) {
+    //             console.error(error);
+    //         }
+    //     }
+    //     getFurniture().then(data => setData(data));
+    // }
+    // , []);
 
     return (
         <>
@@ -28,8 +28,8 @@ export default function Furniture() {
                 <title>Готовая мебель</title>
                 <meta name="description" content="Мебель от Istok" />
             </Helmet>
-            {/* <UnderDevelopment /> */}
-            <div className={style.furniture}>
+            <UnderDevelopment />
+            {/* <div className={style.furniture}>
                 {data.finished_furniture.map((furniture: any) => (
                     <div className={style.card} key={furniture.id}>
                         <h2>{furniture.name}</h2>
@@ -39,7 +39,7 @@ export default function Furniture() {
                         <p>{furniture.description}</p>
                 </div>
                 ))}
-            </div>
+            </div> */}
         </>
     );
 }

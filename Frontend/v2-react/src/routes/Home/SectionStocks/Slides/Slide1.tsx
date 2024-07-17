@@ -2,6 +2,7 @@ import { useState } from "react";
 import style from './style.module.css';
 import { ModalSignUp, Modal, Button } from "src/components";
 import { useWindowWidth } from "src/hooks";
+import img from "src/assets/images/content/home-slider-3-card-1.png"
 
 
 export function Slide1() {
@@ -11,7 +12,8 @@ export function Slide1() {
     const isMobile = windowWidth <= 768;
 
     return (
-        <div className={style.slide2}>
+        <div className={style.slide1}>
+            <img className={style.background} src={img} alt="living room interior" aria-hidden />
             <div className={style.sliderInfo}>
                 <h2
                     className={`${style.commercialHeading} head-32-fl-52 text-color-accent b`}

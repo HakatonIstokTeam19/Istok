@@ -1,3 +1,8 @@
+import frameImage from 'src/assets/images/content/home-slider-2-card-frame.png';
+import countertopsImage from 'src/assets/images/content/home-slider-2-card-countertops.png';
+import frontsImage from 'src/assets/images/content/home-slider-2-card-fronts.png';
+import fittingsImage from 'src/assets/images/content/home-slider-2-card-fittings.png';
+
 
 export enum FurnitureComponents {
     FRAME = 'frame',
@@ -17,7 +22,7 @@ export const materialCategories: MaterialCategory[] = [
     {
       id: FurnitureComponents.FRAME,
       name: 'Корпус',
-      image: `./src/assets/images/content/home-slider-2-card-${FurnitureComponents.FRAME}.png`,
+      image: frameImage,
       details: [
         { title: 'ЛДСП', items: ['Egger', 'Nordeco'] },
         { title: 'МДФ', items: [] },
@@ -26,7 +31,7 @@ export const materialCategories: MaterialCategory[] = [
     {
       id: FurnitureComponents.COUNTERTOPS,
       name: 'Столешницы',
-      image: `./src/assets/images/content/home-slider-2-card-${FurnitureComponents.COUNTERTOPS}.png`,
+      image: countertopsImage,
       details: [
         { title: 'ДСП Столешницы', items: ['SLOTEX', 'Egger', 'СКИФ'] },
         { title: 'HPL Compact laminat', items: ['SLOTEX', 'Sensola'] },
@@ -35,7 +40,7 @@ export const materialCategories: MaterialCategory[] = [
     {
       id: FurnitureComponents.FRONTS,
       name: 'Фасады',
-      image: `./src/assets/images/content/home-slider-2-card-${FurnitureComponents.FRONTS}.png`,
+      image: frontsImage,
       details: [
         { title: 'ЛДСП', items: ['Egger', 'Nordeco'] },
         { title: 'МДФ в пленке ПВХ', items: ['ТАДЖ', 'Adilet'] },
@@ -47,7 +52,7 @@ export const materialCategories: MaterialCategory[] = [
     {
       id: FurnitureComponents.FITTINGS,
       name: 'Фурнитура',
-      image: `./src/assets/images/content/home-slider-2-card-${FurnitureComponents.FITTINGS}.png`,
+      image: fittingsImage,
       details: [
         { title: 'Hettich (Германия)', items: [] },
         { title: 'BLUM (Австрия)', items: [] },

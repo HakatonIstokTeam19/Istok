@@ -2,13 +2,15 @@ import { useState } from 'react';
 import style from './style.module.css';
 import { ModalSignUp, Modal, Button } from "src/components";
 import { useWindowWidth } from 'src/hooks';
+import img from "src/assets/images/content/home-slider-3-card-2.png";
 
 export function Slide2() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const windowWidth = useWindowWidth();
     const isMobile = windowWidth <= 768;
     return (
-        <div className={style.slide1}>
+        <div className={style.slide2}>
+            <img className={style.background} src={img} alt="living room interior" />
             <div className={style.sliderInfo}>
                 <h2
                     className={`${style.commercialHeading} head-32-fl-52 text-color-accent b`}
@@ -34,9 +36,9 @@ export function Slide2() {
             </div>
             <Modal
                 isOpen={isModalOpen}
-                onClose={() => setIsModalOpen(false)}  
+                onClose={() => setIsModalOpen(false)}
             >
-                <ModalSignUp onPrevModalClose={()=> setIsModalOpen(false)}/>
+                <ModalSignUp onPrevModalClose={() => setIsModalOpen(false)} />
             </Modal>
         </div>
     )
