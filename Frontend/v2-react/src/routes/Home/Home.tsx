@@ -19,7 +19,7 @@ export function Home() {
     const containerRef = useHorizontalScroll({ enabled: isScrolling });
     const windowWidth = useWindowWidth();
     const isScrollHorizontal = windowWidth > breakpoints.md;
-    useSectionObserver({ setActiveSectionId });
+    useSectionObserver({setActiveSectionId});
 
     return (
         <>

@@ -11,7 +11,7 @@ export function Mission({isNormalScroll} : {isNormalScroll: boolean}) {
             transition={{ duration: 1 }}
             exit={{ opacity: 0}}
         >
-            <h2 className={`${style.title} fm head-28-fl-34`}>
+            <h2 className={`${style.title} fm head-28-fl-32`}>
                 <span>Наша  </span><span className="text-color-accent">цель</span>
             </h2>
             <p className={`${style.text} fm body-14-fl-16`} >

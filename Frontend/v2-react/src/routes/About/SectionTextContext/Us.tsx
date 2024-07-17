@@ -16,7 +16,7 @@ export function Us({isNormalScroll} : {isNormalScroll: boolean}) {
             </h1>
             <p className={`${style.text} fm body-12-fl-16`}>
                 КОМПАНИЯ ISTOK —<br />
-                ЭТО СТАРТАП ОПЫТНОЙ КОМАНДЫ ПРОФЕССИОНАЛОВ.
+                ЭТО СТАРТАП ОПЫТНОЙ КОМАНДЫ ПРОФЕССИОНАЛОВ. 
             </p>
             <p className={`${style.text} fm body-14-fl-16`}>
                 Наш бренд - это высококачественный сервис с использованием

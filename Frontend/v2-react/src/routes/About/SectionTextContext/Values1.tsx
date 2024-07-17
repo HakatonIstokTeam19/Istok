@@ -11,7 +11,7 @@ export function Values1({ isNormalScroll} : { isNormalScroll: boolean }) {
             transition={{ duration: 1 }}
             exit={{ opacity: 0 }}
         >
-            <h2 className={`${style.title} fm head-28-fl-34`}>
+            <h2 className={`${style.title} fm head-28-fl-32`}>
                 <span>Ценности </span>
                 <span className="text-color-accent">исток</span>
             </h2>

@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { Helmet } from "react-helmet";
-import { AnimatePresence } from "framer-motion";
 import { useHorizontalScroll, useSectionObserver } from "src/hooks";
 import { ProgressBar } from "src/components";
 import { aboutPageConfig, breakpoints, progressBarItems } from "src/configs";
@@ -9,25 +8,30 @@ import { TeamSectionCard } from "./TeamSectionCard/TeamSectionCard";
 import style from './about.module.css'
 
 export function About() {
-    const [activeSectionId, setActiveSectionId] = useState(aboutPageConfig[0].id);
-    const isScrollHorizontal = window.innerWidth >= breakpoints.md;
+    const [activeSectionId, setActiveSectionId] = useState("us");
+    const isDesktop = window.innerWidth >= breakpoints.md;
     const containerRef = useHorizontalScroll();
-    useSectionObserver({ setActiveSectionId });
-    
+    const memoizedSetActiveSectionId = useCallback((id: string) => {
+        setActiveSectionId(id);
+    }, []);
+    useSectionObserver({ 
+        setActiveSectionId: memoizedSetActiveSectionId,
+        threshold: 0.3, 
+        rootMargin: '0px 0px 0px 478px '
+     });
+
     return (
         <>
             <Helmet>
                 <title>О нас</title>
                 <meta name="description" content="О компании Istok" />
             </Helmet>
-            <div className={style.content} ref={containerRef}>
+            <div className={style.content} ref={containerRef} data-h-container>
                 <div className={style.textContainer}>
-                    <AnimatePresence mode="wait">
-                        {isScrollHorizontal ? renderSection(activeSectionId, ) : renderSection(null)}
-                    </AnimatePresence>
+                        {isDesktop ? renderSection(activeSectionId) : renderSection(null)}
                 </div>
                 {
-                    isScrollHorizontal && aboutPageConfig.map((item) => (
+                    isDesktop && aboutPageConfig.map((item) => (
                         <section key={item.id} className={`${style.section} ${style[item.id] ? style[item.id] : ''}`} id={item.id} data-h-slide>
                             {
                                 item.slideContents.map((content, index) => (
@@ -47,9 +51,10 @@ export function About() {
                     ))
                 }
             </div>
-            {isScrollHorizontal && <ProgressBar
+            {isDesktop && 
+            <ProgressBar
                 activeSectionId={activeSectionId}
-                setActiveSectionId={setActiveSectionId}
+                setActiveSectionId={memoizedSetActiveSectionId}
                 items={progressBarItems}
             />}
         </>

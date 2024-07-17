@@ -15,7 +15,7 @@ export function Brand({isNormalScroll} : {isNormalScroll: boolean}) {
                 <p className={`${style.topLine} fm body-12-fl-16`}>
                     ОБЪЕДИНИВ СВОИ ЗНАНИЯ И ОПЫТ, МЫ СОЗДАЛИ
                 </p>
-                <p className={`${style.titleBrand} fm head-28-fl-34`}>
+                <p className={`${style.titleBrand} fm head-28-fl-32`}>
                     <span className="text-color-accent">ISTOK</span> — БРЕНД, КОТОРЫЙ
                     ПОНИМАЕТ<br />
                     ЧТО НУЖНО ЛЮДЯМ И ЕГО СОТРУДНИКАМ.

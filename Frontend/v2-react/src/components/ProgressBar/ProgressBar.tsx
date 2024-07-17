@@ -14,7 +14,6 @@ type ProgressBarProps = {
 };
 
 export function ProgressBar( { activeSectionId, setActiveSectionId, items }: ProgressBarProps) {
-
     return (
         <ul className={style.progressBar}>
             {items.map(({id, text}) => (

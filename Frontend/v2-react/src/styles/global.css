@@ -302,7 +302,6 @@ a {
 .head-28-fl-32 {
   font-size: clamp(28px, 2.5vw, var(--font-32));
   line-height: clamp(34px, 2.5vw, var(--line-height-36));
-
 }
 
 

@@ -1,9 +1,11 @@
 
 .content {
   --_p-bottom: var(--space-131);
+  --_p-left: 487px;
   position: relative;
   padding: var(--space-102) 0;
   padding-bottom: var(--space-131);
+  padding-left: var(--_p-left);
   height: 100vh;
   overflow: hidden;
   display: flex;
@@ -11,11 +13,6 @@
   flex-flow: row nowrap;
 }
 
-@media (max-height: 610px) {
-  .content {
-    --_p-bottom: var(--space-102);
-  }
-}
 
 .content::-webkit-scrollbar {
   display: none;
@@ -26,11 +23,6 @@
   margin-right: var(--space-102);
 }
 
-
-
-.section.us {
-  padding-left: 487px;
-}
 .section.team {
   display: flex;
   gap: var(--space-102);
@@ -49,6 +41,7 @@
 .textContainer {
   position: fixed;
   left: 0;
+  top: 100px;
   z-index: 4;
   display: flex;
   flex-flow: column nowrap;
@@ -57,6 +50,24 @@
   width: fit-content;
   padding: 0 80px 0 var(--space-102);
   height: calc(100vh - var(--space-102) - var(--_p-bottom) + 10px);
+}
+
+
+@media (max-height: 610px) {
+  .content {
+    --_p-bottom: var(--space-102);
+  }
+}
+
+@media (max-width: 1120px) {
+  
+  .textContainer {
+    padding: 0 var(--space-40);
+  }
+
+  .content {
+    --_p-left: calc(487px - var(--space-40)*2);
+  }
 }
 
 @media (max-width: 768px) {

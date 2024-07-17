@@ -12,7 +12,7 @@ export function Team({ isNormalScroll }: { isNormalScroll: boolean }) {
             transition={{ duration: 1 }}
             exit={{ opacity: 0 }}
         >
-            <h2 className={`${style.title} fm head-28-fl-34`}>КОМАНДА</h2>
+            <h2 className={`${style.title} fm head-28-fl-32`}>КОМАНДА</h2>
             <p className={`${style.text} ${style.text4} fm body-14-fl-16`}>
                 У нашей команды большой опыт работы в крупной международной
                 мебельной компании, где мы усвоили, что бизнес делается через
