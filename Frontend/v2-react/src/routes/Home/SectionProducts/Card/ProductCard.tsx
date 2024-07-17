@@ -11,7 +11,7 @@ import style from './style.module.css';
 export function ProductCard({ to, name, imageAlt, imageSrc }: SlideProps) {
     return (
         <Link className={style.card} to={to}>
-            <h3 className={style.productName}>{name}</h3>
+            <h3 className={`${style.productName} fm head-1-st bx`}>{name}</h3>
             <div className={style.imgWrapper}>
                 <img
                     src={imageSrc}

@@ -80,6 +80,10 @@
     gap: 16px;
   }
 
+  .header:has(.nav) {
+    background-color: var(--whitish);
+  }
+
   .nav {
     background-color: var(--whitish);
     margin-left: 0;
@@ -111,7 +115,7 @@
     top: 0;
     padding: var(--space-16);
     gap: 12px;
-
+    background-color: var(--whitish);
   }
 
   .nav {
@@ -119,6 +123,7 @@
     margin: 0 calc(var(--space-16) * -1);
     padding: 0 var(--space-16);
   }
+
   .burgerButton {
     inset: calc(var(--space-16) - 8px) var(--space-16) auto auto;
   }
@@ -128,4 +133,3 @@
     gap: 8px;
   }
 }
-

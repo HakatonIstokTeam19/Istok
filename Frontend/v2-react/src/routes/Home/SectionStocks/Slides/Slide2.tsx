@@ -1,31 +1,35 @@
 import { useState } from 'react';
 import style from './style.module.css';
 import { ModalSignUp, Modal, Button } from "src/components";
+import { useWindowWidth } from 'src/hooks';
 
 export function Slide2() {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const windowWidth = useWindowWidth();
+    const isMobile = windowWidth <= 768;
     return (
         <div className={style.slide1}>
             <div className={style.sliderInfo}>
                 <h2
-                    className={`${style.commercialHeading} font-heading-bold-52 text-color-accent`}
+                    className={`${style.commercialHeading} head-32-fl-52 text-color-accent b`}
                 >
                     СКИДКА 10%
                 </h2>
-                <p className={`${style.commercialText} font-heading-reg-32`}>
+                <p className={`${style.commercialText} head-28-fl-32`}>
                     НА ЛЮБОЙ ЗАКАЗ
                 </p>
                 <ul>
-                    <li>Кухня</li>
-                    <li>Гардероб</li>
-                    <li>Прихожая</li>
-                    <li>Комод</li>
-                    <li>Стеллаж</li>
+                    <li className="fm body-2-st">Кухня</li>
+                    <li className="fm body-2-st">Гардероб</li>
+                    <li className="fm body-2-st">Прихожая</li>
+                    <li className="fm body-2-st">Комод</li>
+                    <li className="fm body-2-st">Стеллаж</li>
                 </ul>
                 <Button
-                onClick={() => setIsModalOpen(true)}
+                    size={isMobile ? 'smallL' : 'large'}
+                    onClick={() => setIsModalOpen(true)}
                     className={style.btnOrder}>
-                    Сделать заказ
+                    Рекомендовать
                 </Button>
             </div>
             <Modal

@@ -25,12 +25,7 @@
   .imgWrapper:hover > img {
     scale: 1.1;
   }
-  
-  .productName {
-    font-family: var(--font-main);
-    font-weight: var(--weight-bold);
-    color: var(--light-black);
-  }
+
 
   @media (max-width: 768px) {
     .productName {

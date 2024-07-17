@@ -1,9 +1,6 @@
 .sliderBtn {
     all: unset;
     cursor: pointer;
-    font-family: var(--font-main);
-    font-weight: var(--weight-bold);
-    color: var(--light-black)
 }
 
 .sliderBtn.active {

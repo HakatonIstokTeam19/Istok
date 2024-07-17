@@ -10,8 +10,8 @@ export function SectionMaterials() {
 
   return (
     <div className={style.innerContainer}>
-      <h2 className={`${style.heading} font-heading-reg-32`} aria-label="МАТЕРИАЛЫ">МАТЕРИАЛЫ</h2>
-      <p className={`font-body-1 ${style.text}`}>
+      <h2 className={`${style.heading} fm head-28-fl-32`} aria-label="МАТЕРИАЛЫ">МАТЕРИАЛЫ</h2>
+      <p className={`body-1-st ${style.text}`}>
         Мы в ISTOK очень тщательно подбираем поставщиков для нашей продукции.
         Для нас важно, чтобы все товары соответствовали строгим критериям отбора,
         включая высокое качество и ЭКОЛОГИЧНОСТЬ.

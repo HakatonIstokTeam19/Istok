@@ -20,12 +20,8 @@ export function Header() {
     
       const shouldMenuBeOpen = windowWIdth > breakpoints.xl || isMenuOpen;
 
-      const headerStyleOnOpen = {
-        backgroundColor: `${isMenuOpen ? 'var(--whitish)' : 'transparent'}`,
-      }
-
     return (
-        <header className={style.header} style={headerStyleOnOpen}>
+        <header className={style.header} >
             <svg className={style.logo}>
                 <use href={`${spritesheet}#logo`}></use>
             </svg>

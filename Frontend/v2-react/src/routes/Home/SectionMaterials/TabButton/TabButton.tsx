@@ -11,7 +11,7 @@ type TabButtonProps = {
 
 export const TabButton: React.FC<TabButtonProps> = memo(({ category, isActive, onClick }) => (
       <button
-        className={`${style.sliderBtn} ${isActive ? style.active : ''}`}
+        className={`fm body-1-st bx ${style.sliderBtn} ${isActive ? style.active : ''}`}
         onClick={onClick}
         role="tab"
         aria-selected={isActive}

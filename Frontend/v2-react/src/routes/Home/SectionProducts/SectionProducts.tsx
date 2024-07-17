@@ -18,8 +18,8 @@ export function SectionProducts({ isSliderActive, setAscendantScroll }: SectionP
         <>
             <div className={style.innerContentWrapper}>
                 <div className={style.titleWrapper}>
-                    <h2 className="font-heading-reg-32">ЧТО МЫ ПРОИЗВОДИМ</h2>
-                    <p className="font-body-1">
+                    <h2 className={`${style.title} fm head-28-fl-32`}>ЧТО МЫ ПРОИЗВОДИМ</h2>
+                    <p className="body-1-st">
                         Мы создаём мебель для любого помещения, потому что у нас нет
                         готовых
                         модулей. Каждый элемент мебели мы разрабатываем и производим

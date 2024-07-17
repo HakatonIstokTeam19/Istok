@@ -9,6 +9,7 @@ import { Slider } from 'src/components'
 import { useWindowWidth } from 'src/hooks'
 import { BenefitCard } from './Card/BenefitCard'
 
+
 export function SectionBenefits() {
     const windowWidth = useWindowWidth();
     const isMobile = windowWidth <= 768;
@@ -16,10 +17,10 @@ export function SectionBenefits() {
     return (
     <>
         <div className={style.titleWrapper}>
-            <h2 className={`${style.title} font-heading-reg-32`} >
-                Почему выбирают <span className="text-color-accent">ИСТОК</span>?
+            <h2 className={`${style.title} fm head-28-fl-32`} >
+                Почему выбирают <span className="text-color-accent b">ИСТОК</span>?
             </h2>
-            <p className={`${style.tagline} font-body-1`}>
+            <p className={`${style.tagline} body-1-st`}>
                 Наша команда ежедневно усердно трудится, чтобы предоставить вам лучший продукт и сервис!
             </p>
         </div>

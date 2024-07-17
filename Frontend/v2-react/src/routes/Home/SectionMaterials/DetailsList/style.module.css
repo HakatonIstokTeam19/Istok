@@ -12,18 +12,6 @@
     gap: 10px;
 }
 
-.detailTitle {
-    font-size: var( --font-16);
-    font-weight: var(--weight-bold-x);
-    line-height: var(--line-height-20);
-}
-
-.slideTxtBlockListElement p {
-    text-transform: none;
-    font-size: 14px;
-    font-weight: 300;
-}
-
 @media (max-width: 768px) {
     .slideTxtBlockList {
         width: 100%;

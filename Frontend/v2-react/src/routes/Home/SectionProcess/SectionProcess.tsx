@@ -4,7 +4,7 @@ export function SectionProcess() {
 
     return (
         <>
-            <h2 className={style.heading}>
+            <h2 className={`${style.heading} fm head-28-fl-32`}>
                 Уникальный технологический
                 <span className="text-color-accent"> ПРОЦЕСС </span> по запатентованной
                 технологии
@@ -12,8 +12,8 @@ export function SectionProcess() {
             <ol className={style.process}>
                 {steps.map((step, index) => (
                     <li className={style.processStep} key={index}>
-                        <h3 className={`${style.stepHeading} font-heading-bold-16`}>{step.title}</h3>
-                        <p className={`${style.stepDescription} font-body-2`}>
+                        <h3 className={`${style.stepHeading} fm body-1-st bx`}>{step.title}</h3>
+                        <p className={`${style.stepDescription} body-2-st`}>
                             {step.description}
                         </p>
                     </li>

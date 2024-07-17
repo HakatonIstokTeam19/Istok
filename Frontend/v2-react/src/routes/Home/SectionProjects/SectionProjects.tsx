@@ -20,8 +20,8 @@ export function SectionProjects() {
 
   return (
     <>
-      <h2 className={`${style.heading} font-heading-reg-32`}>
-        НАШИ <span className="font-heading-bold-32 text-color-accent">ПРОЕКТЫ</span>
+      <h2 className={`${style.heading} fm head-28-fl-32 `}>
+        НАШИ <span className="text-color-accent">ПРОЕКТЫ</span>
       </h2>
       <div className={style.contentWrapper}>
         {projects.map((project, index) => (
@@ -31,8 +31,8 @@ export function SectionProjects() {
       <Modal isOpen={!!selectedProject} onClose={closeModal}>
         {selectedProject && (
           <div className={style.modalContent}>
-            <h3 className='font-heading-bold-32'>{selectedProject.title}</h3>
-            <p className='font-body-1'>Тут будет ваша 3D моделька</p>
+            <h3 className=' fm head-28-fl-32'>{selectedProject.title}</h3>
+            <p className='fm body-st-1'>Тут будет ваша 3D моделька</p>
           </div>
         )}
       </Modal>

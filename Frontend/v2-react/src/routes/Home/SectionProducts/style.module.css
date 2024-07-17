@@ -10,15 +10,15 @@
     display: flex;
     gap: 40px;
     align-items: flex-start;
-    white-space: nowrap;
+
   }
   
-  .titleWrapper p {
-    text-transform: none;
-    white-space: wrap;
+  .title {
+    white-space: nowrap;
   }
 
-  .titleWrapper * {
+  .titleWrapper p {
+    text-transform: none;
     white-space: wrap;
   }
 
@@ -32,6 +32,7 @@
       padding: 32px var(--space-16);
       background-color: var(--beige);
       max-width: 100%;
+      white-space: wrap;
     }
 
   }

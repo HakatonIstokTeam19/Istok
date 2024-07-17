@@ -11,10 +11,6 @@
   .heading {
     text-transform: uppercase;
     margin-bottom: 4px;
-    font-size: var(--font-32);
-    font-weight: var(--weight-bold-semi);
-    line-height: var(--line-height-36);
-    color: var(--green);
   }
   
   .tagline {

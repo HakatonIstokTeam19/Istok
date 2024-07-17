@@ -77,7 +77,7 @@
       }
 
       .textWrapper {
-        padding: 0 var(--space-16);
+        padding: 24px var(--space-16) 0;
       }
 
       .card {
