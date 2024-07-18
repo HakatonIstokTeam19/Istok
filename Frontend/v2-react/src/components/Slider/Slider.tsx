@@ -25,19 +25,20 @@ export function Slider({
     slideGap = '0px'
 
 }: SliderProps) {
-    const sliderContainerRef = useRef<HTMLDivElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
     const windowWidth = useWindowWidth();
     const isMobile = windowWidth <= breakpoints.md;
     const [touchStart, setTouchStart] = useState(0);
-    const [touchEnd, setTouchEnd] = useState(0);
+    const [touchCurrent, setTouchCurrent] = useState(0);
+    // const [touchEnd, setTouchEnd] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [slideWidth, setSlideWidth] = useState(0);
     const totalSlides = children.length;
 
     useEffect(() => {
         const updateSlideWidth = () => {
-            if (sliderContainerRef.current) {
-                const containerWidth = sliderContainerRef.current.offsetWidth;
+            if (containerRef.current) {
+                const containerWidth = containerRef.current.offsetWidth;
                 const gapWidth = parseFloat(slideGap) * (slidesShown - 1);
                 const newSlideWidth = (containerWidth - gapWidth) / slidesShown;
                 setSlideWidth(newSlideWidth);
@@ -52,7 +53,7 @@ export function Slider({
 
 
     useEffect(() => {
-        const sliderContainer = sliderContainerRef.current;
+        const sliderContainer = containerRef.current;
         if (sliderContainer) {
             const translateX = currentIndex * (slideWidth + parseFloat(slideGap));
             sliderContainer.style.transform = `translateX(-${translateX}px)`;
@@ -73,20 +74,27 @@ export function Slider({
 
     const handleTouchStart = (e: React.TouchEvent) => {
         setTouchStart(e.targetTouches[0].clientX);
+        setTouchCurrent(e.targetTouches[0].clientX);
       };
     
       const handleTouchMove = (e: React.TouchEvent) => {
-        setTouchEnd(e.targetTouches[0].clientX);
+        setTouchCurrent(e.targetTouches[0].clientX);
+        const delta = touchStart - touchCurrent;
+        if (containerRef.current) {
+          containerRef.current.style.transform = `translateX(-${delta}px)`;
+        }
       };
     
       const handleTouchEnd = () => {
-        if (touchStart - touchEnd > 75) {
-            nextSlide();
-        }
-    
-        if (touchStart - touchEnd < -75) {
-          prevSlide();
-        }
+        if (!touchStart || !touchCurrent) return;
+        const distance = touchStart - touchCurrent;
+        const minSwipeDistance = 50;
+
+    if (distance > minSwipeDistance) {
+      setCurrentIndex((prev) => Math.min(prev + 1, totalSlides));
+    } else if (distance < -minSwipeDistance) {
+      setCurrentIndex((prev) => Math.max(prev - 1, 0));
+    }
       };
 
     const isPrevDisabled = currentIndex === 0;
@@ -115,7 +123,7 @@ export function Slider({
             <div className={style.displayWindow}>
                 <div
                     className={style.innerContainer}
-                    ref={sliderContainerRef}
+                    ref={containerRef}
                     onTouchStart={isMobile ? handleTouchStart : undefined}
                     onTouchMove={isMobile ? handleTouchMove : undefined}
                     onTouchEnd={isMobile ? handleTouchEnd : undefined}
