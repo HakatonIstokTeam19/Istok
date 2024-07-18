@@ -3,9 +3,8 @@ import { Modal } from 'src/components';
 import { Project } from 'src/types/types';
 import { ProjectCard } from './Card/ProjectCard';
 import style from './style.module.css';
-import img1 from '/src/assets/images/content/home-projects-card-1.png'
-import img2 from '/src/assets/images/content/home-projects-card-2.png'
-import img3 from '/src/assets/images/content/home-projects-card-3.png'
+import { projects } from '../data';
+
 
 export function SectionProjects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -39,25 +38,3 @@ export function SectionProjects() {
     </>
   );
 }
-
-  
-  const projects: Project[] = [
-    {
-      title: 'Кухня в квартиру',
-      image: img1,
-      alt: 'kitchen',
-    },
-    {
-      title: 'Шкаф',
-      image: img2,
-      alt: 'wardrobe',
-    },
-    {
-      title: 'Гардероб в спальню',
-      image: img3,
-      alt: 'wardrobe',
-    },
-  ];
-  
-
-  

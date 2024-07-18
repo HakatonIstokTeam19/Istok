@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { homePageProgressBarItems } from 'src/configs/config';
 import { ProgressBar, Footer, } from 'src/components';
 import { useHorizontalScroll, useSectionObserver, useWindowWidth} from 'src/hooks';
 import {SectionStart} from './SectionStart/SectionStart';
-import {SectionBenefits} from './SectionBenefits/SectionBenefits';
 import {SectionProducts} from './SectionProducts/SectionProducts';
 import {SectionMaterials} from './SectionMaterials/SectionMaterials';
 import {SectionProjects} from './SectionProjects/SectionProjects';
 import {SectionProcess} from './SectionProcess/SectionProcess';
+import { SectionBenefits } from './SectionBenefits/SectionBenefits';
 import {SectionStocks} from './SectionStocks/SectionStocks';
-import style from './home.module.css';
 import { breakpoints } from 'src/configs';
+import style from './home.module.css';
+import { homePageProgressBarItems } from './data';
 
 export function Home() {
     const [activeSectionId, setActiveSectionId] = useState(homePageProgressBarItems[0].id);

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import style from './style.module.css';
 import { ContactLink } from 'src/components';
-import { connectLinks, infoLinks, subscriptionLinks } from 'src/configs/config';
+import { connectLinks, infoLinks, subscriptionLinks } from 'src/configs/linksData';
 
 
 export function Footer() {

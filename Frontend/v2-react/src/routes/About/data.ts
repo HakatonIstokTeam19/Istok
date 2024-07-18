@@ -11,88 +11,6 @@ import aboutSlide5m from "src/assets/images/content/about-slide5-m.png";
 import aboutSlide6m from "src/assets/images/content/about-slide6-m.png";
 import aboutSlide7m from "src/assets/images/content/about-slide7-m.png";
 import aboutSlide8m from "src/assets/images/content/about-slide8-m.png";
-import image1 from 'src/assets/images/content/home-slider-1-card-1.png';
-import image2 from 'src/assets/images/content/home-slider-1-card-2.png';
-import image3 from 'src/assets/images/content/home-slider-1-card-3.png';
-import image4 from 'src/assets/images/content/home-slider-1-card-4.png';
-
-export const headerLinks = [
-    { to: '/', title: 'Главная' },
-    { to: '/furniture', title: 'Готовая мебель' },
-    { to: '/about', title: 'О нас' },
-    { to: './requestSelect', title: 'Оставить заявку' },
-    { to: '/profile', title: 'Войти в личный кабинет' },
-];
-
-
-export const connectLinks = [
-    {
-        linkTitle: 'Чат',
-        iconId: 'whatsapp',
-        ariaLabel: 'Чат whatsapp',
-        to: 'https://wa.me/79311213900?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%81%D0%B2%D1%8F%D0%B7%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D1%81%D0%BE%20%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%81%D1%82%D0%BE%D0%BC%21',
-    },
-    {
-        linkTitle: 'Чат',
-        iconId: 'telegram',
-        ariaLabel: 'Телеграм бот',
-        to: 'https://t.me/ISTOKsupport_bot',
-    },
-    {
-        linkTitle: 'Звонок',
-        iconId: 'ring',
-        ariaLabel: 'Телефон',
-        to: 'tel:+78129662997',
-    }
-];
-
-export const subscriptionLinks = [
-    {
-        linkTitle: 'Сообщество',
-        iconId: 'vkontakte',
-        ariaLabel: 'Группа вконтакте',
-        to: 'https://vk.com/istokmebel',
-    },
-    {
-        linkTitle: 'Сообщество',
-        iconId: 'telegram',
-        ariaLabel: 'Телеграм канал',
-        to: 'https://t.me/ISTOK_Connect',
-    }
-];
-
-export const infoLinks = [
-    {
-        linkTitle: 'Вопросы и ответы',
-        to: '/faq',
-    },
-    {
-        linkTitle: 'Программа лояльности',
-        to: '/loyalty-program',
-    },
-    {
-        linkTitle: 'Доставка и возврат',
-        to: '/delivery-and-return',
-    },
-    {
-        linkTitle: 'Инструкция по уходу',
-        to: '/care-instruction',
-    },
-];
-
-export const linksConfig = [...connectLinks, ...subscriptionLinks];
-
-
-
-export const homePageProgressBarItems = [
-    { id: "start" },
-    { id: "benefits" },
-    { id: "products" },
-    { id: "materials" },
-    { id: "projects" },
-    { id: "process" },
-    { id: "orderNow" }
-]
 
 export const teamSlides = [
     {
@@ -191,10 +109,3 @@ export const progressBarItems = aboutPageConfig.reduce((acc, item) => {
     }
     return acc;
 }, [] as Array<{ id: string, text: string }>);
-
-export const sectionProductSlides = [
-    { to: '/furniture/kitchens', name: 'Кухни', imageSrc: image1, imageAlt: 'Кухни' },
-    { to: '/furniture/storageSystems', name: 'Системы хранения', imageSrc: image2, imageAlt: 'Системы хранения' },
-    { to: '/furniture/vestibules', name: 'Прихожие', imageSrc: image3, imageAlt: 'Прихожие' },
-    { to: '/furniture/fullPack', name: 'Комплексный заказ', imageSrc: image4, imageAlt: 'Комплексный заказ' },
-];

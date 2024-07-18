@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { MaterialCategory } from "../materialData";
+import { MaterialCategory } from "../../data";
 import style from "./style.module.css";
 
 export const DetailList: React.FC<MaterialCategory> = memo(({ details, id }) => (

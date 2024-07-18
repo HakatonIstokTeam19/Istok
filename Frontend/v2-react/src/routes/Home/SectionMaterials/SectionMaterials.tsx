@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import style from './style.module.css';
-import { FurnitureComponents, materialCategories } from './materialData';
+import { FurnitureComponents, materialCategories } from './../data';
 import { TabButton } from './TabButton/TabButton';
 import { DetailList } from './DetailsList/DetailsList';
 

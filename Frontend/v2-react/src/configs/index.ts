@@ -3,12 +3,7 @@ import {
     connectLinks, 
     subscriptionLinks, 
     infoLinks, 
-    linksConfig, 
-    homePageProgressBarItems, 
-    teamSlides, 
-    aboutPageConfig, 
-    progressBarItems,
-    sectionProductSlides } from './config';
+    linksConfig } from './linksData';
 import { breakpoints } from './breakpoints';
 
 export {
@@ -17,10 +12,5 @@ export {
     subscriptionLinks,
     infoLinks,
     linksConfig,
-    homePageProgressBarItems,
-    teamSlides,
-    aboutPageConfig,
-    progressBarItems,
-    breakpoints,
-    sectionProductSlides
+    breakpoints
 };

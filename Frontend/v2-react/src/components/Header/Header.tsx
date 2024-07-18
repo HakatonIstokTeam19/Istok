@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import style from './style.module.css';
-import { headerLinks } from 'src/configs/config';
+import { headerLinks } from 'src/configs/linksData';
 import { useState } from 'react';
 import { Burger} from 'src/components';
 import spritesheet from 'src/assets/images/interface/icons-sprite-sheet.svg';

@@ -3,7 +3,7 @@ import { useWindowWidth } from 'src/hooks';
 import { ProductCard } from './Card/ProductCard';
 import { ProductsSlider } from './Slider/ProductsSlider';
 import style from './style.module.css';
-import { sectionProductSlides } from 'src/configs';
+import { sectionProductSlides } from '../data';
 
 
 type SectionProductsProps = {

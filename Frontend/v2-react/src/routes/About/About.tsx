@@ -2,10 +2,12 @@ import { useCallback, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useHorizontalScroll, useSectionObserver } from "src/hooks";
 import { ProgressBar } from "src/components";
-import { aboutPageConfig, breakpoints, progressBarItems } from "src/configs";
+import { breakpoints } from "src/configs";
 import { Us, Mission, Values1, Values2, Brand, Team } from "./SectionTextContext";
 import { TeamSectionCard } from "./TeamSectionCard/TeamSectionCard";
 import style from './about.module.css'
+import { aboutPageConfig, progressBarItems } from "./data";
+
 
 export function About() {
     const [activeSectionId, setActiveSectionId] = useState("us");

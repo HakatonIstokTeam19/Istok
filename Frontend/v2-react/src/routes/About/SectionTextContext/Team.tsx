@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import style from './style.module.css';
 import { TeamSectionCard } from "../TeamSectionCard/TeamSectionCard";
-import { teamSlides } from "src/configs/config";
+import { teamSlides } from "../data";
 
 export function Team({ isNormalScroll }: { isNormalScroll: boolean }) {
     return (
