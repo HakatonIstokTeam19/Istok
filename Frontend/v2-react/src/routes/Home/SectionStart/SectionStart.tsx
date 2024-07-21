@@ -55,15 +55,12 @@ export function SectionStart({ isScrollHorizontal } : { isScrollHorizontal: bool
                     </motion.div>
                 </div>
             </motion.div>
-            <motion.img
+            <img
                 srcSet={`${heroM} 768w, ${hero} 1120w`}
                 sizes='(max-width: 768px) 768px, 1120px'
                 src={hero}
                 className={style.image}
                 alt="living room interior"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 2 }}
             />
             {!isScrollHorizontal && 
                 <Button className={style.button} size='smallL' onClick={() => setIsModalOpen(true)}>

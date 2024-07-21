@@ -15,9 +15,15 @@ export const routes = {
     TG: 'https://t.me/ISTOK_Connect',
 } as const;
 
+export const furnitureCategories = {
+    popular: 'popular',
+    kitchen: 'kitchen',
+    storageSystems: 'storageSystems',
+    hallway: 'hallway',
+} as const;
 
 export const headerLinks = [
-    { to: '/', title: 'Главная' },
+    { to: routes.home, title: 'Главная' },
     { to: routes.furniture, title: 'Готовая мебель' },
     { to: routes.about, title: 'О нас' },
     { to: routes.requestSelect, title: 'Оставить заявку' },

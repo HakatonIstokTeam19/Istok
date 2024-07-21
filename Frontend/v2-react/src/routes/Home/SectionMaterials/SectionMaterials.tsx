@@ -8,6 +8,8 @@ export function SectionMaterials() {
   const [activeCategoryName, setActiveCategoryName] = useState(FurnitureComponents.FRAME);
   const activeCategory = materialCategories.find(category => category.id === activeCategoryName) || materialCategories[0];
 
+
+  
   return (
     <div className={style.innerContainer}>
       <h2 className={`${style.heading} fm head-28-fl-32`} aria-label="МАТЕРИАЛЫ">МАТЕРИАЛЫ</h2>

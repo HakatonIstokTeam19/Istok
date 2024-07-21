@@ -7,6 +7,7 @@ import { Us, Mission, Values1, Values2, Brand, Team } from "./SectionTextContext
 import { TeamSectionCard } from "./TeamSectionCard/TeamSectionCard";
 import style from './about.module.css'
 import { aboutPageConfig, progressBarItems } from "./data";
+import { motion } from "framer-motion";
 
 
 export function About() {
@@ -16,11 +17,11 @@ export function About() {
     const memoizedSetActiveSectionId = useCallback((id: string) => {
         setActiveSectionId(id);
     }, []);
-    useSectionObserver({ 
+    useSectionObserver({
         setActiveSectionId: memoizedSetActiveSectionId,
-        threshold: 0.3, 
+        threshold: 0.3,
         rootMargin: '0px 0px 0px 478px '
-     });
+    });
 
     return (
         <>
@@ -28,9 +29,15 @@ export function About() {
                 <title>О нас</title>
                 <meta name="description" content="О компании Istok" />
             </Helmet>
-            <div className={style.content} ref={containerRef} data-h-container>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className={style.content}
+                ref={containerRef}
+                data-h-container>
                 <div className={style.textContainer}>
-                        {isDesktop ? renderSection(activeSectionId) : renderSection(null)}
+                    {isDesktop ? renderSection(activeSectionId) : renderSection(null)}
                 </div>
                 {
                     isDesktop && aboutPageConfig.map((item) => (
@@ -52,13 +59,13 @@ export function About() {
                         </section>
                     ))
                 }
-            </div>
-            {isDesktop && 
-            <ProgressBar
-                activeSectionId={activeSectionId}
-                setActiveSectionId={memoizedSetActiveSectionId}
-                items={progressBarItems}
-            />}
+            </motion.div>
+            {isDesktop &&
+                <ProgressBar
+                    activeSectionId={activeSectionId}
+                    setActiveSectionId={memoizedSetActiveSectionId}
+                    items={progressBarItems}
+                />}
         </>
     );
 }
@@ -67,25 +74,25 @@ export function About() {
 const renderSection = (activeSection: string | null) => {
     switch (activeSection) {
         case 'us':
-            return <Us isNormalScroll={!activeSection}/>;
+            return <Us isNormalScroll={!activeSection} />;
         case 'mission':
-            return <Mission isNormalScroll={!activeSection}/>;
+            return <Mission isNormalScroll={!activeSection} />;
         case 'values1':
-            return <Values1 isNormalScroll={!activeSection}/>;
+            return <Values1 isNormalScroll={!activeSection} />;
         case 'values2':
-            return <Values2 isNormalScroll={!activeSection}/>;
+            return <Values2 isNormalScroll={!activeSection} />;
         case 'team':
-            return <Team isNormalScroll={!activeSection}/>;
+            return <Team isNormalScroll={!activeSection} />;
         case 'brand':
-            return <Brand isNormalScroll={!activeSection}/>;
+            return <Brand isNormalScroll={!activeSection} />;
         default:
             return <>
-                <Us isNormalScroll={!activeSection}/>
-                <Mission isNormalScroll={!activeSection}/>
-                <Values1 isNormalScroll={!activeSection}/>
-                <Values2 isNormalScroll={!activeSection}/>
-                <Team isNormalScroll={!activeSection}/>
-                <Brand isNormalScroll={!activeSection}/>
+                <Us isNormalScroll={!activeSection} />
+                <Mission isNormalScroll={!activeSection} />
+                <Values1 isNormalScroll={!activeSection} />
+                <Values2 isNormalScroll={!activeSection} />
+                <Team isNormalScroll={!activeSection} />
+                <Brand isNormalScroll={!activeSection} />
             </>;
     }
 };

@@ -1,0 +1,29 @@
+.field {
+    display: flex;
+    gap: var(--_gap);
+    white-space: nowrap;
+    margin-left: 10px;
+  
+  }
+  
+  .checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--light-black);
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    color: var(--light-black);
+  }
+  
+  .tick {
+    width: 6px;
+    height: 6px;
+    fill: currentColor;
+    stroke: currentColor;
+  }
+  
+  .checkbox[data-checked] .tick {
+    fill: var(--light-black);
+  }

@@ -88,4 +88,7 @@
 	<symbol id="sliderDot" width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<rect width="12" height="2" fill="currentColor" />
 	</symbol>
+	<symbol id="tick" width="6" height="6"  viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M1.90909 4.74627L0.477273 2.86567L0 3.49254L1.90909 6L6 0.626866L5.52273 0L1.90909 4.74627Z" fill="currentColor" />
+	</symbol>
 </svg>

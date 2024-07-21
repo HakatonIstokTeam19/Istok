@@ -108,6 +108,7 @@
   --space-102: 102px;
   --space-124: 124px;
   --space-131: 131px;
+  --footer-width: 180px;
 
   /*breakpoints  */
   --desktop-L: 1440px;
@@ -150,112 +151,9 @@ a {
 }
 
 
-.font-heading-bold-16 {
-  font-family: var(--font-main);
-  font-size: var(--font-16);
-  font-weight: var(--weight-bold-x);
-  line-height: var(--line-height-20);
-  color: var(--light-black);
-}
-
-.font-heading-24 {
-  font-family: var(--font-main);
-  font-size: var(--font-24);
-  font-weight: var(--weight-regular);
-  line-height: var(--line-height-28);
-  color: var(--light-black);
-}
-
-.font-btn-light-24 {
-  font-family: var(--font-main);
-  font-size: var(--font-24);
-  font-weight: var(--weight-light);
-  line-height: var(--line-height-32);
-  color: var(--light-black);
-}
-
-.font-body-1 {
-  font-family: var(--font-main);
-  font-size: var(--font-16);
-  font-weight: var(--weight-regular);
-  line-height: var(--line-height-26);
-  color: var(--light-black);
-}
-
-.font-body-1 {
-  font-family: var(--font-main);
-  font-size: clamp(12px, 2.5vw, var(--font-16));
-  font-weight: var(--weight-regular);
-  line-height: clamp(16px, 2.5vw, var(--line-height-26));
-  color: var(--light-black);
-}
-
-.font-body-light-1 {
-  font-family: var(--font-main);
-  font-size: var(--font-16);
-  font-weight: var(--weight-light);
-  line-height: var(--line-height-26);
-  color: var(--light-black);
-}
-
-.font-body-2 {
-  font-family: var(--font-main);
-  font-size: var(--font-14);
-  font-weight: var(--weight-regular);
-  line-height: var(--line-height-22);
-  color: var(--light-black);
-}
-
-.font-body-light-2 {
-  font-family: var(--font-main);
-  font-size: var(--font-14);
-  font-weight: var(--weight-light);
-  line-height: var(--line-height-22);
-  color: var(--light-black);
-  text-transform: none;
-}
-
-.font-body-3 {
-  font-family: var(--font-main);
-  font-size: var(--font-12);
-  font-weight: var(--weight-light-x);
-  line-height: var(--line-height-16);
-  color: var(--light-black);
-}
-
-.font-body-4 {
-  font-family: var(--font-main);
-  font-size: var(--font-10);
-  font-weight: var(--weight-light);
-  color: var(--light-black);
-}
-
-.font-body-3-bold {
-  font-family: var(--font-main);
-  font-size: var(--font-12);
-  font-weight: var(--weight-bold-x);
-  line-height: var(--line-height-16);
-  color: var(--light-black);
-}
-
-.font-heading-reg-52 {
-  font-family: var(--font-main);
-  font-size: var(--font-52);
-  font-weight: var(--weight-regular);
-  line-height: var(--line-height-65);
-  color: var(--light-black);
-}
-
-/* main font family and color */
-
-.fm {
-  font-family: var(--font-main);
-  font-weight: var(--weight-regular);
-  color: var(--light-black);
-}
 
 
-/* static font size*/
+/* static font sizes*/
 
 .head-1-st {
   font-size: var(--font-16);
@@ -272,8 +170,22 @@ a {
   line-height: var(--line-height-22);
 }
 
+.body-2-st-btn {
+  font-size: var(--font-14);
+  line-height: var(--line-height-14);
+}
 
 /* FONT MODIFIERS */
+
+
+/* main font family and color */
+
+.fm {
+  font-family: var(--font-main);
+  font-weight: var(--weight-regular);
+  color: var(--light-black);
+}
+
 
 .b {
   font-weight: var(--weight-bold);
@@ -282,9 +194,6 @@ a {
 .bx {
   font-weight: var(--weight-bold-x);
 }
-
-
-
 
 /* --------------- FLUID FONTS -----------------*/
 
@@ -305,6 +214,10 @@ a {
 }
 
 
+.head-14-fl-16 {
+  font-size: clamp(14px, 2.5vw, var(--font-16));
+  line-height: clamp(14px, 2.5vw, var(--line-height-18));
+}
 
 /* from body-1 on desktop to body-2 on mobile */
 
@@ -319,6 +232,7 @@ a {
   font-size: clamp(12px, 2.5vw, var(--font-16));
   line-height: clamp(18px, 2.5vw, var(--line-height-26));
 }
+
 
 /* --------------- END OF FLUID FONTS -----------------*/
 

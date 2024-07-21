@@ -21,13 +21,14 @@
   position: fixed;
   right: 0;
   top: 90px;
-  width: 73px;
+  width: 78px;
   height: 141px;
   background-color: inherit;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  gap: 12px;
   cursor: pointer;
   z-index: 1000;
   transform: rotate(180deg) translateX(66px);
@@ -37,7 +38,15 @@
   writing-mode: vertical-lr;
   text-orientation: mixed;
   font-weight: 500;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, color 0.2s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.button:hover {
+  color: var(--beige);
+}
+
+.button:active {
+  color: var(--green);
 }
 
 .pointer {

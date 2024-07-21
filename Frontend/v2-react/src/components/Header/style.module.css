@@ -9,7 +9,7 @@
   left: 0%;
   top: 20px;
   z-index: 1000;
-  padding: 0 var(--space-102);
+  padding: 0 var(--footer-width) 0 var(--space-102);
 }
 
 .logo {

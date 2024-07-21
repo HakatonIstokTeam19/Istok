@@ -1,0 +1,38 @@
+.section {
+  --_gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--_gap);
+  margin-bottom: var(--_gap);
+}
+
+
+
+
+.field {
+  display: flex;
+  gap: var(--_gap);
+  white-space: nowrap;
+  margin-left: 10px;
+
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--light-black);
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  color: transparent;
+}
+
+.tick {
+  width: 6px;
+  height: 6px;
+}
+
+.checkbox[data-checked] {
+  color: var(--light-black);
+}

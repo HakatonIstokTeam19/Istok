@@ -1,45 +1,49 @@
-import {UnderDevelopment} from 'src/components';
-// import style from './style.module.css';
+
+import style from './style.module.css';
 import { Helmet } from 'react-helmet';
-// import { useEffect, useState } from 'react';
+import { Filter } from './Filter/Filter';
+import { NavLink, Outlet } from 'react-router-dom';
+import { useHorizontalScroll } from 'src/hooks';
+import { motion } from 'framer-motion';
+import { sidelinks } from './data';
 
-export default function Furniture() {
-
-    // const [data, setData] = useState({ finished_furniture: [] });
-
-    // useEffect(() => {
-    //     async function getFurniture() {
-    //         try {
-    //             const response = await fetch('/api/v1/finished_furniture_list');
-    //             const data = await response.json();
-    //             console.log(data)
-    //             return data
-    //         } catch (error) {
-    //             console.error(error);
-    //         }
-    //     }
-    //     getFurniture().then(data => setData(data));
-    // }
-    // , []);
-
-    return (
-        <>
-            <Helmet>
-                <title>Готовая мебель</title>
-                <meta name="description" content="Мебель от Istok" />
-            </Helmet>
-            <UnderDevelopment />
-            {/* <div className={style.furniture}>
-                {data.finished_furniture.map((furniture: any) => (
-                    <div className={style.card} key={furniture.id}>
-                        <h2>{furniture.name}</h2>
-                        <p>Тип {furniture.type}</p>
-                        <p> Цена {furniture.price}</p>
-                        <img className={style.image} src={furniture.image_1} alt={furniture.name} />
-                        <p>{furniture.description}</p>
-                </div>
-                ))}
-            </div> */}
-        </>
-    );
+const motionProps = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+  transition: { duration: 0.5 }
 }
+
+export function Furniture() {
+
+  const containerRef = useHorizontalScroll()
+
+  return (
+    <>
+      <Helmet>
+        <title>Готовая мебель</title>
+        <meta name="description" content="Готовая мебель" />
+      </Helmet>
+      <motion.div
+        {...motionProps}
+        className={`${style.layout} filterPortalParent`}>
+        <Filter />
+        <aside className={style.sidenav}>
+          <div className={style.links}>
+            {
+              sidelinks.map(({ id, label }) => (
+                <NavLink key={id} className={({ isActive }) => `fm body-2-st-btn ${isActive ? "text-color-accent" : ''}`} to={id}>
+                  <span className="body-2-st-btn">{label}</span>
+                </NavLink>
+              ))
+            }
+          </div>
+        </aside>
+        <div className={style.content} ref={containerRef}>
+          <Outlet />
+        </div>
+      </motion.div>
+    </>
+  );
+}
+

@@ -1,0 +1,53 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: start;
+    align-items: start;
+    height: 40vmin;
+    max-height: 100%;
+    
+}
+
+
+.image {
+    height: 30vmin;
+    width: 50vmin;
+    max-height: 244px;
+    max-width: 356px;
+    object-fit: cover;
+    flex-shrink: 5;
+}
+
+.tagContainer {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 12px;
+    row-gap: 8px;
+}
+
+.price {
+    margin-bottom: 6px;
+}
+
+
+@media (max-height: 650px) {
+    .image {
+        height: 244px;
+        width: 356px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        height: 100%;
+        width: 100%
+    }
+
+    .image {
+        max-height: 300px;
+        max-width: 100%;
+        height: 100%;
+        width: 100%;
+    }
+}

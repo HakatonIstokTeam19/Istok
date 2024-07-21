@@ -2,8 +2,6 @@ import { ReactNode, useEffect, useRef, useState } from 'react';
 import style from './style.module.css';
 import { Arrow } from './Arrow/Arrow';
 import { Dot } from './Dot/Dot';
-import { useWindowWidth } from 'src/hooks';
-import { breakpoints } from 'src/configs';
 
 type SliderProps = {
     children: ReactNode[];
@@ -26,8 +24,6 @@ export function Slider({
 
 }: SliderProps) {
     const containerRef = useRef<HTMLDivElement>(null);
-    const windowWidth = useWindowWidth();
-    const isMobile = windowWidth <= breakpoints.md;
     const [touchStart, setTouchStart] = useState(0);
     const [touchCurrent, setTouchCurrent] = useState(0);
     // const [touchEnd, setTouchEnd] = useState(0);
@@ -61,16 +57,12 @@ export function Slider({
     }, [currentIndex, slideWidth, slideGap]);
 
     const nextSlide = () => {
-        if (currentIndex < totalSlides - 1) {
-            setCurrentIndex(currentIndex + 1);
-        }
-    };
-
+        setCurrentIndex(prev => Math.min(prev + 1, totalSlides - slidesShown));
+    }
+    
     const prevSlide = () => {
-        if (currentIndex > 0) {
-            setCurrentIndex(currentIndex - 1);
-        }
-    };
+        setCurrentIndex(prev => Math.max(prev - 1, 0));
+    }
 
     const handleTouchStart = (e: React.TouchEvent) => {
         setTouchStart(e.targetTouches[0].clientX);
@@ -91,7 +83,7 @@ export function Slider({
         const minSwipeDistance = 50;
 
     if (distance > minSwipeDistance) {
-      setCurrentIndex((prev) => Math.min(prev + 1, totalSlides));
+      setCurrentIndex((prev) => Math.min(prev + 1, totalSlides - slidesShown));
     } else if (distance < -minSwipeDistance) {
       setCurrentIndex((prev) => Math.max(prev - 1, 0));
     }
@@ -124,9 +116,9 @@ export function Slider({
                 <div
                     className={style.innerContainer}
                     ref={containerRef}
-                    onTouchStart={isMobile ? handleTouchStart : undefined}
-                    onTouchMove={isMobile ? handleTouchMove : undefined}
-                    onTouchEnd={isMobile ? handleTouchEnd : undefined}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
                     >
                     {children.map((child, index) => (
                         <div key={index} style={slideStyle}>

@@ -13,7 +13,7 @@ export const DetailList: React.FC<MaterialCategory> = memo(({ details, id }) => 
           role="tabpanel"
           id={`tabpanel-${id}`}
           aria-labelledby={`tab-${id}`}>
-          <h4 className= "fm head-1-st bx">{detail.title}</h4>
+          <h4 className= " bx head-1-st">{detail.title}</h4>
           {detail.items.map((item, itemIndex) => (
             <p key={itemIndex} className="body-2-st">{item}</p>
           ))}

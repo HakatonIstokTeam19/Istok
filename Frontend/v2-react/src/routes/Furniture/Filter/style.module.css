@@ -1,0 +1,84 @@
+
+
+.filterContent {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: var(--beige);
+  z-index: 10;
+  padding-top: 80px;
+  width: 100%;
+  max-width: 331px;
+  height: calc(100vh - 130px)
+}
+
+
+.toggle {
+  all: unset;
+  position: absolute;
+  top: 124px;
+  left: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 63px;
+  height: 16px;
+  cursor: pointer;
+  z-index: 11;
+}
+
+.toggle.active {
+  color: var(--green);
+}
+
+.trackVertical {
+  background-color: var(--green) !important;
+  width: 8px;
+  border-radius: 4px;
+
+}
+
+.filterForm {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-bottom: 40px;
+  height:auto;
+  margin-left: 52px;
+}
+
+
+.filterForm::webkit-scrollbar {
+  display: none;
+}
+
+.arrow {
+  width: 8px;
+  height: 8px;
+  transition: transform 0.3s ease;
+  transform: rotate(-90deg);
+}
+
+.arrow.open {
+  transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+  .filterContent {
+    top: 60px;
+    padding-top: 56px;
+    max-width: calc(100% - var(--space-16));
+  }
+
+  .filterForm {
+    margin-left: 15px;
+  }
+
+  .toggle {
+    top: 80px;
+    left: var(--space-16);
+  }
+}

@@ -1,0 +1,32 @@
+.grid {
+    display: grid;
+    grid-auto-columns: minmax(350px, 365px);
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 5.9%;
+    column-gap: 16px;
+    height: calc(100vh - 90px);
+    width: fit-content;
+    padding-bottom: 40px;
+}
+
+/*this height correlates with the height of Card component*/
+@media (max-height: 650px) {
+    .grid {
+        grid-template-rows: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-auto-flow: row;
+        width: 100%;
+        height: auto;
+        row-gap: 20px;
+        column-gap: 0;
+        padding: 100px 14px 0 14px;
+        outline: 1px solid red;
+    }
+}
