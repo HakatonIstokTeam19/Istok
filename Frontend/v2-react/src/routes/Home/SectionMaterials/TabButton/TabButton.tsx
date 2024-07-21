@@ -1,5 +1,5 @@
+import { MaterialCategory } from '../../data';
 import style from './style.module.css'
-import { MaterialCategory } from './../materialData';
 import { memo } from 'react';
 
 type TabButtonProps = {

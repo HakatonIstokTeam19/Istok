@@ -1,4 +1,4 @@
-import { FurnitureBodyMaterial, FurnitureColors, FurnitureFrontMaterial, FurnitureItem, FurnitureRoomType, FurnitureShape, FurnitureType } from "./types/types";
+import { CounterTopMaterial, FurnitureBodyMaterial, FurnitureColors, FurnitureFrontMaterial, FurnitureItem, FurnitureRoomType, FurnitureShape, FurnitureType } from "./types/types";
 import image0 from 'src/assets/images/content/mockup/image0.png';
 import image1 from 'src/assets/images/content/mockup/image1.png';
 import image2 from 'src/assets/images/content/mockup/image2.png';
@@ -19,6 +19,7 @@ export const mockKitchenFurniture: FurnitureItem[] = [
         shape: FurnitureShape.lShaped,
         bodyMaterial: [FurnitureBodyMaterial.chipboard],
         frontMaterial: [FurnitureFrontMaterial.mdf, FurnitureFrontMaterial.enamel],
+        counterTopMaterial: [CounterTopMaterial.acryl],
       },
       price: {
         amount: 250000,
@@ -75,6 +76,7 @@ export const mockKitchenFurniture: FurnitureItem[] = [
         shape: FurnitureShape.uShaped,
         bodyMaterial: [FurnitureBodyMaterial.wood],
         frontMaterial: [FurnitureFrontMaterial.wood],
+        counterTopMaterial: [CounterTopMaterial.hplCoatedChipboardW],
       },
       price: {
         amount: 350000,
@@ -131,6 +133,7 @@ export const mockKitchenFurniture: FurnitureItem[] = [
         shape: FurnitureShape.straight,
         bodyMaterial: [FurnitureBodyMaterial.mdf],
         frontMaterial: [FurnitureFrontMaterial.fenixPlastic],
+        counterTopMaterial: [CounterTopMaterial.glass],
       },
       price: {
         amount: 200000,
@@ -187,6 +190,7 @@ export const mockKitchenFurniture: FurnitureItem[] = [
         shape: FurnitureShape.island,
         bodyMaterial: [FurnitureBodyMaterial.chipboard],
         frontMaterial: [FurnitureFrontMaterial.pvcFilm],
+        counterTopMaterial: [CounterTopMaterial.compactLaminate],
       },
       price: {
         amount: 280000,
@@ -243,6 +247,7 @@ export const mockKitchenFurniture: FurnitureItem[] = [
         shape: FurnitureShape.barCountertop,
         bodyMaterial: [FurnitureBodyMaterial.mdf],
         frontMaterial: [FurnitureFrontMaterial.agtPlastic],
+        counterTopMaterial: [CounterTopMaterial.acryl],
       },
       price: {
         amount: 320000,
@@ -299,6 +304,7 @@ export const mockKitchenFurniture: FurnitureItem[] = [
         shape: FurnitureShape.barCountertop,
         bodyMaterial: [FurnitureBodyMaterial.mdf],
         frontMaterial: [FurnitureFrontMaterial.agtPlastic],
+        counterTopMaterial: [CounterTopMaterial.acryl],
       },
       price: {
         amount: 320000,
