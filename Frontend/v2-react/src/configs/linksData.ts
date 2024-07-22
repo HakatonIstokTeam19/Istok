@@ -4,6 +4,7 @@ export const routes = {
     furniture: 'furniture',
     about: 'about',
     requestSelect: 'requestSelect',
+    requestSkipSelect: 'requestSkipSelect',
     profile: 'profile',
     faq: 'faq',
     loyaltyProgram: 'loyaltyProgram',
@@ -87,3 +88,4 @@ export const infoLinks = [
 ];
 
 export const linksConfig = [...connectLinks, ...subscriptionLinks];
+

@@ -1,35 +1,48 @@
-
 .inner {
-    grid-column: 1 / -1;
-    margin-right: 122px;
-    padding: clamp(56px, 10dvh, 16.8%) clamp(60px, 10vw, 14%);
-    background-color: var(--beige);
-    display: flex;
-    flex-flow: column nowrap;
-    gap:30px;
-    overflow-y: scroll;
+  grid-column: 1 / -1;
+  margin-right: 122px;
+  padding: clamp(56px, 10dvh, 16.8%) clamp(16px, 10vw, 14%);
+  background-color: var(--beige);
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 30px;
+  overflow-y: scroll;
 }
+
 
 .inner::-webkit-scrollbar {
   display: none;
 }
 
 @media (max-width: 768px) {
-    .inner {
-        margin-right: 0;
-    }
+  .inner {
+    margin-right: 0;
+    background-color: var(--white);
+  }
 }
 
 .buttonWrapper {
-    display: flex;
-    flex-flow: row wrap;
-    column-gap: 60px;
-    row-gap: 20px;
-    align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 60px;
+  row-gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.registerBtn {
+    max-width: 100% !important;
+    width: 100% !important;
 }
 
 .text {
-    max-width: 100%;
-    text-wrap: wrap;
-    line-break: normal;
+  max-width: 100%;
+  text-wrap: wrap;
+  line-break: normal;
+}
+
+@media (max-width: 576px) {
+  .inner {
+    padding: 60px 30px;
+  }
 }

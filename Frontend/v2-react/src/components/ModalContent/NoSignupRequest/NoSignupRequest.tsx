@@ -1,6 +1,8 @@
 import style from './style.module.css';
 import bgImage from 'src/assets/images/content/modal-to-request.png';
 import { Button } from 'src/components';
+import { requestSelectModalLinks } from './data';
+import { routes } from 'src/configs/linksData';
 
 export function NoSignupRequest() {
 
@@ -15,7 +17,7 @@ export function NoSignupRequest() {
             </div>
             <div className={style.infoContainer}>
                 <div className={style.buttons}>
-                    {links.map((link, index) => (
+                    {requestSelectModalLinks.map((link, index) => (
                         <Button
                             as='a'
                             size='smallX'
@@ -30,7 +32,7 @@ export function NoSignupRequest() {
                         size='smallX'
                         variant='transparent'
                         className={style.link}
-                        href={'./requestSkipSelection'}
+                        href={routes.requestSkipSelect}
                     >
                        Пропустить и перейти к заявке
                     </Button>
@@ -40,11 +42,3 @@ export function NoSignupRequest() {
     );
 }
 
-const links = [
-    { to: './requestSelectFurniture', title: 'Кухня' },
-    { to: './requestSelectFurniture', title: 'Гардероб' },
-    { to: './requestSelectFurniture', title: 'Прихожая' },
-    { to: './requestSelectFurniture', title: 'Комод' },
-    { to: './requestSelectFurniture', title: 'Стеллаж' },
-    { to: './requestSelectFurniture', title: 'Комплексный заказ' },
-];
