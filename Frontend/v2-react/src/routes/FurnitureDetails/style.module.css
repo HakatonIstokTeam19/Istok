@@ -26,6 +26,10 @@
     margin-top: 16px;
 }
 
+.modalContent {
+    padding: var(--space-16);
+}
+
 .details {
     display: flex;
     flex-flow: column wrap;

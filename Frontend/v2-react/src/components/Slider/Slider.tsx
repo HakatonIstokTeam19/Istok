@@ -7,6 +7,7 @@ type SliderProps = {
     children: ReactNode[];
     showDots?: boolean;
     showArrows?: boolean;
+    noArrowBgr?: boolean;
     slidesShown?: number;
     width?: string;
     height?: string;
@@ -17,6 +18,7 @@ export function Slider({
     children,
     showDots = true,
     showArrows = true,
+    noArrowBgr = false,
     slidesShown = 1,
     width = '100%',
     height = 'auto',
@@ -25,8 +27,7 @@ export function Slider({
 }: SliderProps) {
     const containerRef = useRef<HTMLDivElement>(null);
     const [touchStart, setTouchStart] = useState(0);
-    const [touchCurrent, setTouchCurrent] = useState(0);
-    // const [touchEnd, setTouchEnd] = useState(0);
+    const [touchEnd, setTouchEnd] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [slideWidth, setSlideWidth] = useState(0);
     const totalSlides = children.length;
@@ -66,20 +67,16 @@ export function Slider({
 
     const handleTouchStart = (e: React.TouchEvent) => {
         setTouchStart(e.targetTouches[0].clientX);
-        setTouchCurrent(e.targetTouches[0].clientX);
       };
-    
+      
       const handleTouchMove = (e: React.TouchEvent) => {
-        setTouchCurrent(e.targetTouches[0].clientX);
-        const delta = touchStart - touchCurrent;
-        if (containerRef.current) {
-          containerRef.current.style.transform = `translateX(-${delta}px)`;
-        }
+        setTouchEnd(e.targetTouches[0].clientX);
       };
     
+   
       const handleTouchEnd = () => {
-        if (!touchStart || !touchCurrent) return;
-        const distance = touchStart - touchCurrent;
+        if (!touchStart || !touchEnd) return;
+        const distance = touchStart - touchEnd;
         const minSwipeDistance = 50;
 
     if (distance > minSwipeDistance) {
@@ -110,7 +107,7 @@ export function Slider({
             className={style.sliderContainer}
             style={sliderStyle}>
 
-            {showArrows && <Arrow right={false} onClick={prevSlide} disabled={isPrevDisabled} />}
+            {showArrows && <Arrow right={false} showBackground={noArrowBgr} onClick={prevSlide} disabled={isPrevDisabled} />}
 
             <div className={style.displayWindow}>
                 <div
@@ -142,7 +139,7 @@ export function Slider({
                 )}
             </div>
 
-            {showArrows && <Arrow right={true} onClick={nextSlide} disabled={isNextDisabled} />}
+            {showArrows && <Arrow right={true} showBackground={noArrowBgr} onClick={nextSlide} disabled={isNextDisabled} />}
 
         </div>
     )

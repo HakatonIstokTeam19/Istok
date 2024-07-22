@@ -21,6 +21,7 @@ export function FurnitureDetails() {
       <div className={style.visuals}>
         <Slider
           showArrows
+          noArrowBgr
           showDots>
           {images.map((image, index) => (
             <img key={index} src={image.url.large} alt={image.alt} className={style.image} />
@@ -34,7 +35,9 @@ export function FurnitureDetails() {
           Посмотреть 3D проект
         </Button>
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+          <div className={style.modalContent}>
           <h4 className='fm head-st-1 bx'>3D Проект</h4>
+          </div>
         </Modal>
       </div>
       <div className={style.details}>

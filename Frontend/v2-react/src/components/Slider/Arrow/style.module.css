@@ -32,6 +32,10 @@
   }
 }
 
+.sliderBtnBackground {
+  background: transparent;
+}
+
   .sliderBtnRight,
   .sliderBtnLeft {
     position: absolute;
