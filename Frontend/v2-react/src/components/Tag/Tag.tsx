@@ -1,4 +1,4 @@
-import { FurnitureTag } from 'src/types/types';
+import { FurnitureTag } from 'src/types';
 import style from './style.module.css';
 
 export function Tag({ name, highlight }: FurnitureTag) {

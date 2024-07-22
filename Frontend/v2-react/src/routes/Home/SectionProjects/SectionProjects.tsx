@@ -1,6 +1,6 @@
 import  { useState } from 'react';
 import { Modal } from 'src/components';
-import { Project } from 'src/types/types';
+import { Project } from 'src/types';
 import { ProjectCard } from './Card/ProjectCard';
 import style from './style.module.css';
 import { projects } from '../data';

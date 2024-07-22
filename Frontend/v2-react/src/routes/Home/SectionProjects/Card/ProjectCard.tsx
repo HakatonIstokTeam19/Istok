@@ -1,4 +1,4 @@
-import { Project } from 'src/types/types';
+import { Project } from 'src/types';
 import style from './style.module.css';
 
 export const ProjectCard: React.FC<{ project: Project; onClick: () => void }> = ({ project, onClick }) => (
