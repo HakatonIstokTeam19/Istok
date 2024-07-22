@@ -42,6 +42,7 @@ export function Header() {
                                     <NavLink
                                         className={({ isActive }) => `${style.link} ${isActive ? style.active : ''}`}
                                         to={link.to}
+                                        onClick={toggleMenu}
                                     >
                                         {link.title}
                                     </NavLink>
