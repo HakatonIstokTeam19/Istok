@@ -15,7 +15,7 @@ import benefits6 from 'src/assets/images/content/home-benefits-6.png'
 import img1 from '/src/assets/images/content/home-projects-card-1.png'
 import img2 from '/src/assets/images/content/home-projects-card-2.png'
 import img3 from '/src/assets/images/content/home-projects-card-3.png'
-import { Project } from 'src/types/types';
+import { FurnitureType, Project } from 'src/types';
 
 export const homePageProgressBarItems = [
     { id: "start" },
@@ -27,11 +27,11 @@ export const homePageProgressBarItems = [
     { id: "orderNow" }
 ]
 
-
+const slugs = Object.keys(FurnitureType) as Array<keyof typeof FurnitureType>;
 export const sectionProductSlides = [
-    { to: '/furniture/kitchens', name: 'Кухни', imageSrc: image1, imageAlt: 'Кухни' },
-    { to: '/furniture/storageSystems', name: 'Системы хранения', imageSrc: image2, imageAlt: 'Системы хранения' },
-    { to: '/furniture/vestibules', name: 'Прихожие', imageSrc: image3, imageAlt: 'Прихожие' },
+    { to: `furniture/${slugs[1]}`, name: 'Кухни', imageSrc: image1, imageAlt: 'Кухни' },
+    { to: `furniture/${slugs[3]}`, name: 'Системы хранения', imageSrc: image2, imageAlt: 'Системы хранения' },
+    { to: `furniture/${slugs[4]}`, name: 'Прихожие', imageSrc: image3, imageAlt: 'Прихожие' },
     { to: '/furniture/fullPack', name: 'Комплексный заказ', imageSrc: image4, imageAlt: 'Комплексный заказ' },
 ];
 

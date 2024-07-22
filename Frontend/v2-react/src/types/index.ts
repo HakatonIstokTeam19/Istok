@@ -85,6 +85,7 @@ export type  Project = {
     popular = 'Популярное',
     kitchenSet = 'Кухня',
     closet = 'Гардероб',
+    storageSystems = 'Системы хранения',
     hallwaySet = 'Прихожая',
     chestOfDrawers = 'Комод',
     rack = 'Стеллаж',
