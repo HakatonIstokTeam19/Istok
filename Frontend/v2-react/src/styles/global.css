@@ -110,12 +110,6 @@
   --space-131: 131px;
   --footer-width: 180px;
 
-  /*breakpoints  */
-  --desktop-L: 1440px;
-  --desktop: 1120px;
-  --tablet-L: 1024px;
-  --tablet: 768px;
-  --mobile: 480px;
 }
 
 
@@ -150,14 +144,17 @@ a {
   cursor: pointer;
 }
 
-
-
-
 /* static font sizes*/
 
 .head-1-st {
   font-size: var(--font-16);
   line-height: var(--line-height-20);
+}
+
+.head-2-st {
+  font-size: var(--font-32);
+  line-height: var(--line-height-36);
+
 }
 
 .body-1-st {
@@ -189,6 +186,10 @@ a {
 
 .b {
   font-weight: var(--weight-bold);
+}
+
+.bs {
+  font-weight: var(--weight-bold-semi);
 }
 
 .bx {
@@ -235,39 +236,6 @@ a {
 
 
 /* --------------- END OF FLUID FONTS -----------------*/
-
-
-.font-heading-bold-52 {
-  font-family: var(--font-main);
-  font-size: clamp(28px, 2.5vw, var(--font-52));
-  font-weight: var(--weight-bold);
-  line-height: clamp(32px, 2.5vw, var(--line-height-65));
-  color: var(--light-black);
-}
-
-
-.font-heading-48 {
-  font-family: var(--font-main);
-  font-size: var(--font-48);
-  font-weight: var(--weight-regular);
-  line-height: var(--line-height-65);
-  color: var(--light-black);
-}
-
-.font-heading-reg-32 {
-  font-family: var(--font-main);
-  font-size: clamp(28px, 2.5vw, var(--font-32));
-  font-weight: var(--weight-regular);
-  line-height: clamp(32px, 2.5vw, var(--line-height-36));
-  color: var(--light-black);
-}
-
-.font-heading-bold-32 {
-  font-family: var(--font-main);
-  font-size: var(--font-32);
-  font-weight: var(--weight-bold-x);
-  color: var(--light-black);
-}
 
 .text-color-accent {
   color: var(--green);

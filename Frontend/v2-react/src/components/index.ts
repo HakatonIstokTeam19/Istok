@@ -12,6 +12,8 @@ import { SideMenu } from "./SideMenu/SideMenu";
 import { Slider } from "./Slider/Slider";
 import { UnderDevelopment } from "./UnderDevelopment/UnderDevelopment";
 import { CheckboxItem } from "./Checkbox/Checkbox";
+import { Tag } from "./Tag/Tag";
+import { Price } from "./Price/Price";
 
 export {
   Slider,
@@ -27,5 +29,7 @@ export {
   ProgressBar,
   SideMenu,
   UnderDevelopment,
-  CheckboxItem
+  CheckboxItem,
+  Tag,
+  Price
 };

@@ -1,4 +1,5 @@
 import { 
+    routes,
     headerLinks, 
     connectLinks, 
     subscriptionLinks, 
@@ -7,6 +8,7 @@ import {
 import { breakpoints } from './breakpoints';
 
 export {
+    routes,
     headerLinks,
     connectLinks,
     subscriptionLinks,

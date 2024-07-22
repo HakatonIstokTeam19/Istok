@@ -6,9 +6,12 @@
     align-items: start;
     height: 40vmin;
     max-height: 100%;
-    
 }
 
+.card:hover .image{
+    opacity: .7;
+    transition: opacity 0.3s;
+}
 
 .image {
     height: 30vmin;

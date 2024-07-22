@@ -1,4 +1,4 @@
-import { CounterTopMaterial, FurnitureBodyMaterial, FurnitureColors, FurnitureFrontMaterial, FurnitureItem, FurnitureRoomType, FurnitureShape, FurnitureType } from "./types/types";
+import { CounterTopMaterial, FurnitureBodyMaterial, FurnitureColors, FurnitureFrontMaterial, FurnitureItem, FurnitureRoomType, FurnitureShape, FurnitureType } from "./types";
 import image0 from 'src/assets/images/content/mockup/image0.png';
 import image1 from 'src/assets/images/content/mockup/image1.png';
 import image2 from 'src/assets/images/content/mockup/image2.png';
@@ -11,10 +11,12 @@ import image5 from 'src/assets/images/content/mockup/image5.png';
 export const mockKitchenFurniture: FurnitureItem[] = [
     {
       id: 1,
-      name: "Модерн Люкс",
+      name: "Кухня «Комфорт»",
       type: FurnitureType.kitchenSet,
       intendedFor: FurnitureRoomType.kitchen,
       isPopular: true,
+      description: ['Размер кухни: 2390х3000х600. Размер кухни может быть адаптирован под Ваше помещение по всем параметрами.', 'Материалы: Корпус Egger, фасады (двери) Эмаль матовая, петли с доводчиком Hettich, врезные нажимные механизмы (верхние модули), интегрированные ручки, столешница Slotex, стеновая панель Sloteх, плинтус Slotex.', 'Наполнение: 2 ящика типа тандем бокс полного выдвижения с доводчиком Hettich, посудосушитель, системы для сортировки мусора'],
+      similarItemsIds: [1,2,3],
       details: {
         shape: FurnitureShape.lShaped,
         bodyMaterial: [FurnitureBodyMaterial.chipboard],
@@ -33,7 +35,7 @@ export const mockKitchenFurniture: FurnitureItem[] = [
             large: image0,
             original: image0,
           },
-          alt: "Кухня Модерн Люкс",
+          alt: "Кухня «Комфорт»",
         },
         {
           url: {
@@ -42,7 +44,7 @@ export const mockKitchenFurniture: FurnitureItem[] = [
             large: image0,
             original: image0,
           },
-          alt: "Кухня Модерн Люкс",
+          alt: "Кухня «Комфорт»",
         },
         {
           url: {
@@ -51,7 +53,7 @@ export const mockKitchenFurniture: FurnitureItem[] = [
             large: image1,
             original: image1,
           },
-          alt: "Кухня Модерн Люкс",
+          alt: "Кухня «Комфорт»",
         },
         {
           url: {
@@ -60,7 +62,7 @@ export const mockKitchenFurniture: FurnitureItem[] = [
             large: image2,
             original: image2,
           },
-          alt: "Кухня Модерн Люкс",
+          alt: "Кухня «Комфорт»",
         },
       ],
       tags: [{name: "Гарантия", highlight: true}, {name: "Износостойкость", highlight: true}, {name: "Кухня", highlight: false}, {name: "Для дома", highlight: false}],
@@ -72,6 +74,8 @@ export const mockKitchenFurniture: FurnitureItem[] = [
       type: FurnitureType.kitchenSet,
       intendedFor: FurnitureRoomType.kitchen,
       isPopular: false,
+      description: ['Размер кухни: 2390х3000х600. Размер кухни может быть адаптирован под Ваше помещение по всем параметрами.', 'Материалы: Корпус Egger, фасады (двери) Эмаль матовая, петли с доводчиком Hettich, врезные нажимные механизмы (верхние модули), интегрированные ручки, столешница Slotex, стеновая панель Sloteх, плинтус Slotex.', 'Наполнение: 2 ящика типа тандем бокс полного выдвижения с доводчиком Hettich, посудосушитель, системы для сортировки мусора'],
+      similarItemsIds: [1,2,3],
       details: {
         shape: FurnitureShape.uShaped,
         bodyMaterial: [FurnitureBodyMaterial.wood],
@@ -129,6 +133,8 @@ export const mockKitchenFurniture: FurnitureItem[] = [
       type: FurnitureType.kitchenSet,
       intendedFor: FurnitureRoomType.kitchen,
       isPopular: true,
+      description: ['Размер кухни: 2390х3000х600. Размер кухни может быть адаптирован под Ваше помещение по всем параметрами.', 'Материалы: Корпус Egger, фасады (двери) Эмаль матовая, петли с доводчиком Hettich, врезные нажимные механизмы (верхние модули), интегрированные ручки, столешница Slotex, стеновая панель Sloteх, плинтус Slotex.', 'Наполнение: 2 ящика типа тандем бокс полного выдвижения с доводчиком Hettich, посудосушитель, системы для сортировки мусора'],
+      similarItemsIds: [1,2,3],
       details: {
         shape: FurnitureShape.straight,
         bodyMaterial: [FurnitureBodyMaterial.mdf],
@@ -186,6 +192,8 @@ export const mockKitchenFurniture: FurnitureItem[] = [
       type: FurnitureType.kitchenSet,
       intendedFor: FurnitureRoomType.kitchen,
       isPopular: false,
+      description: ['Размер кухни: 2390х3000х600. Размер кухни может быть адаптирован под Ваше помещение по всем параметрами.', 'Материалы: Корпус Egger, фасады (двери) Эмаль матовая, петли с доводчиком Hettich, врезные нажимные механизмы (верхние модули), интегрированные ручки, столешница Slotex, стеновая панель Sloteх, плинтус Slotex.', 'Наполнение: 2 ящика типа тандем бокс полного выдвижения с доводчиком Hettich, посудосушитель, системы для сортировки мусора'],
+      similarItemsIds: [1,2,3],
       details: {
         shape: FurnitureShape.island,
         bodyMaterial: [FurnitureBodyMaterial.chipboard],
@@ -243,6 +251,8 @@ export const mockKitchenFurniture: FurnitureItem[] = [
       type: FurnitureType.kitchenSet,
       intendedFor: FurnitureRoomType.kitchen,
       isPopular: true,
+      description: ['Размер кухни: 2390х3000х600. Размер кухни может быть адаптирован под Ваше помещение по всем параметрами.', 'Материалы: Корпус Egger, фасады (двери) Эмаль матовая, петли с доводчиком Hettich, врезные нажимные механизмы (верхние модули), интегрированные ручки, столешница Slotex, стеновая панель Sloteх, плинтус Slotex.', 'Наполнение: 2 ящика типа тандем бокс полного выдвижения с доводчиком Hettich, посудосушитель, системы для сортировки мусора'],
+      similarItemsIds: [1,2,3],
       details: {
         shape: FurnitureShape.barCountertop,
         bodyMaterial: [FurnitureBodyMaterial.mdf],
@@ -300,6 +310,8 @@ export const mockKitchenFurniture: FurnitureItem[] = [
       type: FurnitureType.kitchenSet,
       intendedFor: FurnitureRoomType.kitchen,
       isPopular: true,
+      description: ['Размер кухни: 2390х3000х600. Размер кухни может быть адаптирован под Ваше помещение по всем параметрами.', 'Материалы: Корпус Egger, фасады (двери) Эмаль матовая, петли с доводчиком Hettich, врезные нажимные механизмы (верхние модули), интегрированные ручки, столешница Slotex, стеновая панель Sloteх, плинтус Slotex.', 'Наполнение: 2 ящика типа тандем бокс полного выдвижения с доводчиком Hettich, посудосушитель, системы для сортировки мусора'],
+      similarItemsIds: [1,2,3],
       details: {
         shape: FurnitureShape.barCountertop,
         bodyMaterial: [FurnitureBodyMaterial.mdf],

@@ -1,5 +1,5 @@
-import { routes } from "src/configs/linksData";
-import { FurnitureType } from "src/types/types";
+import { routes } from "src/configs";
+import { FurnitureType } from "src/types";
 
 export const requestSelectModalLinks = [
     { to: `${routes.requestSelect} ${FurnitureType.kitchenSet}`, title: 'Кухня' },

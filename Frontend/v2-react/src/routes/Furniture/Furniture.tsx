@@ -5,7 +5,7 @@ import { Filter } from './Filter/Filter';
 import { NavLink, Outlet } from 'react-router-dom';
 import { useHorizontalScroll } from 'src/hooks';
 import { motion } from 'framer-motion';
-import { sidelinks } from './data';
+import { FurnitureType } from 'src/types';
 
 const motionProps = {
   initial: { opacity: 0 },
@@ -13,6 +13,8 @@ const motionProps = {
   exit: { opacity: 0 },
   transition: { duration: 0.5 }
 }
+
+const sidelinks = Object.entries(FurnitureType).map(([id, label]) => ({ id, label }))
 
 export function Furniture() {
 

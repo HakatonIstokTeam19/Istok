@@ -5,10 +5,14 @@ import { About } from './routes/About/About.tsx'
 import { Furniture } from './routes/Furniture/Furniture.tsx';
 import RequestSelect from './routes/RequestSelect/RequestSelect.tsx';
 import Profile from './routes/Profile/Profile.tsx';
-import { furnitureCategories, routes } from './configs/linksData.ts';
+import { routes } from 'src/configs';
+import { FurnitureType } from 'src/types';
 import { furnitureLoader, furnitureAction } from './routes/Furniture/loaders.ts';
 import { MainContent } from './routes/Furniture/MainContent/MainContent.tsx';
 import { ErrorElement } from './components/Error/Error.tsx';
+import { FurnitureDetails } from './routes/FurnitureDetails/FurnitureDetails.tsx';
+
+const furnitureChildRoutes = Object.keys(FurnitureType)
 
 const router = createBrowserRouter([
   {
@@ -25,14 +29,17 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <Navigate to={furnitureCategories.popular} replace />,
+            element: <Navigate to={furnitureChildRoutes[0]} replace />,
           },
-          { 
-            path: `:id`,
+          ...furnitureChildRoutes.map((id) => ({
+            path: id,
             element: <MainContent />,
-          }
+          })),
         ],
-
+      },
+      {
+        path: `${routes.furniture}/:id`,
+        element: <FurnitureDetails />,
       },
       { path: routes.requestSelect, element: <RequestSelect /> },
       { path: routes.profile, element: <Profile /> },

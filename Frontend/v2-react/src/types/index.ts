@@ -10,6 +10,8 @@ export type  Project = {
     type: FurnitureType;
     intendedFor: FurnitureRoomType;
     isPopular: boolean;
+    description: Array<string>;
+    similarItemsIds: Array<number>;
     details: {
       shape: FurnitureShape;
       // массивы наименований материалов на тот случай если мебель состоит из нескольких материалов
@@ -80,6 +82,7 @@ export type  Project = {
   }
 
   export enum FurnitureType {
+    popular = 'Популярное',
     kitchenSet = 'Кухня',
     closet = 'Гардероб',
     hallwaySet = 'Прихожая',
@@ -96,7 +99,6 @@ export type  Project = {
     highTech = 'Хай-тек',
     provence = 'Прованс',
     country = 'Кантри',
-        // и так далее
   }
 
   export enum FurnitureColors {
@@ -111,7 +113,6 @@ export type  Project = {
     yellow = 'Желтый',
     pink = 'Розовый',
     purple = 'Фиолетовый',
-    // и так далее
   }
 
   export interface FurnitureTag {

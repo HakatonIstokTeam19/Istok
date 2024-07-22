@@ -7,7 +7,7 @@ import { FilterSection } from '../FilterSection/FilterSection';
 import spritesheet from 'src/assets/images/interface/icons-sprite-sheet.svg';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { FurnitureType, CounterTopMaterial, FurnitureFrontMaterial, FurnitureShape } from 'src/types/types';
+import { FurnitureType, CounterTopMaterial, FurnitureFrontMaterial, FurnitureShape } from 'src/types';
 
 const furnitureTypeOptions = Object.values(FurnitureType);
 const shapeOptions = Object.values(FurnitureShape);

@@ -1,13 +1,18 @@
 import style from './style.module.css';
-import { Slider } from 'src/components';
-import { FurnitureItem } from 'src/types/types';
-import { Tag } from '../Tag/Tag';
+import { Price, Slider, Tag } from 'src/components';
+import { FurnitureItem } from 'src/types';
+import { Link } from 'react-router-dom';
 
 
-export function Card({ name, price, images, tags }: FurnitureItem) {
-const formattedPrice = formatPrice(price.amount);
+export function Card(furniture: FurnitureItem) {
+    const { id, name, price, images, tags } = furniture;
+
     return (
-        <div className={style.card}>
+        <Link 
+        className={style.card}
+        to={`/furniture/${id}`}
+        state={furniture}
+        >
             <Slider
             showArrows={false}
             showDots
@@ -22,11 +27,7 @@ const formattedPrice = formatPrice(price.amount);
                 ))}
             </div>
             <h3 className={`${style.title} fm head-14-fl-16`}>{name}</h3>
-            <p className={`${style.price} fm head-1-st  bx`}>{formattedPrice} {price.currency}</p>
-        </div>
+            <Price className={style.price} amount={price.amount} />
+        </Link>
     );
-}
-
-function formatPrice(price: number) {
-    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 }

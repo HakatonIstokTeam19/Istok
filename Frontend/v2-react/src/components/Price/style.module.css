@@ -1,0 +1,16 @@
+.price {
+    font: var(--font-main);
+    color: var(--light-black)
+}
+
+.medium {
+    font-size: var(--font-16);
+    line-height: var(--line-height-20);
+    font-weight: var(--weight-bold-x);
+}
+
+.large {
+    font-size: var(--font-32);
+    line-height: var(--line-height-36);
+    font-weight: var(--weight-bold-semi);
+}
