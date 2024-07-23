@@ -1,13 +1,16 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation  } from 'react-router-dom';
 import style from './style.module.css';
 import { Button, Modal, Price, Slider, Tag } from 'src/components';
 import { FurnitureItem } from 'src/types';
 import { useState } from 'react';
+import { GoBack } from './GoBack/GoBack';
 
 
 export function FurnitureDetails() {
   const location = useLocation();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
+
 
   const furniture: FurnitureItem = location.state;
   if (!furniture) {
@@ -18,7 +21,9 @@ export function FurnitureDetails() {
 
   return (
     <div className={style.container}>
+
       <div className={style.visuals}>
+        <GoBack />
         <Slider
           showArrows
           noArrowBgr

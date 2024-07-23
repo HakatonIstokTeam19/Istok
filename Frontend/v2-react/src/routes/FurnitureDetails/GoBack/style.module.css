@@ -1,0 +1,40 @@
+.button {
+    all:unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 40px;
+    width: 84px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: all .3s ease;
+    font-family: var(--font-main);
+    font-weight: var(--weight-regular);
+    color: var(--light-black);
+}
+
+.button:active {
+    color: var(--green);
+}
+
+.button:hover {
+    opacity: .7;
+}
+
+.button:hover .icon{
+    transform: translateX(-5px) rotate(90deg);
+}
+
+.buttonText {
+    font-size: var(--font-16);
+    line-height: var(--line-height-26);
+}
+
+.icon {
+    width: 26px;
+    height: 26px;
+    transform: rotate(90deg);
+    transition: transform .3s ease;
+}

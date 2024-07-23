@@ -2,6 +2,7 @@
     display: flex;
     flex-flow: row wrap;
     column-gap: 67px;
+
     padding: var(--space-124) var(--space-102);
     padding-bottom: 30px;
     width: 100vw;
@@ -12,8 +13,9 @@
 .visuals {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(300px, 445px) auto;
+    grid-template-rows: min-content minmax(300px, 445px) auto;
     width: 50%;
+    row-gap: 16px;
 }
 
 .image {
@@ -21,9 +23,6 @@
     height: 100%;
     object-fit: cover;
     padding-bottom: 15px
-}
-.modalToggleBtn {
-    margin-top: 16px;
 }
 
 .modalContent {
