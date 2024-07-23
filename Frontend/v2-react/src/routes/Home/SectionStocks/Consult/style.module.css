@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: flex-start;
     padding: 0 40px;
-    padding-top: clamp(84px, 8vh, 146px);
+    padding-top: clamp(84px, 8dvh, 146px);
   }
   
   .heading {
@@ -14,13 +14,13 @@
   }
   
   .tagline {
-    margin-bottom: clamp(30px, 8vh, 60px);
+    margin-bottom: clamp(30px, 8dvh, 60px);
   }
   .textContent {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-bottom: clamp(35px, 8vh, 70px);
+    margin-bottom: clamp(35px, 8dvh, 70px);
   }
   
   .paragraph {

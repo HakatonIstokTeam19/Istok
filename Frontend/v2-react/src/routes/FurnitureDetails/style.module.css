@@ -5,7 +5,7 @@
     padding: var(--space-124) var(--space-102);
     padding-bottom: 30px;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     overflow: auto;
 }
 

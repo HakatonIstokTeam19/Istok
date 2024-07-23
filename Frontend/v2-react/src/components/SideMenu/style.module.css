@@ -7,7 +7,7 @@
   top: 0;
   right: 0;
   width: var(--space-102);
-  height: 100vh;
+  height: 100dvh;
   background-color: var(--light-black);
   transition: transform 0.5s ease-in-out;
   transform: translateX(102px);
@@ -84,8 +84,8 @@
   align-items: center;
   height: 340px;
   justify-content: space-between;
-  margin-top: clamp(27px, 40vh, 338px);
-  margin-bottom: clamp(45px, 20vh, 90px);
+  margin-top: clamp(27px, 40dvh, 338px);
+  margin-bottom: clamp(45px, 20dvh, 90px);
 }
 
 @media (max-width: 768px) {

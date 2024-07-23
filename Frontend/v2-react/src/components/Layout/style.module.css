@@ -1,15 +1,11 @@
 .layout {
     position: relative;
     z-index: 0;
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap; */
   }
   
   .main {
     display: flex;
     flex-direction: row;
-
   }
 
   @media (max-width: 768px) {
